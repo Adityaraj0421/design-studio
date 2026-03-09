@@ -1,9 +1,9 @@
 {
   "name": "design-studio",
-  "version": "1.0.0",
-  "description": "A virtual design studio that assembles specialist roles for any design task. Creates production UI (HTML/CSS/JS), designs directly in Figma (pages, components, styles, wireframes), audits design compliance, and converts Figma-to-code. Commands: /design, /design-review, /design-system, /figma, /figma-create, /ux-audit",
+  "version": "1.1.0",
+  "description": "A virtual design studio that assembles specialist roles for any design task. Creates production UI (HTML/CSS/JS), designs directly in Figma (pages, components, styles, wireframes), audits design compliance, generates developer handoff docs, creates responsive variants, and provides automated UX critique. Commands: /design, /design-review, /design-system, /figma, /figma-create, /ux-audit, /design-handoff, /figma-responsive",
   "author": {
     "name": "adityaraj0421"
   },
-  "keywords": ["design", "ui", "ux", "frontend", "figma", "figma-create", "accessibility", "design-system", "responsive", "wireframe", "audit"]
+  "keywords": ["design", "ui", "ux", "frontend", "figma", "figma-create", "accessibility", "design-system", "responsive", "wireframe", "audit", "handoff", "critique", "heuristics"]
 }

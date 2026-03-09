@@ -27,6 +27,8 @@ This skill is part of the **design-studio** plugin. For focused workflows, use t
 | `/figma <URL>` | Convert a Figma design to production code |
 | `/figma-create <task>` | Create designs directly in Figma (pages, components, styles) |
 | `/ux-audit <brief>` | Audit a Figma file against a design brief |
+| `/design-handoff` | Generate developer handoff docs (tokens, specs, component APIs) |
+| `/figma-responsive` | Generate mobile/tablet variants from a desktop Figma frame |
 
 ---
 
@@ -57,6 +59,7 @@ This skill is part of the **design-studio** plugin. For focused workflows, use t
 |----------|---------|-----------|
 | **Figma Workflow** | Design-to-code, Figma MCP tools, Code Connect | `references/figma-workflow.md` |
 | **Figma Creator** | Create designs in Figma — pages, components, styles, wireframes | `references/figma-creation.md` |
+| **Design Critique** | Automated UX heuristic review of Figma screens | `agents/design-critique.md` |
 | **Deployment** | Preview server, Firebase Hosting, optimization | `references/deployment.md` |
 
 ---
@@ -106,6 +109,10 @@ Based on the task, activate only the roles needed. Read their reference files fo
 | "Wireframe 3 screens in Figma" | UX Designer + Figma Creator reference |
 | "Audit my Figma file against this brief" | UX Researcher + `/ux-audit` command |
 | "Build hi-fi mockups in Figma" | UI Designer, Design System Lead + Figma Creator reference |
+| "Generate handoff docs for the dev team" | Design System Lead + `/design-handoff` command |
+| "Create mobile and tablet versions" | UI Designer + `/figma-responsive` command |
+| "Review my screens before I present" | UX Researcher + Design Critique agent |
+| "Is this design any good?" | UX Researcher + Design Critique agent |
 
 **Rules:**
 - Simple visual tasks (icon, color tweak) → 1–2 roles, no overhead
@@ -222,6 +229,9 @@ Unless the user specifies otherwise:
 | Figma implementation | Code from Figma context | Figma MCP → code |
 | Figma design | Pages, frames, components, styles in Figma | figma-console MCP (Desktop Bridge) |
 | Figma audit report | Compliance check against a design brief | `/ux-audit` command |
+| Developer handoff | Token maps, specs, component APIs, code snippets | `/design-handoff` command |
+| Responsive variants | Mobile/tablet Figma frames from desktop source | `/figma-responsive` command |
+| UX critique report | Heuristic evaluation with severity-ranked issues | Design Critique agent |
 | Deployed site | Firebase Hosting | Firebase MCP |
 | Wireframe | Low-fidelity HTML or description | Preview server |
 | Figma wireframe | Mid-fidelity gray layouts in Figma | figma-console MCP (Desktop Bridge) |
