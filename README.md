@@ -13,11 +13,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://claude.ai/claude-code)
-[![Roles](https://img.shields.io/badge/Specialist_Roles-7-orange)]()
-[![Commands](https://img.shields.io/badge/Slash_Commands-4-green)]()
-[![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-2300%2B_lines-ff69b4)]()
+[![Roles](https://img.shields.io/badge/Specialist_Roles-8-orange)]()
+[![Commands](https://img.shields.io/badge/Slash_Commands-6-green)]()
+[![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-3600%2B_lines-ff69b4)]()
 
 **Instead of generic AI design help, Design Studio assembles the right specialists for each task — just like a real design studio would staff a project.**
+
+**Now with Figma-native creation** — build pages, wireframes, components, and design systems directly inside Figma via the Desktop Bridge.
 
 [Installation](#-installation) · [Commands](#-commands) · [The Team](#-the-team) · [How It Works](#-how-it-works)
 
@@ -107,7 +109,14 @@ Tokens
 Animation
 
 </td>
-<td align="center" colspan="5">
+<td align="center">
+
+**Figma Creator**
+
+Figma Native
+
+</td>
+<td align="center" colspan="4">
 
 _The Design Manager picks only the roles your task actually needs_
 
@@ -157,6 +166,27 @@ Convert Figma designs to production-ready code:
 /figma https://figma.com/design/abc123/MyApp?node-id=1-2
 ```
 
+### `/figma-create <task>` — Create Designs in Figma
+
+Build pages, wireframes, components, and design systems directly inside Figma via the Desktop Bridge:
+
+```
+/figma-create Build a 3-screen wireframe for a saved content feature
+/figma-create Set up a design system with color tokens and type scale
+/figma-create Create a component set for Button with 4 variants
+```
+
+Requires the [Figma Desktop Bridge](https://www.figma.com/community/plugin/figma-desktop-bridge) plugin running in Figma Desktop.
+
+### `/ux-audit <brief>` — Audit Against a Design Brief
+
+Audit a Figma file for compliance against a design brief — checks page structure, frame naming, sizes, styles, components, and content:
+
+```
+/ux-audit Check the Miles UX Design Challenge submission against the brief
+/ux-audit Verify all required screens are present at 1440×900
+```
+
 ---
 
 ## Agents
@@ -165,8 +195,9 @@ Convert Figma designs to production-ready code:
 |-------|-------------|---------|
 | **accessibility-auditor** | Comprehensive WCAG AA compliance audit with specific code fixes | Background |
 | **design-qa** | Visual QA at 3 breakpoints, token compliance scoring, interaction state check | Background |
+| **figma-creator** | Creates pages, frames, components, and styles directly in Figma via Desktop Bridge | Foreground |
 
-Both agents run in parallel with your main work — no waiting around.
+The first two agents run in parallel with your main work. The figma-creator runs in foreground for interactive Figma creation with screenshot validation.
 
 ---
 
@@ -192,6 +223,10 @@ Both agents run in parallel with your main work — no waiting around.
     └────┬─────┘ └────┬─────┘ └────┬─────┘   are activated
          │            │            │
          └────────────┼────────────┘
+                      │
+              ┌───────┴───────┐
+              │ Figma Creation │ ← Build in Figma (optional)
+              └───────┬───────┘
                       ▼
               ┌───────────────┐
               │  Polish Phase  │ ← Motion + consistency
@@ -228,19 +263,29 @@ Recommendations adapt to match your stack — no manual configuration needed.
 design-studio/
 ├── .claude-plugin/plugin.json          # Plugin manifest
 ├── skills/design/
-│   ├── SKILL.md                        # Design Manager orchestration (216 lines)
+│   ├── SKILL.md                        # Design Manager orchestration
 │   └── references/
 │       ├── product-designer.md         # End-to-end UX, feature scoping
 │       ├── ux-designer.md              # Flows, wireframes, IA
 │       ├── ui-designer.md              # Color, typography, layout, components
 │       ├── ux-researcher.md            # Heuristics, accessibility, edge cases
 │       ├── content-designer.md         # Microcopy, errors, tone of voice
-│       ├── design-system-lead.md       # 3-tier tokens, theming, dark mode
+│       ├── design-system-lead.md       # 3-tier tokens, theming, dark mode, Figma styles
 │       ├── motion-designer.md          # Timing, easing, micro-interactions
-│       ├── figma-workflow.md           # Figma MCP tools, design-to-code
+│       ├── figma-workflow.md           # Figma MCP tools, design-to-code + creation
+│       ├── figma-creation.md           # Figma API patterns via Desktop Bridge (NEW)
 │       └── deployment.md              # Preview server, Firebase Hosting
-├── commands/                           # 4 slash commands
-├── agents/                             # 2 specialist agents
+├── commands/                           # 6 slash commands
+│   ├── design.md                      # Full design workflow
+│   ├── design-review.md               # Quality audit
+│   ├── design-system.md               # Token generation
+│   ├── figma.md                       # Figma to code
+│   ├── figma-create.md                # Create designs in Figma (NEW)
+│   └── ux-audit.md                    # Audit against brief (NEW)
+├── agents/                             # 3 specialist agents
+│   ├── accessibility-auditor.md       # WCAG AA compliance
+│   ├── design-qa.md                   # Visual QA
+│   └── figma-creator.md              # Figma-native creation (NEW)
 ├── hooks/hooks.json                    # SessionStart auto-detection
 ├── scripts/
 │   ├── detect-design-context.sh        # Project stack detection
@@ -249,18 +294,19 @@ design-studio/
 ```
 
 <details>
-<summary><b>Design knowledge breakdown (2,300+ lines)</b></summary>
+<summary><b>Design knowledge breakdown (3,600+ lines)</b></summary>
 
 | Reference | Lines | Covers |
 |-----------|-------|--------|
+| **figma-creation.md** | **694** | **Figma Desktop Bridge API, async patterns, auto-layout, component sets, paint/text styles, variables, wireframe patterns, annotations, screenshot validation, common pitfalls** |
 | motion-designer.md | 361 | Timing, easing functions, transitions, micro-interactions, reduced motion |
-| design-system-lead.md | 301 | 3-tier tokens (primitives/semantic/component), theming, dark mode |
+| design-system-lead.md | 427 | 3-tier tokens, theming, dark mode, Figma paint/text style creation, component sets |
 | ui-designer.md | 244 | Color theory, type scale, grid, components, responsive patterns |
+| figma-workflow.md | 247 | Figma MCP tools, design-to-code, Figma-native creation workflow |
 | ux-designer.md | 240 | User flows, IA, wireframing, interaction design, usability |
 | content-designer.md | 230 | Microcopy, error formulas, empty states, tone, number formatting |
 | ux-researcher.md | 208 | Nielsen's heuristics, WCAG AA checklist, mental models, edge cases |
 | deployment.md | 199 | Preview server, Firebase Hosting, image/CSS/font optimization |
-| figma-workflow.md | 189 | Figma MCP tools, URL parsing, design-to-code translation |
 | product-designer.md | 141 | Feature scoping, user outcomes, business alignment, design patterns |
 
 </details>
