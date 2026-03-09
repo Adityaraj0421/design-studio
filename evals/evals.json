@@ -45,6 +45,140 @@
         {"name": "responsive-layout", "description": "Mobile-responsive layout"},
         {"name": "has-progress-indicator", "description": "Checkout step indicator"}
       ]
+    },
+    {
+      "id": 3,
+      "name": "design-system-tokens",
+      "prompt": "/design-system Generate a complete token system from brand color #2563eb with dark mode support",
+      "expected_output": "CSS custom properties with full color palette (10 shades), semantic colors, typography scale, spacing scale, and dark mode overrides",
+      "files": [],
+      "assertions": [
+        {"name": "has-color-shades", "description": "Primary color expanded to 10+ shades (50-950)"},
+        {"name": "has-semantic-colors", "description": "Success, warning, error, info colors defined"},
+        {"name": "has-dark-mode", "description": "Dark mode overrides present ([data-theme=dark] or @media prefers-color-scheme)"},
+        {"name": "has-typography-scale", "description": "Font sizes from xs to 5xl defined"},
+        {"name": "has-spacing-scale", "description": "Spacing values on a consistent grid"},
+        {"name": "uses-css-variables", "description": "Output uses CSS custom properties"}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "design-review-audit",
+      "prompt": "/design-review ./test-page.html — audit this landing page for accessibility, usability, visual consistency, content quality, and motion design",
+      "expected_output": "Structured 5-point audit report with specific issues, severity levels, and actionable fix recommendations",
+      "files": [],
+      "assertions": [
+        {"name": "checks-accessibility", "description": "WCAG AA contrast and keyboard nav checked"},
+        {"name": "checks-usability", "description": "Nielsen's heuristics referenced"},
+        {"name": "checks-visual-consistency", "description": "Spacing, color, and typography consistency evaluated"},
+        {"name": "has-severity-levels", "description": "Issues categorized by severity (critical, major, minor)"},
+        {"name": "has-fix-suggestions", "description": "Each issue includes a specific remediation"},
+        {"name": "has-summary-score", "description": "Overall quality score or assessment"}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "brand-kit-generation",
+      "prompt": "/brand-kit #6366f1 TechFlow professional",
+      "expected_output": "Complete brand kit with color palette, typography, spacing, and component tokens in CSS and Tailwind formats",
+      "files": [],
+      "assertions": [
+        {"name": "has-primary-palette", "description": "Primary color expanded to full shade scale"},
+        {"name": "has-secondary-color", "description": "Derived secondary/accent color present"},
+        {"name": "has-neutrals", "description": "Neutral gray palette with brand tint"},
+        {"name": "has-typography", "description": "Font pairing and type scale defined"},
+        {"name": "has-css-output", "description": "CSS custom properties generated"},
+        {"name": "has-tailwind-output", "description": "Tailwind config extension generated"}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "responsive-dashboard",
+      "prompt": "/design Build a real-time analytics dashboard with sidebar navigation, KPI cards, line chart, and data table. Must be responsive.",
+      "expected_output": "Full dashboard page with sidebar, KPI summary cards, chart area, data table, responsive breakpoints, and professional styling",
+      "files": [],
+      "assertions": [
+        {"name": "has-sidebar-nav", "description": "Sidebar navigation with menu items"},
+        {"name": "has-kpi-cards", "description": "Summary stat cards with metrics"},
+        {"name": "has-chart-area", "description": "Chart or data visualization area"},
+        {"name": "has-data-table", "description": "Tabular data display"},
+        {"name": "responsive-breakpoints", "description": "Layout adapts at mobile/tablet/desktop"},
+        {"name": "professional-styling", "description": "Uses design tokens and consistent spacing"}
+      ]
+    },
+    {
+      "id": 7,
+      "name": "figma-create-wireframe",
+      "prompt": "/figma-create Build a 3-screen wireframe for a task management app: task list, task detail, and create task modal",
+      "expected_output": "Three Figma frames at standard sizes with auto-layout, placeholder content, and wireframe-appropriate styling",
+      "files": [],
+      "assertions": [
+        {"name": "creates-3-frames", "description": "Three distinct frames created in Figma"},
+        {"name": "uses-auto-layout", "description": "Frames use auto-layout for structure"},
+        {"name": "wireframe-fidelity", "description": "Gray mid-fi aesthetic, not hi-fi"},
+        {"name": "has-placeholder-content", "description": "Realistic placeholder text and elements"},
+        {"name": "proper-naming", "description": "Frames named descriptively"},
+        {"name": "validated-with-screenshot", "description": "Screenshots taken to verify output"}
+      ]
+    },
+    {
+      "id": 8,
+      "name": "ux-audit-compliance",
+      "prompt": "/ux-audit Check the design file for: 4 required pages, frame sizes at 1440×900, at least 10 paint styles, and component sets with proper variants",
+      "expected_output": "Compliance audit report with pass/fail for each requirement and specific findings",
+      "files": [],
+      "assertions": [
+        {"name": "checks-page-structure", "description": "Verifies page count and names"},
+        {"name": "checks-frame-sizes", "description": "Validates frame dimensions"},
+        {"name": "checks-paint-styles", "description": "Counts and lists paint styles"},
+        {"name": "checks-components", "description": "Verifies component sets and variants"},
+        {"name": "has-pass-fail", "description": "Each requirement has clear pass/fail status"},
+        {"name": "has-remediation", "description": "Failed items include fix instructions"}
+      ]
+    },
+    {
+      "id": 9,
+      "name": "design-sprint-facilitation",
+      "prompt": "/design-sprint Users are abandoning the signup flow — 60% drop-off between email entry and account creation",
+      "expected_output": "Structured design sprint with problem mapping, 8 solution ideas, decision matrix, prototype specification, and testing plan",
+      "files": [],
+      "assertions": [
+        {"name": "has-problem-statement", "description": "Clear problem statement with who/what/why"},
+        {"name": "has-user-journey", "description": "Current user journey mapped"},
+        {"name": "has-8-solutions", "description": "At least 8 distinct solution ideas generated"},
+        {"name": "has-decision-matrix", "description": "Scored matrix comparing solutions"},
+        {"name": "has-prototype-spec", "description": "Prototype scope and screens defined"},
+        {"name": "has-test-plan", "description": "Usability test script with tasks and metrics"}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "design-handoff-docs",
+      "prompt": "/design-handoff Generate a developer handoff document from the current Figma file with CSS variables and Tailwind config",
+      "expected_output": "Comprehensive handoff doc with token maps, component specs, spacing reference, and code outputs in multiple formats",
+      "files": [],
+      "assertions": [
+        {"name": "has-color-tokens", "description": "Color tokens extracted with hex values"},
+        {"name": "has-typography-specs", "description": "Typography styles with font/size/weight"},
+        {"name": "has-component-specs", "description": "Component properties and variants documented"},
+        {"name": "has-css-variables", "description": "CSS custom properties output"},
+        {"name": "has-tailwind-config", "description": "Tailwind theme extension output"},
+        {"name": "has-spacing-reference", "description": "Spacing scale documented"}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "design-presentation",
+      "prompt": "/design-present Create a walkthrough presentation of the design with annotations for a stakeholder review",
+      "expected_output": "Self-contained HTML presentation with slides, keyboard navigation, annotations, and speaker notes",
+      "files": [],
+      "assertions": [
+        {"name": "is-single-html", "description": "Output is a single HTML file"},
+        {"name": "has-keyboard-nav", "description": "Arrow keys navigate between slides"},
+        {"name": "has-progress-bar", "description": "Visual progress indicator"},
+        {"name": "has-annotations", "description": "Design decision annotations on screen slides"},
+        {"name": "has-slide-structure", "description": "Title slide, screen slides, summary slide"}
+      ]
     }
   ]
 }

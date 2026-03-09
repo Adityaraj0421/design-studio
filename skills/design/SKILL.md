@@ -29,6 +29,14 @@ This skill is part of the **design-studio** plugin. For focused workflows, use t
 | `/ux-audit <brief>` | Audit a Figma file against a design brief |
 | `/design-handoff` | Generate developer handoff docs (tokens, specs, component APIs) |
 | `/figma-responsive` | Generate mobile/tablet variants from a desktop Figma frame |
+| `/figma-sync` | Detect drift between Figma designs and code implementation |
+| `/design-present` | Generate an HTML presentation from Figma screens |
+| `/brand-kit` | Generate a complete brand kit from colors and mood |
+| `/component-docs` | Auto-generate component documentation from Figma |
+| `/figma-prototype` | Create interactive prototype connections in Figma |
+| `/site-to-figma` | Capture a live website and recreate in Figma |
+| `/ab-variants` | Generate A/B test design variants from a Figma screen |
+| `/design-sprint` | Guided 5-phase design sprint methodology |
 
 ---
 
@@ -60,6 +68,7 @@ This skill is part of the **design-studio** plugin. For focused workflows, use t
 | **Figma Workflow** | Design-to-code, Figma MCP tools, Code Connect | `references/figma-workflow.md` |
 | **Figma Creator** | Create designs in Figma — pages, components, styles, wireframes | `references/figma-creation.md` |
 | **Design Critique** | Automated UX heuristic review of Figma screens | `agents/design-critique.md` |
+| **Design Lint** | Scan Figma files for inconsistencies, orphan colors, non-standard spacing | `agents/design-lint.md` |
 | **Deployment** | Preview server, Firebase Hosting, optimization | `references/deployment.md` |
 
 ---
@@ -113,6 +122,15 @@ Based on the task, activate only the roles needed. Read their reference files fo
 | "Create mobile and tablet versions" | UI Designer + `/figma-responsive` command |
 | "Review my screens before I present" | UX Researcher + Design Critique agent |
 | "Is this design any good?" | UX Researcher + Design Critique agent |
+| "Check if my Figma matches the code" | Design System Lead + `/figma-sync` command |
+| "Make a presentation of my designs" | UI Designer, Motion Designer + `/design-present` command |
+| "Generate a brand kit from #6366f1" | UI Designer, Design System Lead + `/brand-kit` command |
+| "Document all my components" | Design System Lead + `/component-docs` command |
+| "Add prototype connections" | UX Designer + `/figma-prototype` command |
+| "Recreate this website in Figma" | UI Designer + `/site-to-figma` command |
+| "Create A/B test variants" | UX Researcher, UI Designer + `/ab-variants` command |
+| "Run a design sprint for signup" | Product Designer, UX Designer, UX Researcher + `/design-sprint` command |
+| "Lint my Figma file for issues" | Design System Lead + Design Lint agent |
 
 **Rules:**
 - Simple visual tasks (icon, color tweak) → 1–2 roles, no overhead
@@ -236,3 +254,12 @@ Unless the user specifies otherwise:
 | Wireframe | Low-fidelity HTML or description | Preview server |
 | Figma wireframe | Mid-fidelity gray layouts in Figma | figma-console MCP (Desktop Bridge) |
 | Component library | HTML + CSS with documented variants | Preview server |
+| Brand kit | Color palette, type scale, tokens in CSS/Tailwind/JSON | `/brand-kit` command |
+| Design presentation | Interactive HTML slides with annotations | `/design-present` command |
+| Component docs | Storybook-style documentation from Figma | `/component-docs` command |
+| Sync report | Design-code drift analysis with patches | `/figma-sync` command |
+| Prototype flow | Interactive connections between Figma screens | `/figma-prototype` command |
+| A/B variants | Test variants with hypotheses and metrics | `/ab-variants` command |
+| Design sprint | Problem→Solution→Prototype→Test plan | `/design-sprint` command |
+| Figma from site | Editable Figma recreation of a live URL | `/site-to-figma` command |
+| Lint report | Design quality issues with severity and fixes | Design Lint agent |
