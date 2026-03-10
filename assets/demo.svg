@@ -1,69 +1,111 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 580" width="820" height="580">
   <defs>
-    <clipPath id="terminal-clip">
+    <clipPath id="card-clip">
       <rect x="0" y="0" width="820" height="580" rx="12"/>
     </clipPath>
   </defs>
 
-  <!-- Terminal window -->
-  <g clip-path="url(#terminal-clip)">
-    <!-- Background -->
-    <rect width="820" height="580" rx="12" fill="#1e1e2e"/>
+  <g clip-path="url(#card-clip)">
+    <!-- Cream background -->
+    <rect width="820" height="580" rx="12" fill="#F5F0E8"/>
 
-    <!-- Title bar -->
-    <rect width="820" height="40" fill="#313244"/>
+    <!-- Subtle top border accent -->
+    <rect width="820" height="4" fill="#0D9668"/>
 
-    <!-- Traffic lights -->
-    <circle cx="20" cy="20" r="6" fill="#f38ba8"/>
-    <circle cx="40" cy="20" r="6" fill="#f9e2af"/>
-    <circle cx="60" cy="20" r="6" fill="#a6e3a1"/>
+    <!-- Header area -->
+    <text x="40" y="48" fill="#999" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="600" letter-spacing="2">DESIGN STUDIO</text>
+    <text x="780" y="48" text-anchor="end" fill="#c8c0b4" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="500">v2.0.0</text>
 
-    <!-- Title text -->
-    <text x="410" y="25" text-anchor="middle" fill="#6c7086" font-family="ui-monospace, 'SF Mono', Menlo, Monaco, monospace" font-size="13" font-weight="500">Claude Code</text>
+    <!-- Divider -->
+    <line x1="40" y1="62" x2="780" y2="62" stroke="#d8d0c4" stroke-width="1"/>
 
-    <!-- Terminal content -->
-    <g font-family="ui-monospace, 'SF Mono', Menlo, Monaco, monospace" font-size="13.5">
+    <!-- Prompt line -->
+    <text x="40" y="94" fill="#0D9668" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13.5" font-weight="600">$</text>
+    <text x="58" y="94" fill="#1a1a1a" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13.5">/design Build a pricing page with monthly/annual toggle</text>
 
-      <!-- Prompt line -->
-      <text x="20" y="72" fill="#89b4fa">❯</text>
-      <text x="38" y="72" fill="#cdd6f4">/design Build a pricing page with monthly/annual toggle</text>
+    <!-- Task Analysis section -->
+    <text x="40" y="138" fill="#1a1a1a" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700">Task Analysis</text>
+    <line x1="40" y1="148" x2="170" y2="148" stroke="#0D9668" stroke-width="2"/>
 
-      <!-- Blank line -->
+    <text x="40" y="172" fill="#888" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12">Building</text>
+    <text x="130" y="172" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">Responsive pricing component</text>
 
-      <!-- Plugin header -->
-      <text x="20" y="108" fill="#a6adc8">  Design Studio v2.0.0</text>
+    <text x="40" y="194" fill="#888" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12">Quality</text>
+    <text x="130" y="194" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">Production-ready</text>
 
-      <!-- Separator -->
-      <text x="20" y="128" fill="#585b70">  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</text>
+    <text x="40" y="216" fill="#888" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12">Audience</text>
+    <text x="130" y="216" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">SaaS visitors, conversion-focused</text>
 
-      <!-- Task analysis -->
-      <text x="20" y="158" fill="#f9e2af">  🎯 Task Analysis</text>
-      <text x="20" y="178" fill="#a6adc8">  Building:</text><text x="116" y="178" fill="#cdd6f4">Responsive pricing component</text>
-      <text x="20" y="198" fill="#a6adc8">  Quality:</text><text x="108" y="198" fill="#cdd6f4">Production-ready</text>
-      <text x="20" y="218" fill="#a6adc8">  Audience:</text><text x="116" y="218" fill="#cdd6f4">SaaS visitors, conversion-focused</text>
+    <!-- Team Assembled section -->
+    <text x="40" y="258" fill="#1a1a1a" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700">Team Assembled</text>
+    <line x1="40" y1="268" x2="190" y2="268" stroke="#0D9668" stroke-width="2"/>
 
-      <!-- Team assembly -->
-      <text x="20" y="254" fill="#f9e2af">  👥 Team Assembled</text>
-      <text x="20" y="278" fill="#585b70">  ├─</text><text x="56" y="278" fill="#cba6f7">UI Designer</text><text x="162" y="278" fill="#6c7086"> — Layout, typography, visual hierarchy</text>
-      <text x="20" y="298" fill="#585b70">  ├─</text><text x="56" y="298" fill="#f38ba8">Content Designer</text><text x="202" y="298" fill="#6c7086"> — Tier names, feature copy, CTAs</text>
-      <text x="20" y="318" fill="#585b70">  ├─</text><text x="56" y="318" fill="#a6e3a1">Motion Designer</text><text x="194" y="318" fill="#6c7086"> — Toggle animation, hover states</text>
-      <text x="20" y="338" fill="#585b70">  └─</text><text x="56" y="338" fill="#89b4fa">Design System Lead</text><text x="218" y="338" fill="#6c7086"> — Tokens, spacing, theming</text>
+    <!-- Role entries with dots -->
+    <circle cx="52" cy="289" r="4" fill="#6366f1"/>
+    <text x="66" y="293" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600">UI Designer</text>
+    <text x="170" y="293" fill="#888" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12">Layout, typography, visual hierarchy</text>
 
-      <!-- Creative direction -->
-      <text x="20" y="374" fill="#f9e2af">  🎬 Creative Direction</text>
-      <text x="20" y="394" fill="#a6adc8">  Mood:</text><text x="80" y="394" fill="#cdd6f4">Professional, modern, trustworthy</text>
+    <circle cx="52" cy="315" r="4" fill="#f59e0b"/>
+    <text x="66" y="319" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600">Content Designer</text>
+    <text x="200" y="319" fill="#888" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12">Tier names, feature copy, CTAs</text>
 
-      <!-- Build progress -->
-      <text x="20" y="430" fill="#f9e2af">  ⚡ Building</text>
-      <text x="20" y="454" fill="#a6e3a1">  ✓</text><text x="42" y="454" fill="#cdd6f4"> 3-tier pricing cards with feature lists</text>
-      <text x="20" y="474" fill="#a6e3a1">  ✓</text><text x="42" y="474" fill="#cdd6f4"> Monthly/annual toggle with smooth animation</text>
-      <text x="20" y="494" fill="#a6e3a1">  ✓</text><text x="42" y="494" fill="#cdd6f4"> Responsive breakpoints (375px, 768px, 1280px)</text>
-      <text x="20" y="514" fill="#a6e3a1">  ✓</text><text x="42" y="514" fill="#cdd6f4"> Dark mode + design tokens</text>
+    <circle cx="52" cy="341" r="4" fill="#8b5cf6"/>
+    <text x="66" y="345" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600">Motion Designer</text>
+    <text x="198" y="345" fill="#888" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12">Toggle animation, hover states</text>
 
-      <!-- Quality review -->
-      <text x="20" y="550" fill="#a6e3a1">  ✅ Quality Review PASSED</text>
-      <text x="234" y="550" fill="#6c7086">Accessibility: AA ✓  Responsive: ✓  Tokens: ✓</text>
+    <circle cx="52" cy="367" r="4" fill="#3b82f6"/>
+    <text x="66" y="371" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600">Design System Lead</text>
+    <text x="220" y="371" fill="#888" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12">Tokens, spacing, theming</text>
 
-    </g>
+    <!-- Creative Direction section -->
+    <text x="40" y="413" fill="#1a1a1a" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700">Creative Direction</text>
+    <line x1="40" y1="423" x2="210" y2="423" stroke="#0D9668" stroke-width="2"/>
+
+    <text x="40" y="447" fill="#888" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12">Mood</text>
+    <text x="130" y="447" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">Professional, modern, trustworthy</text>
+
+    <!-- Build progress section -->
+    <text x="460" y="138" fill="#1a1a1a" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700">Building</text>
+    <line x1="460" y1="148" x2="540" y2="148" stroke="#0D9668" stroke-width="2"/>
+
+    <!-- Checkmarks -->
+    <text x="460" y="176" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="600">&#10003;</text>
+    <text x="482" y="176" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">3-tier pricing cards with feature lists</text>
+
+    <text x="460" y="204" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="600">&#10003;</text>
+    <text x="482" y="204" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">Monthly/annual toggle with animation</text>
+
+    <text x="460" y="232" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="600">&#10003;</text>
+    <text x="482" y="232" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">Responsive breakpoints (375, 768, 1280px)</text>
+
+    <text x="460" y="260" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="600">&#10003;</text>
+    <text x="482" y="260" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">Dark mode + design tokens</text>
+
+    <!-- Quality Review box -->
+    <rect x="460" y="296" width="320" height="164" rx="8" fill="none" stroke="#c8c0b4" stroke-width="1"/>
+
+    <text x="480" y="322" fill="#1a1a1a" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700">Quality Review</text>
+    <line x1="480" y1="332" x2="600" y2="332" stroke="#0D9668" stroke-width="1.5"/>
+
+    <text x="480" y="358" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="600">PASSED</text>
+
+    <text x="480" y="382" fill="#888" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11.5">Accessibility</text>
+    <text x="580" y="382" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600">AA &#10003;</text>
+
+    <text x="480" y="404" fill="#888" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11.5">Responsive</text>
+    <text x="580" y="404" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600">&#10003;</text>
+
+    <text x="480" y="426" fill="#888" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11.5">Token Compliance</text>
+    <text x="600" y="426" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600">&#10003;</text>
+
+    <text x="480" y="448" fill="#888" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11.5">Contrast Ratio</text>
+    <text x="580" y="448" fill="#0D9668" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600">7.2:1 &#10003;</text>
+
+    <!-- Bottom divider -->
+    <line x1="40" y1="540" x2="780" y2="540" stroke="#d8d0c4" stroke-width="1"/>
+
+    <!-- Footer -->
+    <text x="40" y="564" fill="#bbb" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11">github.com/Adityaraj0421/design-studio</text>
+    <text x="780" y="564" text-anchor="end" fill="#0D9668" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="600">MIT LICENSE</text>
   </g>
 </svg>

@@ -3,40 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1280, height=640">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     width: 1280px;
     height: 640px;
     overflow: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background: #F5F0E8;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-  }
-
-  /* Subtle grid pattern */
-  body::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,0.08) 1px, transparent 0);
-    background-size: 40px 40px;
-  }
-
-  /* Glow accent */
-  .glow {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
+    color: #1a1a1a;
   }
 
   .content {
@@ -46,145 +29,223 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
+    padding: 0 60px;
   }
 
-  .label {
-    font-size: 14px;
+  /* Top badges */
+  .badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .badge {
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: #818cf8;
-    margin-bottom: -8px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1.5px solid;
   }
 
-  h1 {
-    font-size: 80px;
-    font-weight: 800;
-    color: #f8fafc;
-    letter-spacing: -2px;
+  .badge--dark {
+    color: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+
+  .badge--accent {
+    color: #0D9668;
+    border-color: #0D9668;
+  }
+
+  /* Title */
+  .title {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
     line-height: 1;
   }
 
+  .title-design {
+    font-family: 'DM Serif Display', serif;
+    font-size: 96px;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+  }
+
+  .title-studio {
+    font-family: 'DM Serif Display', serif;
+    font-size: 96px;
+    font-weight: 400;
+    font-style: italic;
+    color: #0D9668;
+    letter-spacing: -1px;
+  }
+
+  /* Divider */
+  .divider {
+    width: 80px;
+    height: 2px;
+    background: #1a1a1a;
+    margin: 2px 0;
+  }
+
+  /* Subtitle */
   .subtitle {
-    font-size: 26px;
-    color: #94a3b8;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: #666;
     font-weight: 400;
     margin-top: -4px;
   }
 
+  /* Roles */
   .roles {
     display: flex;
-    gap: 16px;
-    margin-top: 12px;
+    gap: 10px;
+    margin-top: 8px;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 900px;
   }
 
   .role {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(30,41,59,0.8);
-    border: 1px solid rgba(148,163,184,0.15);
+    background: transparent;
+    border: 1px solid #c8c0b4;
     border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 13px;
-    color: #cbd5e1;
+    padding: 5px 14px;
+    font-size: 12.5px;
+    color: #444;
     font-weight: 500;
   }
 
   .role .dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     flex-shrink: 0;
   }
 
+  /* Stats grid */
   .stats {
     display: flex;
-    gap: 32px;
-    margin-top: 16px;
+    border: 1px solid #c8c0b4;
+    border-radius: 8px;
+    margin-top: 12px;
+    overflow: hidden;
   }
 
   .stat {
     text-align: center;
+    padding: 14px 36px;
+  }
+
+  .stat + .stat {
+    border-left: 1px solid #c8c0b4;
   }
 
   .stat-number {
-    font-size: 36px;
-    font-weight: 700;
-    color: #f8fafc;
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #1a1a1a;
     line-height: 1.1;
   }
 
   .stat-label {
-    font-size: 13px;
-    color: #64748b;
-    font-weight: 500;
+    font-size: 10px;
+    color: #888;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
   }
 
-  .stat-divider {
-    width: 1px;
-    height: 48px;
-    background: rgba(148,163,184,0.2);
-    align-self: center;
-  }
-
-  .footer-line {
+  /* Footer */
+  .footer {
     position: absolute;
-    bottom: 32px;
-    font-size: 14px;
-    color: #475569;
+    bottom: 24px;
+    left: 60px;
+    right: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-url {
+    font-size: 13px;
+    color: #999;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-license {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0D9668;
   }
 </style>
 </head>
 <body>
-  <div class="glow"></div>
   <div class="content">
-    <div class="label">Claude Code Plugin</div>
-    <h1>Design Studio</h1>
+    <div class="badges">
+      <span class="badge badge--dark">Open Source</span>
+      <span class="badge badge--accent">Claude Code Plugin</span>
+    </div>
+
+    <div class="title">
+      <span class="title-design">Design</span>
+      <span class="title-studio">Studio</span>
+    </div>
+
+    <div class="divider"></div>
+
     <div class="subtitle">A Virtual Design Team for Claude Code</div>
 
     <div class="roles">
-      <div class="role"><span class="dot" style="background:#818cf8"></span>Product Designer</div>
-      <div class="role"><span class="dot" style="background:#f472b6"></span>UX Designer</div>
-      <div class="role"><span class="dot" style="background:#34d399"></span>UI Designer</div>
-      <div class="role"><span class="dot" style="background:#fbbf24"></span>Content Designer</div>
-      <div class="role"><span class="dot" style="background:#60a5fa"></span>Design System Lead</div>
-      <div class="role"><span class="dot" style="background:#a78bfa"></span>Motion Designer</div>
-      <div class="role"><span class="dot" style="background:#fb923c"></span>UX Researcher</div>
-      <div class="role"><span class="dot" style="background:#f87171"></span>Creative Director</div>
-      <div class="role"><span class="dot" style="background:#2dd4bf"></span>Design Manager</div>
+      <div class="role"><span class="dot" style="background:#6366f1"></span>Product Designer</div>
+      <div class="role"><span class="dot" style="background:#ec4899"></span>UX Designer</div>
+      <div class="role"><span class="dot" style="background:#10b981"></span>UI Designer</div>
+      <div class="role"><span class="dot" style="background:#f59e0b"></span>Content Designer</div>
+      <div class="role"><span class="dot" style="background:#3b82f6"></span>Design System Lead</div>
+      <div class="role"><span class="dot" style="background:#8b5cf6"></span>Motion Designer</div>
+      <div class="role"><span class="dot" style="background:#f97316"></span>UX Researcher</div>
+      <div class="role"><span class="dot" style="background:#ef4444"></span>Creative Director</div>
+      <div class="role"><span class="dot" style="background:#14b8a6"></span>Design Manager</div>
     </div>
 
     <div class="stats">
       <div class="stat">
+        <div class="stat-number">9</div>
+        <div class="stat-label">Roles</div>
+      </div>
+      <div class="stat">
         <div class="stat-number">16</div>
         <div class="stat-label">Commands</div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-number">9</div>
-        <div class="stat-label">Specialist Roles</div>
-      </div>
-      <div class="stat-divider"></div>
       <div class="stat">
         <div class="stat-number">5</div>
         <div class="stat-label">Agents</div>
       </div>
-      <div class="stat-divider"></div>
       <div class="stat">
-        <div class="stat-number">8000+</div>
+        <div class="stat-number">8,000+</div>
         <div class="stat-label">Lines of Knowledge</div>
       </div>
     </div>
   </div>
 
-  <div class="footer-line">github.com/Adityaraj0421/design-studio</div>
+  <div class="footer">
+    <span class="footer-url">github.com/Adityaraj0421/design-studio</span>
+    <span class="footer-license">MIT License</span>
+  </div>
 </body>
 </html>
