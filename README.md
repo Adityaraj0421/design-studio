@@ -44,25 +44,9 @@ Running `/design Build a pricing page with monthly/annual toggle` automatically 
 <details>
 <summary><b>More examples</b></summary>
 
-<br>
-
-```
-/design-review ./src/pages/checkout.html
-→ 5-point audit: Accessibility · Usability · Visual · Content · Motion
-→ WCAG AA contrast check, semantic HTML gaps, focus management issues
-
-/brand-kit #6366f1 premium
-→ 10-shade palette, secondary/accent colors, type scale
-→ CSS custom properties + Tailwind config + JSON tokens + visual reference page
-
-/figma-create Build a 3-screen wireframe for a saved content feature
-→ Creates frames in Figma Desktop via Desktop Bridge
-→ Auto-layout structure, placeholder content, annotation layer
-
-/design-sprint Improve signup conversion for our SaaS product
-→ Guided 5 phases: Understand → Diverge → Decide → Prototype → Validate
-→ Problem map, 8 ideas, decision matrix, testable prototype, test script
-```
+<div align="center">
+<img src="assets/demo-commands.svg" alt="Design Studio command examples — design-review, brand-kit, figma-create, design-sprint" width="820">
+</div>
 
 </details>
 
