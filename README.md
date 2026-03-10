@@ -39,7 +39,32 @@ Then try:
 
 <br>
 
-One command, and the right design knowledge loads automatically. No configuration needed.
+Running `/design Build a pricing page with monthly/annual toggle` automatically loads UI Designer, Content Designer, Motion Designer, and Design System Lead references — each contributing their specific knowledge to the output. A button redesign loads 1–2 references. A full product feature loads 4–7.
+
+<details>
+<summary><b>More examples</b></summary>
+
+<br>
+
+```
+/design-review ./src/pages/checkout.html
+→ 5-point audit: Accessibility · Usability · Visual · Content · Motion
+→ WCAG AA contrast check, semantic HTML gaps, focus management issues
+
+/brand-kit #6366f1 premium
+→ 10-shade palette, secondary/accent colors, type scale
+→ CSS custom properties + Tailwind config + JSON tokens + visual reference page
+
+/figma-create Build a 3-screen wireframe for a saved content feature
+→ Creates frames in Figma Desktop via Desktop Bridge
+→ Auto-layout structure, placeholder content, annotation layer
+
+/design-sprint Improve signup conversion for our SaaS product
+→ Guided 5 phases: Understand → Diverge → Decide → Prototype → Validate
+→ Problem map, 8 ideas, decision matrix, testable prototype, test script
+```
+
+</details>
 
 ---
 

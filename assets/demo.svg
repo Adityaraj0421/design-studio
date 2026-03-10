@@ -36,9 +36,9 @@
     <text x="40" y="216" fill="#888" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12">Audience</text>
     <text x="130" y="216" fill="#1a1a1a" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="12.5">SaaS visitors, conversion-focused</text>
 
-    <!-- Team Assembled section -->
-    <text x="40" y="258" fill="#1a1a1a" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700">Team Assembled</text>
-    <line x1="40" y1="268" x2="190" y2="268" stroke="#0D9668" stroke-width="2"/>
+    <!-- References Loaded section -->
+    <text x="40" y="258" fill="#1a1a1a" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700">References Loaded</text>
+    <line x1="40" y1="268" x2="210" y2="268" stroke="#0D9668" stroke-width="2"/>
 
     <!-- Role entries with dots -->
     <circle cx="52" cy="289" r="4" fill="#6366f1"/>
