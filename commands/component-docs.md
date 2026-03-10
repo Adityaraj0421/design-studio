@@ -261,6 +261,13 @@ preview_screenshot → capture proof
 - **Code examples**: Adapt to detected framework (React/Vue/Svelte/HTML)
 - **Screenshots**: Prefer `figma_capture_screenshot` (current state) over REST API (cloud state)
 
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Ask the user for component screenshots and a list of props/variants
+- Generate documentation from the manually provided inputs
+- Code examples and usage guidelines are still generated normally
+
 ## What's Next
 
 After generating component docs:

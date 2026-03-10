@@ -277,6 +277,13 @@ If the user doesn't specify, default to **Markdown + CSS variables** as the most
 - Token names should follow the pattern used in the Figma file's style naming
 - If the design system has variables with modes (Light/Dark), document both modes
 
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Ask the user for screenshots of screens and exported token data (styles, variables)
+- Generate handoff documentation from the provided materials
+- Output CSS variables, spacing specs, and component tables from available info
+
 ## What's Next
 
 After generating handoff docs:

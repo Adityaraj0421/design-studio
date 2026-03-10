@@ -141,6 +141,12 @@ Fix issues found in screenshots. Common problems to look for:
 - **Auto-layout positioning**: When `layoutMode` is set, children ignore `x`/`y` — use `layoutMode = 'NONE'` for free positioning
 - **Dynamic page access**: Always use async node getters (`getNodeByIdAsync`, `getLocalPaintStylesAsync`, etc.)
 
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Output a text specification of the design: dimensions, layer structure, auto-layout settings, styles, and component properties
+- Format as a structured markdown doc that can be built manually in Figma or used as a brief
+
 ## What's Next
 
 After creating designs in Figma:

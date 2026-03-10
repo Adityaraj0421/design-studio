@@ -6,11 +6,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://claude.ai/claude-code)
-[![Roles](https://img.shields.io/badge/Specialist_Roles-9-orange)]()
-[![Commands](https://img.shields.io/badge/Slash_Commands-16-green)]()
-[![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-8000%2B_lines-ff69b4)]()
+[![Roles](https://img.shields.io/badge/Specialist_Roles-13-orange)]()
+[![Commands](https://img.shields.io/badge/Slash_Commands-19-green)]()
+[![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-9400%2B_lines-ff69b4)]()
 
-**Instead of generic AI design help, Design Studio assembles the right specialists for each task — just like a real design studio would staff a project.**
+**Instead of generic AI design help, Design Studio loads specialized design knowledge for each task — the right expertise activates based on what you're building.**
 
 [Quick Start](#-quick-start) · [Commands](#-commands) · [The Team](#-the-team) · [How It Works](#-how-it-works) · [Changelog](CHANGELOG.md)
 
@@ -21,7 +21,7 @@
 ## 🚀 Quick Start
 
 ```bash
-claude plugin add https://github.com/Adityaraj0421/design-studio.git
+git clone https://github.com/Adityaraj0421/design-studio.git ~/.claude/plugins/design-studio
 ```
 
 Then try:
@@ -39,7 +39,7 @@ Then try:
 
 <br>
 
-One command, and the right specialists activate automatically. No configuration needed.
+One command, and the right design knowledge loads automatically. No configuration needed.
 
 ---
 
@@ -114,7 +114,40 @@ Animation
 </td>
 <td align="center" colspan="5">
 
-_The Design Manager picks only the roles your task actually needs_
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Social Media Designer**
+
+Social Visuals
+
+</td>
+<td align="center">
+
+**Social Media Strategist**
+
+Campaigns
+
+</td>
+<td align="center">
+
+**Social Media Copywriter**
+
+Captions
+
+</td>
+<td align="center">
+
+**Growth/Analytics**
+
+Metrics
+
+</td>
+<td align="center" colspan="3">
+
+_The skill loads only the references your task actually needs_
 
 </td>
 </tr>
@@ -142,6 +175,9 @@ _The Design Manager picks only the roles your task actually needs_
 | `/site-to-figma <URL>` | Capture website → editable Figma design |
 | `/ab-variants` | A/B test design variants |
 | `/design-sprint` | Guided 5-phase design sprint |
+| `/social-content <task>` | Social media visuals (posts, stories, carousels) |
+| `/social-campaign <brief>` | Campaign planning with calendar and captions |
+| `/social-analytics <type>` | Social analytics dashboards and reports |
 
 <details>
 <summary><b>📖 Command details & examples</b></summary>
@@ -319,6 +355,42 @@ Guided 5-phase design sprint methodology:
 
 Phases: Understand (problem mapping) → Diverge (8 solution ideas) → Decide (weighted matrix) → Prototype (build testable solution) → Validate (test script + success metrics).
 
+### `/social-content <task>` — Social Media Visuals
+
+Create platform-optimized social media visuals at exact dimensions with safe zones:
+
+```
+/social-content Instagram carousel for a product launch — 5 slides
+/social-content TikTok story announcing a new feature
+/social-content LinkedIn post about our Series A funding
+```
+
+Supports: feed posts, stories, reels, carousels, thumbnails, ads. Respects platform-specific safe zones, minimum text sizes, and Meta's 20% text rule.
+
+### `/social-campaign <brief>` — Campaign Planning
+
+Plan a social media campaign with strategy, content calendar, caption drafts, and KPI targets:
+
+```
+/social-campaign Awareness campaign for fitness app targeting Gen Z on Instagram and TikTok
+/social-campaign Product launch for SaaS tool — LinkedIn + Twitter — 2 weeks
+/social-campaign Engagement campaign for local restaurant on Instagram
+```
+
+Outputs: campaign strategy, 2-week content calendar, first-week caption drafts with hooks and CTAs, KPI targets with UTM framework. Visual assets created separately via `/social-content`.
+
+### `/social-analytics <type>` — Social Analytics
+
+Build analytics dashboards, generate reports, or design A/B test frameworks:
+
+```
+/social-analytics dashboard for Instagram + TikTok — last 30 days
+/social-analytics weekly report for LinkedIn company page
+/social-analytics ab-test Compare carousel vs. single-image posts on Instagram
+```
+
+Outputs: interactive Chart.js dashboards, structured markdown reports, or A/B test experiment documents with sample size calculators.
+
 </details>
 
 ---
@@ -335,6 +407,8 @@ Commands chain together. Each command suggests relevant next steps:
 | Brand setup | `/brand-kit` → `/figma-create` → `/design-handoff` |
 | Stakeholder review | `/figma-create` → `/design-present` → `/ab-variants` |
 | Full product sprint | `/design-sprint` → `/figma-create` → `/figma-prototype` → `/design-present` |
+| Social media launch | `/social-campaign` → `/social-content` → `/social-analytics` |
+| Social content creation | `/brand-kit` → `/social-content` → `/ab-variants` |
 
 ---
 
@@ -362,7 +436,7 @@ graph TB
     style H fill:#22c55e,stroke:#16a34a,color:#fff
 ```
 
-**Adaptive staffing:** A simple button redesign activates 1–2 roles. A full product feature activates 4–7 roles with the complete workflow.
+**Adaptive loading:** A simple button redesign loads 1–2 references. A full product feature loads 4–7 references with the complete workflow.
 
 ---
 
@@ -430,7 +504,7 @@ Settings marked `"auto"` or left empty defer to auto-detection. The Design Manag
 
 ```
 design-studio/
-├── .claude-plugin/plugin.json          # Plugin manifest (v2.0.0)
+├── .claude-plugin/plugin.json          # Plugin manifest (v2.1.1)
 ├── skills/design/
 │   ├── SKILL.md                        # Design Manager orchestration
 │   ├── settings.local.md              # User-configurable preferences
@@ -442,21 +516,29 @@ design-studio/
 │       ├── content-designer.md         # Microcopy, errors, tone of voice
 │       ├── design-system-lead.md       # 3-tier tokens, theming, dark mode, Figma styles
 │       ├── motion-designer.md          # Timing, easing, micro-interactions
+│       ├── social-media-designer.md    # Platform specs, safe zones, social templates
+│       ├── social-media-strategist.md  # Campaigns, calendars, hashtag strategy
+│       ├── social-media-copywriter.md  # Hooks, captions, CTAs, voice adaptation
+│       ├── growth-analytics-specialist.md # KPIs, dashboards, A/B testing, UTMs
 │       ├── figma-workflow.md           # Figma MCP tools, design-to-code + creation
 │       ├── figma-creation.md           # Figma API patterns via Desktop Bridge
 │       └── deployment.md              # Preview server, Firebase Hosting
-├── commands/                           # 16 slash commands
+├── commands/                           # 19 slash commands
 ├── agents/                             # 5 specialist agents
 ├── hooks/hooks.json                    # SessionStart + PreToolUse + Stop hooks
-├── scripts/detect-design-context.sh    # Project stack detection
-├── evals/evals.json                    # 17 test cases with assertions
+├── scripts/
+│   ├── detect-design-context.sh        # Project stack detection
+│   └── run-evals.sh                    # Eval structure validator
+├── evals/
+│   ├── evals.json                      # 17 eval cases (prompt + assertion specs)
+│   └── fixtures/test-page.html         # Fixture: landing page with a11y issues
 ├── assets/                             # Social preview + demo images
 ├── CHANGELOG.md                       # Version history
 └── CONTRIBUTING.md                    # Contributor guide
 ```
 
 <details>
-<summary><b>Design knowledge breakdown (8,000+ lines)</b></summary>
+<summary><b>Design knowledge breakdown (9,400+ raw lines)</b></summary>
 
 | File | Lines | Covers |
 |------|-------|--------|
@@ -476,6 +558,10 @@ design-studio/
 | **figma-sync.md** | **252** | **Design-code drift detection, token comparison, typography/spacing sync, patch generation** |
 | **ab-variants.md** | **248** | **A/B test variant generation, layout/CTA/copy/color changes, testing recommendations** |
 | figma-workflow.md | 246 | Figma MCP tools, design-to-code, Figma-native creation workflow |
+| **social-media-strategist.md** | **~220** | **Campaign frameworks, PESO model, content pillars, calendars, hashtag strategy, audience personas** |
+| **social-media-designer.md** | **~210** | **Platform dimensions, safe zones, file specs, feed/carousel/story/reel templates, typography rules** |
+| **growth-analytics-specialist.md** | **~220** | **KPI frameworks, engagement formulas, dashboard patterns, A/B testing, UTM tracking, funnels** |
+| **social-media-copywriter.md** | **~200** | **15+ hook formulas, caption templates, CTA frameworks, voice adaptation, bio optimization** |
 | ui-designer.md | 243 | Color theory, type scale, grid, components, responsive patterns |
 | ux-designer.md | 239 | User flows, IA, wireframing, interaction design, usability |
 | **design-present.md** | **233** | **Interactive HTML presentations, keyboard nav, annotations, walkthrough/pitch/case-study types** |
@@ -489,6 +575,9 @@ design-studio/
 | figma.md (command) | 108 | Figma-to-code workflow — analysis, layout mapping, comparison, refinement |
 | design-review.md (cmd) | 89 | 5-point quality audit — accessibility, usability, visual, content, motion |
 | design-system.md (cmd) | 84 | Token generation, extraction, auditing — CSS variables, Tailwind, JSON |
+| **social-campaign.md (cmd)** | **~160** | **Campaign planning — strategy, content calendar, caption drafts, KPI targets** |
+| **social-content.md (cmd)** | **~150** | **Social visuals — platform specs, creative direction, carousel threading, preview** |
+| **social-analytics.md (cmd)** | **~140** | **Analytics dashboards, weekly/monthly reports, A/B test design frameworks** |
 | product-designer.md | 140 | Feature scoping, user outcomes, business alignment, design patterns |
 | design-qa.md | 127 | Visual QA at 3 breakpoints, token compliance, interaction states |
 | accessibility-auditor.md | 105 | WCAG AA compliance, color contrast, semantic HTML, keyboard nav |
@@ -515,14 +604,6 @@ All defaults adapt when the plugin detects your project uses a different stack.
 
 ## 📦 Installation
 
-### One-liner
-
-```bash
-claude plugin add https://github.com/Adityaraj0421/design-studio.git
-```
-
-### Manual
-
 ```bash
 git clone https://github.com/Adityaraj0421/design-studio.git ~/.claude/plugins/design-studio
 ```
@@ -534,7 +615,7 @@ Restart Claude Code to load the plugin.
 ## Requirements
 
 - [Claude Code](https://claude.ai/claude-code) CLI
-- No additional dependencies
+- **Optional MCP servers** for Figma + Preview capabilities — see [MCP Setup Guide](MCP-SETUP.md)
 
 ---
 

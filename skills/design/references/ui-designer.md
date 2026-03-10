@@ -52,7 +52,7 @@ Start with one brand color and derive the rest:
 | Technical | JetBrains Mono, Fira Code | monospace |
 | Marketing | Depends on brand — pair heading + body fonts |
 
-### Type Scale (1.25 ratio)
+### Type Scale (Tailwind defaults)
 
 ```
 text-xs:  0.75rem  (12px) — Labels, captions, fine print
@@ -66,6 +66,9 @@ text-4xl: 2.25rem  (36px) — Page titles
 text-5xl: 3rem     (48px) — Hero headings
 text-6xl: 3.75rem  (60px) — Display text, splash screens
 ```
+
+> These are Tailwind CSS defaults, designed for practical readability — not a strict
+> modular ratio. A true 1.25 scale from 16px: 16 → 20 → 25 → 31 → 39 → 49.
 
 ### Text Styling Rules
 

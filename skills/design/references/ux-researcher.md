@@ -205,3 +205,53 @@ When looking at similar products for inspiration:
 2. **What's confusing?** — Mistakes to avoid
 3. **What's missing?** — Opportunities for differentiation
 4. **What's standard?** — User expectations to meet (don't innovate on everything)
+
+---
+
+## Research Methods
+
+### Usability Testing Protocol
+
+**The 5-participant rule**: 5 users find ~85% of usability issues. Beyond 5, diminishing returns.
+
+**Script template**:
+1. **Opening** (2 min): "We're testing the design, not you. There are no wrong answers. Think aloud as you go."
+2. **Background** (3 min): "Tell me about the last time you [relevant activity]."
+3. **Tasks** (15 min): 3–5 specific tasks, ordered easy → hard. Write tasks as goals, not steps: "Find and purchase a blue widget" not "Click the Products menu, then click Widgets."
+4. **Observe**: Note where they hesitate, misclick, or express confusion. Don't help or explain.
+5. **Debrief** (5 min): "What was hardest? What would you change? How does this compare to [competitor]?"
+
+**Severity rating**: Critical (blocks task) · Major (causes significant delay) · Minor (noticeable but recoverable).
+
+### Card Sorting
+
+Use to validate information architecture and navigation structure.
+
+| Type | When | How |
+|------|------|-----|
+| **Open sort** | Exploring how users categorize | Users group items and name the groups |
+| **Closed sort** | Validating proposed categories | Users sort items into pre-defined groups |
+| **Hybrid sort** | Testing categories while allowing discovery | Pre-defined groups + "create your own" |
+
+**Minimum participants**: 15 for statistical reliability. Analyze with similarity matrix — items sorted together >70% of the time belong in the same group.
+
+### User Interview Guide
+
+**5-question core template** (adapt to context):
+1. **Context**: "Walk me through a typical day when you [activity]."
+2. **Pain points**: "What's the most frustrating part of [current process]?"
+3. **Current tools**: "What tools/workarounds do you use today? Why?"
+4. **Reaction**: "Looking at this design, what's your first impression? What would you expect to happen when you [interact with element]?"
+5. **Comparison**: "How does this compare to [competitor/current solution]?"
+
+**Rules**: Ask open-ended questions. Never ask "Do you like this?" (leading). Follow up with "Why?" and "Can you show me?" Record with permission.
+
+### Survey Design Checklist
+
+- [ ] Each question measures **one thing** (no double-barreled questions)
+- [ ] Scales are balanced (5-point or 7-point Likert with a neutral midpoint)
+- [ ] Answer options are exhaustive and mutually exclusive
+- [ ] Survey takes **under 5 minutes** (aim for 8–12 questions max)
+- [ ] Include 1–2 open-ended questions for qualitative signal
+- [ ] Pilot test with 3 people before sending to catch confusing wording
+- [ ] Response rate benchmark: 10–15% for cold email, 30–50% for existing users

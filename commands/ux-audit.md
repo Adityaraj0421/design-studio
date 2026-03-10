@@ -212,6 +212,13 @@ Final score = (PASS count) / (Total requirements) × 100
 - If a requirement is ambiguous, note both your interpretation and the result
 - Keep the report factual — report what IS vs what SHOULD BE, without editorializing
 
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Ask the user for screenshots of each page/screen and a file description
+- Perform a best-effort visual and structural audit from the provided materials
+- Flag items that cannot be verified without Figma access
+
 ## What's Next
 
 After auditing a Figma file:

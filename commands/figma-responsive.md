@@ -189,11 +189,11 @@ figma_execute: `
     nav.primaryAxisAlignItems = 'SPACE_BETWEEN';
     nav.paddingLeft = 16;
     nav.paddingRight = 16;
-    // Hide nav links, show menu icon
-    for (const child of nav.children) {
-      if (child.name.includes('Feed') || child.name.includes('Saved') || child.name.includes('Discover')) {
-        child.visible = false;
-      }
+    // Hide mid-nav items on mobile (keep first item like logo and last item like menu icon)
+    // Adjust this heuristic to match your layer names if needed
+    const navChildren = [...nav.children];
+    for (let i = 1; i < navChildren.length - 1; i++) {
+      navChildren[i].visible = false;
     }
   }
 `
@@ -296,6 +296,12 @@ Summarize what was created:
 - **Font loading** — always `await figma.loadFontAsync()` before any text property changes
 - **Iteration budget** — max 3 fix iterations per breakpoint, then report remaining issues
 - **Design system consistency** — use the same token-linked styles on responsive variants (don't break style references)
+
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Output the responsive adaptation plan as a markdown spec
+- Include layout changes per breakpoint (desktop, tablet, mobile) with specific dimensions, stacking rules, and typography adjustments
 
 ## What's Next
 

@@ -98,7 +98,7 @@ Based on mood, select a font pairing:
 | Premium | Playfair Display, Fraunces | Inter, Source Sans 3 |
 | Tech | JetBrains Mono, Space Mono | Inter, IBM Plex Sans |
 
-#### Type Scale (Major Third — 1.25 ratio)
+#### Type Scale (Tailwind defaults)
 ```
 text-xs:    12px / 16px (0.75rem)
 text-sm:    14px / 20px (0.875rem)
@@ -299,6 +299,15 @@ This gives grays a subtle warm/cool cast matching the brand.
 - Test contrast ratios: primary-500 on white, primary-500 on primary-50, text on backgrounds
 - If the primary color is very saturated, desaturate the extended palette slightly for usability
 - Component tokens reference color/spacing tokens — never hardcode values
+
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Skip Figma paint/text style creation
+- Output brand kit as CSS custom properties, Tailwind config, and JSON tokens only
+
+If Preview server is unavailable:
+- Write the brand kit HTML file to disk for manual browser viewing
 
 ## What's Next
 

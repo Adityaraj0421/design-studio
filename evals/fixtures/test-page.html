@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Acme SaaS — Supercharge Your Workflow</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; color: #333; }
+    .hero {
+      background: #1a1a2e;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 48px; margin-bottom: 16px; }
+    .hero p { font-size: 18px; color: #888; margin-bottom: 32px; }
+    /* A11y issue: contrast ratio of #888 on #1a1a2e is ~3.1:1, below WCAG AA */
+    .cta-btn {
+      background: #e94560;
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    /* A11y issue: no visible focus outline on button */
+    .cta-btn:focus { outline: none; }
+    .features {
+      display: flex;
+      gap: 32px;
+      padding: 64px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      flex: 1;
+      padding: 24px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+    /* A11y issue: image without alt text rendered below */
+    .feature-card h3 { font-size: 20px; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #777; line-height: 1.5; }
+    .testimonial {
+      background: #f5f5f5;
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .testimonial blockquote {
+      font-size: 20px;
+      font-style: italic;
+      max-width: 640px;
+      margin: 0 auto 16px;
+    }
+    /* Usability issue: no skip-to-content link, no landmark roles */
+    .footer {
+      background: #1a1a2e;
+      color: #aaa;
+      padding: 32px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+    /* Visual consistency issue: inconsistent spacing — hero 80px, features 64px, testimonial 48px */
+    /* Motion issue: no reduced-motion media query */
+    .hero h1 { animation: fadeIn 1s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</head>
+<body>
+  <!-- A11y issue: no skip navigation link -->
+  <!-- A11y issue: html lang attribute missing -->
+
+  <div class="hero">
+    <h1>Supercharge Your Workflow</h1>
+    <p>The all-in-one platform trusted by 10,000+ teams worldwide.</p>
+    <button class="cta-btn">Start Free Trial</button>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <!-- A11y issue: decorative image missing alt="" -->
+      <img src="icon-speed.svg" width="48" height="48">
+      <h3>Lightning Fast</h3>
+      <p>Our engine processes requests in under 50ms so your team never waits.</p>
+    </div>
+    <div class="feature-card">
+      <img src="icon-secure.svg" width="48" height="48">
+      <h3>Enterprise Security</h3>
+      <p>SOC 2 Type II certified with end-to-end encryption and SSO support.</p>
+    </div>
+    <div class="feature-card">
+      <img src="icon-collab.svg" width="48" height="48">
+      <!-- Content issue: vague heading -->
+      <h3>Built for Teams</h3>
+      <p>Real-time collaboration with comments, mentions, and shared dashboards.</p>
+    </div>
+  </div>
+
+  <div class="testimonial">
+    <blockquote>"This tool saved us 20 hours per week. Absolutely game-changing."</blockquote>
+    <p>— Jamie R., Head of Product</p>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 Acme SaaS Inc. All rights reserved.
+  </div>
+</body>
+</html>

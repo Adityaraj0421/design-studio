@@ -326,6 +326,16 @@ At the end of the sprint, deliver:
 - **One sprint, one question** — keep the scope tight. Multiple questions = multiple sprints.
 - **Real decisions** — the decision matrix should produce a clear winner. If it's a tie, the user breaks it.
 
+## MCP Fallback
+
+This command works without MCP servers for Phases 1-3 and 5 (text-based outputs).
+
+If Figma Desktop Bridge is available in Phase 4:
+- Build the prototype directly in Figma using `/figma-create` and `/figma-prototype`
+
+If Figma is unavailable in Phase 4:
+- Output the prototype as interactive HTML wireframes for browser viewing
+
 ## What's Next
 
 After completing a design sprint:

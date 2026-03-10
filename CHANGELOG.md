@@ -2,6 +2,59 @@
 
 All notable changes to Design Studio are documented here.
 
+## [2.1.1] — 2026-03-10
+
+Bug fixes, documentation, and quality improvements based on public review feedback.
+
+### Fixed
+
+- **FID → INP**: Replaced deprecated First Input Delay with Interaction to Next Paint in deployment.md (thresholds updated to <200ms / >500ms)
+- **Accordion anti-pattern**: Replaced `max-height: 500px` hack with modern `grid-template-rows: 0fr → 1fr` pattern in motion-designer.md
+- **Type scale mislabel**: Corrected "1.25 ratio" to "Tailwind defaults" in ui-designer.md and brand-kit.md, added clarifying note
+- **SOURCE_WIDTH undeclared**: Added variable declaration in ab-variants.md figma_execute block
+- **Hardcoded project names**: Replaced 'Feed'/'Saved'/'Discover' with generic nav-hiding heuristic in figma-responsive.md
+- **Eval #4 broken path**: Fixed fixture reference to `./evals/fixtures/test-page.html` and created the fixture file
+- **Eval #11 missing assertion**: Added `has-speaker-notes` assertion to design-presentation eval
+- **Installation command**: Replaced non-existent `claude plugin add` with `git clone` in README
+
+### Added
+
+- **MCP-SETUP.md**: Complete guide for 4 optional MCP servers — Figma REST, Desktop Bridge, Claude Preview, Playwright — with install instructions, verification steps, and "Working Without MCP" table
+- **MCP Fallback sections**: All 19 commands now have documented fallback behavior when MCP servers are unavailable
+- **UX Researcher research methods**: Added usability testing protocol, card sorting guide, interview template, survey design checklist (~40 lines)
+- **Eval validator script**: `scripts/run-evals.sh` validates JSON structure, counts assertions, checks fixture references
+- **Eval fixture file**: `evals/fixtures/test-page.html` — landing page with intentional a11y issues for design-review eval
+
+### Changed
+
+- Stop hook expanded from 9 to all 19 commands (grouped: Core, Figma, Social)
+- README requirements section now links to MCP-SETUP.md
+- README tone: "assembles specialists" → "loads specialized knowledge" (5 edits across README + SKILL.md)
+- Line count badge updated from 9000+ to 9400+ (actual raw count)
+- README directory tree expanded to show scripts/ and evals/ subdirectories
+
+## [2.1.0] — 2026-03-10
+
+The social media expansion — adds a full social wing to Design Studio with 4 new specialist roles and 3 new commands.
+
+### Added
+
+- **4 new specialist roles**: Social Media Designer (platform-specific visuals, safe zones, dimension specs), Social Media Strategist (campaign planning, content calendars, hashtag strategy), Social Media Copywriter (hook formulas, caption templates, CTA frameworks), Growth/Analytics Specialist (KPI frameworks, dashboards, A/B testing, UTM tracking)
+- **3 new commands**: `/social-content` (create platform-optimized posts, stories, reels, carousels), `/social-campaign` (plan campaigns with strategy, calendar, captions, KPI targets), `/social-analytics` (build dashboards, generate reports, design A/B tests)
+- **Platform knowledge**: Dimension tables for Instagram, TikTok, LinkedIn, Twitter/X, YouTube, Facebook — feed posts, stories, reels, thumbnails, carousels
+- **Campaign frameworks**: PESO model, content pillar system (40/25/20/15 split), 3-tier hashtag strategy, audience persona templates
+- **Copy formulas**: 15+ hook formulas, platform-specific caption templates, CTA frameworks by objective, voice adaptation tables
+- **Analytics frameworks**: KPI-by-objective matrices, engagement rate formulas with benchmarks, UTM parameter conventions, TOFU/MOFU/BOFU funnel model
+- **Social workflow phase** added to Design Manager orchestration between Creative and Figma Creation phases
+- **Trigger word rules** for automatic social role activation when tasks mention social platforms or content types
+
+### Changed
+
+- SKILL.md expanded with social specialists table, assembly examples, trigger rules, and social workflow phase
+- `/design` command updated with 4 social roles in team table and social phase in workflow
+- Stop hook updated to suggest social commands as follow-ups
+- Plugin keywords expanded with social media terms
+
 ## [2.0.0] — 2025-03-10
 
 The v2 release expands Design Studio from 4 commands to 16, adds 5 specialist agents, and introduces hooks, auto-detection, and a settings system.

@@ -257,6 +257,12 @@ figma_execute: `
 - **Flow starting points**: A page can have multiple flow starting points for different user journeys.
 - **Connection limit**: Keep individual screens to <10 connections to maintain clarity.
 
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Output the prototype flow as a spec table: source screen, interaction trigger, target screen, and transition type
+- Format as a markdown flow map that can be wired manually in Figma
+
 ## What's Next
 
 After creating prototype connections:

@@ -165,6 +165,9 @@ figma_execute: `
   await figma.loadFontAsync({ family: 'Inter', style: 'Semi Bold' });
   await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
 
+  const source = await figma.getNodeByIdAsync('SOURCE_ID');
+  const SOURCE_WIDTH = Math.round(source.width);
+
   const labels = [
     { text: 'A — Control', desc: 'Original design (baseline)', x: 40 },
     { text: 'B — Layout Swap', desc: 'Hero image on right, CTA above fold', x: SOURCE_WIDTH + 120 },
@@ -246,6 +249,13 @@ figma_capture_screenshot(varCId)     → C — Copy
 3. **Hypothesis first** — every variant needs a clear hypothesis for what it tests and why
 4. **Respect brand** — variants should stay within brand guidelines even while testing
 5. **Prioritize high-impact areas** — CTAs and headlines have more impact than footer layouts
+
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Skip Figma variant creation
+- Output variant specs as a markdown table with hypotheses and testing recommendations
+- Include layout descriptions, copy alternatives, and CTA variations as text specs
 
 ## What's Next
 

@@ -309,6 +309,16 @@ Compare structure:
 - **Complex layouts**: Grid-heavy or absolutely-positioned layouts may not auto-layout perfectly
 - **Authentication**: Cannot capture pages behind login walls unless user is logged in
 
+## MCP Fallback
+
+If Playwright is unavailable:
+- Ask the user for a screenshot of the site and manually extracted styles (colors, fonts, spacing)
+- Proceed with Figma recreation from the provided inputs
+
+If Figma Desktop Bridge is unavailable:
+- Output extracted styles as CSS custom properties and JSON tokens
+- Skip Figma frame creation
+
 ## What's Next
 
 After capturing a site into Figma:

@@ -110,17 +110,19 @@ If removing the animation makes the UI equally understandable, the animation is 
 ### Expand/Collapse
 
 ```css
+/* Modern accordion — animates to auto height via grid */
 .accordion-content {
-  overflow: hidden;
-  transition: max-height 300ms ease-out, opacity 200ms ease-out;
-}
-.accordion-content[aria-hidden="true"] {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease-out, opacity 200ms ease-out;
   opacity: 0;
 }
 .accordion-content[aria-hidden="false"] {
-  max-height: 500px; /* or use JS for dynamic height */
+  grid-template-rows: 1fr;
   opacity: 1;
+}
+.accordion-content > .inner {
+  overflow: hidden;
 }
 ```
 

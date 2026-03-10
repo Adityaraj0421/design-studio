@@ -123,7 +123,7 @@ firebase deploy --only hosting:site-name
 | Metric | Good | Needs work |
 |--------|------|-----------|
 | LCP (Largest Contentful Paint) | < 2.5s | > 4.0s |
-| FID (First Input Delay) | < 100ms | > 300ms |
+| INP (Interaction to Next Paint) | < 200ms | > 500ms |
 | CLS (Cumulative Layout Shift) | < 0.1 | > 0.25 |
 | Total page weight | < 500KB | > 2MB |
 | Requests | < 30 | > 80 |

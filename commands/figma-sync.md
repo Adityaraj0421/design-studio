@@ -251,6 +251,16 @@ figma_execute: `
 - **Direction** — always ask which is the source of truth (Figma or code) before applying patches
 - **Non-destructive** — never auto-apply patches without user confirmation
 
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Ask the user for exported token JSON (variables, styles) from Figma
+- Compare against code tokens using the provided export
+
+If code project is unavailable:
+- Ask the user to paste their CSS custom properties or Tailwind config
+- Compare against Figma tokens from the provided input
+
 ## What's Next
 
 After a sync check:

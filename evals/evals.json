@@ -64,7 +64,7 @@
     {
       "id": 4,
       "name": "design-review-audit",
-      "prompt": "/design-review ./test-page.html — audit this landing page for accessibility, usability, visual consistency, content quality, and motion design",
+      "prompt": "/design-review ./evals/fixtures/test-page.html — audit this landing page for accessibility, usability, visual consistency, content quality, and motion design",
       "expected_output": "Structured 5-point audit report with specific issues, severity levels, and actionable fix recommendations",
       "files": [],
       "assertions": [
@@ -177,7 +177,8 @@
         {"name": "has-keyboard-nav", "description": "Arrow keys navigate between slides"},
         {"name": "has-progress-bar", "description": "Visual progress indicator"},
         {"name": "has-annotations", "description": "Design decision annotations on screen slides"},
-        {"name": "has-slide-structure", "description": "Title slide, screen slides, summary slide"}
+        {"name": "has-slide-structure", "description": "Title slide, screen slides, summary slide"},
+        {"name": "has-speaker-notes", "description": "Speaker notes or presenter view included"}
       ]
     },
     {

@@ -232,6 +232,15 @@ Also offer:
 - Speaker notes are hidden by default, shown only in presenter view
 - The presentation adapts to the dominant color palette from the Figma file
 
+## MCP Fallback
+
+If Figma Desktop Bridge is unavailable:
+- Ask the user for screenshots of the screens to present
+- Build the HTML presentation from provided images and user-described annotations
+
+If Preview server is unavailable:
+- Write the presentation HTML file to disk for manual browser viewing
+
 ## What's Next
 
 After creating a presentation:
