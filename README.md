@@ -1,33 +1,24 @@
 <div align="center">
 
-```
-     ____            _                ____  _             _ _
-    |  _ \  ___  ___(_) __ _ _ __   / ___|| |_ _   _  __| (_) ___
-    | | | |/ _ \/ __| |/ _` | '_ \  \___ \| __| | | |/ _` | |/ _ \
-    | |_| |  __/\__ \ | (_| | | | |  ___) | |_| |_| | (_| | | (_) |
-    |____/ \___||___/_|\__, |_| |_| |____/ \__|\__,_|\__,_|_|\___/
-                       |___/
-```
+<img src="assets/social-preview.png" alt="Design Studio — A Virtual Design Team for Claude Code" width="640">
 
-### A Virtual Design Team for Claude Code
+<br><br>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://claude.ai/claude-code)
-[![Roles](https://img.shields.io/badge/Specialist_Roles-10-orange)]()
+[![Roles](https://img.shields.io/badge/Specialist_Roles-9-orange)]()
 [![Commands](https://img.shields.io/badge/Slash_Commands-16-green)]()
 [![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-8000%2B_lines-ff69b4)]()
 
 **Instead of generic AI design help, Design Studio assembles the right specialists for each task — just like a real design studio would staff a project.**
 
-**Now with 16 commands** — full design workflows, Figma-native creation, brand kits, A/B variants, design sprints, prototyping, responsive variants, component docs, developer handoff, design-code sync, and more.
-
-[Installation](#-installation) · [Commands](#-commands) · [The Team](#-the-team) · [How It Works](#-how-it-works)
+[Quick Start](#-quick-start) · [Commands](#-commands) · [The Team](#-the-team) · [How It Works](#-how-it-works) · [Changelog](CHANGELOG.md)
 
 </div>
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ```bash
 claude plugin add https://github.com/Adityaraj0421/design-studio.git
@@ -40,7 +31,19 @@ Then try:
 
 ---
 
-## The Team
+## ⚡ Demo
+
+<div align="center">
+<img src="assets/demo.svg" alt="Design Studio demo — building a pricing page" width="720">
+</div>
+
+<br>
+
+One command, and the right specialists activate automatically. No configuration needed.
+
+---
+
+## 👥 The Team
 
 <table>
 <tr>
@@ -109,14 +112,7 @@ Tokens
 Animation
 
 </td>
-<td align="center">
-
-**Figma Creator**
-
-Figma Native
-
-</td>
-<td align="center" colspan="4">
+<td align="center" colspan="5">
 
 _The Design Manager picks only the roles your task actually needs_
 
@@ -126,7 +122,31 @@ _The Design Manager picks only the roles your task actually needs_
 
 ---
 
-## Commands
+## 🎯 Commands
+
+| Command | What It Does |
+|---------|-------------|
+| `/design <task>` | Full design workflow with team assembly |
+| `/design-review <file>` | 5-point quality audit (accessibility, usability, visual, content, motion) |
+| `/design-system` | Generate, extract, or audit design tokens |
+| `/figma <URL>` | Convert Figma designs to production code |
+| `/figma-create <task>` | Build pages, wireframes, components in Figma |
+| `/ux-audit <brief>` | Audit Figma file against a design brief |
+| `/design-handoff` | Developer handoff docs (tokens, specs, APIs) |
+| `/figma-responsive` | Generate mobile/tablet variants from desktop |
+| `/figma-sync` | Detect design–code drift |
+| `/design-present` | Interactive HTML presentation from Figma |
+| `/brand-kit <color>` | Complete brand kit from 1–2 colors |
+| `/component-docs` | Storybook-style docs from Figma components |
+| `/figma-prototype` | Prototype connections between frames |
+| `/site-to-figma <URL>` | Capture website → editable Figma design |
+| `/ab-variants` | A/B test design variants |
+| `/design-sprint` | Guided 5-phase design sprint |
+
+<details>
+<summary><b>📖 Command details & examples</b></summary>
+
+<br>
 
 ### `/design <task>` — Full Design Workflow
 
@@ -299,35 +319,89 @@ Guided 5-phase design sprint methodology:
 
 Phases: Understand (problem mapping) → Diverge (8 solution ideas) → Decide (weighted matrix) → Prototype (build testable solution) → Validate (test script + success metrics).
 
+</details>
+
 ---
 
-## Workflows
+## 🔗 Workflows
 
 Commands chain together. Each command suggests relevant next steps:
 
-```
-Design from scratch:
-  /design → /design-review → /design-system → /figma-create
-
-Figma-native workflow:
-  /figma-create → /ux-audit → /figma-prototype → /figma-responsive
-
-Design-to-code pipeline:
-  /figma → /design-review → /figma-sync
-
-Brand setup:
-  /brand-kit → /figma-create → /design-handoff
-
-Stakeholder review:
-  /figma-create → /design-present → /ab-variants
-
-Full product sprint:
-  /design-sprint → /figma-create → /figma-prototype → /design-present
-```
+| Workflow | Pipeline |
+|----------|----------|
+| Design from scratch | `/design` → `/design-review` → `/design-system` → `/figma-create` |
+| Figma-native | `/figma-create` → `/ux-audit` → `/figma-prototype` → `/figma-responsive` |
+| Design-to-code | `/figma` → `/design-review` → `/figma-sync` |
+| Brand setup | `/brand-kit` → `/figma-create` → `/design-handoff` |
+| Stakeholder review | `/figma-create` → `/design-present` → `/ab-variants` |
+| Full product sprint | `/design-sprint` → `/figma-create` → `/figma-prototype` → `/design-present` |
 
 ---
 
-## Configuration
+## ⚙️ How It Works
+
+```mermaid
+graph TB
+    A["🎯 Your Request"] --> B["🧑‍💼 Design Manager"]
+    B --> C["🎬 Creative Director"]
+    C --> D["🔍 Research"]
+    C --> E["📐 Strategy"]
+    C --> F["🎨 Creative"]
+    D --> G["⚡ Build & Polish"]
+    E --> G
+    F --> G
+    G --> H["📦 Delivery"]
+
+    style A fill:#818cf8,stroke:#6366f1,color:#fff
+    style B fill:#1e293b,stroke:#475569,color:#f8fafc
+    style C fill:#1e293b,stroke:#475569,color:#f8fafc
+    style D fill:#0f172a,stroke:#334155,color:#94a3b8
+    style E fill:#0f172a,stroke:#334155,color:#94a3b8
+    style F fill:#0f172a,stroke:#334155,color:#94a3b8
+    style G fill:#1e293b,stroke:#475569,color:#f8fafc
+    style H fill:#22c55e,stroke:#16a34a,color:#fff
+```
+
+**Adaptive staffing:** A simple button redesign activates 1–2 roles. A full product feature activates 4–7 roles with the complete workflow.
+
+---
+
+## 🤖 Agents
+
+| Agent | What It Does | Runs In |
+|-------|-------------|---------|
+| **accessibility-auditor** | Comprehensive WCAG AA compliance audit with specific code fixes | Background |
+| **design-qa** | Visual QA at 3 breakpoints, token compliance scoring, interaction state check | Background |
+| **figma-creator** | Creates pages, frames, components, and styles directly in Figma via Desktop Bridge | Foreground |
+| **design-critique** | Automated UX heuristic review — Nielsen's 10 heuristics, visual audit, interaction states | Foreground |
+| **design-lint** | Scans Figma files for orphan colors, non-standard spacing, low contrast, missing auto-layout | Foreground |
+
+Background agents run in parallel with your main work. Foreground agents run interactively.
+
+---
+
+## 🔍 Auto-Detection
+
+The plugin automatically detects your project context at session start:
+
+| Detects | How |
+|---------|-----|
+| CSS Framework | Tailwind, PostCSS, Bootstrap |
+| JS Framework | React, Vue, Svelte, Next.js, Nuxt, Angular, Astro, Remix, SolidJS |
+| TypeScript | `tsconfig.json` |
+| Build Tool | Vite, Webpack, Turborepo |
+| CSS-in-JS | styled-components, Emotion, vanilla-extract |
+| Component Library | Radix UI, Chakra, MUI, Mantine, shadcn/ui |
+| Design Tokens | `.tokens.json`, `tokens.css`, Style Dictionary |
+| Figma | `.figmarc`, Code Connect files |
+| Deployment | `firebase.json` |
+| Documentation | `.storybook/` directory |
+
+Recommendations adapt to match your stack — no manual configuration needed.
+
+---
+
+## ⚙️ Configuration
 
 Create `skills/design/settings.local.md` (gitignored) to set defaults:
 
@@ -352,82 +426,7 @@ Settings marked `"auto"` or left empty defer to auto-detection. The Design Manag
 
 ---
 
-## Agents
-
-| Agent | What It Does | Runs In |
-|-------|-------------|---------|
-| **accessibility-auditor** | Comprehensive WCAG AA compliance audit with specific code fixes | Background |
-| **design-qa** | Visual QA at 3 breakpoints, token compliance scoring, interaction state check | Background |
-| **figma-creator** | Creates pages, frames, components, and styles directly in Figma via Desktop Bridge | Foreground |
-| **design-critique** | Automated UX heuristic review — Nielsen's 10 heuristics, visual audit, interaction states | Foreground |
-| **design-lint** | Scans Figma files for orphan colors, non-standard spacing, low contrast, missing auto-layout | Foreground |
-
-Background agents run in parallel with your main work. Foreground agents run interactively.
-
----
-
-## How It Works
-
-```
-                    Your Request
-                         │
-                         ▼
-               ┌─────────────────┐
-               │  Design Manager  │ ← Analyzes task
-               └────────┬────────┘
-                         │
-                         ▼
-              ┌──────────────────┐
-              │ Creative Director │ ← Sets visual direction
-              └────────┬─────────┘
-                       │
-          ┌────────────┼────────────┐
-          ▼            ▼            ▼
-    ┌──────────┐ ┌──────────┐ ┌──────────┐
-    │ Research │ │ Strategy │ │ Creative │ ← Only needed roles
-    └────┬─────┘ └────┬─────┘ └────┬─────┘   are activated
-         │            │            │
-         └────────────┼────────────┘
-                      │
-              ┌───────┴───────┐
-              │ Figma Creation │ ← Build in Figma (optional)
-              └───────┬───────┘
-                      ▼
-              ┌───────────────┐
-              │  Polish Phase  │ ← Motion + consistency
-              └───────┬───────┘
-                      ▼
-              ┌───────────────┐
-              │   Delivery     │ ← Build, preview, deploy
-              └───────────────┘
-```
-
-**Adaptive staffing:** A simple button redesign activates 1-2 roles. A full product feature activates 4-7 roles with the complete workflow.
-
----
-
-## Auto-Detection
-
-The plugin automatically detects your project context at session start:
-
-| Detects | How |
-|---------|-----|
-| CSS Framework | Tailwind, PostCSS, Bootstrap |
-| JS Framework | React, Vue, Svelte, Next.js, Nuxt, Angular, Astro, Remix, SolidJS |
-| TypeScript | `tsconfig.json` |
-| Build Tool | Vite, Webpack, Turborepo |
-| CSS-in-JS | styled-components, Emotion, vanilla-extract |
-| Component Library | Radix UI, Chakra, MUI, Mantine, shadcn/ui |
-| Design Tokens | `.tokens.json`, `tokens.css`, Style Dictionary |
-| Figma | `.figmarc`, Code Connect files |
-| Deployment | `firebase.json` |
-| Documentation | `.storybook/` directory |
-
-Recommendations adapt to match your stack — no manual configuration needed.
-
----
-
-## What's Inside
+## 📁 What's Inside
 
 ```
 design-studio/
@@ -447,33 +446,12 @@ design-studio/
 │       ├── figma-creation.md           # Figma API patterns via Desktop Bridge
 │       └── deployment.md              # Preview server, Firebase Hosting
 ├── commands/                           # 16 slash commands
-│   ├── design.md                      # Full design workflow
-│   ├── design-review.md               # Quality audit
-│   ├── design-system.md               # Token generation
-│   ├── figma.md                       # Figma to code
-│   ├── figma-create.md                # Create designs in Figma
-│   ├── ux-audit.md                    # Audit against brief
-│   ├── design-handoff.md             # Developer handoff docs
-│   ├── figma-responsive.md           # Responsive variant generation
-│   ├── figma-sync.md                  # Design-code drift detection
-│   ├── design-present.md             # HTML presentation from Figma
-│   ├── brand-kit.md                   # Brand kit generation
-│   ├── component-docs.md             # Storybook-style docs
-│   ├── figma-prototype.md            # Prototype connections
-│   ├── site-to-figma.md              # Website to Figma capture
-│   ├── ab-variants.md                # A/B test variants
-│   └── design-sprint.md              # 5-phase design sprint
 ├── agents/                             # 5 specialist agents
-│   ├── accessibility-auditor.md       # WCAG AA compliance
-│   ├── design-qa.md                   # Visual QA
-│   ├── figma-creator.md              # Figma-native creation
-│   ├── design-critique.md            # UX heuristic review
-│   └── design-lint.md                # Design file linting
 ├── hooks/hooks.json                    # SessionStart + PreToolUse + Stop hooks
-├── scripts/
-│   ├── detect-design-context.sh        # Project stack detection
-│   └── generate-tokens.sh             # CSS token template generator
+├── scripts/detect-design-context.sh    # Project stack detection
 ├── evals/evals.json                    # 17 test cases with assertions
+├── assets/                             # Social preview + demo images
+├── CHANGELOG.md                       # Version history
 └── CONTRIBUTING.md                    # Contributor guide
 ```
 
@@ -519,7 +497,7 @@ design-studio/
 
 ---
 
-## Tech Stack Defaults
+## 🛠 Tech Stack Defaults
 
 | Category | Default | Why |
 |----------|---------|-----|
@@ -535,7 +513,7 @@ All defaults adapt when the plugin detects your project uses a different stack.
 
 ---
 
-## Installation
+## 📦 Installation
 
 ### One-liner
 
@@ -564,6 +542,6 @@ Restart Claude Code to load the plugin.
 
 **Built with Claude Code**
 
-[Report Issues](https://github.com/Adityaraj0421/design-studio/issues) · [MIT License](LICENSE)
+[Report Issues](https://github.com/Adityaraj0421/design-studio/issues) · [Changelog](CHANGELOG.md) · [MIT License](LICENSE)
 
 </div>
