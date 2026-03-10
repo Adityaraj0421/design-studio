@@ -1,29 +1,24 @@
 ---
 name: Bug Report
-about: Report something that isn't working as expected
-title: "[Bug] "
+about: Something isn't working correctly
 labels: bug
-assignees: ''
 ---
 
-**Command/Agent affected**
-Which slash command or agent has the issue? (e.g., `/design`, `/figma`, `design-qa` agent)
+## Command
+Which command or feature has the bug?
 
-**Describe the bug**
-A clear description of what went wrong.
+`/` (e.g. `/design`, `/figma-create`, `/brand-kit`)
 
-**Steps to reproduce**
-1. Run `/design ...`
-2. Provide this input: ...
-3. See error/unexpected output
+## What happened
+What did you run, and what did you get?
 
-**Expected behavior**
-What should have happened instead.
+## What you expected
+What should have happened?
 
-**Environment**
-- OS: [e.g., macOS 15, Ubuntu 24]
-- Claude Code version: [e.g., 1.x.x]
-- MCP servers available: [e.g., Preview, Figma, Firebase]
+## Environment
+- Claude Code version:
+- MCP servers active (if relevant): <!-- Figma REST / Desktop Bridge / Playwright / Preview -->
+- Project stack: <!-- React, Next.js, Tailwind, etc. -->
 
-**Additional context**
-Paste any error messages or relevant output.
+## Context
+Any other details that might help (error messages, screenshots, etc.).

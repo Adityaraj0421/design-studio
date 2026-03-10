@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#0D9668"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="160" x2="1280" y2="160"/>
+    <line x1="0" y1="320" x2="1280" y2="320"/>
+    <line x1="0" y1="480" x2="1280" y2="480"/>
+    <line x1="320" y1="0" x2="320" y2="640"/>
+    <line x1="640" y1="0" x2="640" y2="640"/>
+    <line x1="960" y1="0" x2="960" y2="640"/>
+  </g>
+
+  <!-- Top accent bar -->
+  <rect width="1280" height="5" fill="url(#accent)"/>
+
+  <!-- Left column -->
+
+  <!-- Wordmark -->
+  <text x="72" y="108" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" font-weight="600" fill="#6366f1" letter-spacing="4">DESIGN STUDIO</text>
+
+  <!-- Main headline -->
+  <text x="72" y="190" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" fill="#f8fafc">Design</text>
+  <text x="72" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" fill="#f8fafc">Studio</text>
+
+  <!-- Descriptor -->
+  <text x="72" y="316" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#94a3b8">Structured design knowledge for Claude Code</text>
+
+  <!-- Stats row -->
+  <!-- Stat 1 -->
+  <rect x="72" y="368" width="160" height="80" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="152" y="400" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#f8fafc">9</text>
+  <text x="152" y="428" text-anchor="middle" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#64748b">Specialist Refs</text>
+
+  <!-- Stat 2 -->
+  <rect x="248" y="368" width="160" height="80" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="328" y="400" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#f8fafc">16</text>
+  <text x="328" y="428" text-anchor="middle" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#64748b">Slash Commands</text>
+
+  <!-- Stat 3 -->
+  <rect x="424" y="368" width="160" height="80" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="504" y="400" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#f8fafc">8.5k+</text>
+  <text x="504" y="428" text-anchor="middle" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#64748b">Lines of Knowledge</text>
+
+  <!-- Divider -->
+  <line x1="72" y1="496" x2="590" y2="496" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- Bottom left — commands preview -->
+  <text x="72" y="528" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#0D9668">/design</text>
+  <text x="150" y="528" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#475569">·</text>
+  <text x="164" y="528" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#0D9668">/figma-create</text>
+  <text x="294" y="528" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#475569">·</text>
+  <text x="308" y="528" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#0D9668">/brand-kit</text>
+  <text x="414" y="528" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#475569">·</text>
+  <text x="428" y="528" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#0D9668">/design-sprint</text>
+
+  <text x="72" y="558" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#0D9668">/design-review</text>
+  <text x="218" y="558" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#475569">·</text>
+  <text x="232" y="558" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#0D9668">/ab-variants</text>
+  <text x="352" y="558" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#475569">·</text>
+  <text x="366" y="558" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#0D9668">/figma-sync</text>
+  <text x="472" y="558" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#475569">+ 9 more</text>
+
+  <!-- Right column — terminal card -->
+  <rect x="700" y="88" width="508" height="464" rx="14" fill="#0f172a" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- Terminal header -->
+  <rect x="700" y="88" width="508" height="44" rx="14" fill="#1e293b"/>
+  <rect x="700" y="110" width="508" height="22" fill="#1e293b"/>
+  <circle cx="732" cy="110" r="7" fill="#ef4444" fill-opacity="0.7"/>
+  <circle cx="756" cy="110" r="7" fill="#f59e0b" fill-opacity="0.7"/>
+  <circle cx="780" cy="110" r="7" fill="#22c55e" fill-opacity="0.7"/>
+  <text x="1190" y="116" text-anchor="end" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" fill="#475569">v2.1.1</text>
+
+  <!-- Terminal content -->
+  <!-- Prompt -->
+  <text x="728" y="164" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#6366f1">$</text>
+  <text x="748" y="164" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#f8fafc">/design pricing page with annual toggle</text>
+
+  <!-- Separator -->
+  <line x1="728" y1="180" x2="1180" y2="180" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Task Analysis -->
+  <text x="728" y="208" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="600" fill="#6366f1">TASK ANALYSIS</text>
+  <text x="728" y="230" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#475569">refs  </text>
+  <text x="782" y="230" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">ui-designer, content-designer, motion-designer,</text>
+  <text x="782" y="248" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">design-system-lead</text>
+
+  <!-- References loaded -->
+  <text x="728" y="284" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="600" fill="#0D9668">REFERENCES LOADED</text>
+  <text x="728" y="306" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#22c55e">✓</text>
+  <text x="748" y="306" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">UI Designer — layout, type, visual hierarchy</text>
+  <text x="728" y="326" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#22c55e">✓</text>
+  <text x="748" y="326" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">Content Designer — tier names, CTAs, copy</text>
+  <text x="728" y="346" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#22c55e">✓</text>
+  <text x="748" y="346" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">Motion Designer — toggle animation, hover</text>
+  <text x="728" y="366" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#22c55e">✓</text>
+  <text x="748" y="366" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">Design System Lead — tokens, spacing</text>
+
+  <!-- Separator -->
+  <line x1="728" y1="384" x2="1180" y2="384" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Output -->
+  <text x="728" y="408" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="600" fill="#0D9668">DELIVERED</text>
+  <text x="728" y="430" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#22c55e">✓</text>
+  <text x="748" y="430" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">3-tier pricing cards + feature lists</text>
+  <text x="728" y="450" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#22c55e">✓</text>
+  <text x="748" y="450" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">Monthly/annual toggle (grid-template-rows)</text>
+  <text x="728" y="470" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#22c55e">✓</text>
+  <text x="748" y="470" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#94a3b8">WCAG AA · Responsive · Token-compliant</text>
+
+  <!-- Cursor blink -->
+  <rect x="728" y="494" width="8" height="16" rx="1" fill="#6366f1" fill-opacity="0.8"/>
+
+  <!-- Bottom: GitHub link -->
+  <text x="72" y="612" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#334155">github.com/Adityaraj0421/design-studio</text>
+  <text x="1208" y="612" text-anchor="end" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="13" fill="#475569">MIT License</text>
+</svg>

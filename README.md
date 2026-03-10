@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/social-preview.png" alt="Design Studio — A Virtual Design Team for Claude Code" width="640">
+<img src="assets/social-preview.svg" alt="Design Studio — Structured design knowledge for Claude Code" width="640">
 
 <br><br>
 

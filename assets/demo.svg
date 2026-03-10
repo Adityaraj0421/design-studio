@@ -14,7 +14,7 @@
 
     <!-- Header area -->
     <text x="40" y="48" fill="#999" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="600" letter-spacing="2">DESIGN STUDIO</text>
-    <text x="780" y="48" text-anchor="end" fill="#c8c0b4" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="500">v2.0.0</text>
+    <text x="780" y="48" text-anchor="end" fill="#c8c0b4" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" font-weight="500">v2.1.1</text>
 
     <!-- Divider -->
     <line x1="40" y1="62" x2="780" y2="62" stroke="#d8d0c4" stroke-width="1"/>
