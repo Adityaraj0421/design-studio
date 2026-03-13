@@ -255,6 +255,51 @@
         {"name": "has-usage-guidelines", "description": "Do/Don't guidelines included"},
         {"name": "has-code-examples", "description": "HTML/React code snippets generated"}
       ]
+    },
+    {
+      "id": 17,
+      "name": "social-content-instagram-carousel",
+      "prompt": "/social-content Instagram carousel product launch 5 slides for a minimalist skincare brand launching a new serum, brand color #2C4A3E",
+      "expected_output": "5-slide Instagram carousel (1080×1080px each) with slide structure plan, visual hierarchy specs, copy for each slide, safe zone guidance, and HTML preview or Figma frame spec",
+      "files": [],
+      "assertions": [
+        {"name": "has-platform-specs", "description": "Correct Instagram dimensions (1080×1080px) and safe zones specified"},
+        {"name": "has-slide-structure", "description": "All 5 slides defined with distinct purpose (hook, story, feature, social proof, CTA)"},
+        {"name": "has-copy-per-slide", "description": "Headline and body copy drafted for each slide"},
+        {"name": "has-visual-direction", "description": "Color, typography, and layout direction consistent with brand color and minimalist aesthetic"},
+        {"name": "has-safe-zone-guidance", "description": "Text and key elements stay within safe zone boundaries"},
+        {"name": "has-cta-slide", "description": "Final slide includes a clear call-to-action"}
+      ]
+    },
+    {
+      "id": 18,
+      "name": "social-campaign-saas-launch",
+      "prompt": "/social-campaign Product launch campaign for a B2B SaaS project management tool targeting startup CTOs, 2-week launch window, Instagram + LinkedIn",
+      "expected_output": "Full campaign plan with positioning strategy, 2-week content calendar, caption drafts for each post, hashtag strategy, and KPI targets with baseline benchmarks",
+      "files": [],
+      "assertions": [
+        {"name": "has-campaign-strategy", "description": "Positioning, key messages, and audience targeting defined"},
+        {"name": "has-content-calendar", "description": "2-week calendar with dates, platforms, content types, and topics"},
+        {"name": "has-caption-drafts", "description": "At least 3 caption drafts written with hooks and CTAs"},
+        {"name": "has-hashtag-strategy", "description": "Hashtag sets provided for LinkedIn and Instagram with mix of broad/niche tags"},
+        {"name": "has-kpi-targets", "description": "Quantified targets for reach, engagement rate, and conversion metrics"},
+        {"name": "has-platform-differentiation", "description": "Distinct content approach for Instagram vs LinkedIn audiences"}
+      ]
+    },
+    {
+      "id": 19,
+      "name": "social-analytics-dashboard",
+      "prompt": "/social-analytics dashboard Instagram + LinkedIn last 30 days for an e-commerce brand",
+      "expected_output": "Interactive HTML analytics dashboard with KPI cards, engagement trend charts, platform comparison, top content table, and actionable recommendations",
+      "files": [],
+      "assertions": [
+        {"name": "has-kpi-cards", "description": "Summary cards for reach, impressions, engagement rate, follower growth"},
+        {"name": "has-trend-charts", "description": "Time-series charts showing performance over the 30-day period"},
+        {"name": "has-platform-comparison", "description": "Side-by-side or tabbed comparison between Instagram and LinkedIn metrics"},
+        {"name": "has-top-content-table", "description": "Table or grid showing best-performing content with key metrics"},
+        {"name": "has-recommendations", "description": "At least 3 actionable insights or optimization recommendations"},
+        {"name": "is-interactive", "description": "Dashboard has functional filters, toggles, or hover states"}
+      ]
     }
   ]
 }
