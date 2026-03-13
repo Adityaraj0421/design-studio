@@ -2,6 +2,24 @@
 
 All notable changes to Design Studio are documented here.
 
+## [2.5.0] — 2026-03-13
+
+Template Gallery — adds `/design-template` command and Template Gallery reference.
+
+### Added
+
+- **`/design-template` command**: Generate production-ready HTML templates from 10 curated categories — `landing-page`, `dashboard`, `pricing`, `auth`, `blog`, `ecommerce`, `portfolio`, `docs`, `saas`, `onboarding`. Supports `--style` modifier (minimal, bold, corporate, playful, dark-tech) and `--dark` flag
+- **`template-gallery.md` reference** (~180 lines): Design standards, CSS variable system, component library (buttons, cards, badges, form inputs), layout skeletons (page/dashboard/docs), style variations with CSS recipes, copy templates per category, responsive breakpoints, QA checklist
+
+### Changed
+
+- plugin.json version bumped to 2.5.0, 23 commands
+- SKILL.md: `/design-template` added to commands table with team assembly examples
+- README: badge 22→23, `/design-template` in commands table and details, Template Gallery workflow
+- Stop hook: includes `/design-template` in suggestions
+
+---
+
 ## [2.4.0] — 2026-03-13
 
 Email Design Wing — adds `/email-template`, `/email-campaign` commands and Email Designer + Email Copywriter roles.

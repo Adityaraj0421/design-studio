@@ -83,6 +83,7 @@ This skill is part of the **design-studio** plugin. For focused workflows, use t
 | `/design-framework <fw> [file]` | Convert HTML design output to React, Vue, Svelte, Next.js, or Astro components |
 | `/email-template <type> for <brand>` | Generate a production-ready HTML email template (inline styles, table layout, responsive) |
 | `/email-campaign <type> for <product>` | Plan and build a complete multi-email campaign sequence |
+| `/design-template <category>` | Production-ready web template from gallery: landing-page, dashboard, pricing, auth, blog, ecommerce, portfolio, docs, saas, onboarding |
 
 ---
 
@@ -226,6 +227,10 @@ Based on the task, activate only the roles needed. Read their reference files fo
 | "Design a promotional email for Black Friday" | Email Designer, Email Copywriter |
 | "Build a re-engagement email campaign" | Email Copywriter, Email Designer |
 | "Generate a newsletter template" | Email Designer, Email Copywriter |
+| "Build a landing page template" | UI Designer, Content Designer, Design System Lead + `/design-template landing-page` |
+| "Create a dashboard template" | UI Designer, Design System Lead + `/design-template dashboard` |
+| "Generate a SaaS pricing page" | UI Designer, Content Designer + `/design-template pricing` |
+| "Build a portfolio site" | UI Designer, Content Designer + `/design-template portfolio` |
 
 **Rules:**
 - Simple visual tasks (icon, color tweak) → 1–2 roles, no overhead

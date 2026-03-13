@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://claude.ai/claude-code)
 [![Roles](https://img.shields.io/badge/Specialist_Roles-9-orange)]()
-[![Commands](https://img.shields.io/badge/Slash_Commands-22-green)]()
+[![Commands](https://img.shields.io/badge/Slash_Commands-23-green)]()
 [![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-8500%2B_lines-ff69b4)]()
 
 **Instead of generic AI design help, Design Studio loads specialized design knowledge for each task — the right expertise activates based on what you're building.**
@@ -201,6 +201,7 @@ _The skill loads only the references your task actually needs_
 | `/design-framework <fw> [file]` | Convert HTML designs to React, Vue, Svelte, Next.js, or Astro |
 | `/email-template <type> for <brand>` | Production HTML email template (responsive, dark mode, cross-client) |
 | `/email-campaign <type> for <product>` | Complete multi-email campaign sequence with copy and HTML templates |
+| `/design-template <category>` | Production web template from gallery (landing-page, dashboard, pricing, auth, blog, ecommerce, portfolio, docs, saas, onboarding) |
 
 <details>
 <summary><b>📖 Command details & examples</b></summary>
@@ -445,6 +446,23 @@ Generate a production-ready HTML email template with inline styles, table layout
 
 Outputs: Full HTML with VML buttons (Outlook), mobile-responsive `@media` rules, dark mode, preheader, ESP template variables reference, and QA checklist.
 
+### `/design-template <category>` — Template Gallery
+
+Start from a production-ready template for any page type:
+
+```
+/design-template landing-page #6366f1
+/design-template dashboard --style dark-tech
+/design-template pricing --style bold
+/design-template saas #2563eb --dark
+/design-template portfolio --style minimal
+/design-template ecommerce #f59e0b
+```
+
+10 categories: `landing-page` · `dashboard` · `pricing` · `auth` · `blog` · `ecommerce` · `portfolio` · `docs` · `saas` · `onboarding`
+
+Outputs: Full responsive HTML/CSS with CSS custom properties for rebrand, semantic markup, vanilla JS interactions, dark mode, and mobile layout.
+
 ### `/email-campaign <type> for <product>` — Email Campaign Sequence
 
 Plan and generate a complete multi-email campaign with copy and HTML templates:
@@ -480,6 +498,8 @@ Commands chain together. Each command suggests relevant next steps:
 | Design-to-Next.js | `/design` → `/design-framework nextjs` → `/figma-sync` |
 | Email launch sequence | `/brand-kit` → `/email-template` → `/email-campaign` |
 | Email + social campaign | `/email-campaign` → `/social-campaign` → `/social-analytics` |
+| Template to production | `/design-template` → `/design-framework react-tailwind` → `/design-system` |
+| Template to Figma | `/design-template` → `/figma-create` → `/component-docs` |
 
 ---
 
