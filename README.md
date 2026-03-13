@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://claude.ai/claude-code)
 [![Roles](https://img.shields.io/badge/Specialist_Roles-9-orange)]()
-[![Commands](https://img.shields.io/badge/Slash_Commands-23-green)]()
+[![Commands](https://img.shields.io/badge/Slash_Commands-25-green)]()
 [![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-8500%2B_lines-ff69b4)]()
 
 **Instead of generic AI design help, Design Studio loads specialized design knowledge for each task — the right expertise activates based on what you're building.**
@@ -167,6 +167,22 @@ Subject Lines
 </td>
 <td align="center">
 
+**Data Viz Designer**
+
+Charts
+
+</td>
+<td align="center">
+
+**Dashboard Architect**
+
+Layouts
+
+</td>
+</tr>
+<tr>
+<td align="center" colspan="7">
+
 _The skill loads only the references your task actually needs_
 
 </td>
@@ -202,6 +218,8 @@ _The skill loads only the references your task actually needs_
 | `/email-template <type> for <brand>` | Production HTML email template (responsive, dark mode, cross-client) |
 | `/email-campaign <type> for <product>` | Complete multi-email campaign sequence with copy and HTML templates |
 | `/design-template <category>` | Production web template from gallery (landing-page, dashboard, pricing, auth, blog, ecommerce, portfolio, docs, saas, onboarding) |
+| `/chart-design <description>` | Accessible chart or data visualization — selects chart type, applies colorblind-safe palette, outputs HTML/CSS/JS |
+| `/dashboard-layout <description>` | Complete dashboard — KPI cards, chart areas, filter bar, data table, sidebar, responsive |
 
 <details>
 <summary><b>📖 Command details & examples</b></summary>
@@ -476,6 +494,32 @@ Plan and generate a complete multi-email campaign with copy and HTML templates:
 
 Outputs: Campaign brief, sequence map with timing, copy for all emails (subject lines, preview text, body, CTAs), full HTML for each email, ESP automation setup notes, A/B test plan.
 
+### `/chart-design <description>` — Chart & Data Visualization
+
+Design any chart with the right chart type, accessible color palette, annotations, and production-ready HTML/CSS/JS:
+
+```
+/chart-design monthly revenue trend for 2025
+/chart-design part-to-whole breakdown of user acquisition channels
+/chart-design scatter plot: ad spend vs conversion rate
+/chart-design --library d3 geographic user distribution by US state
+```
+
+Applies colorblind-safe palettes (sequential/diverging/categorical), adds contextual annotations, includes ARIA accessibility (role="img", title, desc), responsive tick density, and Chart.js data table fallback. Supports `--library` flag for D3, Recharts, Visx, or vanilla SVG.
+
+### `/dashboard-layout <description>` — Dashboard Layout
+
+Build a complete, production-ready dashboard layout:
+
+```
+/dashboard-layout SaaS analytics dashboard with MRR, churn, active users
+/dashboard-layout e-commerce admin: orders, revenue, inventory, customer table
+/dashboard-layout monitoring dashboard for API performance metrics --style dark-tech
+/dashboard-layout --type executive weekly business review for C-suite
+```
+
+Outputs full HTML/CSS with sidebar navigation, 4-column KPI card row, primary + secondary chart areas (with `/chart-design` integration hooks), filter bar with date range selectors, sortable data table with pagination, responsive breakpoints (desktop/tablet/mobile), dark mode, and vanilla JS interactions.
+
 </details>
 
 ---
@@ -500,6 +544,8 @@ Commands chain together. Each command suggests relevant next steps:
 | Email + social campaign | `/email-campaign` → `/social-campaign` → `/social-analytics` |
 | Template to production | `/design-template` → `/design-framework react-tailwind` → `/design-system` |
 | Template to Figma | `/design-template` → `/figma-create` → `/component-docs` |
+| Data viz pipeline | `/dashboard-layout` → `/chart-design` → `/design-framework` |
+| Full analytics build | `/brand-kit` → `/dashboard-layout` → `/chart-design` → `/design-handoff` |
 
 ---
 

@@ -2,6 +2,26 @@
 
 All notable changes to Design Studio are documented here.
 
+## [2.7.0] — 2026-03-13
+
+Data Visualization Wing — adds `/chart-design`, `/dashboard-layout`, and 2 specialist roles.
+
+### Added
+
+- **`/chart-design` command**: Design any chart or data visualization — selects chart type from a 16-type matrix, applies colorblind-safe accessible palettes (sequential/diverging/categorical), adds annotations, outputs production-ready HTML/CSS/JS with Chart.js. Supports `--library` flag for D3, Recharts, Visx, or vanilla SVG. Includes ARIA accessibility for SVG and canvas charts.
+- **`/dashboard-layout` command**: Build complete dashboard layouts — sidebar navigation, KPI card row, primary/secondary chart areas, filter bar with date range selectors, responsive data tables with sorting/pagination. Supports `--type` (analytics/operational/executive/admin/monitoring) and `--style` modifiers. Outputs semantic HTML/CSS with CSS custom properties, responsive breakpoints, and dark mode.
+- **`data-viz-designer.md` reference** (~230 lines): Chart type selection guide (16 types mapped to data relationships), color systems (sequential/diverging/categorical palettes with CSS vars), chart annotation patterns, responsive Chart.js implementation, library recommendations table (Chart.js/D3/Recharts/Visx/Highcharts/Vega-Lite), chart accessibility (ARIA, data table fallback), empty/loading/error states, QA checklist
+- **`dashboard-architect.md` reference** (~250 lines): Dashboard type patterns (6 types), information hierarchy (overview→detail, progressive disclosure), CSS grid patterns (KPI row, 2/3+1/3 chart split), KPI card anatomy and CSS, filter bar design and HTML patterns, data table design with sortable columns and pagination, sidebar navigation patterns (collapsible + mobile drawer), responsive strategy per breakpoint, skeleton loading with shimmer animation, stale data indicators, QA checklist
+
+### Changed
+
+- plugin.json version bumped to 2.7.0, 25 commands
+- SKILL.md: Data Viz Specialists section added (Data Viz Designer + Dashboard Architect); data viz trigger keywords rule added; Data Visualization Phase added to workflow; 6 new team assembly examples; `/chart-design` and `/dashboard-layout` added to commands table and output formats table
+- README: badge 23→25, 2 new commands in table and details section, 2 new team table rows, 2 new workflow entries
+- hooks.json Stop hook: added Data Viz section with `/chart-design` and `/dashboard-layout`
+
+---
+
 ## [2.6.0] — 2026-03-13
 
 Eval expansion — grows from 20 to 32 eval cases covering new commands and cross-command workflows.

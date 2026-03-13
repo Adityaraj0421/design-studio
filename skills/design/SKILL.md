@@ -1,19 +1,20 @@
 ---
 name: design
 description: >
-  Assembles a virtual design team to produce production-quality UI, UX, visual, social media, and email output.
+  Assembles a virtual design team to produce production-quality UI, UX, visual, social media, email, and data output.
   A Design Manager staffs the right specialists (Product Designer, UX Designer, UI Designer, UX Researcher,
   Content Designer, Design System Lead, Motion Designer, Creative Director, Social Media Designer,
   Social Media Strategist, Social Media Copywriter, Growth/Analytics Specialist, Email Designer,
-  Email Copywriter) based on the task scope.
+  Email Copywriter, Data Viz Designer, Dashboard Architect) based on the task scope.
   Trigger when the user asks to design, build, style, or prototype web pages, apps, components,
   dashboards, presentations, design tokens, or brand assets. Also trigger for Figma-to-code workflows,
   design system creation, responsive layouts, dark mode theming, accessibility audits, UX flows,
   wireframes, content strategy, animations, deployment, social media content, campaigns, Instagram,
   TikTok, LinkedIn, Twitter, YouTube, carousels, stories, reels, content calendars, hashtags, captions,
   social analytics, email templates, email campaigns, newsletters, email sequences, welcome emails,
-  drip campaigns, email copywriting, HTML email, or deliverability. Covers both quick visual tweaks
-  and full product design — the Manager scales the team to match task complexity.
+  drip campaigns, email copywriting, HTML email, deliverability, charts, graphs, data visualization,
+  bar charts, line charts, scatter plots, KPI dashboards, analytics dashboards, or data tables.
+  Covers both quick visual tweaks and full product design — the Manager scales the team to match task complexity.
 
   <example>
   user: "Build me a landing page for a SaaS product"
@@ -48,6 +49,16 @@ description: >
   <example>
   user: "Build an HTML email template for our product launch"
   assistant: Routes to /email-template with Email Designer + Email Copywriter
+  </example>
+
+  <example>
+  user: "Build a chart showing monthly revenue trends"
+  assistant: Routes to /chart-design with Data Viz Designer
+  </example>
+
+  <example>
+  user: "Design an analytics dashboard for a SaaS product"
+  assistant: Routes to /dashboard-layout with Dashboard Architect + Data Viz Designer + UI Designer
   </example>
 ---
 
@@ -84,6 +95,8 @@ This skill is part of the **design-studio** plugin. For focused workflows, use t
 | `/email-template <type> for <brand>` | Generate a production-ready HTML email template (inline styles, table layout, responsive) |
 | `/email-campaign <type> for <product>` | Plan and build a complete multi-email campaign sequence |
 | `/design-template <category>` | Production-ready web template from gallery: landing-page, dashboard, pricing, auth, blog, ecommerce, portfolio, docs, saas, onboarding |
+| `/chart-design <description>` | Design a chart or data visualization — selects chart type, applies accessible color palettes, outputs HTML/CSS/JS |
+| `/dashboard-layout <description>` | Build a complete dashboard layout — KPI cards, charts, filter bar, data table, sidebar, responsive |
 
 ---
 
@@ -124,6 +137,13 @@ This skill is part of the **design-studio** plugin. For focused workflows, use t
 |------|-----------|-----------------|-----------|
 | **Email Designer** | HTML email (inline styles, table layout, VML buttons), responsive, dark mode, cross-client rendering | Any HTML email template, email visual design, deliverability | `references/email-designer.md` |
 | **Email Copywriter** | Subject lines, preview text, body copy, CTAs, sequences, A/B test strategy, CAN-SPAM compliance | Email copy, subject lines, campaign sequences, welcome flows | `references/email-copywriter.md` |
+
+### Data Visualization Specialists
+
+| Role | Expertise | When to activate | Reference |
+|------|-----------|-----------------|-----------|
+| **Data Viz Designer** | Chart type selection, accessible color palettes, annotations, Chart.js/D3/Recharts, ARIA for charts | Any chart, graph, or data visualization task | `references/data-viz-designer.md` |
+| **Dashboard Architect** | Dashboard layout patterns, KPI card design, information hierarchy, filter bars, data tables, responsive | Dashboard layout, metrics pages, admin panels, reporting views | `references/dashboard-architect.md` |
 
 ### Cross-Cutting Tools
 
@@ -231,6 +251,12 @@ Based on the task, activate only the roles needed. Read their reference files fo
 | "Create a dashboard template" | UI Designer, Design System Lead + `/design-template dashboard` |
 | "Generate a SaaS pricing page" | UI Designer, Content Designer + `/design-template pricing` |
 | "Build a portfolio site" | UI Designer, Content Designer + `/design-template portfolio` |
+| "Design a bar chart for monthly revenue" | Data Viz Designer + `/chart-design` |
+| "Build a scatter plot for ad spend vs conversion" | Data Viz Designer + `/chart-design` |
+| "Create an analytics dashboard for a SaaS" | Dashboard Architect, Data Viz Designer, UI Designer + `/dashboard-layout` |
+| "Build a KPI dashboard for e-commerce" | Dashboard Architect, Data Viz Designer, UI Designer + `/dashboard-layout` |
+| "Design a monitoring dashboard for API metrics" | Dashboard Architect, Data Viz Designer + `/dashboard-layout --style dark-tech` |
+| "Make a heatmap showing user engagement" | Data Viz Designer + `/chart-design` |
 
 **Rules:**
 - Simple visual tasks (icon, color tweak) → 1–2 roles, no overhead
@@ -248,6 +274,9 @@ Based on the task, activate only the roles needed. Read their reference files fo
 - **Email** roles activate when the task mentions: "email", "newsletter", "email template", "HTML email", "welcome email", "drip campaign", "email sequence", "onboarding email", "subject line", "preheader", "CAN-SPAM", "Mailchimp", "SendGrid", "Klaviyo", "ESP", "transactional email", or "email campaign"
 - The **Email Designer** joins any HTML email template or visual email design task
 - The **Email Copywriter** joins when email copy, subject lines, or email sequences are needed
+- **Data Visualization** roles activate when the task mentions: "chart", "graph", "data viz", "visualization", "bar chart", "line chart", "scatter plot", "pie chart", "donut chart", "histogram", "heatmap", "sparkline", "KPI", "dashboard", "analytics dashboard", "admin panel", "data table", "metrics", "monitoring", or "reporting dashboard"
+- The **Data Viz Designer** joins any chart or visualization task
+- The **Dashboard Architect** joins when the output is a full dashboard layout (vs. a single chart)
 
 ### Step 4 — Execute the Workflow
 
@@ -276,6 +305,10 @@ Social Media Phase (if output is social content)
 Email Phase (if output is an email template or campaign)
   ├─ Email Copywriter: subject lines, preview text, body copy, CTA text, sequence strategy
   └─ Email Designer: HTML template (table layout, inline styles, bulletproof buttons, responsive)
+
+Data Visualization Phase (if output includes charts or dashboards)
+  ├─ Dashboard Architect: layout, KPI hierarchy, filter bar, table design (full dashboards only)
+  └─ Data Viz Designer: chart type selection, color palette, annotations, accessible HTML/JS output
 
 Figma Creation Phase (if output is a Figma file)
   ├─ Figma Creator: pages, frames, auto-layout, components, styles
@@ -384,3 +417,5 @@ Unless the user specifies otherwise:
 | Social media content | Platform-sized HTML visuals or Figma frames | `/social-content` command |
 | Social campaign plan | Campaign brief with calendar, captions, and KPIs | `/social-campaign` command |
 | Social analytics dashboard | HTML dashboard with Chart.js + KPI cards | `/social-analytics` command |
+| Chart / data visualization | Accessible Chart.js HTML/CSS/JS output | `/chart-design` command |
+| Dashboard layout | Full dashboard with KPI cards, charts, filter bar, tables | `/dashboard-layout` command |
