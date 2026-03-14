@@ -480,6 +480,146 @@
         {"name": "has-launch-timing", "description": "Both email and social plans reference a coordinated launch date/window"},
         {"name": "has-cta-consistency", "description": "Primary CTA (e.g., 'Try free') is consistent across email and social"}
       ]
+    },
+    {
+      "id": 32,
+      "name": "depth-ui-component-states",
+      "prompt": "/design Build a quantity selector component for an e-commerce product page.",
+      "expected_output": "Component design that explicitly addresses all 8 states: default, hover, focus, active, disabled, loading, error, and empty — not just the happy-path default state",
+      "files": [],
+      "assertions": [
+        {"name": "has-all-8-states", "description": "Design explicitly covers default, hover, focus, active, disabled, loading, error, and empty/skeleton states"},
+        {"name": "has-disabled-treatment", "description": "Disabled state specifies visual treatment (opacity or muted color) and cursor behavior"},
+        {"name": "has-error-treatment", "description": "Error state includes visual indicator plus descriptive text, not just color"},
+        {"name": "has-loading-state", "description": "Loading state described for async operations"},
+        {"name": "accessibility-in-focus-state", "description": "Focus state specifies an outline (not just background change) for keyboard navigation"}
+      ]
+    },
+    {
+      "id": 33,
+      "name": "depth-ux-empty-states",
+      "prompt": "/design Design the empty states for a project management dashboard that shows tasks, activity feed, and team members.",
+      "expected_output": "Distinct empty state designs for all 4 types: first-use, no results, error, and offline — each with appropriate illustration/icon, headline, explanation, and CTA",
+      "files": [],
+      "assertions": [
+        {"name": "covers-first-use-empty-state", "description": "First-use empty state has headline + explanation + primary CTA"},
+        {"name": "covers-no-results-empty-state", "description": "No-results state acknowledges the search/filter and offers an escape"},
+        {"name": "covers-error-empty-state", "description": "Error state uses plain language with a retry action"},
+        {"name": "covers-offline-empty-state", "description": "Offline state distinguishes itself from error and indicates what's still available"},
+        {"name": "ctaS-are-specific", "description": "Each empty state CTA is a specific verb+object, not generic 'Try again' or 'OK'"}
+      ]
+    },
+    {
+      "id": 34,
+      "name": "depth-product-jtbd",
+      "prompt": "/design We want to add a 'saved searches' feature to our job board. Plan the design.",
+      "expected_output": "Design plan that applies JTBD thinking — identifies the job being done, the functional/emotional/social dimensions, and uses this to shape what actually gets built",
+      "files": [],
+      "assertions": [
+        {"name": "identifies-the-job", "description": "Articulates the job-to-be-done in 'when / motivation / outcome' format, not just the feature description"},
+        {"name": "covers-emotional-dimension", "description": "Identifies an emotional or social dimension of the job beyond the functional task"},
+        {"name": "uses-jtbd-to-scope", "description": "JTBD analysis leads to a scoping decision — what to include and what to exclude based on the job"},
+        {"name": "defines-success-metric", "description": "Proposes a measurable success metric tied to the job, not just feature adoption"},
+        {"name": "has-assumption-list", "description": "Lists at least 2 assumptions that must be true for the feature to succeed"}
+      ]
+    },
+    {
+      "id": 35,
+      "name": "depth-content-error-messages",
+      "prompt": "/design Write the error messages for a file upload component that handles: file too large, wrong format, upload failed, and virus detected.",
+      "expected_output": "Error messages following the 3-part formula (what happened + why + what to do) in plain language with no technical jargon or user-blaming",
+      "files": [],
+      "assertions": [
+        {"name": "no-jargon-in-errors", "description": "No technical terms (error codes, HTTP status, internal names) in any error message"},
+        {"name": "no-user-blame", "description": "No passive-aggressive or blaming language ('You uploaded an invalid file' → 'That file format isn't supported')"},
+        {"name": "all-4-errors-addressed", "description": "All 4 error types have distinct, specific messages"},
+        {"name": "each-has-recovery-action", "description": "Every error message includes a specific action the user can take to resolve it"},
+        {"name": "plain-language-throughout", "description": "All messages are readable by a non-technical user at a glance"}
+      ]
+    },
+    {
+      "id": 36,
+      "name": "depth-dataviz-chart-selection",
+      "prompt": "/design A SaaS analytics dashboard needs to show: monthly revenue trend, plan distribution (free/pro/agency), feature adoption rates across 8 features, and correlation between usage frequency and retention. Which chart types for each and why?",
+      "expected_output": "Chart type recommendations with explicit rationale referencing the data relationship (comparison/distribution/composition/relationship) — not just naming the chart type",
+      "files": [],
+      "assertions": [
+        {"name": "uses-data-relationship-framework", "description": "Recommendation references the data relationship (comparison, distribution, composition, or relationship) for each choice"},
+        {"name": "appropriate-chart-for-trend", "description": "Monthly revenue trend uses a line chart (not bar) with justification"},
+        {"name": "appropriate-chart-for-distribution", "description": "Plan distribution recommendation addresses the pie/donut question explicitly with a reasoned choice"},
+        {"name": "feature-adoption-handles-many-series", "description": "8-feature adoption recommendation accounts for the many-series problem (small multiples or grouped bar, not a 8-line chart)"},
+        {"name": "correlation-uses-scatter", "description": "Usage-retention correlation uses scatter plot with rationale"}
+      ]
+    },
+    {
+      "id": 37,
+      "name": "depth-ux-research-synthesis",
+      "prompt": "/ux-audit We ran 6 usability tests on our onboarding flow. 4 of 6 participants got confused at step 3 (connecting their first integration). How should we synthesise and present these findings to get the team to act?",
+      "expected_output": "Synthesis approach using insight-implication-recommendation structure, with specific guidance on how to present findings that lead to a design decision — not just a report",
+      "files": [],
+      "assertions": [
+        {"name": "uses-insight-implication-recommendation", "description": "Response structures findings as: insight (what happened) → implication (what it means) → recommendation (what to do)"},
+        {"name": "quantifies-the-severity", "description": "Uses the 4/6 finding to frame severity — not just 'some users were confused'"},
+        {"name": "gives-specific-recommendation", "description": "Recommendation is a specific design change, not 'improve step 3'"},
+        {"name": "addresses-how-to-present", "description": "Gives guidance on how to frame findings for a decision-maker audience"},
+        {"name": "notes-what-more-research-would-add", "description": "Acknowledges what quant data would complement the qual finding"}
+      ]
+    },
+    {
+      "id": 38,
+      "name": "depth-figma-token-architecture",
+      "prompt": "/figma Our design team is building a multi-brand design system for 3 clients in Figma. How should we structure the variable/token architecture?",
+      "expected_output": "Three-tier token architecture (primitive → semantic → component) with a specific multi-brand structure — not a generic 'use tokens' recommendation",
+      "files": [],
+      "assertions": [
+        {"name": "uses-three-tier-hierarchy", "description": "Response describes primitive tokens, semantic tokens, and optionally component tokens as distinct tiers"},
+        {"name": "explains-brand-swap-at-semantic-layer", "description": "Multi-brand structure swaps at the semantic layer (not the primitive layer), preserving the primitive foundation"},
+        {"name": "gives-naming-examples", "description": "Provides concrete token naming examples at each tier"},
+        {"name": "addresses-scope-decision", "description": "Addresses whether tokens should be local or published to the shared library"},
+        {"name": "handles-auto-update", "description": "Explains how component tokens inherit from semantic tokens so brand switches propagate automatically"}
+      ]
+    },
+    {
+      "id": 39,
+      "name": "depth-deployment-core-web-vitals",
+      "prompt": "/design Our Next.js app has an LCP of 4.2s and a CLS score of 0.18. What are the most likely causes and how do we fix them?",
+      "expected_output": "Specific, actionable diagnosis and fixes for both LCP and CLS — not generic 'optimise images' advice",
+      "files": [],
+      "assertions": [
+        {"name": "diagnoses-lcp-causes-specifically", "description": "Identifies specific LCP causes (unpreloaded hero image, render-blocking resources, no SSR) not just 'large images'"},
+        {"name": "provides-lcp-code-fix", "description": "Includes a concrete code fix for at least one LCP cause (preload link tag, next/image config, etc.)"},
+        {"name": "diagnoses-cls-causes-specifically", "description": "Identifies specific CLS causes (missing image dimensions, font swap, injected content) not just 'layout shifts'"},
+        {"name": "provides-cls-code-fix", "description": "Includes a concrete code fix for at least one CLS cause (width/height attributes, font-display, reserved space)"},
+        {"name": "references-measurement-tool", "description": "Mentions how to measure/verify the fix (Lighthouse, CrUX, PerformanceObserver)"}
+      ]
+    },
+    {
+      "id": 40,
+      "name": "depth-email-subject-lines",
+      "prompt": "/email-template Write 5 subject line variants for a re-engagement email to users who haven't logged in for 30 days.",
+      "expected_output": "5 subject lines using different formulas (specificity, curiosity, direct benefit, etc.) — not 5 variations of the same approach",
+      "files": [],
+      "assertions": [
+        {"name": "uses-multiple-formulas", "description": "At least 3 distinct subject line formulas used across the 5 variants"},
+        {"name": "includes-preview-text-guidance", "description": "Provides corresponding preview text for at least 2 variants"},
+        {"name": "no-anti-patterns", "description": "No ALL CAPS, no clickbait, no excessive punctuation, no misleading Re:/Fwd: tricks"},
+        {"name": "variants-are-meaningfully-different", "description": "Variants test different approaches (benefit vs. curiosity vs. urgency), not just different wording of the same idea"},
+        {"name": "respects-character-limit", "description": "All subject lines are under 50 characters for mobile preview"}
+      ]
+    },
+    {
+      "id": 41,
+      "name": "depth-social-platform-constraints",
+      "prompt": "/social-content Design a campaign announcement post for a product launch that needs to work across Instagram feed, LinkedIn, and TikTok.",
+      "expected_output": "Platform-specific adaptations that respect each platform's safe zones, aspect ratios, and tone — not the same post resized",
+      "files": [],
+      "assertions": [
+        {"name": "specifies-dimensions-per-platform", "description": "Gives correct dimensions or aspect ratios for each platform (Instagram 4:5, LinkedIn 1200x628 or square, TikTok 9:16)"},
+        {"name": "addresses-safe-zones", "description": "Mentions safe zone constraints for at least one platform (especially TikTok/Reels)"},
+        {"name": "adapts-tone-per-platform", "description": "Copy/tone is adapted per platform, not identical across all three"},
+        {"name": "uses-fixed-flexible-adaptive-model", "description": "Identifies which elements stay fixed (logo, colours) and which adapt (layout, copy length)"},
+        {"name": "no-copy-paste-approach", "description": "Response explicitly addresses why the same asset can't be used across all platforms"}
+      ]
     }
   ]
 }
