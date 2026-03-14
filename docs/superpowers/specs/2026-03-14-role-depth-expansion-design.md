@@ -225,16 +225,18 @@ Every role in scope gets the same upgrade pattern applied consistently:
 - Each role is an independent task — no cross-dependencies
 - Existing content must not be modified, only appended to
 - Both sections (`## Advanced Patterns`, `## Full Coverage`) must be present in every upgraded role
-- After all 10 roles are updated, bump `plugin.json` version to `3.2.0` and add `CHANGELOG.md` entry
-- Evals: add 1 eval case per role testing depth (10 new cases, ids 33–42) — each eval should test that the role gives a *decision* not just a description
+- All 10 roles and all 10 eval cases must be completed before running evals or bumping the version — no partial states
+- After all 10 roles are updated: bump `.claude-plugin/plugin.json` version to `3.2.0` and add `CHANGELOG.md` entry
+- Evals: add 1 eval case per role testing depth (10 new cases, ids 32–41) — each eval should test that the role gives a *decision* not just a description
+- New section headings must use `##` level (not `###`) to match the existing top-level section structure in each role file
 
 ---
 
 ## Success Criteria
 
-1. Every upgraded role has both `## Advanced Patterns` and `## Full Coverage` sections
-2. Each role is 400–500 lines (except `ux-researcher` at ~420, `deployment` and `email-copywriter` at ~400)
+1. Every upgraded role has both `## Advanced Patterns` and `## Full Coverage` sections (both at `##` heading level)
+2. Each role meets its target: `ui-designer` and `ux-designer` ~500 lines; `product-designer`, `content-designer`, `data-viz-designer`, `figma-workflow` ~450 lines; `ux-researcher` ~420 lines; `deployment`, `email-copywriter`, `social-media-designer` ~400 lines
 3. No existing content removed or rewritten
-4. `plugin.json` at `3.2.0`, `CHANGELOG.md` updated
-5. 10 new eval cases (ids 33–42) added to `evals/evals.json`
-6. All evals pass: `bash scripts/run-evals.sh`
+4. `.claude-plugin/plugin.json` at `3.2.0`, `CHANGELOG.md` updated
+5. 10 new eval cases (ids 32–41) added to `evals/evals.json`
+6. All evals pass: `bash scripts/run-evals.sh` — run only after all 10 roles and all 10 evals are complete
