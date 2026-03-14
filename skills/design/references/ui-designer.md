@@ -244,3 +244,190 @@ Write base styles for mobile, then add complexity:
 - **Typography**: Scale down hero text by 20–30% on mobile
 - **Spacing**: Reduce section padding by ~40% on mobile
 - **Images**: Full-width on mobile, contained on desktop
+
+---
+
+## Advanced Patterns
+
+### Dark Mode Token Strategy
+
+Dark mode is not "invert the colors." It requires a parallel token set with independent decisions at every level.
+
+**The three layers that need dark variants:**
+
+1. **Surface tokens** — background colors lift instead of darken. Dark surfaces go from dark-to-light (deep background → elevated card), the opposite of light mode.
+   - Light: `surface-default: white`, `surface-raised: gray-50`, `surface-overlay: gray-100`
+   - Dark: `surface-default: gray-950`, `surface-raised: gray-900`, `surface-overlay: gray-800`
+
+2. **Text tokens** — don't just flip to white. Establish a hierarchy using opacity or explicit tones:
+   - `text-primary: gray-50` (high emphasis)
+   - `text-secondary: gray-400` (medium emphasis)
+   - `text-disabled: gray-600` (low emphasis)
+
+3. **Brand/accent tokens** — your primary color often needs a lighter tint in dark mode to maintain contrast against dark surfaces:
+   - Light mode: `action-primary: blue-600` (against white background)
+   - Dark mode: `action-primary: blue-400` (lighter shade against gray-950 background)
+
+**Pitfalls:**
+- Never use `filter: invert()` — it corrupts images and brand colors
+- Shadows don't work on dark backgrounds — use `box-shadow` with low-opacity white instead
+- Borders at `gray-200` in light mode are invisible at the same value in dark mode — they need their own dark mode token
+
+**Implementation check:** In Figma, create a "Dark" mode in your variable collection. Map every semantic token to a dark value. If you can't map it, you're missing a semantic layer.
+
+---
+
+### Responsive Typography System
+
+Don't just scale font sizes — scale the entire typographic system.
+
+**What changes across breakpoints:**
+
+| Property | Mobile | Tablet | Desktop |
+|---|---|---|---|
+| Base body size | 16px | 16px | 16px |
+| H1 | 28px / 1.2 lh | 36px / 1.15 lh | 48px / 1.1 lh |
+| H2 | 22px / 1.25 lh | 28px / 1.2 lh | 36px / 1.15 lh |
+| Line length | full-width | 60–70 chars | 65–75 chars |
+| Paragraph spacing | 1rem | 1.25rem | 1.5rem |
+
+**The measure (line length) is often more important than font size.** Text wider than ~75 characters per line causes reader fatigue. On desktop, constrain prose with `max-width: 65ch` even when the layout is full-width.
+
+**Fluid type with CSS `clamp()`:**
+```css
+h1 {
+  /* Scales from 28px at 320px viewport to 48px at 1280px viewport */
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 3rem);
+}
+```
+Use sparingly — fluid type is powerful for headings, overkill for body text.
+
+---
+
+### Component State Taxonomy
+
+Every interactive component needs states. Missing states = broken UX in production.
+
+**The 8 states every interactive component must consider:**
+
+| State | When | Visual signal |
+|---|---|---|
+| **Default** | At rest | Base styles |
+| **Hover** | Cursor over | Subtle background shift, cursor change |
+| **Focus** | Keyboard nav / click | Visible outline (2px, 3:1 contrast minimum) |
+| **Active** | Being clicked/pressed | Pressed-in effect (slight scale down, darker bg) |
+| **Disabled** | Not interactable | 40% opacity, `not-allowed` cursor, no hover effect |
+| **Loading** | Async in progress | Spinner or skeleton, prevent double-submission |
+| **Error** | Validation failed | Red/danger tokens, icon + text message |
+| **Empty/Skeleton** | No data yet | Skeleton placeholder at correct content size |
+
+**Focus state rules:**
+- Always visible (never remove `outline: none` without a replacement)
+- `:focus-visible` shows for keyboard users, hides for mouse users
+- Minimum 3:1 contrast ratio between focus indicator and adjacent colors
+
+---
+
+### Spacing System Design
+
+A spacing system should be a scale, not a collection of random values.
+
+**Base-4 scale (Tailwind-compatible):**
+```
+4px  → space-1  (tight inline spacing, icon gaps)
+8px  → space-2  (component padding, tight stacks)
+12px → space-3  (medium padding, list item gaps)
+16px → space-4  (standard section padding)
+24px → space-6  (card padding, generous stacks)
+32px → space-8  (section gaps, major separators)
+48px → space-12 (hero padding, page sections)
+64px → space-16 (large section breaks)
+```
+
+**How to pick spacing values:**
+- **Tight:** items that belong together (label + input, icon + text): 4–8px
+- **Related:** items in the same group (form fields, list items): 12–16px
+- **Separate:** distinct sections or components: 24–48px
+- **Spacious:** page-level sections, hero areas: 48–96px
+
+**The "squint test":** Squint at the design. Visual clusters should be clear. If you can't tell which elements go together, the spacing hierarchy isn't working.
+
+---
+
+## Full Coverage
+
+### Form State Matrix
+
+Complete states for every form element:
+
+| Element | Default | Focus | Error | Disabled | Filled |
+|---|---|---|---|---|---|
+| Text input | Border gray-300 | Border primary, shadow | Border red-500, error message below | 40% opacity, bg gray-50 | Border gray-400 |
+| Select | Chevron icon right | Border primary, shadow | Border red-500 | 40% opacity | Border gray-400 |
+| Checkbox | Border gray-300, unchecked | Focus ring | Red border | 40% opacity | Checkmark in primary |
+| Radio | Border gray-300 | Focus ring | Red border | 40% opacity | Filled circle in primary |
+| Textarea | Same as text input | Same as text input | Same as text input | Same as text input | Same as text input |
+| File upload | Dashed border | Dashed border primary | Dashed border red | 40% opacity | Shows filename |
+
+**Helper text placement rules:**
+- Persistent helper text: below the field, always visible (`text-sm text-gray-500`)
+- Error message: replaces helper text, same position (`text-sm text-red-600` + error icon)
+- Character count: right-aligned below field when there's a limit
+- Never stack helper text + error — error always wins
+
+---
+
+### Navigation Pattern Decision Guide
+
+| Pattern | When to use | When NOT to use |
+|---|---|---|
+| **Top nav** | 5–7 primary sections, desktop-first, content-focused | Mobile-first, more than 8 items, deep hierarchies |
+| **Sidebar** | Complex apps with many sections + sub-sections, power users | Marketing sites, simple apps, mobile-first products |
+| **Bottom tab** | Mobile, 3–5 primary destinations, thumb-friendly | Desktop apps, more than 5 tabs, complex hierarchies |
+| **Hamburger** | Supplementary navigation, overflow items | Primary navigation on desktop, frequent destinations |
+| **Breadcrumbs** | Deep hierarchies (3+ levels), content/documentation sites | Flat apps, shopping carts, wizard flows |
+| **Tabs** | Switching between views of the same content | Primary page navigation, more than 6 tabs |
+
+**Mobile navigation rules:**
+- Bottom tab bar: items must fit in thumb zone (bottom 1/3 of screen)
+- Minimum touch target: 44×44px per Apple HIG / 48×48px per Material
+- Active state must be clearly distinct from inactive (not just color — add label or icon change)
+
+---
+
+### Icon Usage System
+
+**Functional icons (interactive or navigational):**
+- Must have a visible label unless universally understood (home, search, close)
+- Tooltip on hover for icon-only buttons
+- 20–24px for inline UI icons, 16px for dense tables/menus
+- `aria-label` required on icon-only buttons
+
+**Decorative icons:**
+- Reinforce content — never the only way to convey meaning
+- Match visual weight with surrounding text (don't mix outline and filled icons)
+- `aria-hidden="true"` to hide from screen readers
+
+**Icon grid system:**
+- All icons in a set should live on the same grid (16px, 24px, or 32px base)
+- Optical alignment often requires adjusting icons that have different visual weights (a circle appears smaller than a square at the same pixel size)
+
+---
+
+### Elevation & Shadow System
+
+Shadows communicate z-axis position — they're a communication tool, not decoration.
+
+**5-level system:**
+```css
+--shadow-sm:    0 1px 2px rgba(0,0,0,0.05);                          /* focused inputs, subtle cards */
+--shadow-md:    0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.05); /* cards, dropdowns */
+--shadow-lg:    0 10px 15px rgba(0,0,0,0.10), 0 4px 6px rgba(0,0,0,0.05); /* modals, popovers */
+--shadow-xl:    0 20px 25px rgba(0,0,0,0.10), 0 8px 10px rgba(0,0,0,0.04); /* dialogs, drawers */
+--shadow-inner: inset 0 2px 4px rgba(0,0,0,0.06);                   /* pressed states, inset inputs */
+```
+
+**Shadow rules:**
+- Consistent light source: all shadows should suggest light from above (never mixed directions)
+- No shadow on the lowest level (flat surfaces don't cast shadows on themselves)
+- Dark mode: shadows are invisible on dark backgrounds — use border + subtle background shift for elevation instead
