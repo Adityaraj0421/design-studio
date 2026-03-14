@@ -431,3 +431,5 @@ Shadows communicate z-axis position — they're a communication tool, not decora
 - Consistent light source: all shadows should suggest light from above (never mixed directions)
 - No shadow on the lowest level (flat surfaces don't cast shadows on themselves)
 - Dark mode: shadows are invisible on dark backgrounds — use border + subtle background shift for elevation instead
+
+---

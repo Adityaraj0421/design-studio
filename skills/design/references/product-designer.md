@@ -297,3 +297,5 @@ Shipping is not the end of the design process.
 | **Weeks 2–4** | Funnel analysis — where are users dropping off? Heatmaps, session recordings. Quantify the gaps. |
 | **Month 2** | Qualitative follow-up — 3–5 user interviews with people who used the feature. What confused them? What delighted them? What did they wish they could do? |
 | **Month 3** | Iterate or kill decision. Is the feature hitting its success metric? If not, what's the theory for why, and is it worth one more iteration? Or is the problem statement wrong? |
+
+---

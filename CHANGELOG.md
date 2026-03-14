@@ -2,6 +2,21 @@
 
 All notable changes to Design Studio are documented here.
 
+## [3.2.0] — 2026-03-14
+
+Role Depth Expansion — 10 role reference files upgraded with expert-level patterns and full domain coverage.
+
+### Changed
+
+- **10 role files expanded**: `ui-designer`, `ux-designer`, `product-designer`, `content-designer`, `data-viz-designer`, `ux-researcher`, `figma-workflow`, `deployment`, `email-copywriter`, `social-media-designer` — each gains `## Advanced Patterns` and `## Full Coverage` sections
+- **Expert-level patterns added per role**: dark mode token strategy, component state taxonomy, JTBD framework, error message formula, chart type decision tree, qual vs. quant decision guide, auto-layout edge cases, Core Web Vitals optimisation per metric, subject line formula library, platform-specific safe zone guide
+- **Full Coverage added per role**: complete form state matrix, navigation pattern decision guide, edge case mapping methodology, discovery phase checklist, chart type reference, research ops checklist, component audit methodology, performance budget framework, email type reference, platform format reference
+- **Knowledge base**: ~6,000 lines → ~9,500 lines (+58%)
+- **10 new eval cases** (ids 32–41) — one per role, testing decision-making depth
+- plugin.json version bumped to 3.2.0
+
+---
+
 ## [3.1.0] — 2026-03-13
 
 AI Design Critique with Screenshots — enhances `/design-review` with visual analysis mode.

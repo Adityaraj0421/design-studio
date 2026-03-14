@@ -298,7 +298,7 @@ Show only what's needed at each step — reveal complexity on demand.
 
 ### Fitts's Law Applied
 
-**Core rule:** Target acquisition time = distance ÷ size. Bigger + closer = faster.
+**Core rule:** Movement time increases with distance and decreases with target size (logarithmic relationship: T = a + b × log₂(2D/W)). Practical summary: bigger + closer = faster to acquire.
 
 **Minimum touch target sizes:**
 - Mobile (finger): 44×44px minimum, 48×48px recommended
@@ -397,3 +397,5 @@ For every flow, document what happens in each of these 8 scenarios before handof
 | **Permission-denied** | What does a user without access see? Empty? Locked? Hidden entirely? |
 
 **Handoff standard:** A flow is not ready for development until all 8 edge cases are documented for every screen in the flow.
+
+---

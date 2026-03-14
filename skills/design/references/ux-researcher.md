@@ -399,3 +399,5 @@ Use this structure for recruiting participants who match your target:
 | **Social desirability bias** | Participants say what they think you want to hear | Frame questions as hypothetical or past-behaviour. "What did you do last time?" beats "What would you do?" |
 | **Recency bias** | In synthesis, recent sessions feel more important | Take notes immediately after every session. Review all sessions before synthesising. |
 | **Observer effect** | Users behave differently when watched | Use unmoderated testing where possible. Warm up participants. Give them time to forget you're watching. |
+
+---

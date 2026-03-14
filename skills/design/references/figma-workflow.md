@@ -447,3 +447,5 @@ Migrating from hardcoded values to tokens — how to do it without breaking ever
 - Document before/after mapping: "Button/Solid → Button/Primary"
 - Provide a migration session or document
 - Keep the old version live in `Archive` page for 1 sprint after migration
+
+---
