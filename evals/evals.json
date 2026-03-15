@@ -1462,6 +1462,35 @@
           "description": "Addresses at least one state variant (hover, active, disabled, or selected)"
         }
       ]
+    },
+    {
+      "id": 46,
+      "name": "depth-video-hook-structure",
+      "prompt": "/video-script Write a 60-second product demo script for a SaaS time-tracking tool targeting freelancers.",
+      "expected_output": "Script with a specific hook formula in the first 5 seconds, clear problem-solution structure, feature-benefit framing (not just feature listing), and a CTA — not a generic walkthrough.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "opens-with-hook",
+          "description": "First 5 seconds use a recognizable hook formula (question, bold statement, contrarian, curiosity gap, before/after, or number)"
+        },
+        {
+          "name": "uses-problem-solution-structure",
+          "description": "Script clearly frames a problem before presenting the solution"
+        },
+        {
+          "name": "frames-benefits-not-features",
+          "description": "At least one feature is framed as a user benefit (\"so you can...\" or equivalent), not just described functionally"
+        },
+        {
+          "name": "includes-cta",
+          "description": "Script ends with a clear call to action (try, sign up, visit, etc.)"
+        },
+        {
+          "name": "respects-timing",
+          "description": "Script is paced for ~60 seconds (approx 130-160 words for VO, or includes timing markers)"
+        }
+      ]
     }
   ]
 }
