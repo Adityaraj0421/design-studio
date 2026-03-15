@@ -6,15 +6,15 @@
 
 **Your agency's design brain. Always on, always yours.**
 
-*The Naksha design team, inside your terminal — 13 specialist roles activate automatically based on what you're building. Also available as a web workspace at [naksha.ai](https://naksha.ai).*
+*The Naksha design team, inside your terminal — 18 specialist roles activate automatically based on what you're building. Also available as a web workspace at [naksha.ai](https://naksha.ai).*
 
 <br>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://claude.ai/claude-code)
-[![Roles](https://img.shields.io/badge/Specialist_Roles-13-orange)]()
-[![Commands](https://img.shields.io/badge/Slash_Commands-27-green)]()
-[![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-9500%2B_lines-E8633A)]()
+[![Roles](https://img.shields.io/badge/Specialist_Roles-18-orange)]()
+[![Commands](https://img.shields.io/badge/Slash_Commands-32-green)]()
+[![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-11000%2B_lines-E8633A)]()
 
 [Quick Start](#-quick-start) · [Commands](#-commands) · [The Team](#-the-team) · [How It Works](#-how-it-works) · [Changelog](CHANGELOG.md)
 
@@ -183,6 +183,34 @@ Charts
 Layouts
 
 </td>
+<td align="center">
+
+**Presentation Designer**
+
+Decks
+
+</td>
+<td align="center">
+
+**Brand Strategist**
+
+Positioning
+
+</td>
+<td align="center">
+
+**Illustration Director**
+
+Icons & Art
+
+</td>
+<td align="center">
+
+**Video/Content Producer**
+
+Scripts
+
+</td>
 </tr>
 <tr>
 <td align="center" colspan="7">
@@ -226,6 +254,11 @@ _The skill loads only the references your task actually needs_
 | `/dashboard-layout <description>` | Complete dashboard — KPI cards, chart areas, filter bar, data table, sidebar, responsive |
 | `/design-tutorial [track]` | Interactive guided tour — tracks: quick-start, ui, figma, social, email, data-viz, full |
 | `/figma-component-library <description>` | Complete Figma component library — atoms, molecules, organisms with variants, auto layout, component properties |
+| `/motion-design <component or page>` | Design micro-interactions, transitions, and animation systems — duration/easing scale, reduced motion fallbacks |
+| `/presentation-design <deck type>` | Design a complete presentation deck — pitch deck, product demo, or internal — with slide system and visual hierarchy |
+| `/brand-strategy <brand name>` | Define or audit a brand — positioning, visual identity, voice and tone, brand architecture |
+| `/illustration-system <scope>` | Design an illustration style guide, icon system, or SVG asset set |
+| `/video-script <video type>` | Write a video script, storyboard, or content series plan for demos, explainers, social video, or ads |
 
 <details>
 <summary><b>📖 Command details & examples</b></summary>
@@ -589,6 +622,11 @@ Commands chain together. Each command suggests relevant next steps:
 | Full analytics build | `/brand-kit` → `/dashboard-layout` → `/chart-design` → `/design-handoff` |
 | First-time user | `/design-tutorial quick-start` → `/design-tutorial <track>` → `/design <task>` |
 | Full design system | `/brand-kit` → `/figma-component-library` → `/design-handoff` → `/design-framework` |
+| Brand launch | `/brand-strategy` → `/brand-kit` → `/illustration-system` → `/social-content` |
+| Pitch deck | `/brand-strategy` → `/presentation-design` → `/design-present` |
+| Motion system | `/design-system` → `/motion-design` → `/design-review` |
+| Video + social | `/video-script` → `/social-content` → `/social-campaign` |
+| Full identity system | `/brand-strategy` → `/brand-kit` → `/illustration-system` → `/figma-component-library` |
 
 ---
 
@@ -717,7 +755,7 @@ Settings marked `"auto"` or left empty defer to auto-detection. The Design Manag
 
 ```
 naksha/
-├── .claude-plugin/plugin.json          # Plugin manifest (v2.1.1)
+├── .claude-plugin/plugin.json          # Plugin manifest (v3.4.0)
 ├── skills/design/
 │   ├── SKILL.md                        # Design Manager orchestration
 │   ├── settings.local.md              # User-configurable preferences
@@ -732,14 +770,14 @@ naksha/
 │       ├── figma-workflow.md           # Figma MCP tools, design-to-code + creation
 │       ├── figma-creation.md           # Figma API patterns via Desktop Bridge
 │       └── deployment.md              # Preview server, Firebase Hosting
-├── commands/                           # 20 slash commands
+├── commands/                           # 32 slash commands
 ├── agents/                             # 5 specialist agents
 ├── hooks/hooks.json                    # SessionStart + PreToolUse + Stop hooks
 ├── scripts/
 │   ├── detect-design-context.sh        # Project stack detection
 │   └── run-evals.sh                    # Eval structure validator
 ├── evals/
-│   ├── evals.json                      # 17 eval cases (prompt + assertion specs)
+│   ├── evals.json                      # 46 eval cases (prompt + assertion specs)
 │   └── fixtures/test-page.html         # Fixture: landing page with a11y issues
 ├── assets/                             # Social preview + demo images
 ├── CHANGELOG.md                       # Version history
@@ -747,7 +785,7 @@ naksha/
 ```
 
 <details>
-<summary><b>Design knowledge breakdown (8,500+ raw lines)</b></summary>
+<summary><b>Design knowledge breakdown (11,000+ raw lines)</b></summary>
 
 | File | Lines | Covers |
 |------|-------|--------|
