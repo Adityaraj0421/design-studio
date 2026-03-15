@@ -1404,6 +1404,35 @@
           "description": "Content and tone is calibrated for investor audience (traction, market size, ask)"
         }
       ]
+    },
+    {
+      "id": 44,
+      "name": "depth-brand-positioning",
+      "prompt": "/brand-strategy Define the brand positioning and voice for a new productivity app targeting freelancers. Competitors are Notion, Linear, and Todoist.",
+      "expected_output": "Structured positioning statement, differentiation relative to named competitors, and voice/tone definition — not generic brand advice.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "uses-positioning-formula",
+          "description": "Output includes a structured positioning statement or clearly fills the \"for [audience] who [need]...\" formula"
+        },
+        {
+          "name": "addresses-named-competitors",
+          "description": "Differentiates from at least 2 of the 3 named competitors (Notion, Linear, Todoist) specifically"
+        },
+        {
+          "name": "defines-voice-dimensions",
+          "description": "Gives at least 2 specific personality/tone dimensions (not just \"friendly and professional\")"
+        },
+        {
+          "name": "identifies-differentiator-type",
+          "description": "Classifies the differentiator as functional, emotional, or social"
+        },
+        {
+          "name": "includes-visual-direction",
+          "description": "Gives at least one visual identity direction (color mood, typography style, or logo style) consistent with the positioning"
+        }
+      ]
     }
   ]
 }
