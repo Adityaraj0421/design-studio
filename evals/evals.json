@@ -620,6 +620,20 @@
         {"name": "uses-fixed-flexible-adaptive-model", "description": "Identifies which elements stay fixed (logo, colours) and which adapt (layout, copy length)"},
         {"name": "no-copy-paste-approach", "description": "Response explicitly addresses why the same asset can't be used across all platforms"}
       ]
+    },
+    {
+      "id": 42,
+      "name": "depth-motion-reduced-motion",
+      "prompt": "/motion-design Add entrance animations to a dashboard card grid. Cards should stagger in on page load.",
+      "expected_output": "Provides staggered animation with timing formula, easing values, AND a prefers-reduced-motion fallback strategy — not just the happy path animation code.",
+      "files": [],
+      "assertions": [
+        {"name": "provides-stagger-timing", "description": "Gives specific delay formula or values for staggered cards (e.g., nth-child × 50ms or index * 50ms)"},
+        {"name": "specifies-easing-curve", "description": "Names an easing curve with its CSS cubic-bezier value or a named keyword (ease-out, etc.) — not just 'smooth' or 'natural'"},
+        {"name": "includes-reduced-motion", "description": "Explicitly addresses the prefers-reduced-motion media query with a code block or clear override rule"},
+        {"name": "reduced-motion-strategy-not-just-disable", "description": "Reduced motion handling does more than `animation: none` — replaces or simplifies the animation (e.g., fade only, no translate) rather than removing it entirely"},
+        {"name": "specifies-duration", "description": "Gives a specific animation duration value in milliseconds (e.g., 300ms) — not just a descriptor like 'short' or 'fast'"}
+      ]
     }
   ]
 }
