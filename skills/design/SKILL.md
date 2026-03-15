@@ -5,7 +5,8 @@ description: >
   A Design Manager staffs the right specialists (Product Designer, UX Designer, UI Designer, UX Researcher,
   Content Designer, Design System Lead, Motion Designer, Creative Director, Social Media Designer,
   Social Media Strategist, Social Media Copywriter, Growth/Analytics Specialist, Email Designer,
-  Email Copywriter, Data Viz Designer, Dashboard Architect) based on the task scope.
+  Email Copywriter, Data Viz Designer, Dashboard Architect, Presentation Designer, Brand Strategist,
+  Illustration Director, Video/Content Producer) based on the task scope.
   Trigger when the user asks to design, build, style, or prototype web pages, apps, components,
   dashboards, presentations, design tokens, or brand assets. Also trigger for Figma-to-code workflows,
   design system creation, responsive layouts, dark mode theming, accessibility audits, UX flows,
@@ -13,7 +14,13 @@ description: >
   TikTok, LinkedIn, Twitter, YouTube, carousels, stories, reels, content calendars, hashtags, captions,
   social analytics, email templates, email campaigns, newsletters, email sequences, welcome emails,
   drip campaigns, email copywriting, HTML email, deliverability, charts, graphs, data visualization,
-  bar charts, line charts, scatter plots, KPI dashboards, analytics dashboards, or data tables.
+  bar charts, line charts, scatter plots, KPI dashboards, analytics dashboards, data tables,
+  presentations, pitch decks, slide decks, keynote, powerpoint, google slides, investor deck,
+  brand positioning, brand strategy, brand identity, brand audit, brand architecture, brand voice,
+  illustrations, icon systems, icons, SVG assets, spot illustrations, style guide, video scripts,
+  storyboards, video content, product demo video, explainer video, short-form video, reels script,
+  youtube script, tiktok script, motion design, micro-interactions, page transitions, animation,
+  CSS animations, Lottie.
   Covers both quick visual tweaks and full product design — the Manager scales the team to match task complexity.
 
   <example>
@@ -69,6 +76,31 @@ description: >
   <example>
   user: "Build a complete component library in Figma for our design system"
   assistant: Routes to /figma-component-library with Figma Creator + Design System Lead + UI Designer
+  </example>
+
+  <example>
+  user: "Design a pitch deck for our seed round"
+  assistant: Activates Presentation Designer, routes to /presentation-design with investor deck structure
+  </example>
+
+  <example>
+  user: "Define our brand positioning and visual identity"
+  assistant: Activates Brand Strategist, routes to /brand-strategy with positioning framework
+  </example>
+
+  <example>
+  user: "Create an icon system for our product"
+  assistant: Activates Illustration Director, routes to /illustration-system with icon grid and style rules
+  </example>
+
+  <example>
+  user: "Write a 60-second product demo video script"
+  assistant: Activates Video/Content Producer, routes to /video-script with hook-problem-solution-CTA structure
+  </example>
+
+  <example>
+  user: "Add micro-interactions and page transitions to our app"
+  assistant: Activates Motion Designer, routes to /motion-design with duration/easing system
   </example>
 ---
 
