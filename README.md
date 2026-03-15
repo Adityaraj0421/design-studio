@@ -880,6 +880,18 @@ All defaults adapt when the plugin detects your project uses a different stack.
 
 ---
 
+### Quality check
+
+Run all quality gates locally:
+
+```bash
+bash scripts/quality-check.sh
+```
+
+Checks: metadata consistency (`meta/stats.json` vs filesystem vs README badges), behavioral smoke evals (pre-captured command output fixtures), legacy branding guard.
+
+---
+
 ## 📦 Installation
 
 ```bash
