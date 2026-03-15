@@ -2,3 +2,8 @@
 *.local.md
 node_modules/
 .worktrees/
+
+# Internal AI tool artifacts (plans, brainstorms, session data)
+.claude/
+.superpowers/
+docs/superpowers/
