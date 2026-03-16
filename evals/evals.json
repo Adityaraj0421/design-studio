@@ -2122,6 +2122,71 @@
           "description": "Provides at least one benefit-first headline rewrite"
         }
       ]
+    },
+    {
+      "id": 74,
+      "name": "data-viz-audit-chart",
+      "prompt": "/data-viz-audit pie chart showing monthly active users split by 7 plan tiers — standalone, no dashboard context",
+      "expected_output": "Phase 1: chart type flagged (7-slice pie → recommend horizontal bar), colorblind palette issue raised if red-green used, annotation missing called out, anti-pattern noted. Phase 2 skipped with explicit invitation to provide dashboard context.",
+      "files": [
+        "commands/data-viz-audit.md",
+        "skills/design/references/data-viz-designer.md"
+      ],
+      "assertions": [
+        {
+          "name": "flags-pie-anti-pattern",
+          "description": "Identifies 7-slice pie chart as exceeding the 5-slice limit and recommends horizontal bar chart"
+        },
+        {
+          "name": "flags-colorblind-risk",
+          "description": "Raises colorblind palette risk and recommends the categorical colorblind-safe palette"
+        },
+        {
+          "name": "flags-missing-annotation",
+          "description": "Notes missing annotation and suggests a specific callout for the dominant plan tier"
+        },
+        {
+          "name": "skips-phase-2",
+          "description": "Phase 2 is explicitly skipped because no dashboard context was provided, with an invitation to add context"
+        },
+        {
+          "name": "provides-corrected-chart-config",
+          "description": "Outputs a corrected horizontal bar Chart.js config replacing the pie chart"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "name": "data-viz-audit-dashboard",
+      "prompt": "/data-viz-audit dual Y-axis line chart comparing monthly ad spend (left axis, $) and conversion rate (right axis, %) for the last 12 months — placed in a SaaS marketing analytics dashboard with CAC, ROAS, and conversion rate KPI cards",
+      "expected_output": "Phase 1: dual Y-axis anti-pattern flagged, replacement recommended (two separate charts or indexed comparison). Phase 2 runs: chart placement, filter alignment, and KPI coordination reviewed for the marketing analytics dashboard context.",
+      "files": [
+        "commands/data-viz-audit.md",
+        "skills/design/references/data-viz-designer.md",
+        "skills/design/references/dashboard-architect.md"
+      ],
+      "assertions": [
+        {
+          "name": "flags-dual-y-axis",
+          "description": "Identifies dual Y-axis as an anti-pattern and recommends two separate charts or an indexed-to-100 comparison"
+        },
+        {
+          "name": "runs-phase-2",
+          "description": "Phase 2 runs (not skipped) because dashboard context was provided"
+        },
+        {
+          "name": "recommends-placement",
+          "description": "Recommends a specific primary or secondary slot placement within the marketing analytics dashboard"
+        },
+        {
+          "name": "checks-filter-alignment",
+          "description": "Notes whether the chart's date range should be controlled by the dashboard's shared filter bar"
+        },
+        {
+          "name": "checks-kpi-coordination",
+          "description": "Checks whether the chart reinforces or conflicts with the CAC, ROAS, and conversion rate KPI cards"
+        }
+      ]
     }
   ]
 }
