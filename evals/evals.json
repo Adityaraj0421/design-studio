@@ -1491,6 +1491,202 @@
           "description": "Script is paced for ~60 seconds (approx 130-160 words for VO, or includes timing markers)"
         }
       ]
+    },
+    {
+      "id": 47,
+      "name": "gen-image-product-brief",
+      "prompt": "/gen-image a skincare serum bottle on marble surface for Lumina Beauty — editorial photography style, Instagram feed post",
+      "expected_output": "Tool selection with reasoning, full 6-element prompt (subject, style, lighting, camera, mood, negatives), 2 variation prompts, seed strategy note, and platform aspect ratio spec",
+      "files": [],
+      "assertions": [
+        {
+          "name": "selects-tool",
+          "description": "Specifies which tool to use (Midjourney, DALL-E, etc.) with reasoning"
+        },
+        {
+          "name": "uses-6-element-anatomy",
+          "description": "Prompt includes all 6 elements: subject, style, lighting, camera, mood, negatives"
+        },
+        {
+          "name": "produces-variations",
+          "description": "Produces at least 2 variation prompts"
+        },
+        {
+          "name": "includes-seed-strategy",
+          "description": "Includes seed strategy note"
+        },
+        {
+          "name": "includes-aspect-ratio",
+          "description": "Specifies aspect ratio for Instagram feed"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "name": "gen-image-editorial-campaign",
+      "prompt": "/gen-image founder working at a standing desk for TechStartup — authentic documentary style, LinkedIn hero image",
+      "expected_output": "Midjourney selected for editorial/lifestyle; prompt avoids stock photo clichés; negatives include stock photo pose, fake smile; correct 2:1 aspect ratio for LinkedIn",
+      "files": [],
+      "assertions": [
+        {
+          "name": "selects-midjourney-for-editorial",
+          "description": "Recommends Midjourney for editorial/lifestyle photography"
+        },
+        {
+          "name": "avoids-stock-cliches",
+          "description": "Negatives include stock photo or cliché pose terms"
+        },
+        {
+          "name": "correct-aspect-ratio",
+          "description": "Specifies 1.91:1 or 2:1 aspect ratio for LinkedIn"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "name": "gen-video-product-reel",
+      "prompt": "/gen-video a slow product reveal of a skincare bottle for Instagram Reels — luxury commercial aesthetic, 15 seconds",
+      "expected_output": "Tool selected (Runway or Luma for product shot), shot-by-shot prompt pack with full anatomy per shot, consistency strategy, 9:16 aspect ratio, 15s total with shot breakdown",
+      "files": [],
+      "assertions": [
+        {
+          "name": "selects-appropriate-tool",
+          "description": "Selects Runway or Luma for product reveal"
+        },
+        {
+          "name": "produces-shot-prompt-pack",
+          "description": "Produces multiple numbered shot prompts"
+        },
+        {
+          "name": "specifies-9-16",
+          "description": "Specifies 9:16 aspect ratio for Reels"
+        },
+        {
+          "name": "includes-consistency-strategy",
+          "description": "Documents seed or style ref consistency strategy"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "gen-audio-voiceover-brief",
+      "prompt": "/gen-audio voiceover for a 30-second SaaS product demo video — warm and confident, conversational pace",
+      "expected_output": "ElevenLabs or Murf selected, completed voice brief template with all fields, timing cues for 30s video, compliance disclosure note",
+      "files": [],
+      "assertions": [
+        {
+          "name": "selects-voice-tool",
+          "description": "Selects ElevenLabs or Murf for voiceover"
+        },
+        {
+          "name": "completes-voice-brief",
+          "description": "Produces filled voice brief template with tone, pace, emotion fields"
+        },
+        {
+          "name": "includes-timing-cues",
+          "description": "Includes timing cue sheet for video sync"
+        },
+        {
+          "name": "includes-compliance-note",
+          "description": "Includes FTC synthetic voice disclosure note"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "name": "gen-audio-music-brief",
+      "prompt": "/gen-audio background music for a startup pitch video — inspiring and modern, 90 seconds, loopable",
+      "expected_output": "Suno selected for background music, completed music brief with genre, mood, BPM, loop point, and licensing note",
+      "files": [],
+      "assertions": [
+        {
+          "name": "selects-suno",
+          "description": "Selects Suno for background music generation"
+        },
+        {
+          "name": "completes-music-brief",
+          "description": "Produces filled music brief with genre, mood, BPM range fields"
+        },
+        {
+          "name": "addresses-loop-point",
+          "description": "Addresses loop point requirement"
+        },
+        {
+          "name": "includes-licensing-note",
+          "description": "Includes licensing note for commercial use"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "name": "gen-moodboard-campaign",
+      "prompt": "/gen-moodboard a product launch campaign for Lumina — a minimalist skincare brand targeting conscious consumers in their 30s",
+      "expected_output": "3 distinct visual directions, each with name, visual language description, mood, real-world references, brand rationale, and 4-6 ready-to-paste prompts",
+      "files": [],
+      "assertions": [
+        {
+          "name": "produces-3-directions",
+          "description": "Produces exactly 3 meaningfully distinct visual directions"
+        },
+        {
+          "name": "includes-prompt-pack",
+          "description": "Each direction has 4-6 image prompts"
+        },
+        {
+          "name": "includes-brand-rationale",
+          "description": "Each direction explains why it works for the brand"
+        },
+        {
+          "name": "includes-real-references",
+          "description": "Each direction includes real-world visual references"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "name": "prompt-refine-weak-prompt",
+      "prompt": "/prompt-refine a woman in an office smiling -- tool: midjourney",
+      "expected_output": "Annotated critique identifying vague subject, absent style/lighting/camera/mood tokens, generic stock-photo risk; optimized full 6-element prompt; cross-tool DALL-E 3 variant",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-weak-tokens",
+          "description": "Critiques identify vague or missing tokens"
+        },
+        {
+          "name": "produces-optimized-prompt",
+          "description": "Delivers a complete optimized prompt with all 6 elements"
+        },
+        {
+          "name": "explains-changes",
+          "description": "Explains what was changed and why"
+        },
+        {
+          "name": "produces-cross-tool-variant",
+          "description": "Produces a DALL-E 3 or other tool variant"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "name": "prompt-refine-failure-diagnosis",
+      "prompt": "/prompt-refine hyperrealistic photo of a person holding a product, soft lighting, professional -- tool: midjourney",
+      "expected_output": "Identifies risks of anatomy errors (hands holding product), suggests anatomy-specific negatives, improves subject specificity, adds camera and mood tokens, provides optimized version",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-anatomy-risk",
+          "description": "Flags distorted hands/anatomy as a risk for 'person holding product'"
+        },
+        {
+          "name": "adds-anatomy-negatives",
+          "description": "Adds distorted hands, extra fingers, or similar to negatives"
+        },
+        {
+          "name": "improves-subject-specificity",
+          "description": "Adds specificity to the subject description"
+        }
+      ]
     }
   ]
 }
