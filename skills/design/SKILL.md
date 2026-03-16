@@ -171,6 +171,7 @@ This skill is part of the **naksha** plugin. For focused workflows, use these co
 | `/design-template <category>` | Production-ready web template from gallery: landing-page, dashboard, pricing, auth, blog, ecommerce, portfolio, docs, saas, onboarding |
 | `/chart-design <description>` | Design a chart or data visualization — selects chart type, applies accessible color palettes, outputs HTML/CSS/JS |
 | `/dashboard-layout <description>` | Build a complete dashboard layout — KPI cards, charts, filter bar, data table, sidebar, responsive |
+| `/data-viz-audit <chart or description>` | Audit a chart for type selection, accessible palette, annotations, and anti-patterns. Conditional Phase 2 audits dashboard layout fit |
 | `/design-tutorial [track]` | Interactive guided tour — quick-start, ui, figma, social, email, data-viz, or full (30 min complete tour) |
 | `/figma-component-library <description>` | Generate a complete Figma component library — atoms, molecules, organisms with variants, auto layout, component properties |
 
@@ -350,7 +351,7 @@ Based on the task, activate only the roles needed. Read their reference files fo
 - **Email** roles activate when the task mentions: "email", "newsletter", "email template", "HTML email", "welcome email", "drip campaign", "email sequence", "onboarding email", "subject line", "preheader", "CAN-SPAM", "Mailchimp", "SendGrid", "Klaviyo", "ESP", "transactional email", "email campaign", "email audit", "audit email", "audit my email", "review my email", "email review", "check my email template", or "email html issues"
 - The **Email Designer** joins any HTML email template or visual email design task
 - The **Email Copywriter** joins when email copy, subject lines, or email sequences are needed
-- **Data Visualization** roles activate when the task mentions: "chart", "graph", "data viz", "visualization", "bar chart", "line chart", "scatter plot", "pie chart", "donut chart", "histogram", "heatmap", "sparkline", "KPI", "dashboard", "analytics dashboard", "admin panel", "data table", "metrics", "monitoring", or "reporting dashboard"
+- **Data Visualization** roles activate when the task mentions: "chart", "graph", "data viz", "visualization", "bar chart", "line chart", "scatter plot", "pie chart", "donut chart", "histogram", "heatmap", "sparkline", "KPI", "dashboard", "analytics dashboard", "admin panel", "data table", "metrics", "monitoring", "reporting dashboard", "audit chart", "chart audit", "chart review", "review chart", "data viz audit", "viz audit", or "dashboard audit"
 - The **Data Viz Designer** joins any chart or visualization task
 - The **Dashboard Architect** joins when the output is a full dashboard layout (vs. a single chart)
 - **Tutorial** activates when the user says: "tutorial", "getting started", "how do I use", "what can you do", "new user", "first time", "show me", "help me get started" → route directly to `/design-tutorial`

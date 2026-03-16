@@ -92,6 +92,7 @@ check_fixture "gen-audio-output.md"        "voiceover,elevenlabs,tone,timing,com
 check_fixture "gen-moodboard-output.md"    "direction,moodboard,prompt,brand,style" 3    200
 check_fixture "prompt-refine-output.md"    "critique,optimized,token,cross-tool"    2    150
 check_fixture "email-audit-output.md"      "critical,technical,subject,cta,rewrite,aida,inline" 3 200
+check_fixture "data-viz-audit-output.md"   "chart-type,palette,annotation,colorblind,anti-pattern,dashboard-fit,rewrite" 3 200
 
 echo ""
 echo "───────────────────────────────────────"
