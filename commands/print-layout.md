@@ -151,7 +151,7 @@ Output a complete, self-contained HTML document with:
 - [ ] No raster images below 300 DPI equivalent
 - [ ] Fonts declared with @font-face
 - [ ] Fold/cut lines marked in screen view, hidden in print
-- [ ] print-color-adjust: exact on .background-layer and any element with a solid background-color (not inherited)
+- [ ] print-color-adjust: exact on .background-layer and any element with a solid background-color (inherited, but explicit is safer)
 - [ ] Both faces output if front + back required
 ```
 
