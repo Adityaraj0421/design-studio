@@ -1687,6 +1687,383 @@
           "description": "Adds specificity to the subject description"
         }
       ]
+    },
+    {
+      "id": 55,
+      "name": "ux-audit-saas-onboarding",
+      "prompt": "/ux-audit Review the onboarding flow against the brief: convert trial users to paid within 7 days through guided activation",
+      "expected_output": "Heuristic audit findings against the brief, friction points in the flow, specific UX recommendations with rationale, prioritised issue list",
+      "files": [],
+      "assertions": [
+        {
+          "name": "evaluates-against-brief",
+          "description": "Audit references the stated conversion goal (trial to paid)"
+        },
+        {
+          "name": "identifies-friction-points",
+          "description": "Lists specific UX friction points in the onboarding flow"
+        },
+        {
+          "name": "provides-recommendations",
+          "description": "Gives actionable improvement recommendations"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "name": "ux-audit-accessibility",
+      "prompt": "/ux-audit Audit a checkout flow for WCAG AA compliance and cognitive load",
+      "expected_output": "Accessibility issues categorised by WCAG criterion, cognitive load assessment, specific fixes with code examples where relevant",
+      "files": [],
+      "assertions": [
+        {
+          "name": "references-wcag",
+          "description": "References WCAG AA criteria specifically"
+        },
+        {
+          "name": "identifies-accessibility-issues",
+          "description": "Identifies concrete accessibility issues"
+        },
+        {
+          "name": "suggests-fixes",
+          "description": "Provides specific fixes or improvements"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "name": "design-handoff-saas-component",
+      "prompt": "/design-handoff Generate developer handoff docs for a modal dialog component with form validation",
+      "expected_output": "Component specs with dimensions/spacing, design tokens used, interaction states, accessibility notes, API/props definition, CSS snippet or token references",
+      "files": [],
+      "assertions": [
+        {
+          "name": "includes-specs",
+          "description": "Includes spacing, sizing, or layout specifications"
+        },
+        {
+          "name": "includes-tokens",
+          "description": "References design tokens or CSS custom properties"
+        },
+        {
+          "name": "includes-states",
+          "description": "Documents interaction states (default, hover, focus, error, disabled)"
+        },
+        {
+          "name": "includes-accessibility",
+          "description": "Includes accessibility notes (ARIA, keyboard navigation)"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "name": "figma-create-landing-page",
+      "prompt": "/figma-create Build a SaaS landing page wireframe with hero, features section, pricing, and CTA",
+      "expected_output": "Figma frame creation with structured sections, auto-layout frames, component placeholders, layer naming conventions",
+      "files": [],
+      "assertions": [
+        {
+          "name": "creates-frames",
+          "description": "Creates or describes Figma frames for each section"
+        },
+        {
+          "name": "uses-auto-layout",
+          "description": "Applies or recommends auto-layout for sections"
+        },
+        {
+          "name": "names-layers",
+          "description": "Uses semantic layer naming"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "name": "figma-responsive-desktop-to-mobile",
+      "prompt": "/figma-responsive Generate mobile and tablet variants from a desktop dashboard design",
+      "expected_output": "Breakpoint strategy, layout changes per breakpoint, component adaptations (collapsed nav, stacked cards), frame creation at 375px/768px/1280px",
+      "files": [],
+      "assertions": [
+        {
+          "name": "defines-breakpoints",
+          "description": "Specifies breakpoint values for mobile, tablet, desktop"
+        },
+        {
+          "name": "adapts-navigation",
+          "description": "Addresses navigation pattern change at mobile breakpoint"
+        },
+        {
+          "name": "describes-layout-changes",
+          "description": "Describes how layout grid changes across breakpoints"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "name": "figma-sync-drift-detection",
+      "prompt": "/figma-sync Detect design-code drift between a Figma component library and a React component codebase",
+      "expected_output": "Drift report listing mismatches (colors, spacing, typography), severity classification, recommended sync actions",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-drift",
+          "description": "Identifies specific token or style mismatches between design and code"
+        },
+        {
+          "name": "classifies-severity",
+          "description": "Classifies issues by severity or priority"
+        },
+        {
+          "name": "recommends-actions",
+          "description": "Recommends specific sync or update actions"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "name": "figma-prototype-checkout-flow",
+      "prompt": "/figma-prototype Add prototype connections for a 3-step checkout flow: cart → shipping → payment → confirmation",
+      "expected_output": "Prototype connection map, trigger types (on-click), animation settings, flow overview, smart animate recommendations",
+      "files": [],
+      "assertions": [
+        {
+          "name": "defines-connections",
+          "description": "Specifies prototype connections between frames"
+        },
+        {
+          "name": "specifies-triggers",
+          "description": "Defines interaction triggers (click, hover, etc.)"
+        },
+        {
+          "name": "includes-animation",
+          "description": "Recommends animation type or duration"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "name": "figma-component-library-design-system",
+      "prompt": "/figma-component-library Create a component library for a B2B SaaS design system — atoms, molecules, organisms",
+      "expected_output": "Component hierarchy (atoms → molecules → organisms), variant matrix for each component, auto-layout specifications, component property definitions",
+      "files": [],
+      "assertions": [
+        {
+          "name": "follows-atomic-hierarchy",
+          "description": "Organises components into atoms, molecules, organisms"
+        },
+        {
+          "name": "defines-variants",
+          "description": "Specifies variant properties for key components"
+        },
+        {
+          "name": "uses-component-properties",
+          "description": "Defines Figma component properties (boolean, text, instance swap)"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "name": "motion-design-page-transitions",
+      "prompt": "/motion-design Design micro-interactions and page transitions for a SaaS dashboard — loading states, hover effects, route transitions",
+      "expected_output": "Duration/easing scale, specific animation specs per interaction type, reduced motion fallbacks, CSS or Framer Motion code snippets",
+      "files": [],
+      "assertions": [
+        {
+          "name": "defines-easing-scale",
+          "description": "Defines duration and easing values as a system"
+        },
+        {
+          "name": "specifies-animations",
+          "description": "Provides specific animation specs for loading, hover, and transitions"
+        },
+        {
+          "name": "includes-reduced-motion",
+          "description": "Includes prefers-reduced-motion fallbacks"
+        },
+        {
+          "name": "includes-code",
+          "description": "Includes CSS or animation library code snippets"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "name": "presentation-design-pitch-deck",
+      "prompt": "/presentation-design Design a 10-slide pitch deck for a Series A SaaS startup — problem, solution, market, traction, team, ask",
+      "expected_output": "Slide system with layout templates, typography hierarchy, color usage rules, slide-by-slide content structure, visual design direction",
+      "files": [],
+      "assertions": [
+        {
+          "name": "defines-slide-system",
+          "description": "Defines reusable slide layout templates"
+        },
+        {
+          "name": "covers-required-slides",
+          "description": "Covers problem, solution, market, traction, team, and ask"
+        },
+        {
+          "name": "specifies-typography",
+          "description": "Specifies typography hierarchy for slides"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "name": "illustration-system-icon-set",
+      "prompt": "/illustration-system Design an icon system for a productivity app — 24px grid, outlined style, consistent stroke weight",
+      "expected_output": "Icon grid specification (24px base, padding, keyline shapes), stroke weight and corner radius rules, naming convention, SVG export guidelines, sample icons",
+      "files": [],
+      "assertions": [
+        {
+          "name": "defines-grid",
+          "description": "Specifies icon grid size and padding"
+        },
+        {
+          "name": "defines-style-rules",
+          "description": "Specifies stroke weight, corner radius, and visual style"
+        },
+        {
+          "name": "includes-naming",
+          "description": "Provides naming convention for the icon set"
+        },
+        {
+          "name": "includes-export-specs",
+          "description": "Includes SVG export or asset delivery guidelines"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "name": "video-script-product-demo",
+      "prompt": "/video-script Write a 90-second product demo video script for a project management SaaS — problem, solution, key features, CTA",
+      "expected_output": "Full script with scene descriptions, spoken narration, on-screen text notes, timing marks, and shot/visual direction notes",
+      "files": [],
+      "assertions": [
+        {
+          "name": "includes-full-script",
+          "description": "Produces complete spoken narration for the video"
+        },
+        {
+          "name": "includes-scene-directions",
+          "description": "Includes scene or visual direction notes"
+        },
+        {
+          "name": "hits-structure",
+          "description": "Covers problem, solution, features, and CTA"
+        },
+        {
+          "name": "includes-timing",
+          "description": "Includes timing marks or duration notes"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "name": "ab-variants-pricing-page",
+      "prompt": "/ab-variants Generate A/B test variants for a SaaS pricing page — test the CTA copy and plan hierarchy",
+      "expected_output": "2-3 distinct variants with hypothesis, specific copy/design changes per variant, success metric definition, and which variant is recommended as control",
+      "files": [],
+      "assertions": [
+        {
+          "name": "produces-variants",
+          "description": "Produces at least 2 meaningfully distinct design variants"
+        },
+        {
+          "name": "states-hypothesis",
+          "description": "States a testable hypothesis for each variant"
+        },
+        {
+          "name": "defines-success-metric",
+          "description": "Defines a measurable success metric for the test"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "name": "design-sprint-onboarding",
+      "prompt": "/design-sprint Run a 5-phase design sprint for redesigning a mobile app onboarding flow with 30% drop-off at step 3",
+      "expected_output": "5-phase sprint plan (Understand, Sketch, Decide, Prototype, Test) with specific activities, outputs, and timings per phase; HMW questions; sprint brief",
+      "files": [],
+      "assertions": [
+        {
+          "name": "covers-5-phases",
+          "description": "Covers all 5 design sprint phases"
+        },
+        {
+          "name": "includes-hmw-questions",
+          "description": "Generates How Might We questions"
+        },
+        {
+          "name": "includes-activities",
+          "description": "Specifies activities and outputs per phase"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "name": "social-analytics-instagram-report",
+      "prompt": "/social-analytics Generate an Instagram performance dashboard — reach, engagement rate, story completion, follower growth by content type",
+      "expected_output": "Dashboard layout with KPI cards, chart types for each metric, benchmark values, content type performance breakdown, actionable insights",
+      "files": [],
+      "assertions": [
+        {
+          "name": "defines-kpis",
+          "description": "Defines key metrics (reach, engagement rate, story completion, follower growth)"
+        },
+        {
+          "name": "specifies-charts",
+          "description": "Specifies appropriate chart types for each metric"
+        },
+        {
+          "name": "includes-benchmarks",
+          "description": "Includes benchmark or target values for metrics"
+        },
+        {
+          "name": "provides-insights",
+          "description": "Provides actionable insights from the analytics"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "name": "design-present-saas-ui",
+      "prompt": "/design-present Create an interactive HTML presentation showcasing a SaaS dashboard redesign — before/after comparison, design decisions",
+      "expected_output": "Interactive HTML presentation with slides, before/after visuals, design rationale per decision, navigation controls",
+      "files": [],
+      "assertions": [
+        {
+          "name": "produces-html",
+          "description": "Produces HTML presentation output"
+        },
+        {
+          "name": "includes-before-after",
+          "description": "Includes before/after comparison"
+        },
+        {
+          "name": "includes-rationale",
+          "description": "Explains design decisions and rationale"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "name": "gen-moodboard-saas-rebrand",
+      "prompt": "/gen-moodboard a brand refresh campaign for Nexus — a B2B analytics SaaS moving upmarket to enterprise",
+      "expected_output": "3 distinct visual directions with brand personality signals, visual language description, real-world references, and 4-6 AI image prompts per direction",
+      "files": [],
+      "assertions": [
+        {
+          "name": "produces-3-directions",
+          "description": "Produces exactly 3 meaningfully distinct visual directions"
+        },
+        {
+          "name": "addresses-brand-shift",
+          "description": "Addresses the upmarket/enterprise positioning shift in visual language"
+        },
+        {
+          "name": "includes-prompt-pack",
+          "description": "Each direction includes ready-to-use image prompts"
+        }
+      ]
     }
   ]
 }
