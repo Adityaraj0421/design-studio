@@ -2,6 +2,19 @@
 
 All notable changes to naksha are documented here.
 
+## [3.11.0] — 2026-03-16
+
+Framework Wing Completion — completes `framework-specialist.md` with three standard sections (Handoffs, Advanced Patterns, Full Coverage), upgrades the smoke line to 6 keywords, and adds four evals covering Vue, Svelte, Astro, and the design-to-framework chain.
+
+### Added
+- `framework-specialist.md` — added `## Handoffs` (Design System Lead, Frontend Developer, Design Manager handoff paths), `## Advanced Patterns` (compound components, polymorphic `as` prop, `cva` compound variants, Next.js Server/Client boundary, Astro island hydration strategy, Svelte 5 rune migration), `## Full Coverage` (5 framework scenarios: React+Tailwind dashboard, Vue product card, Svelte form, Next.js App Router page, Astro landing with React island)
+- Evals 80–83: `design-framework-vue`, `design-framework-svelte`, `design-framework-astro`, `design-to-framework-chain`
+
+### Updated
+- `scripts/behavioral-smoke.sh` — `design-framework-output.md` smoke line upgraded: 3 keywords → 6 (`component,tsx,props,tailwind,interface,cn`), min headers 2 → 3, min chars 150 → 300
+
+---
+
 ## [3.10.0] — 2026-03-16
 
 Print/PDF Wing — one new Print Designer role and three new commands covering the full print design lifecycle: document layout, single-artifact layout, and preflight audit.
