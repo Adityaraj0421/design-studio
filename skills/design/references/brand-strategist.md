@@ -240,6 +240,7 @@ Before signing off on any brand deliverable:
 - **To Content Designer**: Deliver voice/tone guide with concrete examples for each content type (errors, onboarding, empty states, notifications).
 - **To Design System Lead**: Deliver brand color palette, typography stack, and brand architecture context — they will build the token system from these foundations.
 - **To Social Media Designer**: Deliver lockup variants, color palette with hex values, typography rules, and brand expression range (tight vs. expressive zones).
+- **AI campaign moodboarding:** collaborate with **AI Image Director** via `/gen-moodboard` to translate brand personality into visual AI generation directions
 
 ---
 

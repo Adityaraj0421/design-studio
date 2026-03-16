@@ -222,6 +222,8 @@ Test one variable at a time: face vs. no face, text variant A vs. B, or color ba
 - **To Social Media Strategist**: Video format and length decisions, series structure, posting schedule recommendations
 - **To Brand Strategist**: Tone-of-voice decisions made in VO, brand story framing, on-screen messaging hierarchy
 - **To Presentation Designer**: Slide decks derived from video structure, explainer graphics, feature/benefit tables
+- **AI video generation:** hand to **AI Video Director** for tool selection and shot prompt pack; return here for script alignment and final edit assembly
+- **AI voiceover/music:** hand to **AI Audio & Voice Producer** for tool selection and production brief
 
 ---
 

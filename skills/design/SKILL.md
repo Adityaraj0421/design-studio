@@ -6,7 +6,8 @@ description: >
   Content Designer, Design System Lead, Motion Designer, Creative Director, Social Media Designer,
   Social Media Strategist, Social Media Copywriter, Growth/Analytics Specialist, Email Designer,
   Email Copywriter, Data Viz Designer, Dashboard Architect, Presentation Designer, Brand Strategist,
-  Illustration Director, Video/Content Producer) based on the task scope.
+  Illustration Director, Video/Content Producer, AI Image Director, AI Video Director,
+  AI Audio & Voice Producer, AI Prompt Engineer) based on the task scope.
   Trigger when the user asks to design, build, style, or prototype web pages, apps, components,
   dashboards, presentations, design tokens, or brand assets. Also trigger for Figma-to-code workflows,
   design system creation, responsive layouts, dark mode theming, accessibility audits, UX flows,
@@ -20,7 +21,12 @@ description: >
   illustrations, icon systems, icons, SVG assets, spot illustrations, style guide, video scripts,
   storyboards, video content, product demo video, explainer video, short-form video, reels script,
   youtube script, tiktok script, motion design, micro-interactions, page transitions, animation,
-  CSS animations, Lottie.
+  CSS animations, Lottie,
+  generate image, ai image, midjourney, dall-e, dall·e, ideogram, firefly, stable diffusion,
+  gen video, ai video, runway, kling, sora, pika, luma dream machine,
+  voiceover, voice gen, ai audio, elevenlabs, suno, murf,
+  ai prompt, prompt refine, moodboard, gen-moodboard, prompt-refine,
+  ai-generated image, ai-generated video, image generation, video generation.
   Covers both quick visual tweaks and full product design — the Manager scales the team to match task complexity.
 
   <example>
@@ -101,6 +107,31 @@ description: >
   <example>
   user: "Add micro-interactions and page transitions to our app"
   assistant: Activates Motion Designer, routes to /motion-design with duration/easing system
+  </example>
+
+  <example>
+  user: "Generate an on-brand image for our product launch campaign"
+  assistant: Routes to /gen-image with AI Image Director + AI Prompt Engineer
+  </example>
+
+  <example>
+  user: "Create a moodboard for our new campaign direction"
+  assistant: Routes to /gen-moodboard with AI Image Director + Brand Strategist
+  </example>
+
+  <example>
+  user: "Generate a 15-second product video for Instagram Reels"
+  assistant: Routes to /gen-video with AI Video Director + AI Prompt Engineer
+  </example>
+
+  <example>
+  user: "Write a voiceover for our product demo video"
+  assistant: Routes to /gen-audio with AI Audio & Voice Producer
+  </example>
+
+  <example>
+  user: "This Midjourney prompt isn't working, can you fix it?"
+  assistant: Routes to /prompt-refine with AI Prompt Engineer
   </example>
 ---
 

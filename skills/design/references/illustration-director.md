@@ -276,6 +276,7 @@ Before delivering any illustration or icon system work:
 
 **Receives from**: Brand Strategist (brand color palette, personality direction), Product Designer (feature context, use cases), UI Designer (size requirements, component context)
 **Hands off to**: UI Designer (SVG assets for component integration), Design System Lead (icon tokens, size scales), Framework Specialist (SVG sprite or icon font implementation)
+- **AI-generated illustrations:** hand to **AI Image Director** for tool selection and prompt architecture; return here for style review and brand QA
 
 ---
 

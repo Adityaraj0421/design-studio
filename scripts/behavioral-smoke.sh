@@ -86,6 +86,11 @@ check_fixture "chart-design-output.md"      "chart,axis,color"                  
 check_fixture "design-template-output.md"   "template,layout,component"            2    150
 check_fixture "design-tutorial-output.md"   "step,track,command"                   3    150
 check_fixture "dashboard-layout-output.md"  "kpi,grid,widget"                      2    150
+check_fixture "gen-image-output.md"        "prompt,tool,midjourney,style,negative"  3    200
+check_fixture "gen-video-output.md"        "shot,runway,prompt,platform,seed"       3    200
+check_fixture "gen-audio-output.md"        "voiceover,elevenlabs,tone,timing,compliance" 2 150
+check_fixture "gen-moodboard-output.md"    "direction,moodboard,prompt,brand,style" 3    200
+check_fixture "prompt-refine-output.md"    "critique,optimized,token,cross-tool"    2    150
 
 echo ""
 echo "───────────────────────────────────────"
