@@ -72,7 +72,7 @@ Copy `.github/copilot-instructions.md` to your project's `.github/` directory. C
 ## ⚡ Demo
 
 <div align="center">
-<img src="assets/demo.svg" alt="Naksha demo — building a pricing page" width="720">
+<img src="demos/demo.svg" alt="Naksha demo — building a pricing page" width="720">
 </div>
 
 <br>
@@ -83,7 +83,7 @@ Running `/design Build a pricing page with monthly/annual toggle` automatically 
 <summary><b>More examples</b></summary>
 
 <div align="center">
-<img src="assets/demo-commands.svg" alt="Naksha command examples — design-review, brand-kit, figma-create, design-sprint" width="820">
+<img src="demos/demo-commands.svg" alt="Naksha command examples — design-review, brand-kit, figma-create, design-sprint" width="820">
 </div>
 
 </details>
