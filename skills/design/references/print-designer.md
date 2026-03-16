@@ -329,16 +329,15 @@ Auto-capture running header text: `h1 { string-set: chapter-title content(); }`
 Personalized print (award certificates, letters, name badges) uses CSS custom properties as data tokens:
 
 ```css
-/* Template declares tokens */
+/* Template declares tokens — replaced via JS at render time */
 :root {
-  --recipient-name: "Recipient Name"; /* replaced at render time */
+  --recipient-name: "Recipient Name";
   --course-title: "Course Title";
   --issue-date: "Date";
 }
-.recipient { content: var(--recipient-name); }
 ```
 
-For JS-rendered VDP: set `document.documentElement.style.setProperty('--recipient-name', data.name)` before calling `window.print()`. QR/barcode: use a fixed-size `<div data-barcode="{{ barcode_value }}">` — populate via JS before print.
+For JS-rendered VDP: set `document.documentElement.style.setProperty('--recipient-name', data.name)` before calling `window.print()`. To display the value in the layout, target the element directly: `.recipient::before { content: var(--recipient-name); }`. QR/barcode: use a fixed-size `<div data-barcode="{{ barcode_value }}">` — populate via JS before print.
 
 ### Responsive → Print Degradation
 
@@ -353,7 +352,8 @@ One stylesheet, not two:
   .nav, .sidebar, .cta, button { display: none !important; }
   .print-only { display: block; }
   /* Expand URLs for printed links */
-  a[href]:not([href^="#"])::after { content: " [" attr(href) "]"; font-size: 8pt; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 8pt; color: #6b7280; }
+  a[href^="#"]::after, a[href^="mailto:"]::after { content: ""; }
   /* Force backgrounds to print */
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
