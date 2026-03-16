@@ -86,13 +86,12 @@ Define heading hierarchy: H1 = section title (24pt), H2 = subsection (18pt), H3 
 
 ```css
 @media print {
-  body { font-family: Georgia, 'Times New Roman', serif; font-size: 10pt; line-height: 1.5; color: #000; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 10pt; line-height: 1.5; color: #000;
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   h1 { font-family: 'Inter', Arial, sans-serif; font-size: 24pt; font-weight: 700; line-height: 1.2; }
   h2 { font-family: 'Inter', Arial, sans-serif; font-size: 18pt; font-weight: 600; }
   h3 { font-family: 'Inter', Arial, sans-serif; font-size: 14pt; font-weight: 600; }
   caption, .footnote { font-size: 8pt; color: #6b7280; }
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
 }
 ```
 
@@ -125,7 +124,7 @@ Output this checklist at the end of every `/pdf-report` response:
 - [ ] Widows/orphans: widows: 3; orphans: 3 set on body copy
 - [ ] Page numbers: counter(page) present in @page margin box
 - [ ] Running headers: string-set on H1 elements
-- [ ] print-color-adjust: exact on all background-color elements
+- [ ] print-color-adjust: exact set on body (inherits to all elements)
 ```
 
 ---
