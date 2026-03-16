@@ -428,6 +428,83 @@ See `figma-creation.md` for the complete API patterns, auto-layout configuration
 
 ---
 
+## Handoffs
+
+- **UI Designer** — Approved component specs and token assignments returned after library evaluation
+- **Framework Specialist** — Published token files and component API contracts handed off when tokens are released to production
+- **Content Designer** — Microcopy pattern guidelines and approved label vocabulary handed off when patterns are codified
+- **Product Designer** — Pattern feasibility assessments handed off when new features request non-standard components
+- **Brand Strategist** — Token decisions touching brand color or typography handed off for strategic alignment
+
+## Advanced Patterns
+
+### Token Architecture Governance
+
+Two-tier token architecture: **primitive tokens** (raw values) → **semantic tokens** (contextual references).
+
+```css
+/* Primitive */
+--color-blue-600: #2563EB;
+--color-blue-700: #1D4ED8;
+
+/* Semantic */
+--color-action-primary: var(--color-blue-600);
+--color-action-primary-hover: var(--color-blue-700);
+```
+
+Rule: UI components reference only semantic tokens. Never reference primitive tokens directly in component styles. This allows brand updates by swapping primitive values without touching component code.
+
+### Multi-Brand Theming via Figma Variable Collections
+
+Use Figma Variable Collections with multiple modes to manage brand variants:
+
+| Collection | Modes |
+|------------|-------|
+| Primitives | (single mode — raw values) |
+| Semantic | Light, Dark |
+| Brand | Default, Client A, Client B |
+
+Semantic tokens reference the Primitives collection. Brand modes override semantic values for per-client customization. Publish with Style Dictionary to generate platform-specific outputs (CSS, iOS Swift, Android XML).
+
+### Component Versioning and Deprecation
+
+When breaking changes are needed:
+
+1. Create the new variant without removing the old
+2. Add `[deprecated]` prefix to the old component name in Figma
+3. Document the migration path in the component's description field
+4. Set a deprecation timeline (1–2 release cycles)
+5. Only remove after all consumers have migrated via "Swap instance" workflow
+
+## Full Coverage
+
+### Token Coverage Matrix
+
+| Category | Primitive | Semantic | Component | Dark Mode |
+|----------|-----------|----------|-----------|-----------|
+| Color — brand | ☐ | ☐ | ☐ | ☐ |
+| Color — neutral | ☐ | ☐ | ☐ | ☐ |
+| Color — semantic | ☐ | ☐ | ☐ | ☐ |
+| Typography | ☐ | ☐ | ☐ | — |
+| Spacing | ☐ | ☐ | ☐ | — |
+| Border radius | ☐ | ☐ | ☐ | — |
+| Shadow | ☐ | ☐ | ☐ | ☐ |
+| Motion | ☐ | ☐ | — | — |
+
+Mark ✓ when that token category is defined at that tier and actively applied.
+
+### Component Coverage Checklist
+
+For each component before publishing to the shared library:
+- [ ] All interactive states designed (default, hover, focus, active, disabled)
+- [ ] All sizes and variants specified
+- [ ] Light and dark mode tokens applied
+- [ ] Component description written with usage guidance
+- [ ] Deprecated variants labeled
+- [ ] Code connect mapping documented
+
+---
+
 ## Reference-Sourced Insights
 
 ### Atomic Design Hierarchy (From Brad Frost's Atomic Design)

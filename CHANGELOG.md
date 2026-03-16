@@ -2,6 +2,19 @@
 
 All notable changes to naksha are documented here.
 
+## [3.15.0] — 2026-03-16
+
+Wing Completion Pass 2 — adds ## Handoffs + ## Advanced Patterns + ## Full Coverage to 5 role reference files.
+
+### Added
+- All 3 sections to: design-system-lead, figma-creation, growth-analytics-specialist,
+  social-media-copywriter, social-media-strategist
+
+### Updated
+- `meta/stats.json` — knowledge_lines ~11,915 → ~12,500
+
+---
+
 ## [3.14.0] — 2026-03-16
 
 Wing Completion Pass 1 — adds ## Handoffs section to 9 role reference files.

@@ -282,6 +282,72 @@ ACTIONS FOR NEXT WEEK:
 
 ---
 
+## Handoffs
+
+- **Product Designer** — Funnel drop-off analysis and friction point map handed off to inform next design iteration
+- **UX Designer** — User behavioral patterns and flow completion data handed off as context for UX decisions
+- **Framework Specialist** — Event tracking specifications (event names, properties, triggers) handed off for implementation
+- **UX Researcher** — Quantitative signals requiring qualitative investigation handed off for user research follow-up
+- **Brand Strategist** — Brand perception metrics and sentiment data handed off when campaign performance is reviewed
+
+## Advanced Patterns
+
+### Funnel Instrumentation with AARRR
+
+Map each SaaS funnel stage to instrumented events:
+
+| Stage | Key Events | Primary Metric |
+|-------|------------|---------------|
+| Acquisition | `page_view`, `signup_started` | Visit-to-signup rate |
+| Activation | `onboarding_completed`, `first_value_action` | Activation rate |
+| Retention | `session_started`, `feature_used` | D7 / D30 retention |
+| Revenue | `plan_upgraded`, `checkout_completed` | MRR, ARPU |
+| Referral | `invite_sent`, `referral_converted` | Viral coefficient |
+
+Each event must include: `user_id`, `session_id`, `timestamp`, `platform`, plus 2–3 domain-specific properties. Define the instrumentation spec before implementation begins — retrofitting events is expensive.
+
+### Cohort Segmentation Strategy
+
+Three cohort types for SaaS analysis:
+
+1. **Acquisition cohort** — grouped by signup date (e.g., "signed up March 2025"). Use for baseline retention analysis.
+2. **Behavioral cohort** — grouped by actions taken (e.g., "completed onboarding"). Use to reveal whether specific behaviors predict retention.
+3. **Feature cohort** — grouped by feature adoption (e.g., "used dashboard"). Use to measure feature-level impact on LTV.
+
+Rule: use acquisition cohorts for baseline, behavioral cohorts for product improvement prioritization, feature cohorts for feature-value validation.
+
+### A/B Test Design Principles
+
+Before running any test:
+
+1. **Define one primary metric** — secondary metrics are guardrails, not decision criteria
+2. **Calculate sample size** — use minimum detectable effect (MDE) of 10–20% relative change for most product tests
+3. **Set guardrail metrics** — 2–3 metrics that must not regress; if they break, stop the test regardless of the primary result
+4. **Minimum run time** — at least 1 full week to capture day-of-week effects; typically 2–4 weeks for significance
+
+## Full Coverage
+
+### Analytics Coverage Checklist
+
+For each product area, confirm instrumentation covers:
+- [ ] Entry point events (where users enter the flow)
+- [ ] Completion events (where users successfully exit)
+- [ ] Drop-off events (error states, exits before completion)
+- [ ] Feature usage events (key interactions within the flow)
+- [ ] Revenue events (upgrades, purchases, cancellations)
+
+### Metric-to-Decision Mapping
+
+| Metric Moves | Team Action |
+|-------------|-------------|
+| Activation rate drops >5% | UX Designer reviews onboarding flow |
+| D7 retention drops >3% | Product Designer audits core loop |
+| Conversion rate drops >10% | Run A/B test on checkout or upgrade flow |
+| Feature adoption <20% after 30 days | UX Researcher runs discovery interview |
+| Error rate increases >2× | Framework Specialist investigates |
+
+---
+
 ## Reference-Sourced Insights
 
 ### The Single Most Important Growth Question (From Reforge / Brian Balfour)

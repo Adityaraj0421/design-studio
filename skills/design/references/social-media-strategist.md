@@ -210,6 +210,86 @@ When they scroll: [Morning commute, lunch, evening wind-down]
 
 ---
 
+## Handoffs
+
+- **Social Media Designer** — Campaign creative brief (visual direction, format requirements, dimensions) handed off at campaign kickoff
+- **Social Media Copywriter** — Content brief (messaging pillars, audience, tone, post cadence) handed off at campaign kickoff
+- **Growth Analytics Specialist** — Campaign performance data and UTM tracking requirements handed off for attribution analysis
+- **Brand Strategist** — Campaign strategy touching brand positioning handed off for strategic alignment review
+- **Product Designer** — Social proof content requirements (testimonials, feature callouts) handed off when product milestones occur
+
+## Advanced Patterns
+
+### Campaign Architecture
+
+Map each campaign to its funnel stage:
+
+```
+Awareness → Consideration → Decision
+     ↓              ↓            ↓
+Brand stories   Feature demos   Testimonials
+Thought leader  Comparisons     Free trial CTAs
+Cultural hooks  Case studies    Limited offers
+```
+
+Each campaign needs content at all 3 stages. Awareness content should outproduce decision content 3:1 — most audiences are not yet ready to convert. Inverting this ratio creates audience fatigue and trust erosion.
+
+### Content Calendar Patterns
+
+The 3-tier content mix for sustainable posting:
+
+| Tier | Type | Frequency | Purpose |
+|------|------|-----------|---------|
+| Pillar | Long-form / flagship | 1–2× / week | Establishes authority; repurposed into derivatives |
+| Derivative | Excerpts, carousels, quotes | 3–4× / week | Extends pillar reach with lower production cost |
+| Reactive | Trend-jacks, replies, UGC | As needed | Maintains presence; signals brand personality |
+
+Never invert the pillar-to-derivative ratio. High-derivative, low-pillar strategies exhaust audiences.
+
+### Platform Algorithm Considerations
+
+| Platform | Reach Optimizers | Suppress |
+|----------|-----------------|---------|
+| LinkedIn | Native documents, text posts, early comments | Links in caption |
+| Instagram | Reels > Carousels > Single images | Text-heavy statics |
+| Twitter/X | Threads with media | Links in original tweet |
+| TikTok | Watch-through rate >80% | Low-energy first 2 seconds |
+
+## Full Coverage
+
+### Campaign Coverage Matrix
+
+For each active campaign, track content across funnel stages and platforms:
+
+| Platform | Awareness | Consideration | Conversion |
+|----------|-----------|---------------|------------|
+| LinkedIn | ☐ | ☐ | ☐ |
+| Instagram | ☐ | ☐ | ☐ |
+| Twitter/X | ☐ | ☐ | ☐ |
+| TikTok | ☐ | ☐ | ☐ |
+
+Mark ✓ when content is written, designed, and scheduled.
+
+### Launch Checklist
+
+Before any campaign goes live:
+- [ ] Creative assets approved by Brand Strategist
+- [ ] Copy approved by Social Media Copywriter
+- [ ] UTM parameters set for all links
+- [ ] Analytics events confirmed with Growth Analytics Specialist
+- [ ] Posting schedule added to content calendar
+- [ ] Team notified of go-live date
+
+### Post-Mortem Template
+
+After each campaign cycle:
+- **What worked:** Top 3 performing posts and why
+- **What didn't:** Bottom 3 performers and hypothesis
+- **Metric deltas:** Reach, engagement rate, click-through vs. targets
+- **Next cycle adjustments:** Specific changes to content mix, posting times, CTAs
+
+---
+
 ## Reference-Sourced Insights
 
 ### Audience Research Depth (From Buffer Strategy)

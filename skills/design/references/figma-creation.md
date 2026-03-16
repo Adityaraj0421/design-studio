@@ -694,6 +694,75 @@ async function createColorStyles(styles) {
 
 ---
 
+## Handoffs
+
+- **Figma Workflow** — Completed component sets handed off for file organization and naming standardization
+- **Design System Lead** — New component proposals with all required variants handed off for library evaluation
+- **UI Designer** — Published shared library components handed off when ready for use in screen design
+- **Framework Specialist** — Component structure documentation (variant names, prop mapping) handed off when dev handoff begins
+
+## Advanced Patterns
+
+### Variant Property Naming Convention
+
+Use `Property=Value` naming consistently across all component sets:
+
+```
+Type=Primary, Size=Large, State=Default
+Type=Primary, Size=Large, State=Hover
+Type=Secondary, Size=Medium, State=Disabled
+```
+
+Avoid boolean properties with custom names — use `State=On / State=Off` rather than `Checked=True/False`. Consistent property naming keeps variant lookups predictable for design handoff and code connect mapping.
+
+### Nested Component Architecture
+
+Build in three layers: atoms → molecules → organisms.
+
+- **Atoms** (Icon, Token, Badge): no nested components; primitive values only
+- **Molecules** (Button, Input, Tag): nest atoms; expose only the properties the molecule-level user needs
+- **Organisms** (Card, Form, Navigation): nest molecules; abstract internal complexity
+
+When nesting, use **expose nested instance properties** sparingly. Exposing too many nested props causes variant explosion. Only expose what the organism-level designer actually controls.
+
+### Auto-Layout Edge Cases
+
+Handle these explicitly in every component:
+
+| Scenario | Solution |
+|----------|----------|
+| Text wraps at narrow widths | Set `min-width` constraint; test at 160px and 320px |
+| Icon + label truncation | Use `text-overflow` on text layer; pin icon as absolute position |
+| Empty state (zero items) | Design explicit empty variant — containers must never collapse to 0px |
+| RTL layout | Mirror horizontal padding; test with `direction: RTL` on parent frame |
+
+## Full Coverage
+
+### Component Set Completeness Checklist
+
+Before publishing any component set to the shared library:
+- [ ] All states designed (default, hover, focus, active, disabled, loading if applicable)
+- [ ] All sizes designed (if size is a property)
+- [ ] Light and dark mode variants tested
+- [ ] Auto-layout applied at every level
+- [ ] Layer names match the design token / code component name
+- [ ] Component description written
+
+### Variant Matrix Coverage
+
+Test every property combination at least once before publishing. Minimum coverage: each value in each property × the default state of all other properties. Full combinatorial testing required for high-risk components (form inputs, navigation, modals).
+
+| Property A | Property B | Tested |
+|------------|------------|--------|
+| Type=Primary | State=Default | ☐ |
+| Type=Primary | State=Hover | ☐ |
+| Type=Primary | State=Disabled | ☐ |
+| Type=Secondary | State=Default | ☐ |
+| Type=Secondary | State=Hover | ☐ |
+| Type=Secondary | State=Disabled | ☐ |
+
+---
+
 ## Reference-Sourced Insights
 
 ### When to Start Creating Components (From Figma Best Practices)

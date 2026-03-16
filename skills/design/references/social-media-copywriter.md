@@ -248,6 +248,81 @@ Free templates → link below
 
 ---
 
+## Handoffs
+
+- **Social Media Designer** — Finalized copy strings with character counts handed off for template placement
+- **Social Media Strategist** — Approved copy variants handed off for platform scheduling with posting notes
+- **Brand Strategist** — Copy that introduces new brand voice territory handed off for approval before publication
+- **Content Designer** — Evergreen copy patterns that should be systematized handed off for the content design library
+- **UX Researcher** — Copy hypothesis results (which hooks performed) handed off as input for future research
+
+## Advanced Patterns
+
+### Hook Formulas by Platform
+
+**LinkedIn:** Authority opener + insight + implication
+> "After analyzing 500 SaaS onboarding flows, the #1 drop-off point isn't the form — it's the confirmation email. Here's what we changed."
+
+**Instagram:** Curiosity gap + visual hook + caption resolution
+> "This one design decision added $47K MRR. (Swipe to see what we changed)"
+
+**Twitter/X:** Bold claim → evidence → CTA
+> "Most SaaS signup forms are hurting conversion. Thread: 5 specific changes that increased ours by 34% 🧵"
+
+**TikTok:** Immediate hook in first 2 seconds + educational arc + soft CTA
+> "POV: Your form has 8 fields and wonders why people bounce. Here's the 3-field version that converted 2× better."
+
+### A/B Copy Variant Design
+
+Vary one element at a time per test:
+
+| Variable | Option A | Option B |
+|----------|----------|----------|
+| Hook type | Question | Bold claim |
+| CTA verb | "Get started" | "Try free" |
+| Benefit framing | Feature-led | Outcome-led |
+| Tone | Formal | Conversational |
+
+Measure engagement rate (likes + comments + shares / impressions) for awareness content; click-through rate for conversion content.
+
+### CTA Hierarchy
+
+Every post needs one clear primary action:
+
+| Content Type | Primary CTA | Soft CTA |
+|-------------|-------------|----------|
+| Awareness | Save / Share | Follow |
+| Engagement | Comment | Like |
+| Consideration | Click link | Save |
+| Conversion | Sign up | Learn more |
+
+Never ask for two actions of equal weight in one post — it splits attention and reduces both.
+
+## Full Coverage
+
+### Platform × Copy-Type Coverage Matrix
+
+For each content calendar cycle, track coverage:
+
+| Platform | Awareness | Engagement | Consideration | Conversion |
+|----------|-----------|------------|---------------|------------|
+| LinkedIn | ☐ | ☐ | ☐ | ☐ |
+| Instagram | ☐ | ☐ | ☐ | ☐ |
+| Twitter/X | ☐ | ☐ | ☐ | ☐ |
+| TikTok | ☐ | ☐ | ☐ | ☐ |
+
+Mark ✓ when copy is written, reviewed, and scheduled for that cell.
+
+### Tone Calibration Checklist
+
+Before publishing, verify tone matches platform norms:
+- [ ] **LinkedIn**: Professional but not stiff; first-person narrative; concrete metrics
+- [ ] **Instagram**: Aspirational but authentic; visual-first framing; 3–5 hashtags
+- [ ] **Twitter/X**: Concise and confident; thread if >280 chars; minimal hashtags
+- [ ] **TikTok**: Conversational; fast-paced; hook before context; trending audio reference if applicable
+
+---
+
 ## Reference-Sourced Insights
 
 ### Hook Copy from Real Audience Language (From Buffer Strategy)
