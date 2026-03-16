@@ -30,13 +30,23 @@
 
 ### Claude Code (full plugin — 32 commands, agents, hooks)
 
+**Option A — Marketplace install (recommended, Claude Code 2.1.72+)**
+
+In Claude Code, run:
+```
+/plugin marketplace add https://github.com/Adityaraj0421/naksha-studio.git
+/plugin install naksha@naksha
+```
+
+**Option B — Git clone (older versions / manual setup)**
+
 ```bash
 git clone https://github.com/Adityaraj0421/naksha-studio.git ~/.claude/plugins/naksha
 ```
 
-> **Important:** The folder must be named `naksha` — not `naksha-studio` or anything else. Claude Code uses the folder name as the plugin identifier.
+> **Important:** The folder must be named `naksha` — not `naksha-studio` or anything else.
 
-Then try:
+Then restart Claude Code and try:
 ```
 /design Build a landing page for a SaaS analytics product
 ```
@@ -894,6 +904,13 @@ Checks: metadata consistency (`meta/stats.json` vs filesystem vs README badges),
 
 ## 📦 Installation
 
+**Marketplace install (Claude Code 2.1.72+):**
+```
+/plugin marketplace add https://github.com/Adityaraj0421/naksha-studio.git
+/plugin install naksha@naksha
+```
+
+**Git clone (manual / older versions):**
 ```bash
 git clone https://github.com/Adityaraj0421/naksha-studio.git ~/.claude/plugins/naksha
 ```
