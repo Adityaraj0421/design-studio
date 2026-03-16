@@ -452,6 +452,114 @@ When showing cached data, always indicate its age:
 
 ---
 
+## Advanced Patterns
+
+### Drill-Through Navigation
+
+KPI card or chart element links to a detail page without a full page reload. Implementation pattern:
+- Capture click on the KPI card or chart data point
+- Use `history.pushState({ metric: 'mrr', period: '30d' }, '', '/dashboard/mrr')` to update the URL
+- Swap the main content area with the detail view (hide `.kpi-row`, `.chart-row`; show `.detail-panel`)
+- Add a breadcrumb ("← Dashboard / MRR Detail") so users can navigate back
+- Preserve all active filter state in URL params so deep links work
+
+### Real-Time Data Refresh
+
+**Polling (simple, works anywhere):** `setInterval(() => fetchAndRender(), 30000)` — swap skeleton loader back in, fetch, replace. Use for dashboards where near-real-time (30s–2min lag) is acceptable.
+
+**WebSocket (low latency):** `const ws = new WebSocket('wss://...')` — push updates to only the changed KPI cards. Use only when the server supports it and sub-5s latency is required (operational/monitoring dashboards).
+
+**Skeleton-to-content transition:** On refresh trigger, add `.loading` class (restores shimmer animation) → fetch data → remove `.loading` → update values. Never blank the whole dashboard.
+
+### Cross-Filter Coordination
+
+When one chart is clicked, it filters all sibling charts. Pattern:
+1. Maintain a shared `activeFilters` object at the dashboard level
+2. Each chart registers a `render(filters)` function
+3. On chart click: update `activeFilters`, call `render(filters)` on all registered charts
+4. Avoid circular update loops — clicks only propagate downward (chart → filter state → re-render), never back up
+
+### Progressive Disclosure
+
+For dense operational dashboards where mobile viewport can't show everything:
+- Summary card (always visible): metric name, current value, status badge
+- Expandable detail panel: trend chart, breakdown table, last 5 events
+- Use `aria-expanded="false"` on the trigger, toggle to `"true"` on open
+- Default all panels collapsed on mobile (< 768px), expanded on desktop
+
+---
+
+## Full Coverage
+
+### Dashboard Type Worked Scenarios
+
+Use these as reference scenarios — one per type — when a user doesn't specify the dashboard type:
+
+**Analytics — SaaS MRR Dashboard**
+- Level 1 (KPI row): MRR ($84,231 +12%), Churn (1.8% −0.3pp), Active Users (2,341 +8%), Avg Revenue Per User ($36.01 +4%)
+- Level 2 (charts): Primary (2/3) — MRR trend line chart 12 months. Secondary (1/3) — Churn rate vs industry benchmark grouped bar
+- Level 3 (table): Top 20 accounts by MRR, columns: Account, Plan, MRR, Joined, Trend
+
+**Operational — API Monitoring**
+- Level 1: P99 Latency (142ms ✅), Error Rate (0.03% ✅), Uptime (99.97% ✅), Active Requests (1,847)
+- Level 2: Primary — Request volume timeline (last 24h, 5-min buckets). Secondary — Error type breakdown donut
+- Incident feed below charts: timestamp, severity badge, description, status
+
+**Executive — Weekly Business Review**
+- Four oversized KPIs only: Revenue (no chart behind it), NPS, CAC, Runway
+- Sparklines inline with each KPI (7-day mini trend)
+- No table. No filter bar. One export button.
+
+**Admin — E-Commerce Orders**
+- Sidebar with filter panel (status, date range, fulfilment centre)
+- Table-primary layout: Order ID, Customer, Items, Total, Status, Fulfilment
+- Bulk action toolbar appears on row selection (checkboxes)
+- No chart row — operational data doesn't need trend visualization
+
+**Monitoring — Infrastructure Health**
+- Full-width timeline bar (service × time grid, color-coded: green/amber/red)
+- Alert log: severity, service, message, timestamp, acknowledge button
+- No KPI row — status replaces metrics
+
+### Empty / Loading / Error States
+
+Every dashboard component must handle three non-data states. These are consistently missed:
+
+**Empty state** (no data for selected period):
+```html
+<div class="empty-state">
+  <p>No data for the selected period.</p>
+  <button onclick="resetFilters()">Reset filters</button>
+</div>
+```
+Never show blank space or a zero-value KPI card without explanation.
+
+**Loading state**: skeleton loaders with `@keyframes shimmer` — same dimensions as loaded content. Swap `.loading` class on and off; never blank the container.
+
+**Error state**: Inline error banner at the top of the affected section, not a full-page error:
+```html
+<div class="error-banner" role="alert">
+  Failed to load chart data. <button onclick="retryFetch()">Retry</button>
+</div>
+```
+
+### Mobile Dashboard Degradation (375px)
+
+At 375px viewport width, apply these layout rules (controlled by CSS breakpoints, not JS):
+- Sidebar: `display: none` + show hamburger button in topbar
+- KPI row: `grid-template-columns: 1fr` (single column)
+- Chart row: each chart `width: 100%`, tick density reduced to 4
+- Tables: `overflow-x: auto` on `.table-section`, `white-space: nowrap` on cells, pin first column with `position: sticky; left: 0`
+
+### Export Patterns
+
+Add these only when explicitly requested — don't include by default:
+- **Table CSV**: `const blob = new Blob([csvString], { type: 'text/csv' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'export.csv'; a.click();`
+- **Chart PNG**: `canvas.toDataURL('image/png')` — wrap in a download anchor
+- **Print/PDF**: `window.print()` + `@media print` stylesheet that hides sidebar, topbar, filter bar; forces single-column layout
+
+---
+
 ## Reference-Sourced Insights
 
 ### Data-Ink Ratio: Stripping Visual Noise (From Geckoboard)
