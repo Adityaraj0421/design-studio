@@ -2187,6 +2187,134 @@
           "description": "Checks whether the chart reinforces or conflicts with the CAC, ROAS, and conversion rate KPI cards"
         }
       ]
+    },
+    {
+      "id": 76,
+      "name": "pdf-report-generation",
+      "prompt": "/pdf-report Q4 Annual Report for Lumina SaaS — 12-page multi-section report, client-facing, full-color",
+      "expected_output": "Multi-page HTML document with CSS @page rules for named pages (cover, toc, body, back), master template structure, typography system for print, page break rules, widows/orphans, running headers/footers via @page margin boxes, and a preflight checklist.",
+      "files": [
+        "commands/pdf-report.md",
+        "skills/design/references/print-designer.md"
+      ],
+      "assertions": [
+        {
+          "name": "defines-named-pages",
+          "description": "CSS @page rules defined for named pages: cover, toc, body, and back"
+        },
+        {
+          "name": "has-typography-system",
+          "description": "Print typography system defined with pt-based sizes, serif body font, and line-height for print"
+        },
+        {
+          "name": "has-page-break-rules",
+          "description": "break-before: page on chapter H1s and break-inside: avoid on figures/tables"
+        },
+        {
+          "name": "has-widows-orphans",
+          "description": "widows and orphans properties set on body copy paragraphs"
+        },
+        {
+          "name": "outputs-preflight-checklist",
+          "description": "Response includes a print preflight checklist covering bleed, CMYK, fonts, page breaks, and page numbers"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "name": "print-layout-business-card",
+      "prompt": "/print-layout Business card for Lumina SaaS — 85×54mm, front and back, full bleed, coated finish",
+      "expected_output": "Self-contained HTML/CSS for a business card with artboard at 91×60mm (bleed), CSS variables for trim/bleed/safe dimensions, content constrained to safe zone, CMYK-documented brand colors, minimum font sizes met, both faces (front and back) output, and a preflight checklist.",
+      "files": [
+        "commands/print-layout.md",
+        "skills/design/references/print-designer.md"
+      ],
+      "assertions": [
+        {
+          "name": "defines-bleed-correctly",
+          "description": "Artboard dimensions are trim + 3mm bleed on all sides (91×60mm for 85×54mm trim)"
+        },
+        {
+          "name": "constrains-content-to-safe-zone",
+          "description": "Live content (text, logos) constrained to safe zone: 3mm inside trim"
+        },
+        {
+          "name": "documents-cmyk-colors",
+          "description": "Brand colors have CMYK breakdown documented in CSS comments (C:X M:X Y:X K:X format)"
+        },
+        {
+          "name": "meets-minimum-font-sizes",
+          "description": "All font sizes meet minimums: body/name 8pt+, labels 7pt minimum"
+        },
+        {
+          "name": "outputs-both-faces",
+          "description": "Both front and back faces are included in the output"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "name": "print-audit-standalone",
+      "prompt": "/print-audit Invoice HTML: uses rgb(30, 58, 95) for header background, font-family: Arial, no bleed or safe zone defined, no page break rules — no brand context provided",
+      "expected_output": "Phase 1: bleed missing flagged with fix, RGB color not CMYK-documented flagged, Arial without @font-face flagged, page break rules missing flagged. Phase 2 skipped with invitation message containing brand-fit. Rewrite block with corrected CSS.",
+      "files": [
+        "commands/print-audit.md",
+        "skills/design/references/print-designer.md"
+      ],
+      "assertions": [
+        {
+          "name": "flags-missing-bleed",
+          "description": "Phase 1 flags missing bleed definition and provides a specific fix (artboard dimensions + negative margin pattern)"
+        },
+        {
+          "name": "flags-rgb-color",
+          "description": "Phase 1 flags the rgb() color as not CMYK-safe and recommends a hex equivalent with CMYK documentation"
+        },
+        {
+          "name": "flags-font-embed",
+          "description": "Phase 1 flags Arial without @font-face and provides the corrected @font-face declaration"
+        },
+        {
+          "name": "skips-phase-2",
+          "description": "Phase 2 is explicitly skipped because no brand context was provided; skip message contains the word brand-fit"
+        },
+        {
+          "name": "outputs-rewrite-block",
+          "description": "Response includes a corrected CSS rewrite block with /* FIX: */ comments on changed lines"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "name": "print-audit-with-brand",
+      "prompt": "/print-audit Brochure layout CSS: tri-fold DL, bleed defined at 3mm, uses #1e40af for header (Lumina brand navy is #1e3a5f), font-family: Inter but no @font-face — brand context: Lumina navy #1e3a5f, orange #ff8000, Inter typeface",
+      "expected_output": "Phase 1: bleed passes, font-embed flagged (no @font-face for Inter). Phase 2 runs: color accuracy flagged (#1e40af vs #1e3a5f), typography match confirmed direction but @font-face missing flagged. Rewrite block corrects both Phase 1 and Phase 2 issues.",
+      "files": [
+        "commands/print-audit.md",
+        "skills/design/references/print-designer.md"
+      ],
+      "assertions": [
+        {
+          "name": "passes-bleed-check",
+          "description": "Phase 1 bleed check passes because bleed is defined at 3mm"
+        },
+        {
+          "name": "flags-font-embed-missing",
+          "description": "Phase 1 flags Inter used without @font-face declaration"
+        },
+        {
+          "name": "runs-phase-2",
+          "description": "Phase 2 runs (not skipped) because brand context was provided"
+        },
+        {
+          "name": "flags-color-accuracy",
+          "description": "Phase 2 flags the color mismatch between #1e40af (used) and #1e3a5f (brand standard)"
+        },
+        {
+          "name": "outputs-rewrite-block",
+          "description": "Rewrite block addresses both the missing @font-face and the color mismatch with /* FIX: */ comments"
+        }
+      ]
     }
   ]
 }
