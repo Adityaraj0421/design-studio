@@ -2,6 +2,19 @@
 
 All notable changes to naksha are documented here.
 
+## [3.12.0] — 2026-03-16
+
+Quality Infrastructure — achieves 100% smoke fixture coverage (22/42 → 42/42) across all 42 commands and fills eval gaps for under-tested commands, growing the eval suite from 84 to 110.
+
+### Added
+- 21 new smoke fixtures covering: ab-variants, component-docs, design-handoff, design-present, design-sprint, ux-audit, figma-create, figma-prototype, figma-responsive, figma-sync, figma-component-library, social-content, social-campaign, social-analytics, brand-kit, brand-strategy, illustration-system, motion-design, presentation-design, site-to-figma, video-script
+- 26 new evals (ids 84–109): +2 for commands at 0 evals (design-handoff, design-present, design-sprint, figma-component-library, figma-prototype, brand-strategy), +1 for 14 commands at 1 eval
+
+### Updated
+- `scripts/behavioral-smoke.sh` — 21 new `check_fixture` lines; smoke coverage 22/42 → 42/42 (100%)
+
+---
+
 ## [3.11.0] — 2026-03-16
 
 Framework Wing Completion — completes `framework-specialist.md` with three standard sections (Handoffs, Advanced Patterns, Full Coverage), upgrades the smoke line to 6 keywords, and adds four evals covering Vue, Svelte, Astro, and the design-to-framework chain.

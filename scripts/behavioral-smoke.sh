@@ -96,6 +96,27 @@ check_fixture "data-viz-audit-output.md"   "chart-type,palette,annotation,colorb
 check_fixture "pdf-report-output.md"       "cover,toc,typography,page-break,widows,preflight,@page"                       3 200
 check_fixture "print-layout-output.md"     "bleed,safe-zone,cmyk,trim,grid,typography,preflight"                          3 200
 check_fixture "print-audit-output.md"      "bleed,safe-zone,cmyk,font-embed,page-break,brand-fit,rewrite"                 3 200
+check_fixture "ab-variants-output.md"             "variant,hypothesis,control,treatment,conversion,metric"             3    300
+check_fixture "component-docs-output.md"          "component,props,usage,accessibility,variant,example"               3    300
+check_fixture "design-handoff-output.md"          "spec,token,spacing,breakpoint,component,developer"                 3    300
+check_fixture "design-present-output.md"          "slide,narrative,decision,rationale,stakeholder,outcome"            3    300
+check_fixture "design-sprint-output.md"           "sprint,hmw,prototype,vote,map,insight"                             3    300
+check_fixture "ux-audit-output.md"                "friction,heuristic,severity,recommendation,accessibility,finding"  3    300
+check_fixture "figma-create-output.md"            "frame,component,layer,autolayout,variant,wireframe"                3    300
+check_fixture "figma-prototype-output.md"         "flow,interaction,trigger,transition,hotspot,prototype"             3    300
+check_fixture "figma-responsive-output.md"        "breakpoint,mobile,tablet,desktop,constraint,responsive"            3    300
+check_fixture "figma-sync-output.md"              "token,drift,mismatch,sync,variable,component"                      3    300
+check_fixture "figma-component-library-output.md" "library,component,variant,token,atom,organism"                     3    300
+check_fixture "social-content-output.md"          "caption,hook,carousel,hashtag,cta,engagement"                     3    300
+check_fixture "social-campaign-output.md"         "campaign,platform,audience,creative,schedule,objective"            3    300
+check_fixture "social-analytics-output.md"        "reach,engagement,impression,conversion,benchmark,insight"          3    300
+check_fixture "brand-kit-output.md"               "palette,typography,logo,token,guideline,color"                     3    300
+check_fixture "brand-strategy-output.md"          "positioning,voice,audience,differentiation,value,brand"            3    300
+check_fixture "illustration-system-output.md"     "style,icon,illustration,grid,stroke,color"                         3    300
+check_fixture "motion-design-output.md"           "animation,duration,easing,transition,keyframe,motion"              3    300
+check_fixture "presentation-design-output.md"     "slide,deck,narrative,layout,typography,visual"                     3    300
+check_fixture "site-to-figma-output.md"           "capture,layer,component,token,spacing,import"                      3    300
+check_fixture "video-script-output.md"            "scene,voiceover,shot,script,hook,duration"                         3    300
 
 echo ""
 echo "───────────────────────────────────────"
