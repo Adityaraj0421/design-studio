@@ -47,18 +47,18 @@ Check:
 
 Output using this exact format (the word **bleed** and **safe-zone** must appear):
 ```
-### bleed + safe-zone check
+**bleed + safe-zone check**
 
 ✅ bleed: 3mm defined on all edges (artboard 91 × 60mm, trim 85 × 54mm)
 ✅ safe-zone: content area inside 3mm safe zone
 ```
 or:
 ```
-### bleed + safe-zone check
+**bleed + safe-zone check**
 
 ❌ bleed: Not defined. Background stops at trim edge — white gap will appear after cutting.
    Fix: Set artboard to trim + 6mm (e.g., 91 × 60mm for a 85 × 54mm business card).
-   Apply: background-layer { margin: calc(-1 * var(--bleed)); padding: var(--bleed); }
+   Apply: .background-layer { position: absolute; inset: 0; }
 
 ❌ safe-zone: Logo at 1mm from trim edge — will be cut off.
    Fix: Move all live content to at least 3mm inside trim.
@@ -75,7 +75,7 @@ Scan all color values. Flag any that have not been CMYK-verified:
 
 Output (the word **cmyk** must appear in this section heading):
 ```
-### cmyk color audit
+**cmyk color audit**
 
 ❌ --brand-blue: #0000ff — no CMYK documentation. Pure web blue converts to C:100 M:100 Y:0 K:0,
    which prints as purple-blue on press. Use a CMYK-safe alternative:
@@ -96,7 +96,7 @@ Check:
 
 Output (the word **font-embed** must appear in this section heading):
 ```
-### font-embed audit
+**font-embed audit**
 
 ❌ font-embed: font-family: Arial — no @font-face declaration found.
    Arial may not embed in CSS-to-PDF workflows. Fix:
@@ -104,7 +104,7 @@ Output (the word **font-embed** must appear in this section heading):
      font-family: 'Inter';
      src: url('/fonts/Inter-Regular.woff2') format('woff2');
      font-weight: 400;
-     font-display: block;
+     font-display: block; /* print/PDF: block ensures font loads before capture; use swap only for live web */
    }
    body { font-family: 'Inter', Arial, sans-serif; }
 ```
@@ -120,7 +120,7 @@ For multi-page documents: check `break-before: page` on section starts, `widows`
 
 Output (the word **page-break** must appear in this section heading):
 ```
-### page-break + flow audit
+**page-break + flow audit**
 
 ❌ page-break: No break-before: page on chapter elements — sections will flow
    continuously without forced page breaks.
@@ -162,7 +162,7 @@ The word **rewrite** must appear in the section heading.
 Format: fenced CSS block with `/* FIX: [reason] */` comments on changed lines.
 
 ```
-### rewrite
+**rewrite**
 
 ```css
 :root {
@@ -181,13 +181,13 @@ Format: fenced CSS block with `/* FIX: [reason] */` comments on changed lines.
   font-family: 'Inter';
   src: url('/fonts/Inter-Regular.woff2') format('woff2');
   font-weight: 400;
-  font-display: block;
+  font-display: block; /* print/PDF: block ensures font loads before capture; use swap only for live web */
 }
 
 .background-layer {
-  /* FIX: Extended background to bleed edge (was stopping at trim) */
-  margin: calc(-1 * var(--bleed));
-  padding: var(--bleed);
+  /* FIX: Extended background to bleed edge via two-layer architecture */
+  position: absolute;
+  inset: 0; /* fills artboard including bleed — no negative margin needed */
   background: var(--brand-primary);
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
