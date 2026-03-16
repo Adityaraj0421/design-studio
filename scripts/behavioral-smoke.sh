@@ -121,6 +121,7 @@ check_fixture "lint-design-output.md"             "lint,orphan,spacing,contrast,
 check_fixture "design-critique-output.md"         "heuristic,critique,visibility,feedback,usability,recommendation"   3    300
 check_fixture "design-qa-output.md"               "responsive,token,breakpoint,compliance,state,score"                3    300
 check_fixture "accessibility-audit-output.md"     "wcag,contrast,aria,keyboard,semantic,violation"                    3    300
+check_fixture "template-gallery-output.md"        "landing-page,dashboard,pricing,ecommerce,Try:"                     2    200
 
 echo ""
 echo "───────────────────────────────────────"
