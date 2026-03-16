@@ -2431,6 +2431,344 @@
           "description": "Output includes setup instructions with an npm install command for required packages"
         }
       ]
+    },
+    {
+      "id": 84,
+      "name": "design-handoff-developer-package",
+      "command": "/design-handoff",
+      "role": "skills/design/references/deployment.md",
+      "prompt": "/design-handoff — Generate a developer handoff package for the Lumina SaaS onboarding flow including specs, tokens, and component inventory",
+      "assertions": [
+        {"name": "outputs-spec-document", "description": "A design spec document is produced with measurements and layout annotations"},
+        {"name": "includes-token-references", "description": "Design tokens are referenced with their CSS variable names"},
+        {"name": "lists-components-used", "description": "Components used in the design are listed with their names"},
+        {"name": "includes-breakpoint-specs", "description": "Responsive breakpoints are specified for the layout"}
+      ]
+    },
+    {
+      "id": 85,
+      "name": "design-handoff-token-export",
+      "command": "/design-handoff",
+      "role": "skills/design/references/deployment.md",
+      "prompt": "/design-handoff tokens — Export the Lumina SaaS design token set with values for developers",
+      "assertions": [
+        {"name": "exports-color-tokens", "description": "Color tokens are exported with their hex or hsl values"},
+        {"name": "exports-spacing-tokens", "description": "Spacing tokens are exported with their pixel values"},
+        {"name": "exports-typography-tokens", "description": "Typography tokens include font family, size, and weight"},
+        {"name": "developer-notes-included", "description": "Developer implementation notes are included in the handoff"}
+      ]
+    },
+    {
+      "id": 86,
+      "name": "design-present-stakeholder-review",
+      "command": "/design-present",
+      "role": "skills/design/references/product-designer.md",
+      "prompt": "/design-present — Create a stakeholder presentation for the Lumina SaaS onboarding redesign",
+      "assertions": [
+        {"name": "slide-narrative-present", "description": "A slide-by-slide narrative structure is produced"},
+        {"name": "design-rationale-explained", "description": "Design decisions are explained with rationale for each key choice"},
+        {"name": "stakeholder-questions-anticipated", "description": "Likely stakeholder questions are identified and pre-addressed"},
+        {"name": "outcome-goals-stated", "description": "Expected outcomes or success metrics from the design are stated"}
+      ]
+    },
+    {
+      "id": 87,
+      "name": "design-present-exec-walkthrough",
+      "command": "/design-present",
+      "role": "skills/design/references/product-designer.md",
+      "prompt": "/design-present executive — Prepare a C-suite walkthrough of the Lumina SaaS Q1 design strategy",
+      "assertions": [
+        {"name": "executive-summary-included", "description": "An executive summary or key takeaways section is included"},
+        {"name": "business-impact-framed", "description": "Design changes are framed in terms of business impact or metrics"},
+        {"name": "visual-hierarchy-described", "description": "Visual hierarchy and layout choices are described"},
+        {"name": "next-steps-defined", "description": "Next steps or decisions required from stakeholders are defined"}
+      ]
+    },
+    {
+      "id": 88,
+      "name": "design-sprint-problem-framing",
+      "command": "/design-sprint",
+      "role": "skills/design/references/ux-researcher.md",
+      "prompt": "/design-sprint — Facilitate a design sprint for Lumina SaaS checkout abandonment problem",
+      "assertions": [
+        {"name": "sprint-goal-defined", "description": "A clear sprint goal or challenge statement is produced"},
+        {"name": "hmw-questions-generated", "description": "How Might We questions are generated from the problem space"},
+        {"name": "user-journey-mapped", "description": "A user journey or problem map is included in the sprint output"},
+        {"name": "insight-themes-identified", "description": "Key insight themes from research or assumptions are identified"}
+      ]
+    },
+    {
+      "id": 89,
+      "name": "design-sprint-solution-sketch",
+      "command": "/design-sprint",
+      "role": "skills/design/references/ux-researcher.md",
+      "prompt": "/design-sprint solutions — Generate solution sketches and voting protocol for the Lumina SaaS checkout sprint",
+      "assertions": [
+        {"name": "solution-concepts-generated", "description": "Multiple solution concepts or sketch ideas are produced"},
+        {"name": "voting-criteria-defined", "description": "Criteria or process for voting on solutions is defined"},
+        {"name": "prototype-scope-defined", "description": "The prototype scope for the sprint is specified"},
+        {"name": "sprint-phases-outlined", "description": "A phase or day-by-day structure for the sprint is outlined"}
+      ]
+    },
+    {
+      "id": 90,
+      "name": "figma-component-library-atoms",
+      "command": "/figma-component-library",
+      "role": "skills/design/references/design-system-lead.md",
+      "prompt": "/figma-component-library atoms — Build the atomic component layer for the Lumina SaaS design system in Figma",
+      "assertions": [
+        {"name": "atom-components-defined", "description": "Atomic components such as Button and Input are specified with their properties"},
+        {"name": "token-usage-documented", "description": "How design tokens map to component properties is documented"},
+        {"name": "figma-structure-described", "description": "Figma file structure including pages and frames is described"},
+        {"name": "naming-convention-stated", "description": "Component naming conventions are specified"}
+      ]
+    },
+    {
+      "id": 91,
+      "name": "figma-component-library-variants",
+      "command": "/figma-component-library",
+      "role": "skills/design/references/design-system-lead.md",
+      "prompt": "/figma-component-library variants — Define the variant matrix and organism components for Lumina SaaS in Figma",
+      "assertions": [
+        {"name": "variant-properties-defined", "description": "Variant properties and their allowed values are listed for key components"},
+        {"name": "organism-components-present", "description": "Higher-level organism components are included beyond atoms and molecules"},
+        {"name": "component-documentation-included", "description": "Component descriptions or usage notes are included in the output"},
+        {"name": "library-publish-steps-included", "description": "Steps for publishing the component library to the team are included"}
+      ]
+    },
+    {
+      "id": 92,
+      "name": "figma-prototype-checkout-flow",
+      "command": "/figma-prototype",
+      "role": "skills/design/references/figma-workflow.md",
+      "prompt": "/figma-prototype — Build an interactive checkout flow prototype in Figma for Lumina SaaS usability testing",
+      "assertions": [
+        {"name": "flow-steps-enumerated", "description": "Checkout flow steps are enumerated in sequence"},
+        {"name": "interactions-specified", "description": "Interaction types such as click and hover are specified for each trigger point"},
+        {"name": "transition-types-defined", "description": "Transition animations between screens are defined with duration and easing"},
+        {"name": "error-states-included", "description": "Error or validation states are included in the prototype specification"}
+      ]
+    },
+    {
+      "id": 93,
+      "name": "figma-prototype-onboarding",
+      "command": "/figma-prototype",
+      "role": "skills/design/references/figma-workflow.md",
+      "prompt": "/figma-prototype — Create an onboarding flow prototype in Figma for Lumina SaaS with branching paths",
+      "assertions": [
+        {"name": "onboarding-screens-listed", "description": "Onboarding screens are listed in sequence with screen names"},
+        {"name": "hotspot-locations-described", "description": "Hotspot locations or trigger areas are described for each screen"},
+        {"name": "branching-flows-handled", "description": "Branching paths such as skip and back are included in the flow"},
+        {"name": "prototype-testing-notes", "description": "Notes for testing or presenting the prototype are included"}
+      ]
+    },
+    {
+      "id": 94,
+      "name": "brand-strategy-positioning",
+      "command": "/brand-strategy",
+      "role": "skills/design/references/brand-strategist.md",
+      "prompt": "/brand-strategy positioning — Define Lumina SaaS brand positioning and competitive differentiation",
+      "assertions": [
+        {"name": "positioning-statement-produced", "description": "A brand positioning statement is produced in standard format"},
+        {"name": "target-audience-defined", "description": "Target audience segments are defined with characteristics"},
+        {"name": "competitive-differentiation-stated", "description": "Differentiation from key competitors is clearly stated"},
+        {"name": "value-proposition-articulated", "description": "The core brand value proposition is clearly articulated"}
+      ]
+    },
+    {
+      "id": 95,
+      "name": "brand-strategy-voice-tone",
+      "command": "/brand-strategy",
+      "role": "skills/design/references/brand-strategist.md",
+      "prompt": "/brand-strategy voice — Define brand voice and tone guidelines for Lumina SaaS",
+      "assertions": [
+        {"name": "voice-attributes-defined", "description": "Brand voice attributes or personality traits are defined"},
+        {"name": "tone-variations-by-context", "description": "Tone variations for different contexts such as marketing and error messages are specified"},
+        {"name": "do-dont-examples-included", "description": "Do and Don't copy examples are included to illustrate the voice"},
+        {"name": "audience-language-calibrated", "description": "Language register is calibrated to the defined target audience"}
+      ]
+    },
+    {
+      "id": 96,
+      "name": "ab-variants-cta-copy",
+      "command": "/ab-variants",
+      "role": "skills/design/references/content-designer.md",
+      "prompt": "/ab-variants — Design A/B test variants for the Lumina SaaS hero CTA button copy",
+      "assertions": [
+        {"name": "control-variant-defined", "description": "The control (current) CTA copy variant is clearly defined"},
+        {"name": "treatment-variant-defined", "description": "The treatment (new) CTA copy variant is clearly defined"},
+        {"name": "hypothesis-stated", "description": "A testable hypothesis is stated for the variant change"},
+        {"name": "conversion-metric-identified", "description": "The primary conversion metric to measure is identified"}
+      ]
+    },
+    {
+      "id": 97,
+      "name": "brand-kit-dark-mode",
+      "command": "/brand-kit",
+      "role": "skills/design/references/design-system-lead.md",
+      "prompt": "/brand-kit dark-mode — Generate the Lumina SaaS dark mode brand kit and token mappings",
+      "assertions": [
+        {"name": "dark-mode-palette-defined", "description": "Dark mode color palette is defined with specific hex or hsl values"},
+        {"name": "contrast-ratios-addressed", "description": "WCAG contrast ratio compliance is addressed for dark mode colors"},
+        {"name": "token-mapping-for-dark-mode", "description": "Token mapping from light to dark mode values is documented"},
+        {"name": "component-behavior-in-dark", "description": "How key components render in dark mode is described"}
+      ]
+    },
+    {
+      "id": 98,
+      "name": "component-docs-data-table",
+      "command": "/component-docs",
+      "role": "skills/design/references/design-system-lead.md",
+      "prompt": "/component-docs — Generate documentation for the Lumina SaaS DataTable component",
+      "assertions": [
+        {"name": "props-documented", "description": "All component props are documented with types and default values"},
+        {"name": "usage-example-included", "description": "A code usage example is included showing the component in context"},
+        {"name": "accessibility-attributes-noted", "description": "Accessibility attributes such as aria and role are noted"},
+        {"name": "variant-states-documented", "description": "Variant states such as loading, empty, and error are documented"}
+      ]
+    },
+    {
+      "id": 99,
+      "name": "figma-create-mobile-screens",
+      "command": "/figma-create",
+      "role": "skills/design/references/figma-creation.md",
+      "prompt": "/figma-create mobile — Create mobile screen designs for the Lumina SaaS dashboard in Figma",
+      "assertions": [
+        {"name": "mobile-frames-specified", "description": "Mobile-sized frames at 375px or similar are specified"},
+        {"name": "component-usage-documented", "description": "Components used in the mobile screens are listed"},
+        {"name": "autolayout-applied", "description": "Auto-layout usage is documented for responsive frame behavior"},
+        {"name": "layer-naming-conventions-followed", "description": "Layer naming conventions are specified for the mobile screens"}
+      ]
+    },
+    {
+      "id": 100,
+      "name": "figma-responsive-mobile-nav",
+      "command": "/figma-responsive",
+      "role": "skills/design/references/figma-workflow.md",
+      "prompt": "/figma-responsive — Design responsive navigation variants for Lumina SaaS across breakpoints in Figma",
+      "assertions": [
+        {"name": "mobile-nav-pattern-defined", "description": "Mobile navigation pattern such as hamburger or bottom bar is defined"},
+        {"name": "breakpoint-behavior-specified", "description": "How the navigation changes at each breakpoint is specified"},
+        {"name": "constraint-settings-documented", "description": "Figma constraint settings for responsive behavior are documented"},
+        {"name": "touch-targets-addressed", "description": "Touch target sizes for mobile interaction are addressed"}
+      ]
+    },
+    {
+      "id": 101,
+      "name": "figma-sync-token-drift",
+      "command": "/figma-sync",
+      "role": "skills/design/references/figma-workflow.md",
+      "prompt": "/figma-sync — Audit token drift between Lumina SaaS Figma variables and production CSS",
+      "assertions": [
+        {"name": "token-drift-identified", "description": "Tokens in Figma that differ from code values are identified"},
+        {"name": "mismatch-severity-noted", "description": "Severity or impact of each token mismatch is noted"},
+        {"name": "sync-action-items-listed", "description": "Specific action items to resolve token drift are listed"},
+        {"name": "variable-collection-status-reported", "description": "Status of Figma variable collections versus code variables is reported"}
+      ]
+    },
+    {
+      "id": 102,
+      "name": "illustration-system-spot-art",
+      "command": "/illustration-system",
+      "role": "skills/design/references/illustration-director.md",
+      "prompt": "/illustration-system spot-art — Define the spot illustration style for Lumina SaaS empty states and onboarding",
+      "assertions": [
+        {"name": "spot-illustration-style-defined", "description": "Style for spot illustrations is defined including line weight and color usage"},
+        {"name": "use-cases-for-spot-art", "description": "Specific use cases for spot illustrations are listed such as empty states"},
+        {"name": "grid-and-sizing-specified", "description": "Grid and sizing guidelines for spot illustrations are specified"},
+        {"name": "color-palette-for-illustrations", "description": "Color palette restrictions or guidelines for illustrations are defined"}
+      ]
+    },
+    {
+      "id": 103,
+      "name": "motion-design-micro-interactions",
+      "command": "/motion-design",
+      "role": "skills/design/references/motion-designer.md",
+      "prompt": "/motion-design micro — Define micro-interaction motion specs for Lumina SaaS UI components",
+      "assertions": [
+        {"name": "micro-interaction-types-defined", "description": "Types of micro-interactions such as button press and form validation are defined"},
+        {"name": "duration-values-specified", "description": "Duration values in milliseconds are specified for each interaction type"},
+        {"name": "easing-curves-documented", "description": "Easing curves are documented with CSS cubic-bezier or named values"},
+        {"name": "keyframe-structure-provided", "description": "Keyframe or animation specification is provided for at least one interaction"}
+      ]
+    },
+    {
+      "id": 104,
+      "name": "presentation-design-case-study",
+      "command": "/presentation-design",
+      "role": "skills/design/references/presentation-designer.md",
+      "prompt": "/presentation-design case-study — Design a Lumina SaaS design case study presentation for a conference talk",
+      "assertions": [
+        {"name": "case-study-narrative-structured", "description": "A before-and-after or problem-solution narrative structure is produced"},
+        {"name": "slide-layout-specified", "description": "Slide layout and visual hierarchy approach is described"},
+        {"name": "typography-system-applied", "description": "Typography choices for headings, body, and captions are specified"},
+        {"name": "visual-evidence-placement-noted", "description": "Where to integrate screenshots, mockups, or data visualizations is specified"}
+      ]
+    },
+    {
+      "id": 105,
+      "name": "site-to-figma-component-map",
+      "command": "/site-to-figma",
+      "role": "skills/design/references/figma-workflow.md",
+      "prompt": "/site-to-figma — Capture the Lumina SaaS marketing site and map reusable components to a Figma library",
+      "assertions": [
+        {"name": "components-extracted", "description": "Reusable components identified from the site capture are listed"},
+        {"name": "layer-structure-described", "description": "How the captured site will be organized in Figma layers is described"},
+        {"name": "token-values-captured", "description": "Color and spacing token values found in the site are captured"},
+        {"name": "import-sequence-documented", "description": "The sequence for importing or recreating components in Figma is documented"}
+      ]
+    },
+    {
+      "id": 106,
+      "name": "social-analytics-growth-report",
+      "command": "/social-analytics",
+      "role": "skills/design/references/social-media-strategist.md",
+      "prompt": "/social-analytics — Generate a Q1 2026 social media growth report for Lumina SaaS",
+      "assertions": [
+        {"name": "growth-metrics-tracked", "description": "Key growth metrics such as follower growth and reach trend are tracked"},
+        {"name": "benchmark-comparisons-included", "description": "Performance is benchmarked against industry or historical data"},
+        {"name": "content-performance-insights", "description": "Insights about which content types performed best are included"},
+        {"name": "conversion-attribution-noted", "description": "Social-to-conversion or trial signup attribution is noted"}
+      ]
+    },
+    {
+      "id": 107,
+      "name": "social-campaign-content-calendar",
+      "command": "/social-campaign",
+      "role": "skills/design/references/social-media-strategist.md",
+      "prompt": "/social-campaign — Build a content calendar for the Lumina SaaS AI analytics feature launch campaign",
+      "assertions": [
+        {"name": "content-calendar-produced", "description": "A content calendar or posting schedule is produced"},
+        {"name": "platform-specific-formats-addressed", "description": "Platform-specific content formats are addressed for each channel"},
+        {"name": "audience-targeting-defined", "description": "Target audience for the campaign is defined"},
+        {"name": "measurable-objectives-stated", "description": "Campaign objectives are stated as measurable goals"}
+      ]
+    },
+    {
+      "id": 108,
+      "name": "social-content-linkedin-post",
+      "command": "/social-content",
+      "role": "skills/design/references/social-media-copywriter.md",
+      "prompt": "/social-content linkedin — Write a LinkedIn post announcing Lumina SaaS's onboarding redesign results",
+      "assertions": [
+        {"name": "linkedin-format-followed", "description": "Content follows LinkedIn best practices for length, tone, and formatting"},
+        {"name": "hook-opening-line-present", "description": "A strong opening hook line is present to stop the scroll"},
+        {"name": "engagement-prompt-included", "description": "A call-to-action or engagement prompt is included at the end"},
+        {"name": "hashtag-strategy-noted", "description": "Hashtag usage strategy appropriate for LinkedIn is noted"}
+      ]
+    },
+    {
+      "id": 109,
+      "name": "video-script-feature-walkthrough",
+      "command": "/video-script",
+      "role": "skills/design/references/video-content-producer.md",
+      "prompt": "/video-script — Write a 90-second product demo video script for the Lumina SaaS homepage",
+      "assertions": [
+        {"name": "scene-by-scene-breakdown", "description": "Scene-by-scene breakdown of the video is produced with timing"},
+        {"name": "voiceover-copy-written", "description": "Voiceover copy is written for each scene"},
+        {"name": "visual-direction-notes-included", "description": "Visual direction or shot type notes are included for each scene"},
+        {"name": "hook-and-duration-defined", "description": "The opening hook and total video duration are defined"}
+      ]
     }
   ]
 }
