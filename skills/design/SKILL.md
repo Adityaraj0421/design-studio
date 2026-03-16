@@ -369,6 +369,11 @@ Based on the task, activate only the roles needed. Read their reference files fo
 | "Create a dashboard template" | UI Designer, Design System Lead + `/design-template dashboard` |
 | "Generate a SaaS pricing page" | UI Designer, Content Designer + `/design-template pricing` |
 | "Build a portfolio site" | UI Designer, Content Designer + `/design-template portfolio` |
+| "Browse available templates" | UI Designer + `/design-template` (gallery mode — shows all 10 categories) |
+| "What templates are available?" | UI Designer + `/design-template` (gallery mode — shows all 10 categories) |
+| "Show me template options" | UI Designer + `/design-template` (gallery mode — shows all 10 categories) |
+| "Template list" | UI Designer + `/design-template` (gallery mode — shows all 10 categories) |
+| "Available templates" | UI Designer + `/design-template` (gallery mode — shows all 10 categories) |
 | "Design a bar chart for monthly revenue" | Data Viz Designer + `/chart-design` |
 | "Build a scatter plot for ad spend vs conversion" | Data Viz Designer + `/chart-design` |
 | "Create an analytics dashboard for a SaaS" | Dashboard Architect, Data Viz Designer, UI Designer + `/dashboard-layout` |
