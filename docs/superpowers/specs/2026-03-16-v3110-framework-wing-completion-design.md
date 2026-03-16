@@ -2,7 +2,7 @@
 
 **Goal:** Complete the Framework Specialist role file by adding the 3 missing standard sections, upgrade the smoke fixture to meaningful coverage, add 4 evals covering the 3 missing frameworks and a chain workflow, and bump to v3.11.0.
 
-**Architecture:** Polish-only release — no new commands, no new roles, no routing changes. All changes are within `framework-specialist.md`, `evals/fixtures/design-framework-output.md`, `evals/evals.json`, `scripts/behavioral-smoke.sh`, and version files.
+**Architecture:** Polish-only release — no new commands, no new roles, no routing changes. All changes are within `framework-specialist.md`, `evals/evals.json`, `scripts/behavioral-smoke.sh`, and version files. The existing `design-framework-output.md` fixture is already compliant — only the smoke line is updated.
 
 **Tech Stack:** Markdown (role file), JSON (evals), Bash (smoke script), standard 8-file version bump set.
 
@@ -12,7 +12,7 @@
 
 **File:** `skills/design/references/framework-specialist.md`
 
-Append three sections between `## QA Checklist` and `## Reference-Sourced Insights`.
+Append three sections between `## QA Checklist` and `## Reference-Sourced Insights`. After inserting the sections, verify the file ends with a trailing `---` followed by a newline — add it if missing (the current file ends after the last `## Reference-Sourced Insights` subsection with no terminal `---`).
 
 ### `## Handoffs`
 
@@ -82,6 +82,8 @@ Svelte 5 replaces the `$:` reactive syntax with explicit runes. Key migration pa
 
 ### `## Full Coverage`
 
+Add exactly these 5 worked examples in order:
+
 **React + Tailwind — SaaS dashboard page**
 Input: HTML dashboard with sidebar nav, header with user menu, main area with stat cards and a data table.
 Output: `DashboardLayout.tsx` (Server Component), `Sidebar.tsx` (Server), `UserMenu.tsx` (Client — dropdown state), `StatCard.tsx` (Server), `DataTable.tsx` (Client — sort/filter state).
@@ -109,23 +111,22 @@ Watch for: Astro components don't support client-side state — the toggle must 
 
 ---
 
-## Task 2: Upgrade smoke fixture
+## Task 2: Upgrade smoke line (fixture already compliant)
 
-**File:** `evals/fixtures/design-framework-output.md`
+**File:** `scripts/behavioral-smoke.sh`
 
-Replace existing content (thin, only covers file list) with a richer React + Tailwind output that naturally contains all 6 required keywords: `component`, `tsx`, `props`, `tailwind`, `interface`, `cn`.
+The existing `evals/fixtures/design-framework-output.md` already contains all 6 required keywords and meets structural thresholds — do NOT replace or modify the fixture file. It contains `interface` (in `interface HeroProps`, `interface NavLinkProps`), `cn` (imported and used in `SiteNav.tsx`), `component` / `tsx` / `props` / `tailwind` throughout.
 
-The fixture should contain:
-- A TypeScript `interface` declaration for component props
-- A component function using `cn()` for conditional Tailwind classes
-- At least one Tailwind utility class applied
-- `## Files to Create`, `## Setup`, `## Usage` sections (3 `##` headers minimum)
-- At least 300 characters total
-
-**Updated smoke line in `scripts/behavioral-smoke.sh`:**
+Only update the smoke script line from:
 ```bash
-check_fixture "design-framework-output.md" "component,tsx,props,tailwind,interface,cn"  3  300
+check_fixture "design-framework-output.md" "component,tsx,props"                   2    150
 ```
+to (match the tab-aligned column spacing of surrounding lines):
+```bash
+check_fixture "design-framework-output.md" "component,tsx,props,tailwind,interface,cn"   3    300
+```
+
+Align the numeric columns (3rd and 4th args) with the tab-stop style used by all other `check_fixture` lines in the script.
 
 ---
 
