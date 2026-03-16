@@ -95,9 +95,9 @@ TIMING CUE SHEET — [project name]
 Total video duration: [Xs]
 Audio type: [VO / music / both]
 
-[00:00–00:03]  Music: fade in from 0 to 80% volume
-[00:02–00:XX]  VO: begins ("Welcome to...")
-[00:XX–00:XX]  Music: ducks to 30% under VO
+[00:00–00:02]  Music: fade in from 0 to 80% volume
+[00:02–00:XX]  VO: begins ("Welcome to...") — music already at full bed level
+[00:XX–00:XX]  Music: ducks to 25–30% under VO
 [00:XX–00:XX]  VO ends
 [00:XX–00:XX]  Music: fade up to 100%
 [00:XX–00:XX]  Music: fade out over 2 seconds
@@ -106,7 +106,7 @@ Audio type: [VO / music / both]
 
 **Rules:**
 - VO starts 1–2 seconds after video opens (give visuals a moment)
-- Music ducks 20–30dB under VO (not silent, just back)
+- Music ducks 10–15dB under VO (from its full level — audible but clearly secondary)
 - Fade out: at least 1.5–2 seconds before hard end — never cut audio dead
 - For ads: music bed should not compete with the VO in frequency (avoid busy mid-range tracks under spoken word)
 
@@ -127,7 +127,7 @@ Requires that AI-generated audio content which could be mistaken for a natural h
 
 **Delivery note template:**
 ```
-⚠️ SYNTHETIC VOICE DISCLOSURE
+SYNTHETIC VOICE DISCLOSURE
 This audio contains AI-generated voiceover produced using [ElevenLabs/Murf].
 For FTC compliance: add "AI-generated voiceover" to ad copy or end card.
 For EU delivery: ensure "AI-generated" label is visible in platform metadata or description.
@@ -149,7 +149,7 @@ For EU delivery: ensure "AI-generated" label is visible in platform metadata or 
 ## Handoffs
 
 - **→ Video Content Producer:** audio files + timing cue sheet + compliance disclosure note, ready for final edit assembly
-- **→ Client:** audio files + licensing confirmation + compliance note
+- **→ Client:** audio files (WAV master + MP3 320kbps delivery) + licensing confirmation + compliance note
 
 ---
 
@@ -174,6 +174,20 @@ When briefing the Video Content Producer on layered audio:
 - Music bed: slight stereo width, -18dB to -24dB under VO
 - SFX: positional pan matching on-screen action, -12dB to -15dB
 
+Note: The -18dB to -24dB figures above are *absolute* output levels (dBFS); they assume VO is at approximately -6dB to -9dB. The 10–15dB duck rule refers to relative reduction from the music bed's full level during non-VO sections.
+
+### VO Iteration Protocol
+When the first generation doesn't hit the brief, adjust one variable at a time:
+
+| Symptom | Adjustment |
+|---------|-----------|
+| Too robotic / flat | Lower Stability to 0.4–0.5; increase Style Exaggeration to 0.2–0.3 |
+| Too fast | Edit the script (fewer words) — do not rely on Pace setting alone |
+| Wrong emotion register | Rewrite the Emotion field in the Voice Brief; use more specific language (e.g., "warm but not excited" instead of "warm") |
+| Inconsistent between takes | Raise Stability to 0.75–0.85 |
+| Artifacts / distortion | Reduce Similarity Enhancement below 0.82; check if voice clone has sufficient training audio |
+| Mispronounced words | Use ElevenLabs' pronunciation editor; for Murf, use phonetic spelling in the script |
+
 ---
 
 ## Full Coverage
@@ -188,6 +202,8 @@ When briefing the Video Content Producer on layered audio:
 - Broadcast/TV: -23 LUFS (EBU R128 standard)
 - Podcast: -16 LUFS
 - Always export at 44.1kHz / 16-bit WAV for master; MP3 320kbps for delivery
+
+**Suno licensing — verify before client delivery:** Suno's commercial licensing terms are under active legal scrutiny (RIAA litigation) and have changed across plan tiers. Before delivering Suno-generated music to a client for broadcast or paid campaigns, verify the current commercial license terms at suno.com/pricing. Do not assume commercial clearance based on plan tier alone.
 
 ---
 
