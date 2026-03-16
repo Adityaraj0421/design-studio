@@ -457,11 +457,11 @@ When showing cached data, always indicate its age:
 ### Drill-Through Navigation
 
 KPI card or chart element links to a detail page without a full page reload. Implementation pattern:
-- Capture click on the KPI card or chart data point
-- Use `history.pushState({ metric: 'mrr', period: '30d' }, '', '/dashboard/mrr')` to update the URL
-- Swap the main content area with the detail view (hide `.kpi-row`, `.chart-row`; show `.detail-panel`)
-- Add a breadcrumb ("← Dashboard / MRR Detail") so users can navigate back
-- Preserve all active filter state in URL params so deep links work
+1. Capture click on the KPI card or chart data point
+2. Use `history.pushState({ metric: 'mrr', period: '30d' }, '', '/dashboard/mrr')` to update the URL
+3. Swap the main content area with the detail view (hide `.kpi-row`, `.chart-row`; show `.detail-panel`)
+4. Add a breadcrumb ("← Dashboard / MRR Detail") so users can navigate back
+5. Preserve all active filter state in URL params so deep links work
 
 ### Real-Time Data Refresh
 
@@ -479,13 +479,13 @@ When one chart is clicked, it filters all sibling charts. Pattern:
 3. On chart click: update `activeFilters`, call `render(filters)` on all registered charts
 4. Avoid circular update loops — clicks only propagate downward (chart → filter state → re-render), never back up
 
-### Progressive Disclosure
+### Mobile Progressive Disclosure
 
 For dense operational dashboards where mobile viewport can't show everything:
 - Summary card (always visible): metric name, current value, status badge
 - Expandable detail panel: trend chart, breakdown table, last 5 events
 - Use `aria-expanded="false"` on the trigger, toggle to `"true"` on open
-- Default all panels collapsed on mobile (< 768px), expanded on desktop
+- Default all panels collapsed at the single-column breakpoint (< 600px), expanded on desktop
 
 ---
 
@@ -493,7 +493,7 @@ For dense operational dashboards where mobile viewport can't show everything:
 
 ### Dashboard Type Worked Scenarios
 
-Use these as reference scenarios — one per type — when a user doesn't specify the dashboard type:
+Use these as reference scenarios covering each dashboard type:
 
 **Analytics — SaaS MRR Dashboard**
 - Level 1 (KPI row): MRR ($84,231 +12%), Churn (1.8% −0.3pp), Active Users (2,341 +8%), Avg Revenue Per User ($36.01 +4%)
@@ -520,6 +520,12 @@ Use these as reference scenarios — one per type — when a user doesn't specif
 - Full-width timeline bar (service × time grid, color-coded: green/amber/red)
 - Alert log: severity, service, message, timestamp, acknowledge button
 - No KPI row — status replaces metrics
+
+**Reporting — Monthly Finance Report**
+- Level 1 (KPI row): Revenue ($2.4M vs $2.1M target), Gross Margin (68%), Opex ($740K), EBITDA ($580K)
+- Level 2 (charts): Primary (2/3) — Revenue vs target grouped bar (12 months). Secondary (1/3) — Expense breakdown stacked bar
+- Level 3 (table): Department-level P&L, columns: Department, Budget, Actual, Variance, Variance %
+- Export button prominent: "Export to PDF" triggers `window.print()` with `@media print` layout
 
 ### Empty / Loading / Error States
 
