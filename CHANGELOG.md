@@ -2,6 +2,25 @@
 
 All notable changes to naksha are documented here.
 
+## [3.10.0] — 2026-03-16
+
+Print/PDF Wing — one new Print Designer role and three new commands covering the full print design lifecycle: document layout, single-artifact layout, and preflight audit.
+
+### Added
+- `skills/design/references/print-designer.md` — new role: Print Designer, full-completion with all 12 standard sections including Advanced Patterns (multi-page document flow, VDP, responsive→print degradation, bleed-aware image placement) and Full Coverage (invoice, annual report, certificate, brochure, business card, packaging scenarios)
+- `/pdf-report` command — generates multi-page print-ready document layouts with CSS `@page` named pages, running headers/footers, master template, typography system, and preflight checklist
+- `/print-layout` command — designs single print artifacts (business cards, certificates, flyers, brochures) with correct bleed/safe zone setup, CMYK color documentation, and HTML/CSS output
+- `/print-audit` command — two-phase preflight audit: Phase 1 (always) checks bleed, safe zone, CMYK mode, font embedding, and page break rules; Phase 2 (conditional) audits brand consistency when brand context is provided
+- `evals/fixtures/pdf-report-output.md`, `print-layout-output.md`, `print-audit-output.md` — smoke fixtures
+- Evals 76–79: pdf-report, print-layout business card, print-audit standalone, print-audit with brand
+
+### Updated
+- `scripts/behavioral-smoke.sh` — smoke coverage 19/39 → 22/42
+- `skills/design/SKILL.md` — Print Designer added to role list; `/pdf-report`, `/print-layout`, `/print-audit` added to commands table; print trigger keywords added
+- `meta/stats.json` — version 3.9.0 → 3.10.0, roles 22 → 23, commands 39 → 42
+
+---
+
 ## [3.9.0] — 2026-03-16
 
 Data Viz Wing Completion — polished the Dashboard Architect role file and added a new `/data-viz-audit` command covering chart quality (always) and dashboard layout fit (conditional).

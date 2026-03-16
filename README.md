@@ -16,8 +16,8 @@
 [![Windsurf](https://img.shields.io/badge/Windsurf-Rules-0099ff)]()
 [![Gemini CLI](https://img.shields.io/badge/Gemini_CLI-GEMINI.md-4285F4)]()
 [![Copilot](https://img.shields.io/badge/Copilot-Instructions-24292e)]()
-[![Roles](https://img.shields.io/badge/Specialist_Roles-22-orange)]()
-[![Commands](https://img.shields.io/badge/Slash_Commands-39-green)]()
+[![Roles](https://img.shields.io/badge/Specialist_Roles-23-orange)]()
+[![Commands](https://img.shields.io/badge/Slash_Commands-42-green)]()
 [![Design Knowledge](https://img.shields.io/badge/Design_Knowledge-11000%2B_lines-E8633A)]()
 
 [Quick Start](#-quick-start) · [Commands](#-commands) · [The Team](#-the-team) · [How It Works](#-how-it-works) · [Changelog](CHANGELOG.md)
@@ -28,7 +28,7 @@
 
 ## 🚀 Quick Start
 
-### Claude Code (full plugin — 39 commands, agents, hooks)
+### Claude Code (full plugin — 42 commands, agents, hooks)
 
 **Option A — Marketplace install (recommended, Claude Code 2.1.72+)**
 
@@ -276,6 +276,15 @@ Prompt Systems
 
 </td>
 <td align="center" colspan="3">
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Print Designer**
+
+Print & PDF
 
 </td>
 </tr>
