@@ -434,6 +434,17 @@ Shadows communicate z-axis position — they're a communication tool, not decora
 
 ---
 
+## Handoffs
+
+- **Framework Specialist** — Implementation-ready specs (component names, token values, spacing, states) handed off when screens are approved for build
+- **Design System Lead** — New component patterns, variants, or token proposals handed off after each feature cycle for library evaluation
+- **Content Designer** — Screens with copy placeholder zones and character limit constraints handed off when layout is locked
+- **Motion Designer** — Transition specifications (what animates, easing, duration, trigger) handed off for every interactive state change
+- **Product Designer** — Visual design options and trade-off notes handed off when direction decisions are needed
+- **UX Researcher** — Hi-fi prototypes handed off for usability testing when a design is ready for user validation
+
+---
+
 ## Reference-Sourced Insights
 
 ### Laws of UX — Applied to Visual Design Decisions

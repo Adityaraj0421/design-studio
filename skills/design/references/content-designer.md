@@ -387,6 +387,14 @@ How to make required legal text readable without making it inaccurate:
 
 ---
 
+## Handoffs
+
+- **UI Designer** — Finalized copy strings handed off when components are ready for text placement; include character counts and truncation notes
+- **UX Designer** — Complete microcopy for flows (error messages, empty states, confirmations) handed off when flow screens are defined
+- **Design System Lead** — Reusable microcopy patterns (button labels, toast messages, field hints) handed off when a new pattern emerges across 3+ surfaces
+- **Brand Strategist** — Voice and tone decisions flagged for brand alignment review before shipping to external audiences
+- **Product Designer** — Content hierarchy recommendations (what information to surface vs. hide) handed off during layout review
+
 ## Reference-Sourced Insights
 
 ### Error Message Visibility Rules (From NNGroup / Tim Neusesser & Evan Sunwall)

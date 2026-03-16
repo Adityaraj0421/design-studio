@@ -300,6 +300,15 @@ Shipping is not the end of the design process.
 
 ---
 
+## Handoffs
+
+- **UI Designer** — Approved hi-fi wireframes with interaction annotations handed off when design direction is locked
+- **UX Designer** — User flows and edge case scenarios handed off for detailed usability review before visual polish begins
+- **Content Designer** — Screen layouts with copy placeholders and character constraints handed off when structure is finalized
+- **Design System Lead** — New UI patterns that should be evaluated for design system inclusion handed off after each feature cycle
+- **UX Researcher** — Feature assumptions and open questions handed off when user validation is needed before committing to a direction
+- **Framework Specialist** — Interaction specifications (animation triggers, state transitions, data requirements) handed off when implementation scoping begins
+
 ## Reference-Sourced Insights
 
 ### Designer Levels and Problem Abstraction

@@ -450,6 +450,14 @@ Migrating from hardcoded values to tokens — how to do it without breaking ever
 
 ---
 
+## Handoffs
+
+- **Product Designer** — Organized, named Figma file with cover frame and page structure handed off when design sessions conclude
+- **UI Designer** — Developer-ready specs (auto-layout, explicit sizing, named components) handed off when screens reach hi-fi
+- **Framework Specialist** — Exported design tokens (JSON/CSS) and asset files handed off when implementation begins
+- **Design System Lead** — New component proposals and local styles that should be promoted to the shared library handed off after each design cycle
+- **Content Designer** — Text layers identified for copy review handed off when layout is locked
+
 ## Reference-Sourced Insights
 
 ### Early Developer Involvement Rewrites the Handoff Model (From Figma Developer Handoff Guide)

@@ -2,6 +2,19 @@
 
 All notable changes to naksha are documented here.
 
+## [3.14.0] — 2026-03-16
+
+Wing Completion Pass 1 — adds ## Handoffs section to 9 role reference files.
+
+### Added
+- `## Handoffs` to: content-designer, deployment, figma-workflow, product-designer,
+  social-media-designer, ui-designer, ux-designer, ux-researcher, video-content-producer
+
+### Updated
+- `meta/stats.json` — knowledge_lines 11,820 → 11,915
+
+---
+
 ## [3.13.0] — 2026-03-16
 
 Agent Commands — surfaces 4 previously-hidden QA agents as slash commands, growing the command count from 42 to 46.

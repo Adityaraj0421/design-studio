@@ -343,6 +343,16 @@ CTA:     [50–60s] Follow, save, try, or visit
 
 ---
 
+## Handoffs
+
+- **Motion Designer** — Raw cut timeline and motion brief handed off for animation polish, title sequences, and transition refinement
+- **Social Media Designer** — Exported video assets and thumbnail frames handed off for social format adaptation (Reels, Stories, YouTube thumbnails)
+- **Brand Strategist** — Hero content and flagship videos handed off for brand alignment review before external publication
+- **Social Media Strategist** — Final video files with metadata (title, description, tags, captions) handed off for platform scheduling
+- **Content Designer** — Script drafts and on-screen text handed off for copy review and accessibility caption generation
+
+---
+
 ## Reference-Sourced Insights
 
 ### Video as a Core Content Format, Not a Campaign Deliverable (From Sprout Social Video Strategy)

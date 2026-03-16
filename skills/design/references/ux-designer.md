@@ -400,6 +400,16 @@ For every flow, document what happens in each of these 8 scenarios before handof
 
 ---
 
+## Handoffs
+
+- **Product Designer** — Validated user flows and wireframes handed off when IA and interaction logic are confirmed
+- **Content Designer** — Information architecture, content hierarchy, and copy structure handed off when flow screens are defined
+- **UX Researcher** — Unvalidated assumptions, open research questions, and prototype links handed off when user testing is needed
+- **UI Designer** — Annotated wireframes with interaction specs handed off when visual design phase begins
+- **Design System Lead** — Flow patterns that suggest reusable interaction components handed off for library consideration
+
+---
+
 ## Reference-Sourced Insights
 
 ### UX Mapping — Four Methods and When to Use Each

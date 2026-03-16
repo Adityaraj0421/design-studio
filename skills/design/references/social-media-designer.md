@@ -378,6 +378,16 @@ What adapts: [list of flexible elements]
 
 ---
 
+## Handoffs
+
+- **Social Media Copywriter** — Designed templates with placeholder copy zones handed off when layouts are approved; include character limits per zone
+- **Social Media Strategist** — Final asset package (all sizes, formats) handed off for campaign scheduling review
+- **Brand Strategist** — New brand touchpoints or visual treatments that deviate from existing guidelines handed off for approval before publication
+- **Motion Designer** — Static templates flagged for animation treatment handed off with motion brief and duration constraints
+- **Product Designer** — Social proof assets (testimonial cards, metric callouts) handed off when product milestone occurs
+
+---
+
 ## Reference-Sourced Insights
 
 ### Platform-Native Video Strategy (From Sprout Social)

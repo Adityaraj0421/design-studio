@@ -421,3 +421,11 @@ document.documentElement.style.opacity = '1';
 **Variant pollution prevention:** Use the same user → same variant mapping across sessions. A user who saw variant B on Monday should see variant B on Thursday. Inconsistency contaminates results.
 
 ---
+
+## Handoffs
+
+- **Framework Specialist** — Build configuration, environment variable specs, and CI pipeline requirements handed off before first deploy attempt
+- **Product Designer** — Staging environment URL and deploy checklist handed off when staging is ready for visual sign-off
+- **UI Designer** — Deploy-gated visual verification tasks (check production renders correctly at all breakpoints) handed off post-deploy
+- **Design System Lead** — Token file build artifacts and CDN paths handed off when design tokens are published to production
+- **UX Researcher** — Production analytics access and event tracking confirmation handed off when instrumentation is verified live

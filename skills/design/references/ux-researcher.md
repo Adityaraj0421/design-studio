@@ -402,6 +402,16 @@ Use this structure for recruiting participants who match your target:
 
 ---
 
+## Handoffs
+
+- **UX Designer** — Research synthesis, user needs, pain points, and behavioral patterns handed off as a findings report after each study
+- **Product Designer** — Prioritized insights and validated feature directions handed off when research informs roadmap decisions
+- **Content Designer** — User language patterns, mental models, and terminology preferences handed off to inform microcopy and labeling
+- **Growth Analytics Specialist** — Analytics instrumentation requirements and event tracking specifications handed off when behavioral research informs measurement strategy
+- **Brand Strategist** — User perception findings and emotional response data handed off when research touches brand positioning
+
+---
+
 ## Reference-Sourced Insights
 
 ### Usability Testing — Precise Protocols and Numbers
