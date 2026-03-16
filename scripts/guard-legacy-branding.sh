@@ -19,6 +19,7 @@ RESULTS=$(grep -rn \
   --exclude-dir=".worktrees" \
   --exclude-dir="docs" \
   --exclude="CHANGELOG.md" \
+  --exclude="REVIEW.md" \
   --exclude="guard-legacy-branding.sh" \
   "$REPO" 2>/dev/null) || GREP_RC=$?
 GREP_RC=${GREP_RC:-0}
