@@ -2,6 +2,25 @@
 
 All notable changes to naksha are documented here.
 
+## v4.8.0 — Tooling & Orchestration Polish (2026-03-17)
+
+**MCP availability check in `/naksha-doctor`:**
+- 5th health probe: Playwright MCP and Figma MCP availability tested on every doctor run
+- Reports `AVAILABLE` / `UNAVAILABLE` per MCP as an informational panel — not a quality gate
+- Maps each unavailable MCP to the commands that depend on it (so users know what falls back)
+- `--fix` mode extended with MCP setup remediation instructions
+
+**Agent model optimization:**
+- `design-token-extractor` and `design-lint` agents switched from `model: inherit` to `model: haiku`
+- Both are mechanical scan-and-report tasks with no judgment requirements — haiku reduces cost and latency without quality loss
+
+**Context7 MCP integration:**
+- `/design-framework` now calls Context7 (step 2.5) before generating code — resolves library ID, queries latest API docs for the target framework (React/Vue/Svelte/Next.js/Astro), and applies any version-specific breaking changes
+- `/design-system` now calls Context7 before token generation — fetches current Tailwind theme config and Style Dictionary transform docs; respects `tokenFormat` from `.naksha/project.json`
+- Both commands include graceful fallback when Context7 is unavailable
+
+---
+
 ## v4.7.0 — Design Intelligence (2026-03-17)
 
 **`/design-score` command (60th command):**
