@@ -1,7 +1,7 @@
 ---
 description: "Run all naksha quality checks and report the plugin's health status."
 argument-hint: "[--fix]"
-allowed-tools: ["Bash", "Read", "Glob"]
+allowed-tools: ["Bash", "Read", "Glob", "mcp__plugin_playwright_playwright__browser_navigate", "mcp__figma-console__figma_get_status"]
 ---
 
 # /naksha-doctor
@@ -37,9 +37,25 @@ bash scripts/behavioral-smoke.sh 2>&1
 bash scripts/guard-legacy-branding.sh 2>&1
 ```
 
+## Step 2.5: MCP Availability Check
+
+Probe the two primary MCP integrations that naksha commands depend on. These checks are **informational** — they reveal whether MCP-dependent commands will work in the current environment. MCP unavailability does not make the plugin unhealthy; it means certain commands will operate in fallback mode.
+
+**Playwright MCP:**
+Attempt to call `mcp__plugin_playwright_playwright__browser_navigate` with `url: "about:blank"`.
+- If the call succeeds → record `AVAILABLE`
+- If the tool throws an error or is not found → record `UNAVAILABLE`
+
+**Figma MCP:**
+Attempt to call `mcp__figma-console__figma_get_status`.
+- If the call succeeds → record `AVAILABLE`
+- If the tool throws an error or is not found → record `UNAVAILABLE`
+
+Record both results for inclusion in the health report.
+
 ## Step 3: Build the health report
 
-Parse each script's output and exit code. Present results in this format when all pass:
+Parse each script's output and exit code. Present results in this format when all quality checks pass:
 
 ```
 ╔═══════════════════════════════════════╗
@@ -51,12 +67,17 @@ Parse each script's output and exit code. Present results in this format when al
   ✅  behavioral-smoke      fixtures passing
   ✅  guard-legacy-branding no banned strings found
 
+  ──────────────────────────────────────
+  MCPs         playwright  ✅ AVAILABLE
+               figma       ✅ AVAILABLE
+  ──────────────────────────────────────
+
   ══════════════════════════════════════
   Status: HEALTHY — 4/4 checks passed
   ══════════════════════════════════════
 ```
 
-When any check fails:
+When any quality check fails, show ❌ and a one-line summary. The HEALTHY/UNHEALTHY status and N/4 count is based on script checks only — MCP availability is shown separately as an environment probe:
 
 ```
 ╔═══════════════════════════════════════╗
@@ -67,6 +88,14 @@ When any check fails:
   ❌  verify-metadata       FAIL — commands count mismatch
   ✅  behavioral-smoke      fixtures passing
   ✅  guard-legacy-branding no banned strings found
+
+  ──────────────────────────────────────
+  MCPs         playwright  ❌ UNAVAILABLE
+               figma       ✅ AVAILABLE
+  ──────────────────────────────────────
+  Note: /design-compare, /competitive-audit require Playwright.
+  These commands will fall back to manual screenshot mode.
+  ──────────────────────────────────────
 
   ══════════════════════════════════════
   Status: UNHEALTHY — 1/4 checks failed
@@ -79,6 +108,10 @@ When any check fails:
   To fix: update meta/stats.json → commands to match the actual
   file count, then re-run /naksha-doctor.
 ```
+
+Only show the MCP Note line when at least one MCP is UNAVAILABLE. Map each unavailable MCP to the commands that depend on it:
+- playwright UNAVAILABLE → `/design-compare`, `/competitive-audit`, `/design-review` (URL mode), `/design-critique` (URL mode)
+- figma UNAVAILABLE → `/figma-create`, `/figma-sync`, `/design-lint`, `/design-score` (Figma mode)
 
 ## Step 4: Fix mode (if --fix argument present)
 
@@ -107,6 +140,11 @@ When `--fix` is present, after the report add a numbered remediation checklist f
 **guard-legacy-branding failures:**
 - Each FAIL shows the file and line number with the banned string
 - Replace `design-studio`, `design_studio`, or `Design Studio` with `naksha`
+
+**MCP availability (informational — not a quality gate):**
+- `playwright UNAVAILABLE`: Playwright MCP is not running in this session. Ensure `mcp__plugin_playwright_playwright` is configured in your Claude Code MCP settings and the Playwright server is started.
+- `figma UNAVAILABLE`: Figma MCP is not running. Ensure `mcp__figma-console` is installed and the Figma plugin bridge is active in your Figma desktop app.
+- Both MCPs unavailable does not affect plugin health — it only limits vision-powered and Figma-native commands.
 
 ## Notes
 
