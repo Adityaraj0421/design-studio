@@ -476,6 +476,48 @@ From **PCI DSS v4.0 Requirement 3.3.1** (pcisecuritystandards.org/document_libra
 
 The UI implication: CVV/CVC fields must be single-use per transaction. Never pre-populate them. Never show a masked representation (e.g., "•••") for a saved card's CVV — this implies storage, which is explicitly prohibited. The only compliant representation is the absence of a CVV field for saved cards, replaced by a re-entry field at time of payment.
 
+> Source: pcisecuritystandards.org/document_library — 2024
+
+---
+
+### CCPA Enforcement Guidance — California Privacy Protection Agency
+
+From **CPPA — Enforcement Advisory** (cppa.ca.gov/regulations/):
+
+> "Businesses that sell or share personal information must provide a clear and conspicuous link on their homepage titled 'Do Not Sell or Share My Personal Information'."
+
+The CPPA's enforcement advisories provide specific UI requirements that go beyond the statutory text of the CCPA. Key design obligations:
+
+**Link placement and recognition.** The "Do Not Sell or Share" link must appear in the website's footer on every page (or in the navigation if no persistent footer exists). The link text must be exactly as specified — shortening it to "Opt Out" or burying it in "Privacy Settings" is a dark pattern that has been cited in enforcement actions.
+
+**Opt-out confirmation.** The CPPA requires that when a user opts out, the confirmation must be immediate and unambiguous. A page reload that silently applies the opt-out is not sufficient — the user must see a confirmation screen or toast notification acknowledging that the opt-out has been processed. The confirmation must include the date it takes effect (required within 15 business days of the request).
+
+**Universal Opt-Out Mechanism (GPC) compliance.** Businesses subject to CCPA must honor the Global Privacy Control browser signal as a valid opt-out. Design your consent management system to detect the `Sec-GPC: 1` header and automatically apply the opt-out without requiring any additional user action. This is an enforcement priority from 2024 onwards — GPC non-compliance has been cited in CPPA enforcement actions.
+
+> Source: cppa.ca.gov/regulations — 2024
+
+---
+
+### eIDAS Qualified Electronic Signatures — European Commission
+
+From **eIDAS Regulation (EU) No 910/2014 — Article 25** (eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0910):
+
+> "A qualified electronic signature shall have the equivalent legal effect of a handwritten signature."
+
+The eIDAS Regulation creates a three-tier signature classification that determines both the legal weight of the signature and the UI/UX requirements for each tier:
+
+| Tier | Name | Legal Weight | UI Requirements |
+|---|---|---|---|
+| **SES** | Simple Electronic Signature | Low — admissible as evidence, weight determined by court | Name typed in a field, checkbox with "I agree" — minimum viable proof of intent |
+| **AES** | Advanced Electronic Signature | Medium — uniquely links to signatory; created using data under signatory's sole control | Email-link-to-sign flow; cryptographic key tied to verified email; audit trail with IP, timestamp, device |
+| **QES** | Qualified Electronic Signature | Equivalent to handwritten signature — highest legal weight in EU | Identity-proofed certificate from a Qualified Trust Service Provider (QTSP); biometric or hardware token; separate identity verification pre-signing |
+
+**Design implication:** Determine the required signature tier for each document type in your product before designing the signing flow. A user onboarding agreement can use SES. An employment contract or loan agreement in the EU requires AES minimum. A real estate transaction or power of attorney requires QES.
+
+**The identity verification pre-flow for QES** must be designed as a distinct multi-step experience: document upload (passport/ID), liveness check, QTSP API call, certificate issuance confirmation, then signing action. This is not a 30-second flow — design it as a 2–5 minute onboarding experience with clear progress indication and resume capability.
+
+> Source: eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0910 — 2024
+
 ---
 
 ## Advanced Patterns
@@ -559,6 +601,47 @@ Products serving users in multiple jurisdictions must layer compliance requireme
 - GDPR requires opt-in consent for analytics; CCPA only requires opt-out for sale/sharing — resolve by applying the stricter (GDPR opt-in) globally, which satisfies both
 - HIPAA minimum session timeout (no statutory minimum, but 15 minutes is industry standard via CMS ARS) vs. standard web session — always use the shorter timeout for health products
 - PCI DSS and GDPR data minimisation principle — PCI DSS says never store CVV; GDPR says collect only what is necessary — both point to the same UI pattern (no CVV storage)
+
+### Consent Version Migration and Re-Consent Flows
+
+When privacy policies change, existing consents may be invalidated. GDPR Article 7(3) requires that consent be as easy to withdraw as to give — and changed consent conditions require fresh, specific consent. Design the consent version migration system upfront.
+
+**When re-consent is required:**
+- The purpose of processing has changed or expanded beyond what was originally consented to
+- A new category of personal data is being collected that wasn't disclosed at the time of original consent
+- A new third-party data processor has been added (for purposes that require consent, not legitimate interest)
+- The legal basis for a specific processing activity has changed (consent → legitimate interest is not automatic; users must be notified of LI claims)
+- The consent mechanism itself was found to be non-compliant (e.g., a pre-ticked box used for prior consent)
+
+**Re-consent UI pattern:**
+
+```
+[MODAL — blocking, cannot dismiss without action]
+
+⚡ We've updated our Privacy Policy
+
+We've changed how we use your data for [specific purpose].
+To continue using [feature], please review and confirm your preferences.
+
+[What changed]:
+• We now share your usage data with [Partner Name] for advertising
+• The previous consent for this was given on [date] and covered [old scope]
+
+[Your current choice]:
+○ Accept the updated terms
+○ Reject — I'll lose access to [specific feature]
+
+[Review full changes]  [Learn more]
+
+[ACCEPT]  [REJECT]
+```
+
+**Rules:**
+- Re-consent modals must be **blocking** — the user cannot dismiss without making a choice. This is what distinguishes re-consent from a notification (which can be dismissed).
+- The modal must specify **what changed**, not just that something changed. Vague "we've updated our privacy policy" prompts without specifics do not constitute valid informed consent.
+- Rejecting re-consent must have a **clearly stated consequence** before the rejection action. "You will lose access to [feature]" must precede the reject button, not appear after.
+- Re-consent events must be stored with a new consent record (new timestamp, new consent version) — they do not overwrite the original consent record. The audit trail must show consent history, not just the current state.
+- After re-consent is given, users must be able to withdraw the new consent from the preference center just as easily as the original.
 
 ---
 
