@@ -128,16 +128,73 @@ Evaluate across 4 dimensions:
 
 ---
 
+### Scoring Calculation
+
+Before writing the final output, calculate the four dimension scores:
+
+**Accessibility (0–25 pts):** Map Pass 2 findings to the rubric:
+- Contrast ratios → up to 6pts
+- Component contrast → up to 4pts
+- Focus states → up to 4pts
+- Touch targets → up to 4pts
+- Color-only information → up to 4pts
+- Form labels → up to 3pts
+
+**Usability (0–25 pts):** Sum all 10 heuristic scores from Pass 1, then: `round((sum / 30) × 25)`
+
+**Visual Quality (0–25 pts):** From Pass 3 + visual observations:
+- Spacing consistency → up to 5pts
+- Typography hierarchy → up to 5pts
+- Color usage → up to 5pts
+- Whitespace/visual noise → up to 5pts
+- Primary action prominence → up to 5pts
+
+**Token Compliance (0–25 pts):** From Pass 4 scan.
+
+**Total:** Accessibility + Usability + Visual Quality + Token Compliance (max 100)
+
+**Grade:** A=90–100, B=80–89, C=70–79, D=60–69, F=<60
+
+**Score bar:** 20 chars. `filled = round((score/25)*20)`. `█` filled, `░` empty.
+
+---
+
+### Pass 4: Token Compliance
+
+Scan for hardcoded values that should be tokens:
+
+1. **Color tokens** — scan for raw hex/rgb/hsl values outside CSS custom property definitions. Check against brand colors in `.naksha/project.json` if available. Score 0–5pts.
+2. **Typography tokens** — look for hardcoded `font-family` declarations not using a variable; hardcoded `font-size` in px not on a common scale (12/14/16/18/20/24/32/40/48px). Score 0–5pts.
+3. **Spacing tokens** — arbitrary margin/padding values not on an 8pt scale (4/8/12/16/20/24/32/40/48/64/80/96px). Score 0–5pts.
+4. **Component consistency** — multiple button variants with inconsistent `border-radius` or `padding`; multiple card styles with different shadows. Score 0–5pts.
+5. **State consistency** — hover/focus/active states applied differently to visually similar components. Score 0–5pts.
+
+If no token system is detectable, assess visual consistency instead (same patterns used for same purposes throughout the design). If no code is available (screenshot only), note which sub-criteria could not be assessed.
+
+---
+
 ### Final Output
 
 ```
 ## Design Critique Report
 ### [Product/Page Name]
 
-━━━ Overall Assessment ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Heuristics Score:    X/30
-Accessibility:       Pass / Partial / Fail (3 issues)
-Content Quality:     Strong / Moderate / Needs Work
+━━━ Design Score Summary ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Overall:  [score]/100  [grade]
+
+Accessibility:       [n]/25  [bar]  [pct]%
+Usability:           [n]/25  [bar]  [pct]%
+Visual Quality:      [n]/25  [bar]  [pct]%
+Token Compliance:    [n]/25  [bar]  [pct]%
+
+Grade: [A/B/C/D/F] — [label]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━ Overall Assessment ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Heuristics Score:    X/30  (→ Usability: Y/25)
+Accessibility:       Pass / Partial / Fail (N issues)
+Visual Quality:      Strong / Moderate / Needs Work
+Token Compliance:    Compliant / Partial / Needs Work
 
 ━━━ Priority Action List ━━━━━━━━━━━━━━━━━━━━━━━━━
 Sorted by: Impact × Effort (quick wins first)
