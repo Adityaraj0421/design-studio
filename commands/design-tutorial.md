@@ -540,6 +540,55 @@ Run this command now:
 
 ---
 
+### TRACK: compliance
+
+**Goal:** Generate a GDPR consent flow, run a HIPAA compliance audit, and set up project memory — the Compliance wing plus the memory command that saves your decisions.
+
+---
+
+**Exercise 1 of 3 — GDPR Consent Flow**
+
+Run this command now:
+
+```
+/design-gdpr SaaS analytics product. Jurisdiction: EU. Consent categories: analytics, marketing.
+```
+
+> **What to watch for:** Three cookie banner variants (minimal one-line / standard two-button / detailed category-toggle), consent flow UI spec showing the progressive disclosure model, privacy control center wireframe with data export and deletion request flows, and a jurisdiction checklist covering IAB TCF compliance and legitimate interest documentation.
+
+---
+
+**Exercise 2 of 3 — HIPAA Compliance Audit**
+
+```
+/design-compliance --regulation hipaa patient dashboard with appointment booking and lab results
+```
+
+> **What to watch for:** PHI field marking spec (all 18 HIPAA identifiers flagged with visual indicators), 15-minute session timeout design (idle warning at 13 min, hard logout at 15 min), audit log display component, and access control UI patterns. Note the `--regulation` flag — without it, the command outputs an error block explaining the required format.
+
+---
+
+**Exercise 3 of 3 — Project Memory**
+
+```
+/naksha-init
+```
+
+> **What to watch for:** Interactive wizard prompting for project name, brand colors, font, framework (React/Vue/Svelte/Next.js/Astro/HTML), and token format (CSS vars/Tailwind/Style Dictionary). Writes `.naksha/project.json` and creates `.naksha/memory.md`. After running this once, commands like `/design` and `/brand-kit` will automatically load your project context.
+
+---
+
+**Compliance track complete.** You've seen:
+- `/design-gdpr` → consent flows, cookie banners, privacy controls
+- `/design-compliance` → regulated UI (HIPAA, PCI, ADA) with `--regulation` flag
+- `/naksha-init` → project memory setup for persistent brand/framework context
+
+**Suggested next:**
+- `/naksha-status` to view saved project context
+- `/design-tutorial full` for the complete tour
+
+---
+
 ### TRACK: full
 
 **Goal:** Complete tour of all design wings — UI, Figma, Social, AI Visual Gen, Email, Data Viz, Print/PDF, and Handoff.
