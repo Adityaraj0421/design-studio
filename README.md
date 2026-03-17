@@ -29,15 +29,16 @@
 ### Claude Code (full plugin — 60 commands, agents, hooks)
 
 ```bash
-git clone https://github.com/Adityaraj0421/naksha-studio.git ~/.claude/plugins/naksha
+git clone https://github.com/Adityaraj0421/naksha-studio.git
+cd naksha-studio && bash install.sh
 ```
-
-> **Important:** The folder must be named `naksha` — not `naksha-studio` or anything else.
 
 Then restart Claude Code and try:
 ```
 /design Build a landing page for a SaaS analytics product
 ```
+
+> **Updates:** Just `git pull` inside the repo — no reinstall needed. The plugin is a live symlink to your local clone.
 
 ### Cursor
 
@@ -943,10 +944,11 @@ Checks: metadata consistency (`meta/stats.json` vs filesystem vs README badges),
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/Adityaraj0421/naksha-studio.git ~/.claude/plugins/naksha
+git clone https://github.com/Adityaraj0421/naksha-studio.git
+cd naksha-studio && bash install.sh
 ```
 
-Restart Claude Code to load the plugin.
+Restart Claude Code to load the plugin. To update: `git pull` (no reinstall needed).
 
 ---
 
