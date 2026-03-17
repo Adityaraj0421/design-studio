@@ -101,7 +101,7 @@ The anchor has been lost mid-session — due to low light, occluded target, or d
 Floating instruction cards anchored near tracked objects. These deliver step-by-step guidance in AR without requiring the user to look away from the physical task.
 
 **Positioning rule:**
-- Position card above the tracked object, 30–50° above eye level — close enough to relate to the object, high enough to avoid obscuring the work area
+- Position card above the tracked object in scene space — close enough to relate to the object, high enough to avoid obscuring the work area, while keeping the card within the user's comfortable vertical gaze range (±20° from eye level per ergonomic comfort guidelines)
 - At arm's length (~0.5m), the card should subtly float above the real-world object rather than sitting on it
 - For objects on surfaces (table, floor), position cards at eye level or slightly above — never below the surface plane
 
