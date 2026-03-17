@@ -92,7 +92,7 @@ GDPR Art. 15 gives users the right to access all personal data held about them. 
 1. Authenticated user navigates to Privacy → My Data → Request My Data
 2. Select request type (access / portability / erasure / restriction / objection)
 3. Identity verification step — re-authenticate or provide government ID for high-risk requests
-4. Submission confirmation with a reference number and expected completion date (max 30 days; extendable to 60 days with notice)
+4. Submission confirmation with a reference number and expected completion date (max 30 days per GDPR Art. 12(3); extendable by a further 2 months — 90 days total — for complex or numerous requests, with notice sent before the initial month expires)
 5. Status tracker: Submitted → Under Review → Ready for Download (or → Rejected with reason)
 
 **Email notification touchpoints:** submission confirmation, 7-day progress update if not complete, ready-for-download with secure link (expires in 72 hours), and completion notice.
@@ -369,7 +369,7 @@ A keyboard trap (WCAG 2.1 SC 2.1.2) is a state from which a keyboard user cannot
 | Normal text (< 18pt or < 14pt bold) | 4.5:1 | SC 1.4.3 |
 | Large text (≥ 18pt or ≥ 14pt bold) | 3:1 | SC 1.4.3 |
 | UI components (button borders, input borders, icons) | 3:1 | SC 1.4.11 (WCAG 2.1) |
-| Focus indicator | 3:1 against adjacent colors | SC 1.4.11 |
+| Focus indicator | 3:1 against adjacent colors | SC 1.4.11 (visual component); WCAG 2.2 adds SC 2.4.11/2.4.13 for focus appearance — check if product targets EN 301 549 v3.2.1 |
 | Disabled states | No requirement | Explicitly excluded from 1.4.3 |
 | Decorative images / text | No requirement | Purely decorative — no informational value |
 
