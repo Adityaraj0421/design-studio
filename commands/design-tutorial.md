@@ -55,7 +55,7 @@ If no track is given, display this orientation:
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║                    Welcome to Naksha                      ║
-║                         v4.0.0 · 57 commands                    ║
+║                         v4.8.0 · 60 commands                    ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Naksha assembles specialist roles for any design task.
@@ -640,7 +640,7 @@ You've learned: [list the commands used in this track]
 
 ━━━ Explore more ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  All 57 commands:
+  All 60 commands:
 
   Core Design     /design /design-review /design-critique /design-qa
                   /design-system /brand-kit /brand-strategy
@@ -649,7 +649,7 @@ You've learned: [list the commands used in this track]
   Figma           /figma /figma-create /figma-responsive /figma-prototype
                   /figma-sync /figma-component-library /ab-variants /site-to-figma
 
-  QA & Audit      /ux-audit /accessibility-audit /lint-design /component-docs
+  QA & Audit      /ux-audit /accessibility-audit /lint-design /component-docs /design-score
 
   Social          /social-content /social-campaign /social-analytics
 
@@ -667,7 +667,7 @@ You've learned: [list the commands used in this track]
 
   Templates       /design-template
 
-  Memory          /naksha-init /naksha-status
+  Memory          /naksha-init /naksha-status /naksha-doctor
 
   Pipelines       /pipeline
 
