@@ -3886,6 +3886,146 @@
           "description": "updates updatedAt to current timestamp"
         }
       ]
+    },
+    {
+      "id": 140,
+      "name": "conversational-track-chatbot",
+      "prompt": "/design-tutorial conversational",
+      "expected_output": "Design a chatbot UI, voice interface",
+      "assertions": [
+        {
+          "name": "output-contains-chatbot",
+          "description": "output contains 'chatbot'"
+        },
+        {
+          "name": "output-contains-dialog",
+          "description": "output contains 'dialog'"
+        },
+        {
+          "name": "output-contains-bubble",
+          "description": "output contains 'bubble'"
+        },
+        {
+          "name": "output-contains-accessibility",
+          "description": "output contains 'accessibility'"
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "name": "conversational-track-voice",
+      "prompt": "/design-tutorial conversational",
+      "expected_output": "Voice interface exercises",
+      "assertions": [
+        {
+          "name": "output-contains-voice",
+          "description": "output contains 'voice'"
+        },
+        {
+          "name": "output-contains-wake",
+          "description": "output contains 'wake'"
+        },
+        {
+          "name": "output-contains-confirmation",
+          "description": "output contains 'confirmation'"
+        },
+        {
+          "name": "output-contains-earcon",
+          "description": "output contains 'earcon'"
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "name": "spatial-track-visionos",
+      "prompt": "/design-tutorial spatial",
+      "expected_output": "visionOS spatial design",
+      "assertions": [
+        {
+          "name": "output-contains-spatial",
+          "description": "output contains 'spatial'"
+        },
+        {
+          "name": "output-contains-depth",
+          "description": "output contains 'depth'"
+        },
+        {
+          "name": "output-contains-window",
+          "description": "output contains 'window'"
+        },
+        {
+          "name": "output-contains-ornament",
+          "description": "output contains 'ornament'"
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "name": "spatial-track-ar",
+      "prompt": "/design-tutorial spatial",
+      "expected_output": "AR overlay design",
+      "assertions": [
+        {
+          "name": "output-contains-anchor",
+          "description": "output contains 'anchor'"
+        },
+        {
+          "name": "output-contains-tracking",
+          "description": "output contains 'tracking'"
+        },
+        {
+          "name": "output-contains-scan",
+          "description": "output contains 'scan'"
+        },
+        {
+          "name": "output-contains-overlay",
+          "description": "output contains 'overlay'"
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "name": "compliance-track-gdpr",
+      "prompt": "/design-tutorial compliance",
+      "expected_output": "GDPR consent flow",
+      "assertions": [
+        {
+          "name": "output-contains-gdpr",
+          "description": "output contains 'gdpr'"
+        },
+        {
+          "name": "output-contains-consent",
+          "description": "output contains 'consent'"
+        },
+        {
+          "name": "output-contains-banner",
+          "description": "output contains 'banner'"
+        },
+        {
+          "name": "output-contains-privacy",
+          "description": "output contains 'privacy'"
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "name": "compliance-track-pipeline",
+      "prompt": "/pipeline list",
+      "expected_output": "Available pipelines listing",
+      "assertions": [
+        {
+          "name": "output-contains-launch-prep",
+          "description": "output contains 'launch-prep'"
+        },
+        {
+          "name": "output-contains-design-tokens",
+          "description": "output contains 'design-tokens'"
+        },
+        {
+          "name": "output-contains-email-launch",
+          "description": "output contains 'email-launch'"
+        }
+      ]
     }
   ]
 }

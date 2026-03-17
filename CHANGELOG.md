@@ -2,6 +2,18 @@
 
 All notable changes to naksha are documented here.
 
+## v4.1.0 — Tutorial Depth & Pipeline Library (2026-03-17)
+
+**Tutorial expansion:**
+- 3 new tutorial tracks: `conversational` (chatbot → VUI → pipeline), `spatial` (visionOS → AR → competitive audit), `compliance` (GDPR → HIPAA → project memory)
+- `full` track expanded 16 → 19 steps (chatbot, GDPR, and /pipeline run launch-prep added)
+- Welcome Screen updated with tracks 10–12 and Frontier Wings / Memory & Pipelines rows
+- Footer tracks list updated with all 12 tracks
+
+**Pipeline library:**
+- 3 new built-in pipelines: `design-tokens` (design-system → brand-kit → design-framework), `email-launch` (email-template → email-campaign → email-audit), `ar-prototype` (design-spatial → design-ar-overlay → competitive-audit)
+- Total: 7 pipelines in `skills/design/pipelines/`
+
 ## v4.0.0 (2026-03-17)
 
 The biggest naksha release — four pillars that transform the plugin from a stateless command toolkit into a project-aware, vision-capable, pipeline-driven design operations platform with three new frontier wings.

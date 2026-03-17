@@ -865,7 +865,7 @@ Settings marked `"auto"` or left empty defer to auto-detection. The Design Manag
 
 ```
 naksha/
-├── .claude-plugin/plugin.json          # Plugin manifest (v4.0.0)
+├── .claude-plugin/plugin.json          # Plugin manifest (v4.1.0)
 ├── skills/design/
 │   ├── SKILL.md                        # Design Manager orchestration
 │   ├── settings.local.md              # User-configurable preferences
