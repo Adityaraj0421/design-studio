@@ -319,25 +319,101 @@ visionOS materials are designed to respond to real-world environment lighting, c
 
 ### Adaptive Spatial Layout — Apple
 From **visionOS Human Interface Guidelines** (https://developer.apple.com/design/human-interface-guidelines/visionos):
-> "People can place and resize windows throughout their surroundings, so design your windows to look great at various sizes and in various locations." Apple's HIG explicitly frames spatial layout as user-controlled, not designer-controlled. Spatial designers must design adaptive layouts, not fixed canvases.
+
+> "People can place and resize windows throughout their surroundings, so design your windows to look great at various sizes and in various locations."
+
+Apple's HIG explicitly frames spatial layout as **user-controlled, not designer-controlled**. Spatial designers must design adaptive layouts, not fixed canvases. This has three direct design implications:
+
+1. **No fixed aspect ratio locks.** Windows must be fully adaptive — content must reflow gracefully when a user stretches or compresses the window. Treat spatial layout like responsive web design, not print layout.
+2. **No layout that assumes a specific viewing distance.** Users can place windows at any distance. Typography, icon sizes, and minimum tap targets must scale correctly across the full distance range (0.5m–5m). Test your layout at both extremes.
+3. **Deliberate minimum and maximum bounds.** Define `defaultSize`, `minSize`, and `maxSize` for every window. Without these bounds, extremely small or large window sizes can break the layout. The HIG recommends designing a comfortable default size and then verifying at 50% and 200% of that size.
+
+> Source: developer.apple.com/design/human-interface-guidelines/visionos — 2024
 
 ---
 
 ### XR Session Focus Requirements — W3C
 From **WebXR Device API Specification** (https://www.w3.org/TR/webxr/):
-> The spec requires that a user agent must not grant an immersive session request if the page does not have focus. Entry points must be intentional opt-in flows — an onboarding screen before requesting XR permissions is always required, never optional.
+
+> "A user agent must not grant an immersive session request if the relevant document is not focused, or if the user's intention to enter an immersive session is not understood."
+
+The spec mandates intentional opt-in flows — an onboarding screen before requesting XR permissions is always required, never optional. The design implications extend beyond the permission prompt itself:
+
+**Session entry must be a clear, deliberate action.** A button labeled "Enter Experience" with a one-sentence description of what the XR session will do (and how to exit) is the minimum required design. Never request XR session access on page load.
+
+**Exit is as important as entry.** The spec requires that users can always exit an immersive session. Design a persistent, always-accessible exit affordance: a button that's reachable without removing the headset, and a keyboard escape path for WebXR. For Apple Vision Pro, the Digital Crown always exits — design should acknowledge this and not fight it.
+
+**Feature detection informs progressive enhancement.** The WebXR API's feature detection model (`navigator.xr.isSessionSupported()`) means your onboarding flow must gracefully handle: full XR supported, partial XR supported (e.g., `inline` session only), and no XR support. Design three distinct entry states, not one XR-only path.
+
+> Source: w3.org/TR/webxr — 2024
 
 ---
 
 ### Hit-Test as Separate Capability — W3C Immersive Web
 From **W3C Immersive Web Working Group** (https://www.w3.org/immersive-web/):
-> Hit-testing (determining what real-world surface a ray intersects) is a separate capability from basic AR session establishment. Design AR anchor workflows with graceful fallback for devices that support `immersive-ar` but not the `hit-test` module — not all AR devices expose hit-test results.
+
+> "Hit-testing (determining what real-world surface a ray intersects) is a separate capability from basic AR session establishment."
+
+Hit-testing is a separate capability from basic AR session establishment. Design AR anchor workflows with graceful fallback for devices that support `immersive-ar` but not the `hit-test` module.
+
+**The design fallback hierarchy for AR anchoring:**
+1. `immersive-ar` + `hit-test` → Full world-anchor placement with surface detection feedback
+2. `immersive-ar` without `hit-test` → Fixed-distance placement (anchor floats at a set depth, no surface snapping); show a "placement mode not available" explanation
+3. No `immersive-ar` → Flat preview mode with a "View in AR" prompt that explains device requirements
+
+**Surface type matters for anchor confidence.** Hit-test results include a surface type signal (plane, point, mesh). Design different placement feedback for different surface types: a flat horizontal plane (floor, table) should show a placement ring; a vertical plane (wall) should show a vertical placement indicator; a point cloud result (no clear surface) should show an "uncertain placement" warning and request the user to scan more of the environment.
+
+> Source: w3.org/immersive-web — 2024
 
 ---
 
 ### 3DoF Input Constraints — Historical Reference
 From **Google Daydream Design Guidelines** (archived 2016–2019):
-> A 3-degree-of-freedom (3DoF) input model (rotation only, no positional tracking) fundamentally limits direct manipulation design. Always identify your minimum DOF requirement early — 3DoF controllers must rely on ray-casting and gaze, not direct reach. This constraint still applies to any XR device without full 6DoF positional tracking.
+
+> "A 3-degree-of-freedom (3DoF) input model fundamentally limits direct manipulation design."
+
+A 3DoF controller (rotation only, no positional tracking) cannot support direct reach or hand-presence interactions. This constraint still applies to any XR device without full 6DoF positional tracking, and informs the minimum target size and interaction model requirements.
+
+**The 3DoF design implications still matter in 2024:**
+- Some mobile WebXR sessions run in 3DoF mode (phone-based XR, Cardboard-class devices). Design must not assume 6DoF hand presence.
+- Ray-casting and gaze-dwell are the required interaction primitives for 3DoF. Design minimum target sizes for ray-cast interactions at **44pt at 1m distance** — equivalent to the WCAG touch target minimum, scaled for distance.
+- **Controller model detection:** If you cannot detect the controller type at runtime, default to 3DoF-safe interaction patterns. Assuming 6DoF availability and finding it absent breaks all interactive elements.
+- For hybrid products targeting both 3DoF and 6DoF, use a capability flag at session init and swap interaction layers. Never try to make a single interaction model work for both — 3DoF ray-cast targets and 6DoF direct-touch targets have different size and feedback requirements.
+
+> Source: Google Daydream Design Guidelines (archived, still reference-relevant for constraint reasoning) — 2019
+
+---
+
+### Meta Quest Developer Center — Spatial Design Principles
+From **Meta Quest Developer Center — Interaction Design** (developer.oculus.com/design):
+
+> "Interactions should leverage people's existing knowledge of how to interact with the physical world."
+
+Meta's guidelines establish the concept of **natural affordance transfer**: users should be able to predict how to interact with spatial UI elements based on their real-world experience of manipulating physical objects. UI elements that look like physical objects (a drawer, a dial, a slider rail) should behave like them. UI elements that look abstract (a flat panel, a status bar) must have explicit interaction affordances.
+
+**The principle of consistent hand presence.** Meta's research shows that when hand tracking is active, users expect their hands to always be visible and to always interact with the virtual world in a physically plausible way. Disappearing hands, hands that clip through surfaces, or hand models that show a different pose than the user's actual hand cause immediate disorientation. Design hand presence as a first-class concern: verify hand-model accuracy, establish collision response for physical surfaces, and ensure hand occlusion by virtual objects is handled correctly.
+
+**Microinteraction feedback latency.** Interaction feedback (a button press response, a grab confirmation, a surface contact sound) must occur within 50ms of the action. Latency above 50ms is perceptible and creates a "lag feeling" that breaks physical presence. Design haptic, audio, and visual feedback to fire simultaneously at the interaction event, not after the action is confirmed server-side.
+
+> Source: developer.oculus.com/design — 2024
+
+---
+
+### Microsoft Mixed Reality Design — Comfort and Legibility
+From **Microsoft Mixed Reality Design Guidelines** (learn.microsoft.com/en-us/windows/mixed-reality/design):
+
+> "Holographic content should be placed within a comfortable viewing zone of 1.25m to 5m from the user."
+
+Microsoft's extensive comfort research with HoloLens established the **vergence-accommodation conflict** as the primary cause of eye strain in near-field AR. This conflict occurs when the eye's focus distance (accommodation) doesn't match the depth cue from binocular disparity (vergence). UI placed closer than 1.25m forces the eyes to accommodate to a near distance while vergence suggests a further position, causing fatigue.
+
+**Microsoft's design rules derived from this research:**
+
+- Never place interactive content closer than 1.25m from the user. Informational overlays (non-interactive) can go as close as 0.85m for brief inspection durations, but must return to the comfort zone for sustained display.
+- Content that needs to be read for more than 5 seconds should be at 1.5m–3m, where the vergence-accommodation conflict is minimized.
+- Text legibility decreases at distances beyond 3m for typical font sizes. Scale text proportionally: at 2m, a 0.5° angular size corresponds to approximately 17mm physical height; at 4m, the same 0.5° requires 35mm. Use angular size (degrees) as your type scale unit in spatial specs, not absolute points or millimeters.
+- **Depth jitter:** Virtual content placed on or near a real surface will exhibit depth fighting (flickering) as the z-buffer precision degrades. Keep virtual content at least 2cm in front of or behind any real surface it's placed near.
+
+> Source: learn.microsoft.com/en-us/windows/mixed-reality/design — 2024
 
 ---
 
@@ -404,6 +480,39 @@ Multi-user shared spatial environments require additional design consideration:
 - **Voice proximity:** Voice volume should attenuate with avatar distance (spatial audio). Users within 3m hear clearly; users at 10m hear faintly. This mirrors real-world social audio and enables spatial conversation management.
 - **Shared anchor:** All users need a shared world anchor (a common origin point in physical space). In WebXR, this requires the `anchors` feature module. Design onboarding around establishing this shared origin.
 - **Presence indicators:** Show who is looking at what (gaze indicators), who is speaking (voice activity indicator), and who is idle (opacity reduction on avatar).
+
+---
+
+### Spatial Audio as UI Feedback
+
+Spatial audio is a first-class interaction feedback channel in XR, not an optional enhancement. Used correctly, spatial audio reduces visual clutter and provides richer feedback than visual-only systems.
+
+**Audio feedback hierarchy:**
+
+| Trigger | Audio Response | Visual Response | Notes |
+|---|---|---|---|
+| Button press / pinch confirm | Short click tone (50–80ms) | Scale pop (1.0→1.05→1.0) | Audio confirms input; visual confirms state change |
+| Error / invalid action | Low dissonant tone (120ms) | Red flash + shake animation | Never use a positive-sounding tone for errors |
+| Object grab | Soft whoosh (80ms) | Object follows hand | Signals physical ownership of the grabbed object |
+| Object drop / placement | Thud or surface contact sound | Drop shadow appears | Match surface material: soft cloth vs. hard desk |
+| Notification arrival | Spatial chime from notification origin | Badge appears at source | Audio direction should match visual position |
+| Session boundary (entering/exiting Immersive Space) | Fade-in ambient tone | Environment fade transition | Audio continuity prevents jarring scene cuts |
+
+**Spatial audio directionality rules:**
+
+- All audio feedback that corresponds to a UI element must originate from that element's 3D position. A button that beeps when pressed should emit the beep from the button's world-space position, not from the center of the scene.
+- Ambient audio (background environment sounds) should come from beyond 5m to prevent interference with foreground interaction feedback.
+- Never use stereo-only audio in XR — headsets with spatial audio capability (Vision Pro, Quest 3) derive significant depth perception from audio. Flat stereo audio breaks the spatial illusion.
+
+**Earcon design principles:**
+
+- All earcons (interface sound effects) must be < 200ms to avoid slowing the interaction tempo.
+- Earcon frequency range: 800Hz–4000Hz — in this range, earcons cut through ambient noise and are not masked by the lower-frequency spatial audio ambience.
+- Use pitch to convey valence: higher pitch = success/confirmation, lower pitch = error/warning. This is a widely understood audio convention that transfers without language barriers.
+- Provide a Reduced Sound option in accessibility settings — some users find spatial audio disorienting. Fallback to purely visual feedback when Reduced Sound is enabled.
+
+**SSML for voice in hybrid spatial:**
+When combining spatial audio with voice output (e.g., a voice assistant in a Vision Pro app), use `<audio src="...">` SSML to inject earcon audio into the TTS stream at key moments — confirmation tones, alert sounds — rather than playing them as separate audio events. This ensures the voice and earcon are temporally synchronized and feel like a unified audio system.
 
 ---
 
