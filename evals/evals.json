@@ -1409,7 +1409,7 @@
       "id": 44,
       "name": "depth-brand-positioning",
       "prompt": "/brand-strategy Define the brand positioning and voice for a new productivity app targeting freelancers. Competitors are Notion, Linear, and Todoist.",
-      "expected_output": "Structured positioning statement, differentiation relative to named competitors, and voice/tone definition — not generic brand advice.",
+      "expected_output": "Structured positioning statement, differentiation relative to named competitors, and voice/tone definition \u2014 not generic brand advice.",
       "files": [],
       "assertions": [
         {
@@ -1438,7 +1438,7 @@
       "id": 45,
       "name": "depth-illustration-icon-system",
       "prompt": "/illustration-system Design an icon system for a project management SaaS. Should work at 16px and 24px.",
-      "expected_output": "Specific grid system with keyline shapes, stroke weight recommendations per size, and at least one optical adjustment rule — not just style preference.",
+      "expected_output": "Specific grid system with keyline shapes, stroke weight recommendations per size, and at least one optical adjustment rule \u2014 not just style preference.",
       "files": [],
       "assertions": [
         {
@@ -1467,7 +1467,7 @@
       "id": 46,
       "name": "depth-video-hook-structure",
       "prompt": "/video-script Write a 60-second product demo script for a SaaS time-tracking tool targeting freelancers.",
-      "expected_output": "Script with a specific hook formula in the first 5 seconds, clear problem-solution structure, feature-benefit framing (not just feature listing), and a CTA — not a generic walkthrough.",
+      "expected_output": "Script with a specific hook formula in the first 5 seconds, clear problem-solution structure, feature-benefit framing (not just feature listing), and a CTA \u2014 not a generic walkthrough.",
       "files": [],
       "assertions": [
         {
@@ -1495,7 +1495,7 @@
     {
       "id": 47,
       "name": "gen-image-product-brief",
-      "prompt": "/gen-image a skincare serum bottle on marble surface for Lumina Beauty — editorial photography style, Instagram feed post",
+      "prompt": "/gen-image a skincare serum bottle on marble surface for Lumina Beauty \u2014 editorial photography style, Instagram feed post",
       "expected_output": "Tool selection with reasoning, full 6-element prompt (subject, style, lighting, camera, mood, negatives), 2 variation prompts, seed strategy note, and platform aspect ratio spec",
       "files": [],
       "assertions": [
@@ -1524,8 +1524,8 @@
     {
       "id": 48,
       "name": "gen-image-editorial-campaign",
-      "prompt": "/gen-image founder working at a standing desk for TechStartup — authentic documentary style, LinkedIn hero image",
-      "expected_output": "Midjourney selected for editorial/lifestyle; prompt avoids stock photo clichés; negatives include stock photo pose, fake smile; correct 2:1 aspect ratio for LinkedIn",
+      "prompt": "/gen-image founder working at a standing desk for TechStartup \u2014 authentic documentary style, LinkedIn hero image",
+      "expected_output": "Midjourney selected for editorial/lifestyle; prompt avoids stock photo clich\u00e9s; negatives include stock photo pose, fake smile; correct 2:1 aspect ratio for LinkedIn",
       "files": [],
       "assertions": [
         {
@@ -1534,7 +1534,7 @@
         },
         {
           "name": "avoids-stock-cliches",
-          "description": "Negatives include stock photo or cliché pose terms"
+          "description": "Negatives include stock photo or clich\u00e9 pose terms"
         },
         {
           "name": "correct-aspect-ratio",
@@ -1545,7 +1545,7 @@
     {
       "id": 49,
       "name": "gen-video-product-reel",
-      "prompt": "/gen-video a slow product reveal of a skincare bottle for Instagram Reels — luxury commercial aesthetic, 15 seconds",
+      "prompt": "/gen-video a slow product reveal of a skincare bottle for Instagram Reels \u2014 luxury commercial aesthetic, 15 seconds",
       "expected_output": "Tool selected (Runway or Luma for product shot), shot-by-shot prompt pack with full anatomy per shot, consistency strategy, 9:16 aspect ratio, 15s total with shot breakdown",
       "files": [],
       "assertions": [
@@ -1570,7 +1570,7 @@
     {
       "id": 50,
       "name": "gen-audio-voiceover-brief",
-      "prompt": "/gen-audio voiceover for a 30-second SaaS product demo video — warm and confident, conversational pace",
+      "prompt": "/gen-audio voiceover for a 30-second SaaS product demo video \u2014 warm and confident, conversational pace",
       "expected_output": "ElevenLabs or Murf selected, completed voice brief template with all fields, timing cues for 30s video, compliance disclosure note",
       "files": [],
       "assertions": [
@@ -1595,7 +1595,7 @@
     {
       "id": 51,
       "name": "gen-audio-music-brief",
-      "prompt": "/gen-audio background music for a startup pitch video — inspiring and modern, 90 seconds, loopable",
+      "prompt": "/gen-audio background music for a startup pitch video \u2014 inspiring and modern, 90 seconds, loopable",
       "expected_output": "Suno selected for background music, completed music brief with genre, mood, BPM, loop point, and licensing note",
       "files": [],
       "assertions": [
@@ -1620,7 +1620,7 @@
     {
       "id": 52,
       "name": "gen-moodboard-campaign",
-      "prompt": "/gen-moodboard a product launch campaign for Lumina — a minimalist skincare brand targeting conscious consumers in their 30s",
+      "prompt": "/gen-moodboard a product launch campaign for Lumina \u2014 a minimalist skincare brand targeting conscious consumers in their 30s",
       "expected_output": "3 distinct visual directions, each with name, visual language description, mood, real-world references, brand rationale, and 4-6 ready-to-paste prompts",
       "files": [],
       "assertions": [
@@ -1821,7 +1821,7 @@
     {
       "id": 61,
       "name": "figma-prototype-checkout-flow",
-      "prompt": "/figma-prototype Add prototype connections for a 3-step checkout flow: cart → shipping → payment → confirmation",
+      "prompt": "/figma-prototype Add prototype connections for a 3-step checkout flow: cart \u2192 shipping \u2192 payment \u2192 confirmation",
       "expected_output": "Prototype connection map, trigger types (on-click), animation settings, flow overview, smart animate recommendations",
       "files": [],
       "assertions": [
@@ -1842,8 +1842,8 @@
     {
       "id": 62,
       "name": "figma-component-library-design-system",
-      "prompt": "/figma-component-library Create a component library for a B2B SaaS design system — atoms, molecules, organisms",
-      "expected_output": "Component hierarchy (atoms → molecules → organisms), variant matrix for each component, auto-layout specifications, component property definitions",
+      "prompt": "/figma-component-library Create a component library for a B2B SaaS design system \u2014 atoms, molecules, organisms",
+      "expected_output": "Component hierarchy (atoms \u2192 molecules \u2192 organisms), variant matrix for each component, auto-layout specifications, component property definitions",
       "files": [],
       "assertions": [
         {
@@ -1863,7 +1863,7 @@
     {
       "id": 63,
       "name": "motion-design-page-transitions",
-      "prompt": "/motion-design Design micro-interactions and page transitions for a SaaS dashboard — loading states, hover effects, route transitions",
+      "prompt": "/motion-design Design micro-interactions and page transitions for a SaaS dashboard \u2014 loading states, hover effects, route transitions",
       "expected_output": "Duration/easing scale, specific animation specs per interaction type, reduced motion fallbacks, CSS or Framer Motion code snippets",
       "files": [],
       "assertions": [
@@ -1888,7 +1888,7 @@
     {
       "id": 64,
       "name": "presentation-design-pitch-deck",
-      "prompt": "/presentation-design Design a 10-slide pitch deck for a Series A SaaS startup — problem, solution, market, traction, team, ask",
+      "prompt": "/presentation-design Design a 10-slide pitch deck for a Series A SaaS startup \u2014 problem, solution, market, traction, team, ask",
       "expected_output": "Slide system with layout templates, typography hierarchy, color usage rules, slide-by-slide content structure, visual design direction",
       "files": [],
       "assertions": [
@@ -1909,7 +1909,7 @@
     {
       "id": 65,
       "name": "illustration-system-icon-set",
-      "prompt": "/illustration-system Design an icon system for a productivity app — 24px grid, outlined style, consistent stroke weight",
+      "prompt": "/illustration-system Design an icon system for a productivity app \u2014 24px grid, outlined style, consistent stroke weight",
       "expected_output": "Icon grid specification (24px base, padding, keyline shapes), stroke weight and corner radius rules, naming convention, SVG export guidelines, sample icons",
       "files": [],
       "assertions": [
@@ -1934,7 +1934,7 @@
     {
       "id": 66,
       "name": "video-script-product-demo",
-      "prompt": "/video-script Write a 90-second product demo video script for a project management SaaS — problem, solution, key features, CTA",
+      "prompt": "/video-script Write a 90-second product demo video script for a project management SaaS \u2014 problem, solution, key features, CTA",
       "expected_output": "Full script with scene descriptions, spoken narration, on-screen text notes, timing marks, and shot/visual direction notes",
       "files": [],
       "assertions": [
@@ -1959,7 +1959,7 @@
     {
       "id": 67,
       "name": "ab-variants-pricing-page",
-      "prompt": "/ab-variants Generate A/B test variants for a SaaS pricing page — test the CTA copy and plan hierarchy",
+      "prompt": "/ab-variants Generate A/B test variants for a SaaS pricing page \u2014 test the CTA copy and plan hierarchy",
       "expected_output": "2-3 distinct variants with hypothesis, specific copy/design changes per variant, success metric definition, and which variant is recommended as control",
       "files": [],
       "assertions": [
@@ -2001,7 +2001,7 @@
     {
       "id": 69,
       "name": "social-analytics-instagram-report",
-      "prompt": "/social-analytics Generate an Instagram performance dashboard — reach, engagement rate, story completion, follower growth by content type",
+      "prompt": "/social-analytics Generate an Instagram performance dashboard \u2014 reach, engagement rate, story completion, follower growth by content type",
       "expected_output": "Dashboard layout with KPI cards, chart types for each metric, benchmark values, content type performance breakdown, actionable insights",
       "files": [],
       "assertions": [
@@ -2026,7 +2026,7 @@
     {
       "id": 70,
       "name": "design-present-saas-ui",
-      "prompt": "/design-present Create an interactive HTML presentation showcasing a SaaS dashboard redesign — before/after comparison, design decisions",
+      "prompt": "/design-present Create an interactive HTML presentation showcasing a SaaS dashboard redesign \u2014 before/after comparison, design decisions",
       "expected_output": "Interactive HTML presentation with slides, before/after visuals, design rationale per decision, navigation controls",
       "files": [],
       "assertions": [
@@ -2047,7 +2047,7 @@
     {
       "id": 71,
       "name": "gen-moodboard-saas-rebrand",
-      "prompt": "/gen-moodboard a brand refresh campaign for Nexus — a B2B analytics SaaS moving upmarket to enterprise",
+      "prompt": "/gen-moodboard a brand refresh campaign for Nexus \u2014 a B2B analytics SaaS moving upmarket to enterprise",
       "expected_output": "3 distinct visual directions with brand personality signals, visual language description, real-world references, and 4-6 AI image prompts per direction",
       "files": [],
       "assertions": [
@@ -2068,9 +2068,13 @@
     {
       "id": 72,
       "name": "email-audit technical",
-      "prompt": "Audit this email HTML for Lumina Beauty — it's a promotional email for the Glow Serum launch: <!DOCTYPE html><html><head><title>Email</title></head><body><table width='600'><tr><td><h1>Introducing version 2 of our Glow Serum</h1><p>We've improved the formula.</p><a href='#' style='background-color:#c9a96e;color:#fff;padding:12px 24px;'>Click here</a></td></tr></table></body></html>",
+      "prompt": "Audit this email HTML for Lumina Beauty \u2014 it's a promotional email for the Glow Serum launch: <!DOCTYPE html><html><head><title>Email</title></head><body><table width='600'><tr><td><h1>Introducing version 2 of our Glow Serum</h1><p>We've improved the formula.</p><a href='#' style='background-color:#c9a96e;color:#fff;padding:12px 24px;'>Click here</a></td></tr></table></body></html>",
       "expected_output": "Phase 1 technical audit with at least 2 critical issues: missing bulletproof VML button and missing preheader. Corrected HTML provided for critical issues. Phase 2 copy audit flags feature-first headline and weak CTA text, provides rewrites.",
-      "files": ["commands/email-audit.md", "skills/design/references/email-designer.md", "skills/design/references/email-copywriter.md"],
+      "files": [
+        "commands/email-audit.md",
+        "skills/design/references/email-designer.md",
+        "skills/design/references/email-copywriter.md"
+      ],
       "assertions": [
         {
           "name": "flags-missing-vml-button",
@@ -2099,7 +2103,10 @@
       "name": "email-audit-copy",
       "prompt": "Audit the copy of this email for a re-engagement campaign targeting lapsed Lumina Beauty customers. Subject: 'Update from Lumina Beauty'. Preview text: none. Headline: 'We have some news to share with you'. Body: 'We have been busy at Lumina Beauty HQ. We wanted to reach out because we noticed you haven't visited us in a while. We have a new serum. We hope you like it.' CTA: 'Submit'.",
       "expected_output": "Phase 2 copy audit scoring the subject line low on specificity, flagging missing preview text, identifying brand-first and passive body copy, flagging 'Submit' as the weakest possible CTA. Provides rewrites for subject, preview text, headline, body copy, and CTA.",
-      "files": ["commands/email-audit.md", "skills/design/references/email-copywriter.md"],
+      "files": [
+        "commands/email-audit.md",
+        "skills/design/references/email-copywriter.md"
+      ],
       "assertions": [
         {
           "name": "scores-subject-specificity-low",
@@ -2126,8 +2133,8 @@
     {
       "id": 74,
       "name": "data-viz-audit-chart",
-      "prompt": "/data-viz-audit pie chart showing monthly active users split by 7 plan tiers — standalone, no dashboard context",
-      "expected_output": "Phase 1: chart type flagged (7-slice pie → recommend horizontal bar), colorblind palette issue raised if red-green used, annotation missing called out, anti-pattern noted. Phase 2 skipped with explicit invitation to provide dashboard context.",
+      "prompt": "/data-viz-audit pie chart showing monthly active users split by 7 plan tiers \u2014 standalone, no dashboard context",
+      "expected_output": "Phase 1: chart type flagged (7-slice pie \u2192 recommend horizontal bar), colorblind palette issue raised if red-green used, annotation missing called out, anti-pattern noted. Phase 2 skipped with explicit invitation to provide dashboard context.",
       "files": [
         "commands/data-viz-audit.md",
         "skills/design/references/data-viz-designer.md"
@@ -2158,7 +2165,7 @@
     {
       "id": 75,
       "name": "data-viz-audit-dashboard",
-      "prompt": "/data-viz-audit dual Y-axis line chart comparing monthly ad spend (left axis, $) and conversion rate (right axis, %) for the last 12 months — placed in a SaaS marketing analytics dashboard with CAC, ROAS, and conversion rate KPI cards",
+      "prompt": "/data-viz-audit dual Y-axis line chart comparing monthly ad spend (left axis, $) and conversion rate (right axis, %) for the last 12 months \u2014 placed in a SaaS marketing analytics dashboard with CAC, ROAS, and conversion rate KPI cards",
       "expected_output": "Phase 1: dual Y-axis anti-pattern flagged, replacement recommended (two separate charts or indexed comparison). Phase 2 runs: chart placement, filter alignment, and KPI coordination reviewed for the marketing analytics dashboard context.",
       "files": [
         "commands/data-viz-audit.md",
@@ -2191,7 +2198,7 @@
     {
       "id": 76,
       "name": "pdf-report-generation",
-      "prompt": "/pdf-report Q4 Annual Report for Lumina SaaS — 12-page multi-section report, client-facing, full-color",
+      "prompt": "/pdf-report Q4 Annual Report for Lumina SaaS \u2014 12-page multi-section report, client-facing, full-color",
       "expected_output": "Multi-page HTML document with CSS @page rules for named pages (cover, toc, body, back), master template structure, typography system for print, page break rules, widows/orphans, running headers/footers via @page margin boxes, and a preflight checklist.",
       "files": [
         "commands/pdf-report.md",
@@ -2223,8 +2230,8 @@
     {
       "id": 77,
       "name": "print-layout-business-card",
-      "prompt": "/print-layout Business card for Lumina SaaS — 85×54mm, front and back, full bleed, coated finish",
-      "expected_output": "Self-contained HTML/CSS for a business card with artboard at 91×60mm (bleed), CSS variables for trim/bleed/safe dimensions, content constrained to safe zone, CMYK-documented brand colors, minimum font sizes met, both faces (front and back) output, and a preflight checklist.",
+      "prompt": "/print-layout Business card for Lumina SaaS \u2014 85\u00d754mm, front and back, full bleed, coated finish",
+      "expected_output": "Self-contained HTML/CSS for a business card with artboard at 91\u00d760mm (bleed), CSS variables for trim/bleed/safe dimensions, content constrained to safe zone, CMYK-documented brand colors, minimum font sizes met, both faces (front and back) output, and a preflight checklist.",
       "files": [
         "commands/print-layout.md",
         "skills/design/references/print-designer.md"
@@ -2232,7 +2239,7 @@
       "assertions": [
         {
           "name": "defines-bleed-correctly",
-          "description": "Artboard dimensions are trim + 3mm bleed on all sides (91×60mm for 85×54mm trim)"
+          "description": "Artboard dimensions are trim + 3mm bleed on all sides (91\u00d760mm for 85\u00d754mm trim)"
         },
         {
           "name": "constrains-content-to-safe-zone",
@@ -2255,7 +2262,7 @@
     {
       "id": 78,
       "name": "print-audit-standalone",
-      "prompt": "/print-audit Invoice HTML: uses rgb(30, 58, 95) for header background, font-family: Arial, no bleed or safe zone defined, no page break rules — no brand context provided",
+      "prompt": "/print-audit Invoice HTML: uses rgb(30, 58, 95) for header background, font-family: Arial, no bleed or safe zone defined, no page break rules \u2014 no brand context provided",
       "expected_output": "Phase 1: bleed missing flagged with fix, RGB color not CMYK-documented flagged, Arial without @font-face flagged, page break rules missing flagged. Phase 2 skipped with invitation message containing brand-fit. Rewrite block with corrected CSS.",
       "files": [
         "commands/print-audit.md",
@@ -2287,7 +2294,7 @@
     {
       "id": 79,
       "name": "print-audit-with-brand",
-      "prompt": "/print-audit Brochure layout CSS: tri-fold DL, bleed defined at 3mm, uses #1e40af for header (Lumina brand navy is #1e3a5f), font-family: Inter but no @font-face — brand context: Lumina navy #1e3a5f, orange #ff8000, Inter typeface",
+      "prompt": "/print-audit Brochure layout CSS: tri-fold DL, bleed defined at 3mm, uses #1e40af for header (Lumina brand navy is #1e3a5f), font-family: Inter but no @font-face \u2014 brand context: Lumina navy #1e3a5f, orange #ff8000, Inter typeface",
       "expected_output": "Phase 1: bleed passes, font-embed flagged (no @font-face for Inter). Phase 2 runs: color accuracy flagged (#1e40af vs #1e3a5f), typography match confirmed direction but @font-face missing flagged. Rewrite block corrects both Phase 1 and Phase 2 issues.",
       "files": [
         "commands/print-audit.md",
@@ -2321,7 +2328,7 @@
       "name": "design-framework-vue",
       "command": "/design-framework",
       "role": "skills/design/references/framework-specialist.md",
-      "prompt": "/design-framework vue — Convert this Lumina SaaS product card HTML to a Vue 3 SFC with typed props and UnoCSS",
+      "prompt": "/design-framework vue \u2014 Convert this Lumina SaaS product card HTML to a Vue 3 SFC with typed props and UnoCSS",
       "assertions": [
         {
           "name": "outputs-vue-file",
@@ -2333,7 +2340,7 @@
         },
         {
           "name": "uses-defineProps",
-          "description": "Props are declared with typed defineProps<T>() — not runtime props object"
+          "description": "Props are declared with typed defineProps<T>() \u2014 not runtime props object"
         },
         {
           "name": "applies-unocss-utilities",
@@ -2350,7 +2357,7 @@
       "name": "design-framework-svelte",
       "command": "/design-framework",
       "role": "skills/design/references/framework-specialist.md",
-      "prompt": "/design-framework svelte — Convert this Lumina SaaS form component to Svelte 5 using rune syntax",
+      "prompt": "/design-framework svelte \u2014 Convert this Lumina SaaS form component to Svelte 5 using rune syntax",
       "assertions": [
         {
           "name": "outputs-svelte-file",
@@ -2366,7 +2373,7 @@
         },
         {
           "name": "no-legacy-export-let",
-          "description": "No export let prop declarations appear in the component — Svelte 5 rune syntax throughout"
+          "description": "No export let prop declarations appear in the component \u2014 Svelte 5 rune syntax throughout"
         },
         {
           "name": "includes-setup-notes",
@@ -2379,7 +2386,7 @@
       "name": "design-framework-astro",
       "command": "/design-framework",
       "role": "skills/design/references/framework-specialist.md",
-      "prompt": "/design-framework astro — Convert this Lumina SaaS marketing hero section to an Astro component with a React island for the CTA button",
+      "prompt": "/design-framework astro \u2014 Convert this Lumina SaaS marketing hero section to an Astro component with a React island for the CTA button",
       "assertions": [
         {
           "name": "outputs-astro-file",
@@ -2408,7 +2415,7 @@
       "name": "design-to-framework-chain",
       "command": "/design + /design-framework",
       "role": "skills/design/references/framework-specialist.md",
-      "prompt": "/design a SaaS pricing page for Lumina with 3 tiers and monthly/annual toggle — then convert it to React + Tailwind components using /design-framework react-tailwind",
+      "prompt": "/design a SaaS pricing page for Lumina with 3 tiers and monthly/annual toggle \u2014 then convert it to React + Tailwind components using /design-framework react-tailwind",
       "assertions": [
         {
           "name": "design-output-produced-first",
@@ -2437,12 +2444,24 @@
       "name": "design-handoff-developer-package",
       "command": "/design-handoff",
       "role": "skills/design/references/deployment.md",
-      "prompt": "/design-handoff — Generate a developer handoff package for the Lumina SaaS onboarding flow including specs, tokens, and component inventory",
+      "prompt": "/design-handoff \u2014 Generate a developer handoff package for the Lumina SaaS onboarding flow including specs, tokens, and component inventory",
       "assertions": [
-        {"name": "outputs-spec-document", "description": "A design spec document is produced with measurements and layout annotations"},
-        {"name": "includes-token-references", "description": "Design tokens are referenced with their CSS variable names"},
-        {"name": "lists-components-used", "description": "Components used in the design are listed with their names"},
-        {"name": "includes-breakpoint-specs", "description": "Responsive breakpoints are specified for the layout"}
+        {
+          "name": "outputs-spec-document",
+          "description": "A design spec document is produced with measurements and layout annotations"
+        },
+        {
+          "name": "includes-token-references",
+          "description": "Design tokens are referenced with their CSS variable names"
+        },
+        {
+          "name": "lists-components-used",
+          "description": "Components used in the design are listed with their names"
+        },
+        {
+          "name": "includes-breakpoint-specs",
+          "description": "Responsive breakpoints are specified for the layout"
+        }
       ]
     },
     {
@@ -2450,12 +2469,24 @@
       "name": "design-handoff-token-export",
       "command": "/design-handoff",
       "role": "skills/design/references/deployment.md",
-      "prompt": "/design-handoff tokens — Export the Lumina SaaS design token set with values for developers",
+      "prompt": "/design-handoff tokens \u2014 Export the Lumina SaaS design token set with values for developers",
       "assertions": [
-        {"name": "exports-color-tokens", "description": "Color tokens are exported with their hex or hsl values"},
-        {"name": "exports-spacing-tokens", "description": "Spacing tokens are exported with their pixel values"},
-        {"name": "exports-typography-tokens", "description": "Typography tokens include font family, size, and weight"},
-        {"name": "developer-notes-included", "description": "Developer implementation notes are included in the handoff"}
+        {
+          "name": "exports-color-tokens",
+          "description": "Color tokens are exported with their hex or hsl values"
+        },
+        {
+          "name": "exports-spacing-tokens",
+          "description": "Spacing tokens are exported with their pixel values"
+        },
+        {
+          "name": "exports-typography-tokens",
+          "description": "Typography tokens include font family, size, and weight"
+        },
+        {
+          "name": "developer-notes-included",
+          "description": "Developer implementation notes are included in the handoff"
+        }
       ]
     },
     {
@@ -2463,12 +2494,24 @@
       "name": "design-present-stakeholder-review",
       "command": "/design-present",
       "role": "skills/design/references/product-designer.md",
-      "prompt": "/design-present — Create a stakeholder presentation for the Lumina SaaS onboarding redesign",
+      "prompt": "/design-present \u2014 Create a stakeholder presentation for the Lumina SaaS onboarding redesign",
       "assertions": [
-        {"name": "slide-narrative-present", "description": "A slide-by-slide narrative structure is produced"},
-        {"name": "design-rationale-explained", "description": "Design decisions are explained with rationale for each key choice"},
-        {"name": "stakeholder-questions-anticipated", "description": "Likely stakeholder questions are identified and pre-addressed"},
-        {"name": "outcome-goals-stated", "description": "Expected outcomes or success metrics from the design are stated"}
+        {
+          "name": "slide-narrative-present",
+          "description": "A slide-by-slide narrative structure is produced"
+        },
+        {
+          "name": "design-rationale-explained",
+          "description": "Design decisions are explained with rationale for each key choice"
+        },
+        {
+          "name": "stakeholder-questions-anticipated",
+          "description": "Likely stakeholder questions are identified and pre-addressed"
+        },
+        {
+          "name": "outcome-goals-stated",
+          "description": "Expected outcomes or success metrics from the design are stated"
+        }
       ]
     },
     {
@@ -2476,12 +2519,24 @@
       "name": "design-present-exec-walkthrough",
       "command": "/design-present",
       "role": "skills/design/references/product-designer.md",
-      "prompt": "/design-present executive — Prepare a C-suite walkthrough of the Lumina SaaS Q1 design strategy",
+      "prompt": "/design-present executive \u2014 Prepare a C-suite walkthrough of the Lumina SaaS Q1 design strategy",
       "assertions": [
-        {"name": "executive-summary-included", "description": "An executive summary or key takeaways section is included"},
-        {"name": "business-impact-framed", "description": "Design changes are framed in terms of business impact or metrics"},
-        {"name": "visual-hierarchy-described", "description": "Visual hierarchy and layout choices are described"},
-        {"name": "next-steps-defined", "description": "Next steps or decisions required from stakeholders are defined"}
+        {
+          "name": "executive-summary-included",
+          "description": "An executive summary or key takeaways section is included"
+        },
+        {
+          "name": "business-impact-framed",
+          "description": "Design changes are framed in terms of business impact or metrics"
+        },
+        {
+          "name": "visual-hierarchy-described",
+          "description": "Visual hierarchy and layout choices are described"
+        },
+        {
+          "name": "next-steps-defined",
+          "description": "Next steps or decisions required from stakeholders are defined"
+        }
       ]
     },
     {
@@ -2489,12 +2544,24 @@
       "name": "design-sprint-problem-framing",
       "command": "/design-sprint",
       "role": "skills/design/references/ux-researcher.md",
-      "prompt": "/design-sprint — Facilitate a design sprint for Lumina SaaS checkout abandonment problem",
+      "prompt": "/design-sprint \u2014 Facilitate a design sprint for Lumina SaaS checkout abandonment problem",
       "assertions": [
-        {"name": "sprint-goal-defined", "description": "A clear sprint goal or challenge statement is produced"},
-        {"name": "hmw-questions-generated", "description": "How Might We questions are generated from the problem space"},
-        {"name": "user-journey-mapped", "description": "A user journey or problem map is included in the sprint output"},
-        {"name": "insight-themes-identified", "description": "Key insight themes from research or assumptions are identified"}
+        {
+          "name": "sprint-goal-defined",
+          "description": "A clear sprint goal or challenge statement is produced"
+        },
+        {
+          "name": "hmw-questions-generated",
+          "description": "How Might We questions are generated from the problem space"
+        },
+        {
+          "name": "user-journey-mapped",
+          "description": "A user journey or problem map is included in the sprint output"
+        },
+        {
+          "name": "insight-themes-identified",
+          "description": "Key insight themes from research or assumptions are identified"
+        }
       ]
     },
     {
@@ -2502,12 +2569,24 @@
       "name": "design-sprint-solution-sketch",
       "command": "/design-sprint",
       "role": "skills/design/references/ux-researcher.md",
-      "prompt": "/design-sprint solutions — Generate solution sketches and voting protocol for the Lumina SaaS checkout sprint",
+      "prompt": "/design-sprint solutions \u2014 Generate solution sketches and voting protocol for the Lumina SaaS checkout sprint",
       "assertions": [
-        {"name": "solution-concepts-generated", "description": "Multiple solution concepts or sketch ideas are produced"},
-        {"name": "voting-criteria-defined", "description": "Criteria or process for voting on solutions is defined"},
-        {"name": "prototype-scope-defined", "description": "The prototype scope for the sprint is specified"},
-        {"name": "sprint-phases-outlined", "description": "A phase or day-by-day structure for the sprint is outlined"}
+        {
+          "name": "solution-concepts-generated",
+          "description": "Multiple solution concepts or sketch ideas are produced"
+        },
+        {
+          "name": "voting-criteria-defined",
+          "description": "Criteria or process for voting on solutions is defined"
+        },
+        {
+          "name": "prototype-scope-defined",
+          "description": "The prototype scope for the sprint is specified"
+        },
+        {
+          "name": "sprint-phases-outlined",
+          "description": "A phase or day-by-day structure for the sprint is outlined"
+        }
       ]
     },
     {
@@ -2515,12 +2594,24 @@
       "name": "figma-component-library-atoms",
       "command": "/figma-component-library",
       "role": "skills/design/references/design-system-lead.md",
-      "prompt": "/figma-component-library atoms — Build the atomic component layer for the Lumina SaaS design system in Figma",
+      "prompt": "/figma-component-library atoms \u2014 Build the atomic component layer for the Lumina SaaS design system in Figma",
       "assertions": [
-        {"name": "atom-components-defined", "description": "Atomic components such as Button and Input are specified with their properties"},
-        {"name": "token-usage-documented", "description": "How design tokens map to component properties is documented"},
-        {"name": "figma-structure-described", "description": "Figma file structure including pages and frames is described"},
-        {"name": "naming-convention-stated", "description": "Component naming conventions are specified"}
+        {
+          "name": "atom-components-defined",
+          "description": "Atomic components such as Button and Input are specified with their properties"
+        },
+        {
+          "name": "token-usage-documented",
+          "description": "How design tokens map to component properties is documented"
+        },
+        {
+          "name": "figma-structure-described",
+          "description": "Figma file structure including pages and frames is described"
+        },
+        {
+          "name": "naming-convention-stated",
+          "description": "Component naming conventions are specified"
+        }
       ]
     },
     {
@@ -2528,12 +2619,24 @@
       "name": "figma-component-library-variants",
       "command": "/figma-component-library",
       "role": "skills/design/references/design-system-lead.md",
-      "prompt": "/figma-component-library variants — Define the variant matrix and organism components for Lumina SaaS in Figma",
+      "prompt": "/figma-component-library variants \u2014 Define the variant matrix and organism components for Lumina SaaS in Figma",
       "assertions": [
-        {"name": "variant-properties-defined", "description": "Variant properties and their allowed values are listed for key components"},
-        {"name": "organism-components-present", "description": "Higher-level organism components are included beyond atoms and molecules"},
-        {"name": "component-documentation-included", "description": "Component descriptions or usage notes are included in the output"},
-        {"name": "library-publish-steps-included", "description": "Steps for publishing the component library to the team are included"}
+        {
+          "name": "variant-properties-defined",
+          "description": "Variant properties and their allowed values are listed for key components"
+        },
+        {
+          "name": "organism-components-present",
+          "description": "Higher-level organism components are included beyond atoms and molecules"
+        },
+        {
+          "name": "component-documentation-included",
+          "description": "Component descriptions or usage notes are included in the output"
+        },
+        {
+          "name": "library-publish-steps-included",
+          "description": "Steps for publishing the component library to the team are included"
+        }
       ]
     },
     {
@@ -2541,12 +2644,24 @@
       "name": "figma-prototype-checkout-flow",
       "command": "/figma-prototype",
       "role": "skills/design/references/figma-workflow.md",
-      "prompt": "/figma-prototype — Build an interactive checkout flow prototype in Figma for Lumina SaaS usability testing",
+      "prompt": "/figma-prototype \u2014 Build an interactive checkout flow prototype in Figma for Lumina SaaS usability testing",
       "assertions": [
-        {"name": "flow-steps-enumerated", "description": "Checkout flow steps are enumerated in sequence"},
-        {"name": "interactions-specified", "description": "Interaction types such as click and hover are specified for each trigger point"},
-        {"name": "transition-types-defined", "description": "Transition animations between screens are defined with duration and easing"},
-        {"name": "error-states-included", "description": "Error or validation states are included in the prototype specification"}
+        {
+          "name": "flow-steps-enumerated",
+          "description": "Checkout flow steps are enumerated in sequence"
+        },
+        {
+          "name": "interactions-specified",
+          "description": "Interaction types such as click and hover are specified for each trigger point"
+        },
+        {
+          "name": "transition-types-defined",
+          "description": "Transition animations between screens are defined with duration and easing"
+        },
+        {
+          "name": "error-states-included",
+          "description": "Error or validation states are included in the prototype specification"
+        }
       ]
     },
     {
@@ -2554,12 +2669,24 @@
       "name": "figma-prototype-onboarding",
       "command": "/figma-prototype",
       "role": "skills/design/references/figma-workflow.md",
-      "prompt": "/figma-prototype — Create an onboarding flow prototype in Figma for Lumina SaaS with branching paths",
+      "prompt": "/figma-prototype \u2014 Create an onboarding flow prototype in Figma for Lumina SaaS with branching paths",
       "assertions": [
-        {"name": "onboarding-screens-listed", "description": "Onboarding screens are listed in sequence with screen names"},
-        {"name": "hotspot-locations-described", "description": "Hotspot locations or trigger areas are described for each screen"},
-        {"name": "branching-flows-handled", "description": "Branching paths such as skip and back are included in the flow"},
-        {"name": "prototype-testing-notes", "description": "Notes for testing or presenting the prototype are included"}
+        {
+          "name": "onboarding-screens-listed",
+          "description": "Onboarding screens are listed in sequence with screen names"
+        },
+        {
+          "name": "hotspot-locations-described",
+          "description": "Hotspot locations or trigger areas are described for each screen"
+        },
+        {
+          "name": "branching-flows-handled",
+          "description": "Branching paths such as skip and back are included in the flow"
+        },
+        {
+          "name": "prototype-testing-notes",
+          "description": "Notes for testing or presenting the prototype are included"
+        }
       ]
     },
     {
@@ -2567,12 +2694,24 @@
       "name": "brand-strategy-positioning",
       "command": "/brand-strategy",
       "role": "skills/design/references/brand-strategist.md",
-      "prompt": "/brand-strategy positioning — Define Lumina SaaS brand positioning and competitive differentiation",
+      "prompt": "/brand-strategy positioning \u2014 Define Lumina SaaS brand positioning and competitive differentiation",
       "assertions": [
-        {"name": "positioning-statement-produced", "description": "A brand positioning statement is produced in standard format"},
-        {"name": "target-audience-defined", "description": "Target audience segments are defined with characteristics"},
-        {"name": "competitive-differentiation-stated", "description": "Differentiation from key competitors is clearly stated"},
-        {"name": "value-proposition-articulated", "description": "The core brand value proposition is clearly articulated"}
+        {
+          "name": "positioning-statement-produced",
+          "description": "A brand positioning statement is produced in standard format"
+        },
+        {
+          "name": "target-audience-defined",
+          "description": "Target audience segments are defined with characteristics"
+        },
+        {
+          "name": "competitive-differentiation-stated",
+          "description": "Differentiation from key competitors is clearly stated"
+        },
+        {
+          "name": "value-proposition-articulated",
+          "description": "The core brand value proposition is clearly articulated"
+        }
       ]
     },
     {
@@ -2580,12 +2719,24 @@
       "name": "brand-strategy-voice-tone",
       "command": "/brand-strategy",
       "role": "skills/design/references/brand-strategist.md",
-      "prompt": "/brand-strategy voice — Define brand voice and tone guidelines for Lumina SaaS",
+      "prompt": "/brand-strategy voice \u2014 Define brand voice and tone guidelines for Lumina SaaS",
       "assertions": [
-        {"name": "voice-attributes-defined", "description": "Brand voice attributes or personality traits are defined"},
-        {"name": "tone-variations-by-context", "description": "Tone variations for different contexts such as marketing and error messages are specified"},
-        {"name": "do-dont-examples-included", "description": "Do and Don't copy examples are included to illustrate the voice"},
-        {"name": "audience-language-calibrated", "description": "Language register is calibrated to the defined target audience"}
+        {
+          "name": "voice-attributes-defined",
+          "description": "Brand voice attributes or personality traits are defined"
+        },
+        {
+          "name": "tone-variations-by-context",
+          "description": "Tone variations for different contexts such as marketing and error messages are specified"
+        },
+        {
+          "name": "do-dont-examples-included",
+          "description": "Do and Don't copy examples are included to illustrate the voice"
+        },
+        {
+          "name": "audience-language-calibrated",
+          "description": "Language register is calibrated to the defined target audience"
+        }
       ]
     },
     {
@@ -2593,12 +2744,24 @@
       "name": "ab-variants-cta-copy",
       "command": "/ab-variants",
       "role": "skills/design/references/content-designer.md",
-      "prompt": "/ab-variants — Design A/B test variants for the Lumina SaaS hero CTA button copy",
+      "prompt": "/ab-variants \u2014 Design A/B test variants for the Lumina SaaS hero CTA button copy",
       "assertions": [
-        {"name": "control-variant-defined", "description": "The control (current) CTA copy variant is clearly defined"},
-        {"name": "treatment-variant-defined", "description": "The treatment (new) CTA copy variant is clearly defined"},
-        {"name": "hypothesis-stated", "description": "A testable hypothesis is stated for the variant change"},
-        {"name": "conversion-metric-identified", "description": "The primary conversion metric to measure is identified"}
+        {
+          "name": "control-variant-defined",
+          "description": "The control (current) CTA copy variant is clearly defined"
+        },
+        {
+          "name": "treatment-variant-defined",
+          "description": "The treatment (new) CTA copy variant is clearly defined"
+        },
+        {
+          "name": "hypothesis-stated",
+          "description": "A testable hypothesis is stated for the variant change"
+        },
+        {
+          "name": "conversion-metric-identified",
+          "description": "The primary conversion metric to measure is identified"
+        }
       ]
     },
     {
@@ -2606,12 +2769,24 @@
       "name": "brand-kit-dark-mode",
       "command": "/brand-kit",
       "role": "skills/design/references/design-system-lead.md",
-      "prompt": "/brand-kit dark-mode — Generate the Lumina SaaS dark mode brand kit and token mappings",
+      "prompt": "/brand-kit dark-mode \u2014 Generate the Lumina SaaS dark mode brand kit and token mappings",
       "assertions": [
-        {"name": "dark-mode-palette-defined", "description": "Dark mode color palette is defined with specific hex or hsl values"},
-        {"name": "contrast-ratios-addressed", "description": "WCAG contrast ratio compliance is addressed for dark mode colors"},
-        {"name": "token-mapping-for-dark-mode", "description": "Token mapping from light to dark mode values is documented"},
-        {"name": "component-behavior-in-dark", "description": "How key components render in dark mode is described"}
+        {
+          "name": "dark-mode-palette-defined",
+          "description": "Dark mode color palette is defined with specific hex or hsl values"
+        },
+        {
+          "name": "contrast-ratios-addressed",
+          "description": "WCAG contrast ratio compliance is addressed for dark mode colors"
+        },
+        {
+          "name": "token-mapping-for-dark-mode",
+          "description": "Token mapping from light to dark mode values is documented"
+        },
+        {
+          "name": "component-behavior-in-dark",
+          "description": "How key components render in dark mode is described"
+        }
       ]
     },
     {
@@ -2619,12 +2794,24 @@
       "name": "component-docs-data-table",
       "command": "/component-docs",
       "role": "skills/design/references/design-system-lead.md",
-      "prompt": "/component-docs — Generate documentation for the Lumina SaaS DataTable component",
+      "prompt": "/component-docs \u2014 Generate documentation for the Lumina SaaS DataTable component",
       "assertions": [
-        {"name": "props-documented", "description": "All component props are documented with types and default values"},
-        {"name": "usage-example-included", "description": "A code usage example is included showing the component in context"},
-        {"name": "accessibility-attributes-noted", "description": "Accessibility attributes such as aria and role are noted"},
-        {"name": "variant-states-documented", "description": "Variant states such as loading, empty, and error are documented"}
+        {
+          "name": "props-documented",
+          "description": "All component props are documented with types and default values"
+        },
+        {
+          "name": "usage-example-included",
+          "description": "A code usage example is included showing the component in context"
+        },
+        {
+          "name": "accessibility-attributes-noted",
+          "description": "Accessibility attributes such as aria and role are noted"
+        },
+        {
+          "name": "variant-states-documented",
+          "description": "Variant states such as loading, empty, and error are documented"
+        }
       ]
     },
     {
@@ -2632,12 +2819,24 @@
       "name": "figma-create-mobile-screens",
       "command": "/figma-create",
       "role": "skills/design/references/figma-creation.md",
-      "prompt": "/figma-create mobile — Create mobile screen designs for the Lumina SaaS dashboard in Figma",
+      "prompt": "/figma-create mobile \u2014 Create mobile screen designs for the Lumina SaaS dashboard in Figma",
       "assertions": [
-        {"name": "mobile-frames-specified", "description": "Mobile-sized frames at 375px or similar are specified"},
-        {"name": "component-usage-documented", "description": "Components used in the mobile screens are listed"},
-        {"name": "autolayout-applied", "description": "Auto-layout usage is documented for responsive frame behavior"},
-        {"name": "layer-naming-conventions-followed", "description": "Layer naming conventions are specified for the mobile screens"}
+        {
+          "name": "mobile-frames-specified",
+          "description": "Mobile-sized frames at 375px or similar are specified"
+        },
+        {
+          "name": "component-usage-documented",
+          "description": "Components used in the mobile screens are listed"
+        },
+        {
+          "name": "autolayout-applied",
+          "description": "Auto-layout usage is documented for responsive frame behavior"
+        },
+        {
+          "name": "layer-naming-conventions-followed",
+          "description": "Layer naming conventions are specified for the mobile screens"
+        }
       ]
     },
     {
@@ -2645,12 +2844,24 @@
       "name": "figma-responsive-mobile-nav",
       "command": "/figma-responsive",
       "role": "skills/design/references/figma-workflow.md",
-      "prompt": "/figma-responsive — Design responsive navigation variants for Lumina SaaS across breakpoints in Figma",
+      "prompt": "/figma-responsive \u2014 Design responsive navigation variants for Lumina SaaS across breakpoints in Figma",
       "assertions": [
-        {"name": "mobile-nav-pattern-defined", "description": "Mobile navigation pattern such as hamburger or bottom bar is defined"},
-        {"name": "breakpoint-behavior-specified", "description": "How the navigation changes at each breakpoint is specified"},
-        {"name": "constraint-settings-documented", "description": "Figma constraint settings for responsive behavior are documented"},
-        {"name": "touch-targets-addressed", "description": "Touch target sizes for mobile interaction are addressed"}
+        {
+          "name": "mobile-nav-pattern-defined",
+          "description": "Mobile navigation pattern such as hamburger or bottom bar is defined"
+        },
+        {
+          "name": "breakpoint-behavior-specified",
+          "description": "How the navigation changes at each breakpoint is specified"
+        },
+        {
+          "name": "constraint-settings-documented",
+          "description": "Figma constraint settings for responsive behavior are documented"
+        },
+        {
+          "name": "touch-targets-addressed",
+          "description": "Touch target sizes for mobile interaction are addressed"
+        }
       ]
     },
     {
@@ -2658,12 +2869,24 @@
       "name": "figma-sync-token-drift",
       "command": "/figma-sync",
       "role": "skills/design/references/figma-workflow.md",
-      "prompt": "/figma-sync — Audit token drift between Lumina SaaS Figma variables and production CSS",
+      "prompt": "/figma-sync \u2014 Audit token drift between Lumina SaaS Figma variables and production CSS",
       "assertions": [
-        {"name": "token-drift-identified", "description": "Tokens in Figma that differ from code values are identified"},
-        {"name": "mismatch-severity-noted", "description": "Severity or impact of each token mismatch is noted"},
-        {"name": "sync-action-items-listed", "description": "Specific action items to resolve token drift are listed"},
-        {"name": "variable-collection-status-reported", "description": "Status of Figma variable collections versus code variables is reported"}
+        {
+          "name": "token-drift-identified",
+          "description": "Tokens in Figma that differ from code values are identified"
+        },
+        {
+          "name": "mismatch-severity-noted",
+          "description": "Severity or impact of each token mismatch is noted"
+        },
+        {
+          "name": "sync-action-items-listed",
+          "description": "Specific action items to resolve token drift are listed"
+        },
+        {
+          "name": "variable-collection-status-reported",
+          "description": "Status of Figma variable collections versus code variables is reported"
+        }
       ]
     },
     {
@@ -2671,12 +2894,24 @@
       "name": "illustration-system-spot-art",
       "command": "/illustration-system",
       "role": "skills/design/references/illustration-director.md",
-      "prompt": "/illustration-system spot-art — Define the spot illustration style for Lumina SaaS empty states and onboarding",
+      "prompt": "/illustration-system spot-art \u2014 Define the spot illustration style for Lumina SaaS empty states and onboarding",
       "assertions": [
-        {"name": "spot-illustration-style-defined", "description": "Style for spot illustrations is defined including line weight and color usage"},
-        {"name": "use-cases-for-spot-art", "description": "Specific use cases for spot illustrations are listed such as empty states"},
-        {"name": "grid-and-sizing-specified", "description": "Grid and sizing guidelines for spot illustrations are specified"},
-        {"name": "color-palette-for-illustrations", "description": "Color palette restrictions or guidelines for illustrations are defined"}
+        {
+          "name": "spot-illustration-style-defined",
+          "description": "Style for spot illustrations is defined including line weight and color usage"
+        },
+        {
+          "name": "use-cases-for-spot-art",
+          "description": "Specific use cases for spot illustrations are listed such as empty states"
+        },
+        {
+          "name": "grid-and-sizing-specified",
+          "description": "Grid and sizing guidelines for spot illustrations are specified"
+        },
+        {
+          "name": "color-palette-for-illustrations",
+          "description": "Color palette restrictions or guidelines for illustrations are defined"
+        }
       ]
     },
     {
@@ -2684,12 +2919,24 @@
       "name": "motion-design-micro-interactions",
       "command": "/motion-design",
       "role": "skills/design/references/motion-designer.md",
-      "prompt": "/motion-design micro — Define micro-interaction motion specs for Lumina SaaS UI components",
+      "prompt": "/motion-design micro \u2014 Define micro-interaction motion specs for Lumina SaaS UI components",
       "assertions": [
-        {"name": "micro-interaction-types-defined", "description": "Types of micro-interactions such as button press and form validation are defined"},
-        {"name": "duration-values-specified", "description": "Duration values in milliseconds are specified for each interaction type"},
-        {"name": "easing-curves-documented", "description": "Easing curves are documented with CSS cubic-bezier or named values"},
-        {"name": "keyframe-structure-provided", "description": "Keyframe or animation specification is provided for at least one interaction"}
+        {
+          "name": "micro-interaction-types-defined",
+          "description": "Types of micro-interactions such as button press and form validation are defined"
+        },
+        {
+          "name": "duration-values-specified",
+          "description": "Duration values in milliseconds are specified for each interaction type"
+        },
+        {
+          "name": "easing-curves-documented",
+          "description": "Easing curves are documented with CSS cubic-bezier or named values"
+        },
+        {
+          "name": "keyframe-structure-provided",
+          "description": "Keyframe or animation specification is provided for at least one interaction"
+        }
       ]
     },
     {
@@ -2697,12 +2944,24 @@
       "name": "presentation-design-case-study",
       "command": "/presentation-design",
       "role": "skills/design/references/presentation-designer.md",
-      "prompt": "/presentation-design case-study — Design a Lumina SaaS design case study presentation for a conference talk",
+      "prompt": "/presentation-design case-study \u2014 Design a Lumina SaaS design case study presentation for a conference talk",
       "assertions": [
-        {"name": "case-study-narrative-structured", "description": "A before-and-after or problem-solution narrative structure is produced"},
-        {"name": "slide-layout-specified", "description": "Slide layout and visual hierarchy approach is described"},
-        {"name": "typography-system-applied", "description": "Typography choices for headings, body, and captions are specified"},
-        {"name": "visual-evidence-placement-noted", "description": "Where to integrate screenshots, mockups, or data visualizations is specified"}
+        {
+          "name": "case-study-narrative-structured",
+          "description": "A before-and-after or problem-solution narrative structure is produced"
+        },
+        {
+          "name": "slide-layout-specified",
+          "description": "Slide layout and visual hierarchy approach is described"
+        },
+        {
+          "name": "typography-system-applied",
+          "description": "Typography choices for headings, body, and captions are specified"
+        },
+        {
+          "name": "visual-evidence-placement-noted",
+          "description": "Where to integrate screenshots, mockups, or data visualizations is specified"
+        }
       ]
     },
     {
@@ -2710,12 +2969,24 @@
       "name": "site-to-figma-component-map",
       "command": "/site-to-figma",
       "role": "skills/design/references/figma-workflow.md",
-      "prompt": "/site-to-figma — Capture the Lumina SaaS marketing site and map reusable components to a Figma library",
+      "prompt": "/site-to-figma \u2014 Capture the Lumina SaaS marketing site and map reusable components to a Figma library",
       "assertions": [
-        {"name": "components-extracted", "description": "Reusable components identified from the site capture are listed"},
-        {"name": "layer-structure-described", "description": "How the captured site will be organized in Figma layers is described"},
-        {"name": "token-values-captured", "description": "Color and spacing token values found in the site are captured"},
-        {"name": "import-sequence-documented", "description": "The sequence for importing or recreating components in Figma is documented"}
+        {
+          "name": "components-extracted",
+          "description": "Reusable components identified from the site capture are listed"
+        },
+        {
+          "name": "layer-structure-described",
+          "description": "How the captured site will be organized in Figma layers is described"
+        },
+        {
+          "name": "token-values-captured",
+          "description": "Color and spacing token values found in the site are captured"
+        },
+        {
+          "name": "import-sequence-documented",
+          "description": "The sequence for importing or recreating components in Figma is documented"
+        }
       ]
     },
     {
@@ -2723,12 +2994,24 @@
       "name": "social-analytics-growth-report",
       "command": "/social-analytics",
       "role": "skills/design/references/social-media-strategist.md",
-      "prompt": "/social-analytics — Generate a Q1 2026 social media growth report for Lumina SaaS",
+      "prompt": "/social-analytics \u2014 Generate a Q1 2026 social media growth report for Lumina SaaS",
       "assertions": [
-        {"name": "growth-metrics-tracked", "description": "Key growth metrics such as follower growth and reach trend are tracked"},
-        {"name": "benchmark-comparisons-included", "description": "Performance is benchmarked against industry or historical data"},
-        {"name": "content-performance-insights", "description": "Insights about which content types performed best are included"},
-        {"name": "conversion-attribution-noted", "description": "Social-to-conversion or trial signup attribution is noted"}
+        {
+          "name": "growth-metrics-tracked",
+          "description": "Key growth metrics such as follower growth and reach trend are tracked"
+        },
+        {
+          "name": "benchmark-comparisons-included",
+          "description": "Performance is benchmarked against industry or historical data"
+        },
+        {
+          "name": "content-performance-insights",
+          "description": "Insights about which content types performed best are included"
+        },
+        {
+          "name": "conversion-attribution-noted",
+          "description": "Social-to-conversion or trial signup attribution is noted"
+        }
       ]
     },
     {
@@ -2736,12 +3019,24 @@
       "name": "social-campaign-content-calendar",
       "command": "/social-campaign",
       "role": "skills/design/references/social-media-strategist.md",
-      "prompt": "/social-campaign — Build a content calendar for the Lumina SaaS AI analytics feature launch campaign",
+      "prompt": "/social-campaign \u2014 Build a content calendar for the Lumina SaaS AI analytics feature launch campaign",
       "assertions": [
-        {"name": "content-calendar-produced", "description": "A content calendar or posting schedule is produced"},
-        {"name": "platform-specific-formats-addressed", "description": "Platform-specific content formats are addressed for each channel"},
-        {"name": "audience-targeting-defined", "description": "Target audience for the campaign is defined"},
-        {"name": "measurable-objectives-stated", "description": "Campaign objectives are stated as measurable goals"}
+        {
+          "name": "content-calendar-produced",
+          "description": "A content calendar or posting schedule is produced"
+        },
+        {
+          "name": "platform-specific-formats-addressed",
+          "description": "Platform-specific content formats are addressed for each channel"
+        },
+        {
+          "name": "audience-targeting-defined",
+          "description": "Target audience for the campaign is defined"
+        },
+        {
+          "name": "measurable-objectives-stated",
+          "description": "Campaign objectives are stated as measurable goals"
+        }
       ]
     },
     {
@@ -2749,12 +3044,24 @@
       "name": "social-content-linkedin-post",
       "command": "/social-content",
       "role": "skills/design/references/social-media-copywriter.md",
-      "prompt": "/social-content linkedin — Write a LinkedIn post announcing Lumina SaaS's onboarding redesign results",
+      "prompt": "/social-content linkedin \u2014 Write a LinkedIn post announcing Lumina SaaS's onboarding redesign results",
       "assertions": [
-        {"name": "linkedin-format-followed", "description": "Content follows LinkedIn best practices for length, tone, and formatting"},
-        {"name": "hook-opening-line-present", "description": "A strong opening hook line is present to stop the scroll"},
-        {"name": "engagement-prompt-included", "description": "A call-to-action or engagement prompt is included at the end"},
-        {"name": "hashtag-strategy-noted", "description": "Hashtag usage strategy appropriate for LinkedIn is noted"}
+        {
+          "name": "linkedin-format-followed",
+          "description": "Content follows LinkedIn best practices for length, tone, and formatting"
+        },
+        {
+          "name": "hook-opening-line-present",
+          "description": "A strong opening hook line is present to stop the scroll"
+        },
+        {
+          "name": "engagement-prompt-included",
+          "description": "A call-to-action or engagement prompt is included at the end"
+        },
+        {
+          "name": "hashtag-strategy-noted",
+          "description": "Hashtag usage strategy appropriate for LinkedIn is noted"
+        }
       ]
     },
     {
@@ -2762,12 +3069,24 @@
       "name": "video-script-feature-walkthrough",
       "command": "/video-script",
       "role": "skills/design/references/video-content-producer.md",
-      "prompt": "/video-script — Write a 90-second product demo video script for the Lumina SaaS homepage",
+      "prompt": "/video-script \u2014 Write a 90-second product demo video script for the Lumina SaaS homepage",
       "assertions": [
-        {"name": "scene-by-scene-breakdown", "description": "Scene-by-scene breakdown of the video is produced with timing"},
-        {"name": "voiceover-copy-written", "description": "Voiceover copy is written for each scene"},
-        {"name": "visual-direction-notes-included", "description": "Visual direction or shot type notes are included for each scene"},
-        {"name": "hook-and-duration-defined", "description": "The opening hook and total video duration are defined"}
+        {
+          "name": "scene-by-scene-breakdown",
+          "description": "Scene-by-scene breakdown of the video is produced with timing"
+        },
+        {
+          "name": "voiceover-copy-written",
+          "description": "Voiceover copy is written for each scene"
+        },
+        {
+          "name": "visual-direction-notes-included",
+          "description": "Visual direction or shot type notes are included for each scene"
+        },
+        {
+          "name": "hook-and-duration-defined",
+          "description": "The opening hook and total video duration are defined"
+        }
       ]
     },
     {
@@ -2777,10 +3096,22 @@
       "role": "Design Linter",
       "prompt": "Lint the current Figma page for design quality issues",
       "assertions": [
-        {"name": "produces-lint-report", "description": "Response produces a lint report with categorized design issues"},
-        {"name": "identifies-severity-levels", "description": "Issues are categorized by severity levels such as error, warning, and info"},
-        {"name": "includes-fix-suggestions", "description": "Each issue includes a specific, actionable fix suggestion"},
-        {"name": "covers-multiple-categories", "description": "Report covers at least two categories such as color, typography, or spacing"}
+        {
+          "name": "produces-lint-report",
+          "description": "Response produces a lint report with categorized design issues"
+        },
+        {
+          "name": "identifies-severity-levels",
+          "description": "Issues are categorized by severity levels such as error, warning, and info"
+        },
+        {
+          "name": "includes-fix-suggestions",
+          "description": "Each issue includes a specific, actionable fix suggestion"
+        },
+        {
+          "name": "covers-multiple-categories",
+          "description": "Report covers at least two categories such as color, typography, or spacing"
+        }
       ]
     },
     {
@@ -2790,10 +3121,22 @@
       "role": "Design Linter",
       "prompt": "Lint the Button component set in Figma for design inconsistencies",
       "assertions": [
-        {"name": "targets-specified-component", "description": "Response targets the named component rather than scanning the whole file"},
-        {"name": "checks-variant-naming", "description": "Report includes a check for variant naming conventions such as Property=Value format"},
-        {"name": "reports-lint-score", "description": "Response includes a numerical lint score out of 100"},
-        {"name": "groups-related-issues", "description": "Similar issues across multiple nodes are grouped rather than listed individually"}
+        {
+          "name": "targets-specified-component",
+          "description": "Response targets the named component rather than scanning the whole file"
+        },
+        {
+          "name": "checks-variant-naming",
+          "description": "Report includes a check for variant naming conventions such as Property=Value format"
+        },
+        {
+          "name": "reports-lint-score",
+          "description": "Response includes a numerical lint score out of 100"
+        },
+        {
+          "name": "groups-related-issues",
+          "description": "Similar issues across multiple nodes are grouped rather than listed individually"
+        }
       ]
     },
     {
@@ -2803,10 +3146,22 @@
       "role": "UX Design Critic",
       "prompt": "Critique the onboarding flow screens in the current Figma file",
       "assertions": [
-        {"name": "applies-nielsen-heuristics", "description": "Evaluation references Nielsen's usability heuristics by name or number"},
-        {"name": "leads-with-strengths", "description": "Response acknowledges what the design does well before listing issues"},
-        {"name": "prioritizes-issues", "description": "Issues are categorized by priority such as critical, major, or minor"},
-        {"name": "provides-visual-design-score", "description": "Response includes a visual design quality score or rating across key criteria"}
+        {
+          "name": "applies-nielsen-heuristics",
+          "description": "Evaluation references Nielsen's usability heuristics by name or number"
+        },
+        {
+          "name": "leads-with-strengths",
+          "description": "Response acknowledges what the design does well before listing issues"
+        },
+        {
+          "name": "prioritizes-issues",
+          "description": "Issues are categorized by priority such as critical, major, or minor"
+        },
+        {
+          "name": "provides-visual-design-score",
+          "description": "Response includes a visual design quality score or rating across key criteria"
+        }
       ]
     },
     {
@@ -2816,10 +3171,22 @@
       "role": "UX Design Critic",
       "prompt": "Review the checkout flow screens for UX issues before the v2 launch",
       "assertions": [
-        {"name": "evaluates-user-control", "description": "Critique checks for user control and freedom such as back navigation or undo options"},
-        {"name": "checks-error-prevention", "description": "Report reviews error prevention and recovery patterns in the flow"},
-        {"name": "provides-actionable-recommendations", "description": "Top recommendations are specific and implementable, not vague suggestions"},
-        {"name": "references-heuristics-by-name", "description": "At least one issue references a specific Nielsen heuristic number or name"}
+        {
+          "name": "evaluates-user-control",
+          "description": "Critique checks for user control and freedom such as back navigation or undo options"
+        },
+        {
+          "name": "checks-error-prevention",
+          "description": "Report reviews error prevention and recovery patterns in the flow"
+        },
+        {
+          "name": "provides-actionable-recommendations",
+          "description": "Top recommendations are specific and implementable, not vague suggestions"
+        },
+        {
+          "name": "references-heuristics-by-name",
+          "description": "At least one issue references a specific Nielsen heuristic number or name"
+        }
       ]
     },
     {
@@ -2829,10 +3196,22 @@
       "role": "Design QA Specialist",
       "prompt": "Run QA on the pricing page at src/pages/pricing.html",
       "assertions": [
-        {"name": "tests-three-breakpoints", "description": "QA report checks behavior at mobile, tablet, and desktop breakpoints"},
-        {"name": "produces-overall-score", "description": "Response includes an overall QA score out of 100"},
-        {"name": "checks-interactive-states", "description": "Report verifies hover, focus, and active states on interactive elements"},
-        {"name": "identifies-blocking-issues", "description": "Any issues that would block launch are clearly flagged as blockers"}
+        {
+          "name": "tests-three-breakpoints",
+          "description": "QA report checks behavior at mobile, tablet, and desktop breakpoints"
+        },
+        {
+          "name": "produces-overall-score",
+          "description": "Response includes an overall QA score out of 100"
+        },
+        {
+          "name": "checks-interactive-states",
+          "description": "Report verifies hover, focus, and active states on interactive elements"
+        },
+        {
+          "name": "identifies-blocking-issues",
+          "description": "Any issues that would block launch are clearly flagged as blockers"
+        }
       ]
     },
     {
@@ -2842,10 +3221,22 @@
       "role": "Design QA Specialist",
       "prompt": "Check if the dashboard page at src/pages/dashboard.html uses design tokens correctly",
       "assertions": [
-        {"name": "identifies-hardcoded-values", "description": "Report flags hardcoded CSS values that should use design tokens"},
-        {"name": "calculates-compliance-percentage", "description": "Response reports a percentage of tokenized versus total CSS values"},
-        {"name": "suggests-token-mappings", "description": "Each hardcoded value is paired with a suggested token name or variable"},
-        {"name": "categorizes-violations-by-type", "description": "Token violations are grouped by type such as color, spacing, or typography"}
+        {
+          "name": "identifies-hardcoded-values",
+          "description": "Report flags hardcoded CSS values that should use design tokens"
+        },
+        {
+          "name": "calculates-compliance-percentage",
+          "description": "Response reports a percentage of tokenized versus total CSS values"
+        },
+        {
+          "name": "suggests-token-mappings",
+          "description": "Each hardcoded value is paired with a suggested token name or variable"
+        },
+        {
+          "name": "categorizes-violations-by-type",
+          "description": "Token violations are grouped by type such as color, spacing, or typography"
+        }
       ]
     },
     {
@@ -2855,10 +3246,22 @@
       "role": "Accessibility Specialist",
       "prompt": "Audit the signup form at src/components/SignupForm.html for WCAG AA compliance",
       "assertions": [
-        {"name": "produces-wcag-compliance-grade", "description": "Response assigns a WCAG AA compliance grade or pass/partial/fail status"},
-        {"name": "checks-label-associations", "description": "Audit verifies that form inputs have programmatically associated labels"},
-        {"name": "provides-exact-code-fixes", "description": "Every critical issue includes the exact HTML or CSS code change needed"},
-        {"name": "covers-four-wcag-principles", "description": "Audit addresses all four WCAG principles: perceivable, operable, understandable, and robust"}
+        {
+          "name": "produces-wcag-compliance-grade",
+          "description": "Response assigns a WCAG AA compliance grade or pass/partial/fail status"
+        },
+        {
+          "name": "checks-label-associations",
+          "description": "Audit verifies that form inputs have programmatically associated labels"
+        },
+        {
+          "name": "provides-exact-code-fixes",
+          "description": "Every critical issue includes the exact HTML or CSS code change needed"
+        },
+        {
+          "name": "covers-four-wcag-principles",
+          "description": "Audit addresses all four WCAG principles: perceivable, operable, understandable, and robust"
+        }
       ]
     },
     {
@@ -2868,10 +3271,22 @@
       "role": "Accessibility Specialist",
       "prompt": "Check the navigation component at src/components/Nav.html for keyboard accessibility",
       "assertions": [
-        {"name": "checks-focus-management", "description": "Audit verifies that all focusable elements have visible focus styles"},
-        {"name": "identifies-keyboard-traps", "description": "Report checks for keyboard traps in navigation patterns such as dropdown menus"},
-        {"name": "verifies-semantic-html", "description": "Audit confirms use of appropriate semantic HTML elements such as nav and aria landmarks"},
-        {"name": "checks-skip-navigation", "description": "Report notes the presence or absence of a skip-to-main-content link"}
+        {
+          "name": "checks-focus-management",
+          "description": "Audit verifies that all focusable elements have visible focus styles"
+        },
+        {
+          "name": "identifies-keyboard-traps",
+          "description": "Report checks for keyboard traps in navigation patterns such as dropdown menus"
+        },
+        {
+          "name": "verifies-semantic-html",
+          "description": "Audit confirms use of appropriate semantic HTML elements such as nav and aria landmarks"
+        },
+        {
+          "name": "checks-skip-navigation",
+          "description": "Report notes the presence or absence of a skip-to-main-content link"
+        }
       ]
     },
     {
@@ -2881,10 +3296,22 @@
       "role": "UI Designer",
       "prompt": "/design-template",
       "assertions": [
-        {"name": "shows-all-10-categories", "description": "Gallery output includes all 10 categories: landing-page, dashboard, pricing, auth, blog, ecommerce, portfolio, docs, saas, onboarding"},
-        {"name": "includes-sections-per-category", "description": "Each category entry lists its key sections (e.g. Hero · Features · CTA for landing-page)"},
-        {"name": "includes-best-for-tags", "description": "Each category entry includes a Best for tag describing the ideal use case"},
-        {"name": "includes-try-example", "description": "Each category entry includes a Try: example command with a style flag"}
+        {
+          "name": "shows-all-10-categories",
+          "description": "Gallery output includes all 10 categories: landing-page, dashboard, pricing, auth, blog, ecommerce, portfolio, docs, saas, onboarding"
+        },
+        {
+          "name": "includes-sections-per-category",
+          "description": "Each category entry lists its key sections (e.g. Hero \u00b7 Features \u00b7 CTA for landing-page)"
+        },
+        {
+          "name": "includes-best-for-tags",
+          "description": "Each category entry includes a Best for tag describing the ideal use case"
+        },
+        {
+          "name": "includes-try-example",
+          "description": "Each category entry includes a Try: example command with a style flag"
+        }
       ]
     },
     {
@@ -2894,9 +3321,570 @@
       "role": "UI Designer",
       "prompt": "what templates are available in naksha?",
       "assertions": [
-        {"name": "routes-to-gallery-mode", "description": "Discovery phrase triggers the gallery mode, not a template generation attempt"},
-        {"name": "shows-all-10-categories", "description": "Gallery output includes all 10 template categories"},
-        {"name": "includes-usage-hint", "description": "Response ends with a usage hint or invitation to specify a category"}
+        {
+          "name": "routes-to-gallery-mode",
+          "description": "Discovery phrase triggers the gallery mode, not a template generation attempt"
+        },
+        {
+          "name": "shows-all-10-categories",
+          "description": "Gallery output includes all 10 template categories"
+        },
+        {
+          "name": "includes-usage-hint",
+          "description": "Response ends with a usage hint or invitation to specify a category"
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "name": "naksha-init-basic",
+      "prompt": "Set up project memory for my React + Tailwind SaaS app. Brand color: #6366F1, font: Inter, mood: professional",
+      "expected_output": "Wizard steps, writes .naksha/project.json with name, brand.primary, framework, tokenFormat fields, creates .naksha/memory.md",
+      "assertions": [
+        {
+          "name": "mentions-project-json",
+          "description": "mentions .naksha/project.json"
+        },
+        {
+          "name": "confirms-brand-color",
+          "description": "confirms brand color #6366F1 was saved"
+        },
+        {
+          "name": "confirms-framework",
+          "description": "confirms framework React was recorded"
+        },
+        {
+          "name": "mentions-memory-md",
+          "description": "mentions .naksha/memory.md created"
+        },
+        {
+          "name": "includes-token-format",
+          "description": "includes token format selection"
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "name": "naksha-status-display",
+      "prompt": "/naksha-status",
+      "expected_output": "Formatted dashboard showing project context, brand settings, framework, and recent decisions",
+      "assertions": [
+        {
+          "name": "displays-project-context",
+          "description": "displays project context table or structured output"
+        },
+        {
+          "name": "shows-brand-color",
+          "description": "shows brand color if set"
+        },
+        {
+          "name": "shows-memory-entries",
+          "description": "shows last 10 memory entries or 'no entries yet'"
+        },
+        {
+          "name": "shows-framework",
+          "description": "shows framework if set"
+        },
+        {
+          "name": "handles-missing-naksha",
+          "description": "handles missing .naksha/ gracefully with 'not found' message"
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "name": "pipeline-list",
+      "prompt": "/pipeline list",
+      "expected_output": "List of available pipelines from built-in and user-defined sources",
+      "assertions": [
+        {
+          "name": "lists-launch-prep",
+          "description": "lists launch-prep pipeline"
+        },
+        {
+          "name": "lists-brand-audit",
+          "description": "lists brand-audit pipeline"
+        },
+        {
+          "name": "lists-component-build",
+          "description": "lists component-build pipeline"
+        },
+        {
+          "name": "lists-social-launch",
+          "description": "lists social-launch pipeline"
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "name": "pipeline-run-launch-prep",
+      "prompt": "/pipeline run launch-prep for a SaaS dashboard landing page",
+      "expected_output": "Sequential execution of design \u2192 accessibility-audit \u2192 design-review \u2192 design-handoff with progress indicators and aggregated summary",
+      "assertions": [
+        {
+          "name": "shows-pipeline-progression",
+          "description": "shows pipeline step progression"
+        },
+        {
+          "name": "mentions-design-step",
+          "description": "mentions design step"
+        },
+        {
+          "name": "mentions-accessibility-audit-step",
+          "description": "mentions accessibility-audit step"
+        },
+        {
+          "name": "mentions-design-review-step",
+          "description": "mentions design-review step"
+        },
+        {
+          "name": "produces-aggregated-summary",
+          "description": "produces aggregated summary report"
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "name": "design-compare-basic",
+      "prompt": "/design-compare https://stripe.com https://paddle.com",
+      "expected_output": "Side-by-side analysis of both payment company sites: layout, typography, color, UX patterns, and 'Steal This' recommendations",
+      "assertions": [
+        {
+          "name": "analyzes-both-urls",
+          "description": "analyzes both URLs"
+        },
+        {
+          "name": "includes-layout-comparison",
+          "description": "includes layout comparison"
+        },
+        {
+          "name": "includes-color-comparison",
+          "description": "includes color system comparison"
+        },
+        {
+          "name": "includes-typography-comparison",
+          "description": "includes typography comparison"
+        },
+        {
+          "name": "includes-steal-this-recommendations",
+          "description": "includes 'Steal This' or 'steal' recommendations table"
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "name": "competitive-audit-basic",
+      "prompt": "/competitive-audit https://linear.app",
+      "expected_output": "Design pattern extraction from Linear: color palette, type system, UX patterns, navigation, CTAs with rated recommendations",
+      "assertions": [
+        {
+          "name": "analyzes-provided-url",
+          "description": "analyzes the provided URL"
+        },
+        {
+          "name": "extracts-color-palette",
+          "description": "extracts color palette"
+        },
+        {
+          "name": "identifies-typography-patterns",
+          "description": "identifies typography patterns"
+        },
+        {
+          "name": "includes-rated-recommendations",
+          "description": "includes rated recommendations (stars or ratings)"
+        },
+        {
+          "name": "mentions-navigation-or-ux",
+          "description": "mentions navigation or UX patterns"
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "name": "design-chatbot-customer-support",
+      "prompt": "/design-chatbot support web 'TechCorp assistant \u2014 professional, helpful, clear'",
+      "expected_output": "Complete chatbot UI spec including persona, dialog flow map, bubble UI spec, component library, error states, and accessibility",
+      "assertions": [
+        {
+          "name": "includes-persona-spec",
+          "description": "includes persona/voice spec"
+        },
+        {
+          "name": "includes-dialog-flow-map",
+          "description": "includes dialog flow map with happy path"
+        },
+        {
+          "name": "includes-message-bubble-spec",
+          "description": "includes message bubble spec"
+        },
+        {
+          "name": "includes-typing-indicator",
+          "description": "includes typing indicator spec"
+        },
+        {
+          "name": "includes-error-states",
+          "description": "includes error states"
+        },
+        {
+          "name": "includes-accessibility-aria-live",
+          "description": "includes accessibility notes with aria-live"
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "name": "design-chatbot-onboarding",
+      "prompt": "Design an onboarding chatbot UI for a mobile fintech app",
+      "expected_output": "Mobile onboarding chatbot UI spec with financial persona, step-by-step dialog flow, mobile-optimized bubbles",
+      "assertions": [
+        {
+          "name": "targets-mobile-platform",
+          "description": "targets mobile platform"
+        },
+        {
+          "name": "includes-onboarding-flow",
+          "description": "includes onboarding flow"
+        },
+        {
+          "name": "includes-quick-reply-chips",
+          "description": "includes quick reply chips"
+        },
+        {
+          "name": "includes-error-recovery-path",
+          "description": "includes error recovery path"
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "name": "design-voice-ui-smart-home",
+      "prompt": "/design-voice-ui smart home platform custom hybrid",
+      "expected_output": "Voice interface design: wake word flow, confirmation patterns, screen companion layout, audio feedback, accessibility",
+      "assertions": [
+        {
+          "name": "includes-wake-word-flow",
+          "description": "includes wake word flow"
+        },
+        {
+          "name": "includes-confirmation-pattern",
+          "description": "includes explicit confirmation pattern for destructive actions"
+        },
+        {
+          "name": "includes-screen-companion-layout",
+          "description": "includes screen companion layout"
+        },
+        {
+          "name": "includes-audio-feedback-spec",
+          "description": "includes earcon/audio feedback spec"
+        },
+        {
+          "name": "includes-accessibility-notes",
+          "description": "includes accessibility notes"
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "name": "design-spatial-visionos-productivity",
+      "prompt": "/design-spatial productivity visionos task management app",
+      "expected_output": "Spatial UI spec: Window type selection with rationale, depth hierarchy document, ornament spec, spatial typography scale, interaction model",
+      "assertions": [
+        {
+          "name": "recommends-window-type",
+          "description": "recommends Window type for productivity"
+        },
+        {
+          "name": "includes-depth-hierarchy",
+          "description": "includes depth hierarchy with 4 layers"
+        },
+        {
+          "name": "includes-ornament-spec",
+          "description": "includes ornament placement spec using attachmentAnchor"
+        },
+        {
+          "name": "includes-spatial-typography",
+          "description": "includes spatial typography scale"
+        },
+        {
+          "name": "includes-comfort-guidelines",
+          "description": "includes comfort guidelines"
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "name": "design-spatial-webxr-media",
+      "prompt": "Design a spatial media viewer for WebXR",
+      "expected_output": "WebXR spatial design with inline session fallback, controller/hand/gaze input chain, depth layers for media content",
+      "assertions": [
+        {
+          "name": "specifies-webxr-session-types",
+          "description": "specifies WebXR session types"
+        },
+        {
+          "name": "includes-input-fallback-chain",
+          "description": "includes input fallback chain"
+        },
+        {
+          "name": "includes-depth-hierarchy",
+          "description": "includes depth hierarchy"
+        },
+        {
+          "name": "mentions-inline-session-fallback",
+          "description": "mentions inline session fallback for non-XR devices"
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "name": "design-ar-overlay-instructions",
+      "prompt": "/design-ar-overlay instructions arkit",
+      "expected_output": "AR overlay spec: surface-detected anchor strategy, tracking states, instruction cards with ergonomic positioning, scan states, confirmation overlays",
+      "assertions": [
+        {
+          "name": "recommends-surface-detected-anchor",
+          "description": "recommends surface-detected anchor for instructions"
+        },
+        {
+          "name": "includes-3-tracking-states",
+          "description": "includes 3 tracking states (searching/acquired/lost)"
+        },
+        {
+          "name": "includes-instruction-card-positioning",
+          "description": "includes instruction card positioning within \u00b120\u00b0 gaze range"
+        },
+        {
+          "name": "includes-scan-state-designs",
+          "description": "includes scan state designs"
+        },
+        {
+          "name": "includes-confirmation-overlays",
+          "description": "includes confirmation overlays with 44pt targets"
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "name": "design-gdpr-eu-saas",
+      "prompt": "/design-gdpr SaaS product eu analytics,marketing,personalization",
+      "expected_output": "GDPR consent flow: 3 cookie banner variants, consent flow spec, privacy control center, data deletion flow, EU GDPR compliance checklist",
+      "assertions": [
+        {
+          "name": "includes-3-banner-variants",
+          "description": "includes 3 cookie banner variants (minimal, standard, detailed)"
+        },
+        {
+          "name": "mentions-iab-tcf",
+          "description": "mentions IAB TCF"
+        },
+        {
+          "name": "includes-privacy-control-center",
+          "description": "includes privacy control center"
+        },
+        {
+          "name": "includes-data-deletion-flow",
+          "description": "includes data deletion request flow"
+        },
+        {
+          "name": "mentions-dsar-response-timeline",
+          "description": "mentions 30-day DSAR response with 90-day extension"
+        },
+        {
+          "name": "includes-gdpr-checklist",
+          "description": "includes GDPR compliance checklist"
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "name": "design-gdpr-both-jurisdictions",
+      "prompt": "Design cookie consent for both EU and California users for our e-commerce site",
+      "expected_output": "Consent flow covering both GDPR and CCPA requirements, including 'Do Not Sell or Share' link for CA users",
+      "assertions": [
+        {
+          "name": "covers-eu-gdpr",
+          "description": "covers EU GDPR requirements"
+        },
+        {
+          "name": "covers-ca-ccpa",
+          "description": "covers CA CCPA requirements"
+        },
+        {
+          "name": "mentions-do-not-sell-link",
+          "description": "mentions 'Do Not Sell or Share My Personal Information' link"
+        },
+        {
+          "name": "includes-jurisdiction-split-checklist",
+          "description": "includes jurisdiction-split compliance checklist"
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "name": "design-compliance-hipaa-generate",
+      "prompt": "/design-compliance --regulation hipaa Design a patient portal dashboard",
+      "expected_output": "HIPAA-compliant UI spec: PHI field marking with star indicator, 15-min session timeout modal, audit log table, role badge system, break-the-glass flow",
+      "assertions": [
+        {
+          "name": "outputs-hipaa-branch",
+          "description": "outputs HIPAA branch only"
+        },
+        {
+          "name": "includes-phi-field-marking",
+          "description": "includes PHI field marking with star indicator"
+        },
+        {
+          "name": "specifies-session-timeout",
+          "description": "specifies 15-minute session timeout"
+        },
+        {
+          "name": "includes-audit-log-table",
+          "description": "includes audit log table with required columns"
+        },
+        {
+          "name": "includes-role-badge-component",
+          "description": "includes role badge component"
+        },
+        {
+          "name": "includes-break-the-glass-flow",
+          "description": "includes break-the-glass access flow"
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "name": "design-compliance-pci-generate",
+      "prompt": "/design-compliance --regulation pci Design the checkout payment form",
+      "expected_output": "PCI-compliant payment form: iframe isolation architecture, masked PAN, 3DS v2 UI, error message standards, SAQ-A checklist",
+      "assertions": [
+        {
+          "name": "outputs-pci-branch",
+          "description": "outputs PCI branch only"
+        },
+        {
+          "name": "specifies-iframe-isolation",
+          "description": "specifies iframe isolation"
+        },
+        {
+          "name": "includes-masked-pan",
+          "description": "includes masked PAN format"
+        },
+        {
+          "name": "includes-3ds-challenge-ui",
+          "description": "includes 3DS challenge UI"
+        },
+        {
+          "name": "includes-error-message-standards",
+          "description": "includes error message standards table"
+        },
+        {
+          "name": "includes-saqa-eligibility",
+          "description": "includes SAQ-A eligibility notes"
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "name": "design-compliance-ada-audit",
+      "prompt": "/design-compliance --regulation ada Audit the navigation component for accessibility",
+      "expected_output": "ADA compliance audit: check for skip-nav, keyboard trap, focus order, color-only indicators, missing labels",
+      "assertions": [
+        {
+          "name": "outputs-ada-branch",
+          "description": "outputs ADA branch only"
+        },
+        {
+          "name": "checks-skip-navigation",
+          "description": "checks for skip-navigation link"
+        },
+        {
+          "name": "checks-keyboard-trap",
+          "description": "checks for keyboard trap"
+        },
+        {
+          "name": "checks-focus-order",
+          "description": "checks focus order"
+        },
+        {
+          "name": "checks-color-only-indicators",
+          "description": "checks for color-only error indicators"
+        },
+        {
+          "name": "checks-programmatic-labels",
+          "description": "checks for programmatic labels"
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "name": "design-compliance-invalid-flag",
+      "prompt": "/design-compliance --regulation soc2 Generate audit",
+      "expected_output": "Error message listing valid --regulation values: hipaa, pci, ada",
+      "assertions": [
+        {
+          "name": "outputs-error-for-invalid-regulation",
+          "description": "outputs error message for invalid regulation"
+        },
+        {
+          "name": "lists-valid-values",
+          "description": "lists valid values (hipaa, pci, ada)"
+        },
+        {
+          "name": "does-not-run-any-branch",
+          "description": "does not attempt to run any branch"
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "name": "pipeline-show-launch-prep",
+      "prompt": "/pipeline show launch-prep",
+      "expected_output": "Formatted display of launch-prep pipeline definition: steps, commands, pass-output-as settings, on-error behavior",
+      "assertions": [
+        {
+          "name": "shows-pipeline-name",
+          "description": "shows pipeline name"
+        },
+        {
+          "name": "shows-list-of-steps",
+          "description": "shows list of steps"
+        },
+        {
+          "name": "shows-design-as-first-step",
+          "description": "shows design as first step"
+        },
+        {
+          "name": "shows-design-handoff-as-last-step",
+          "description": "shows design-handoff as last step"
+        },
+        {
+          "name": "shows-on-error-stop",
+          "description": "shows on-error: stop behavior"
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "name": "naksha-init-reinit",
+      "prompt": "/naksha-init for my existing project \u2014 I want to update the brand color to #FF6B6B",
+      "expected_output": "Re-init flow preserves existing .naksha/memory.md entries and createdAt, updates brand.primary to #FF6B6B",
+      "assertions": [
+        {
+          "name": "updates-brand-primary",
+          "description": "updates brand.primary to #FF6B6B"
+        },
+        {
+          "name": "preserves-memory-entries",
+          "description": "preserves existing memory.md entries"
+        },
+        {
+          "name": "preserves-created-at",
+          "description": "preserves original createdAt timestamp"
+        },
+        {
+          "name": "updates-updated-at",
+          "description": "updates updatedAt to current timestamp"
+        }
       ]
     }
   ]
