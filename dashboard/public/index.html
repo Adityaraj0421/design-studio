@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>naksha · dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="dots">
+        <span class="dot"></span><span class="dot dim"></span><span class="dot"></span>
+        <span class="dot dim"></span><span class="dot mid"></span><span class="dot dim"></span>
+        <span class="dot"></span><span class="dot dim"></span><span class="dot"></span>
+      </div>
+      <span class="name">naksha</span>
+      <span class="sep">·</span>
+      <span class="label">studio dashboard</span>
+    </div>
+    <div class="status">
+      <span id="ws-dot" class="ws-dot disconnected"></span>
+      <span id="ws-label">connecting…</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Row 1: Score + Token Health -->
+    <section class="card score-card">
+      <h2>Design Score</h2>
+      <div class="score-ring">
+        <svg viewBox="0 0 100 100">
+          <circle class="track" cx="50" cy="50" r="42"/>
+          <circle id="score-arc" class="arc" cx="50" cy="50" r="42"
+            stroke-dasharray="0 264" stroke-dashoffset="66"/>
+        </svg>
+        <div class="score-label">
+          <span id="score-total">—</span>
+          <small>/100</small>
+        </div>
+      </div>
+      <div class="score-breakdown" id="score-breakdown">
+        <div class="bd-row"><span>Accessibility</span><span id="sc-a">—</span></div>
+        <div class="bd-row"><span>Usability</span><span id="sc-u">—</span></div>
+        <div class="bd-row"><span>Visual</span><span id="sc-v">—</span></div>
+        <div class="bd-row"><span>Tokens</span><span id="sc-t">—</span></div>
+      </div>
+    </section>
+
+    <section class="card token-card">
+      <h2>Token Health</h2>
+      <div id="token-health-badge" class="health-badge none">—</div>
+      <div class="token-grid" id="token-grid">
+        <div class="tk-row"><span>Color</span><span id="tk-color">—</span></div>
+        <div class="tk-row"><span>Spacing</span><span id="tk-spacing">—</span></div>
+        <div class="tk-row"><span>Border Radius</span><span id="tk-radius">—</span></div>
+        <div class="tk-row"><span>Typography</span><span id="tk-typo">—</span></div>
+      </div>
+      <div class="lint-summary">
+        <span>Lint issues</span>
+        <span id="lint-issues">—</span>
+      </div>
+    </section>
+
+    <!-- Row 2: Command History + Quick Launch -->
+    <section class="card history-card">
+      <h2>Command History</h2>
+      <ul id="command-list" class="command-list">
+        <li class="empty">No commands run yet this session.</li>
+      </ul>
+    </section>
+
+    <section class="card launch-card">
+      <h2>Quick Launch</h2>
+      <p class="launch-hint">Queues a command for Claude to pick up next turn.</p>
+      <div class="launch-grid">
+        <button class="launch-btn" data-cmd="/design-review">design-review</button>
+        <button class="launch-btn" data-cmd="/design-score">design-score</button>
+        <button class="launch-btn" data-cmd="/design-lint">design-lint</button>
+        <button class="launch-btn primary" data-cmd="/design-token-extractor">token-extractor</button>
+        <button class="launch-btn" data-cmd="/design-system">design-system</button>
+        <button class="launch-btn" data-cmd="/naksha-doctor">naksha-doctor</button>
+      </div>
+      <div id="queue-status" class="queue-status hidden"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

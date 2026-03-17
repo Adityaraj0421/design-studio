@@ -14,3 +14,7 @@ docs/superpowers/
 brand/
 design-lint-report.json
 REVIEW.md
+
+# Dashboard
+dashboard/node_modules/
+.naksha/dashboard.pid

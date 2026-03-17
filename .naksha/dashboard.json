@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "updated": null,
+  "score": {
+    "total": null,
+    "accessibility": null,
+    "usability": null,
+    "visual": null,
+    "tokens": null,
+    "updated": null
+  },
+  "commands": [],
+  "tokens": {
+    "color": 0,
+    "spacing": 0,
+    "radius": 0,
+    "typography": 0,
+    "health": null,
+    "updated": null
+  },
+  "lint": {
+    "issues": 0,
+    "files_scanned": 0,
+    "updated": null
+  },
+  "queue": []
+}

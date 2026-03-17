@@ -20,5 +20,20 @@
     "gdpr", "ccpa", "compliance", "hipaa", "pci", "cookie-consent", "consent-banner",
     "privacy-control", "data-subject-rights", "ada", "section-508",
     "naksha-init", "naksha-status", "project-memory", "pipeline", "design-pipeline",
-    "competitive-audit", "design-compare", "visual-comparison"]
+    "competitive-audit", "design-compare", "visual-comparison"],
+  "mcpServers": {
+    "naksha-dashboard": {
+      "command": "node",
+      "args": ["dashboard/mcp-server.js"],
+      "description": "Local dashboard MCP server — logs command state and surfaces the UI at http://localhost:7432"
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      "hooks/session-start-dashboard.sh"
+    ],
+    "SessionStop": [
+      "hooks/session-stop-dashboard.sh"
+    ]
+  }
 }
