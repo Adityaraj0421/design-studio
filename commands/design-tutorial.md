@@ -51,7 +51,7 @@ If no track is given, display this orientation:
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║                    Welcome to Naksha                      ║
-║                         v3.18.0 · 46 commands                   ║
+║                         v4.0.0 · 57 commands                    ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Naksha assembles specialist roles for any design task.
@@ -480,7 +480,7 @@ You've learned: [list the commands used in this track]
 
 ━━━ Explore more ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  All 46 commands:
+  All 57 commands:
 
   Core Design     /design /design-review /design-critique /design-qa
                   /design-system /brand-kit /brand-strategy
@@ -506,6 +506,18 @@ You've learned: [list the commands used in this track]
   Media           /illustration-system /motion-design /presentation-design /video-script
 
   Templates       /design-template
+
+  Memory          /naksha-init /naksha-status
+
+  Pipelines       /pipeline
+
+  Vision          /design-compare /competitive-audit
+
+  Conversational  /design-chatbot /design-voice-ui
+
+  Spatial & AR    /design-spatial /design-ar-overlay
+
+  Compliance      /design-gdpr /design-compliance
 
   Tutorial        /design-tutorial
 
