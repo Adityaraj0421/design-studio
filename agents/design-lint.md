@@ -31,7 +31,7 @@ description: |
   Pre-handoff quality check — lint agent catches issues developers would flag.
   </commentary>
   </example>
-model: inherit
+model: haiku
 color: yellow
 tools: ["Read", "Grep", "Glob", "mcp__figma-console__*"]
 ---

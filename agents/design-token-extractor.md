@@ -32,7 +32,7 @@ description: |
   </commentary>
   </example>
 
-model: inherit
+model: haiku
 color: purple
 tools: ["Read", "Write", "Glob", "Grep", "Bash"]
 ---
