@@ -4,6 +4,46 @@
 
 PROJECT_DIR="${PWD}"
 CONTEXT=""
+NAKSHA_JSON=""
+
+# --- .naksha/project.json (Project Memory) ---
+SEARCH_DIR="$PROJECT_DIR"
+for i in 1 2 3; do
+  if [ -f "$SEARCH_DIR/.naksha/project.json" ]; then
+    NAKSHA_JSON="$SEARCH_DIR/.naksha/project.json"
+    break
+  fi
+  SEARCH_DIR="$(dirname "$SEARCH_DIR")"
+done
+
+if [ -n "$NAKSHA_JSON" ]; then
+  NAKSHA_CONTEXT="Project Memory:\n"
+
+  NAKSHA_NAME=$(grep '"name"' "$NAKSHA_JSON" | sed 's/.*: *"\(.*\)".*/\1/' | head -1)
+  [ -n "$NAKSHA_NAME" ] && NAKSHA_CONTEXT="${NAKSHA_CONTEXT}- Project: ${NAKSHA_NAME}\n"
+
+  NAKSHA_BRAND_PRIMARY=$(grep '"primary"' "$NAKSHA_JSON" | sed 's/.*: *"\(.*\)".*/\1/' | head -1)
+  [ -n "$NAKSHA_BRAND_PRIMARY" ] && NAKSHA_CONTEXT="${NAKSHA_CONTEXT}- Brand: ${NAKSHA_BRAND_PRIMARY}\n"
+
+  NAKSHA_BRAND_SECONDARY=$(grep '"secondary"' "$NAKSHA_JSON" | sed 's/.*: *"\(.*\)".*/\1/' | head -1)
+  if [ -n "$NAKSHA_BRAND_SECONDARY" ] && [ "$NAKSHA_BRAND_SECONDARY" != "null" ]; then
+    NAKSHA_CONTEXT="${NAKSHA_CONTEXT}- Brand accent: ${NAKSHA_BRAND_SECONDARY}\n"
+  fi
+
+  NAKSHA_BRAND_FONT=$(grep '"font"' "$NAKSHA_JSON" | sed 's/.*: *"\(.*\)".*/\1/' | head -1)
+  [ -n "$NAKSHA_BRAND_FONT" ] && NAKSHA_CONTEXT="${NAKSHA_CONTEXT}- Font: ${NAKSHA_BRAND_FONT}\n"
+
+  NAKSHA_BRAND_VOICE=$(grep '"voice"' "$NAKSHA_JSON" | sed 's/.*: *"\(.*\)".*/\1/' | head -1)
+  [ -n "$NAKSHA_BRAND_VOICE" ] && NAKSHA_CONTEXT="${NAKSHA_CONTEXT}- Voice: ${NAKSHA_BRAND_VOICE}\n"
+
+  NAKSHA_FRAMEWORK=$(grep '"framework"' "$NAKSHA_JSON" | sed 's/.*: *"\(.*\)".*/\1/' | head -1)
+  [ -n "$NAKSHA_FRAMEWORK" ] && NAKSHA_CONTEXT="${NAKSHA_CONTEXT}- Framework (from memory): ${NAKSHA_FRAMEWORK}\n"
+
+  NAKSHA_TOKEN_FORMAT=$(grep '"tokenFormat"' "$NAKSHA_JSON" | sed 's/.*: *"\(.*\)".*/\1/' | head -1)
+  [ -n "$NAKSHA_TOKEN_FORMAT" ] && NAKSHA_CONTEXT="${NAKSHA_CONTEXT}- Token format: ${NAKSHA_TOKEN_FORMAT}\n"
+
+  CONTEXT="${NAKSHA_CONTEXT}${CONTEXT}"
+fi
 
 # --- CSS Framework ---
 if [ -f "$PROJECT_DIR/tailwind.config.js" ] || [ -f "$PROJECT_DIR/tailwind.config.ts" ] || [ -f "$PROJECT_DIR/tailwind.config.mjs" ] || [ -f "$PROJECT_DIR/tailwind.config.cjs" ]; then
@@ -107,7 +147,11 @@ fi
 
 # --- Output ---
 if [ -n "$CONTEXT" ]; then
-  RESULT=$(printf '{"continue": true, "systemMessage": "Naksha detected project context:\\n%s\\nAdapt design recommendations to match these project conventions."}' "$CONTEXT")
+  if [ -n "$NAKSHA_JSON" ]; then
+    RESULT=$(printf '{"continue": true, "systemMessage": "Naksha project memory loaded. Context:\\n%s\\nAdapt design recommendations to match these project conventions."}' "$CONTEXT")
+  else
+    RESULT=$(printf '{"continue": true, "systemMessage": "Naksha detected project context:\\n%s\\nAdapt design recommendations to match these project conventions."}' "$CONTEXT")
+  fi
   echo "$RESULT"
 else
   echo '{"continue": true}'
