@@ -2,6 +2,25 @@
 
 All notable changes to naksha are documented here.
 
+## v4.6.0 — CI/CD & Community Health (2026-03-17)
+
+**CI/CD:**
+- New workflow `quality-check.yml`: runs behavioral-smoke + guard-legacy-branding on PRs touching fixtures, commands, or CI scripts — posts collapsible failure details as PR comment
+- CI coverage now: validate-structure (structural), quality-check (behavioral + branding), design-check (CSS/HTML) — three orthogonal workflows
+
+**`/naksha-doctor` command (59th command):**
+- Runs all 4 quality scripts (validate-structure, verify-metadata, behavioral-smoke, guard-legacy-branding) and produces a `╔ naksha doctor ╗` health report
+- `--fix` flag adds per-check remediation instructions for every failure type
+- Added to SKILL.md routing ("doctor", "health check", "validate plugin", "diagnose naksha") and Stop hook suggestions
+
+**Community health:**
+- `.github/labels.yml`: 17 canonical label definitions (Triage, Workflow, Area groups)
+- `scripts/sync-labels.sh`: idempotent label sync via `gh label create/edit`
+- Created labels: `wishlist`, `claimed`, `ci`, `commands`, `agents`, `knowledge`, `evals`, `wing`
+- `CONTRIBUTING.md`: added `## Building a Wing` — 7-step wing checklist (role reference → commands → SKILL.md → evals → fixtures → platform adapters → stats), PR requirements, examples from 3 existing wings
+
+---
+
 ## v4.5.0 — Knowledge Depth Pass (2026-03-17)
 
 **Conversational Designer reference deepened:**
