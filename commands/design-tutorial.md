@@ -28,7 +28,9 @@ Interactive guided tour of Naksha. Choose a track below and complete a real exer
 - `/design-tutorial social` — Design a post, plan a campaign, build a performance dashboard
 - `/design-tutorial email` — Build a welcome email template and a 3-email onboarding sequence
 - `/design-tutorial data-viz` — Design a bar chart, then build a full analytics dashboard
-- `/design-tutorial full` — Complete tour: all wings, all workflows (~30 min)
+- `/design-tutorial ai-visual-gen` — Generate image prompts, video briefs, and moodboards
+- `/design-tutorial print-pdf` — Build a print layout, PDF report, and run a preflight audit
+- `/design-tutorial full` — Complete tour: all wings, all workflows (~40 min)
 
 ---
 
