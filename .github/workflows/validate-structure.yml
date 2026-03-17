@@ -1,0 +1,65 @@
+name: Validate Plugin Structure
+
+on:
+  pull_request:
+    paths:
+      - 'commands/**'
+      - 'skills/design/references/**'
+      - '.claude-plugin/plugin.json'
+      - 'meta/stats.json'
+
+jobs:
+  validate-structure:
+    name: Validate Structure
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run validate-structure
+        id: validate
+        shell: bash
+        run: node scripts/validate-structure.js 2>&1 | tee validate-output.txt; exit ${PIPESTATUS[0]}
+        continue-on-error: true
+
+      - name: Post PR comment on failure
+        if: steps.validate.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.existsSync('validate-output.txt')
+              ? fs.readFileSync('validate-output.txt', 'utf-8').trim()
+              : 'No output captured.';
+            const body = [
+              '## ❌ validate-structure failed',
+              '',
+              '```',
+              output,
+              '```',
+              '',
+              'Fix the issues above, then push to re-run.',
+              '',
+              '> Run locally: `node scripts/validate-structure.js`'
+            ].join('\n');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });
+
+      - name: Fail on validation errors
+        if: steps.validate.outcome == 'failure'
+        run: |
+          echo "Plugin structure validation failed. See PR comment for details."
+          exit 1
