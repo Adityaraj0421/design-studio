@@ -388,6 +388,60 @@ Run:
 
 ---
 
+### TRACK: print-pdf
+
+**Goal:** Design a print layout → generate a multi-page PDF report → run a preflight audit.
+
+---
+
+**Exercise 1 of 3 — Create a Print Layout**
+
+Run this command now:
+
+```
+/print-layout business card for Naksha — name: Alex Rivera, title: Design Lead. Minimal style.
+```
+
+> **What to watch for:** The Print Designer applies bleed/trim/safe-zone geometry, CMYK color documentation, and CSS Paged Media rules. Output is production-ready CSS you can send straight to a print vendor.
+
+Once you see the output, continue to Exercise 2.
+
+---
+
+**Exercise 2 of 3 — Generate a PDF Report**
+
+Run:
+
+```
+/pdf-report quarterly design system status report. Sections: Executive Summary, Token Changes, Component Updates, Accessibility Score.
+```
+
+> **What to watch for:** Multi-page layout with `@page` rules, named pages, running headers/footers, TOC, and widows/orphans control. The kind of report that usually requires InDesign — generated in one command.
+
+---
+
+**Exercise 3 of 3 — Run a Preflight Audit**
+
+Take the business card CSS from Exercise 1 and run:
+
+```
+/print-audit [paste the business card CSS from Exercise 1]
+```
+
+> **What to watch for:** Two-phase audit — Phase 1 always runs (bleed geometry, CMYK values, font embedding, page-break rules). Phase 2 runs if brand context is provided. Output is a scored preflight checklist with specific fixes.
+
+---
+
+**Print / PDF track complete.** You've seen:
+- `/print-layout` → production-ready CSS with bleed, CMYK, and CSS Paged Media
+- `/pdf-report` → multi-page report with `@page` rules, TOC, and running headers
+- `/print-audit` → two-phase preflight audit
+
+**Suggested next:**
+- `/design-tutorial full` for the complete tour
+
+---
+
 ### TRACK: full
 
 **Goal:** Complete tour of all 8 design wings.
