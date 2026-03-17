@@ -1,0 +1,11 @@
+name: design-tokens
+description: Extract a token system, build a brand kit, and export framework code — full design-to-code token pipeline
+steps:
+  - command: design-system
+    args: "extract tokens from $INPUT"
+  - command: brand-kit
+    pass-output-as: context
+  - command: design-framework
+    args: "react-tailwind"
+    pass-output-as: context
+on-error: stop

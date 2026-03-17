@@ -1,0 +1,10 @@
+name: email-launch
+description: Build a welcome email template, plan a campaign sequence, and audit for deliverability
+steps:
+  - command: email-template
+    args: "$INPUT"
+  - command: email-campaign
+    pass-output-as: context
+  - command: email-audit
+    pass-output-as: file
+on-error: stop

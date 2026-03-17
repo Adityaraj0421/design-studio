@@ -1,0 +1,10 @@
+name: ar-prototype
+description: Design a spatial app, add an AR overlay, then audit the experience against a competitor
+steps:
+  - command: design-spatial
+    args: "$INPUT"
+  - command: design-ar-overlay
+    pass-output-as: context
+  - command: competitive-audit
+    args: "$COMPETITOR_URL"
+on-error: continue
