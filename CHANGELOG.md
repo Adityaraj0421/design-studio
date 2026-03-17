@@ -2,6 +2,18 @@
 
 All notable changes to naksha are documented here.
 
+## v4.2.0 — Eval Quality & CI Hardening (2026-03-17)
+
+**Eval quality:**
+- Upgraded v4.1.0 tutorial evals (IDs 140–145) from shallow keyword checks to rich 6-assertion format
+- All 146 evals now follow consistent named-assertion pattern
+
+**CI hardening — 3 new validate-structure checks (5 → 8):**
+- Check 6: `pipeline-yaml-structure` — validates all pipeline YAML files have name, description, steps, and command fields
+- Check 7: `skill-command-sync` — ensures every command in `commands/` is referenced in `skills/design/SKILL.md`
+- Check 8: `command-allowed-tools` — enforces `allowed-tools:` frontmatter on all 57 command files; fixed 17 commands that were missing it
+- Updated stale comment in Check 4 (previously said "17/46 commands lack allowed-tools" — now all 57 are compliant)
+
 ## v4.1.0 — Tutorial Depth & Pipeline Library (2026-03-17)
 
 **Tutorial expansion:**
