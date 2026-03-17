@@ -122,6 +122,17 @@ check_fixture "design-critique-output.md"         "heuristic,critique,visibility
 check_fixture "design-qa-output.md"               "responsive,token,breakpoint,compliance,state,score"                3    300
 check_fixture "accessibility-audit-output.md"     "wcag,contrast,aria,keyboard,semantic,violation"                    3    300
 check_fixture "template-gallery-output.md"        "landing-page,dashboard,pricing,ecommerce,Try:"                     2    200
+check_fixture "naksha-init-output.md"             "init,project,brand,memory"                                          3    300
+check_fixture "naksha-status-output.md"           "status,context,brand,framework"                                     3    300
+check_fixture "pipeline-output.md"                "pipeline,step,launch,summary"                                       3    300
+check_fixture "design-compare-output.md"          "compare,layout,typography,steal"                                    3    300
+check_fixture "competitive-audit-output.md"       "audit,palette,pattern,recommendation"                               3    300
+check_fixture "design-chatbot-output.md"          "chatbot,dialog,bubble,accessibility"                                3    300
+check_fixture "design-voice-ui-output.md"         "voice,wake,confirmation,earcon"                                     3    300
+check_fixture "design-spatial-output.md"          "spatial,depth,window,ornament"                                      3    300
+check_fixture "design-ar-overlay-output.md"       "anchor,tracking,overlay,scan"                                       3    300
+check_fixture "design-gdpr-output.md"             "gdpr,consent,banner,privacy"                                        3    300
+check_fixture "design-compliance-output.md"       "compliance,hipaa,phi,audit"                                         3    300
 
 echo ""
 echo "───────────────────────────────────────"
