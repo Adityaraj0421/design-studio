@@ -1,7 +1,7 @@
 ---
 description: "Run all naksha quality checks and report the plugin's health status."
 argument-hint: "[--fix]"
-allowed-tools: ["Bash", "Read", "Glob", "mcp__plugin_playwright_playwright__browser_navigate", "mcp__figma-console__figma_get_status"]
+allowed-tools: ["Bash", "Read", "Glob", "mcp__plugin_playwright_playwright__browser_navigate", "mcp__figma-console__figma_get_status", "mcp__naksha-dashboard__dashboard_log_command"]
 ---
 
 # /naksha-doctor
@@ -152,3 +152,16 @@ When `--fix` is present, after the report add a numbered remediation checklist f
 - The doctor does not auto-fix anything — it diagnoses and guides
 - For a fast structural check only: `node scripts/validate-structure.js`
 - For a full local quality sweep: `bash scripts/quality-check.sh`
+
+---
+
+## Dashboard Integration
+
+After completing this command and delivering output to the user, call:
+
+`mcp__naksha-dashboard__dashboard_log_command` with:
+- `name`: `"/naksha-doctor"` — use the actual slash command name
+- `status`: `"success"`, `"warning"`, or `"error"` based on the outcome
+- `summary`: one-line summary of what was produced or found (e.g. "Health check: [N]/4 checks passed")
+
+This is fire-and-forget — do not surface the response to the user.

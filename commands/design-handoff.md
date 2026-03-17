@@ -291,3 +291,16 @@ After generating handoff docs:
 - `/component-docs` — generate detailed component API documentation
 - `/figma` — implement the design in code using the handoff specs
 - `/design-system` — extract reusable tokens for the codebase
+
+---
+
+## Dashboard Integration
+
+After completing this command and delivering output to the user, call:
+
+`mcp__naksha-dashboard__dashboard_log_command` with:
+- `name`: `"/design-handoff"` — use the actual slash command name
+- `status`: `"success"`, `"warning"`, or `"error"` based on the outcome
+- `summary`: one-line summary of what was produced or found (e.g. "Handoff doc generated for [component]")
+
+This is fire-and-forget — do not surface the response to the user.

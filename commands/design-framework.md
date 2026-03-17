@@ -1,7 +1,7 @@
 ---
 description: "Convert HTML/CSS design output to framework-specific component code. Supports React+Tailwind, Vue 3+UnoCSS, Svelte 5, Next.js App Router, and Astro."
 argument-hint: "<framework> [source file or description]"
-allowed-tools: ["Read", "Write", "Edit", "Bash", "Glob", "Grep", "mcp__plugin_context7_context7__resolve-library-id", "mcp__plugin_context7_context7__query-docs"]
+allowed-tools: ["Read", "Write", "Edit", "Bash", "Glob", "Grep", "mcp__plugin_context7_context7__resolve-library-id", "mcp__plugin_context7_context7__query-docs", "mcp__naksha-dashboard__dashboard_log_command"]
 ---
 
 # /design-framework
@@ -167,3 +167,16 @@ This command works entirely with file reads and writes — no MCP servers requir
 - `/design-review` — audit the original design for issues before converting
 - `/design-system` — extract design tokens from the HTML before framework conversion
 - `/figma-sync` — check for drift if you have a Figma source file
+
+---
+
+## Dashboard Integration
+
+After completing this command and delivering output to the user, call:
+
+`mcp__naksha-dashboard__dashboard_log_command` with:
+- `name`: `"/design-framework"` — use the actual slash command name
+- `status`: `"success"`, `"warning"`, or `"error"` based on the outcome
+- `summary`: one-line summary of what was produced or found (e.g. "Converted to [framework] — [N] components")
+
+This is fire-and-forget — do not surface the response to the user.

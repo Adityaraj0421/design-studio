@@ -293,3 +293,16 @@ After a design review, suggest follow-up actions based on findings:
 - `/design-system` — create tokens if the review found hardcoded values
 - `/figma-sync` — check if Figma designs match the reviewed code
 - `/figma-component-library` — build a proper component library if the review found inconsistency
+
+---
+
+## Dashboard Integration
+
+After completing this command and delivering output to the user, call:
+
+`mcp__naksha-dashboard__dashboard_log_command` with:
+- `name`: `"/design-review"` — use the actual slash command name
+- `status`: `"success"`, `"warning"`, or `"error"` based on the outcome
+- `summary`: one-line summary of what was produced or found (e.g. "Reviewed [X] — [N] critical issues found")
+
+This is fire-and-forget — do not surface the response to the user.

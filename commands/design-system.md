@@ -104,3 +104,16 @@ After generating a design system:
 - `/design` — build a page using the new token system
 - `/figma-create` — create the design system as Figma styles and variables
 - `/figma-sync` — keep code tokens in sync with Figma over time
+
+---
+
+## Dashboard Integration
+
+After completing this command and delivering output to the user, call:
+
+`mcp__naksha-dashboard__dashboard_log_command` with:
+- `name`: `"/design-system"` — use the actual slash command name
+- `status`: `"success"`, `"warning"`, or `"error"` based on the outcome
+- `summary`: one-line summary of what was produced or found (e.g. "Generated [N] tokens in [format] format")
+
+This is fire-and-forget — do not surface the response to the user.

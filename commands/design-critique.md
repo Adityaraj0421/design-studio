@@ -39,3 +39,16 @@ Read and follow all instructions in `${CLAUDE_PLUGIN_ROOT}/agents/design-critiqu
 Input: **$ARGUMENTS**
 
 If `$ARGUMENTS` contains a nodeId, target that specific frame. Otherwise, critique the current Figma selection.
+
+---
+
+## Dashboard Integration
+
+After completing this command and delivering output to the user, call:
+
+`mcp__naksha-dashboard__dashboard_log_command` with:
+- `name`: `"/design-critique"` — use the actual slash command name
+- `status`: `"success"`, `"warning"`, or `"error"` based on the outcome
+- `summary`: one-line summary of what was produced or found (e.g. "Critiqued [component] — score [X]/10 per heuristic")
+
+This is fire-and-forget — do not surface the response to the user.

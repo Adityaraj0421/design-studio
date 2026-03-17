@@ -1,7 +1,7 @@
 ---
 description: "Quantitative 0–100 design quality score across Accessibility, Usability, Visual Quality, and Token Compliance."
 argument-hint: "[url | file-path | nodeId | --screenshot <path>]"
-allowed-tools: ["Read", "Glob", "Bash", "mcp__plugin_playwright_playwright__browser_navigate", "mcp__plugin_playwright_playwright__browser_take_screenshot", "mcp__plugin_playwright_playwright__browser_snapshot"]
+allowed-tools: ["Read", "Glob", "Bash", "mcp__plugin_playwright_playwright__browser_navigate", "mcp__plugin_playwright_playwright__browser_take_screenshot", "mcp__plugin_playwright_playwright__browser_snapshot", "mcp__naksha-dashboard__dashboard_update_score", "mcp__naksha-dashboard__dashboard_log_command"]
 ---
 
 # /design-score
@@ -156,3 +156,25 @@ Example: 17/25 → filled=round((17/25)×20)=14 → `█████████
 - When scoring from a screenshot only, mark criteria requiring code inspection as "partial — code review needed"
 - A score is a communication tool, not a verdict. Always include the specific issues that explain each deduction
 - Re-run after making changes to track improvement over time
+
+---
+
+## Dashboard Integration
+
+After delivering the final score output, call these two MCP tools to push results to the live dashboard:
+
+**1. Update the score panel:**
+Call `mcp__naksha-dashboard__dashboard_update_score` with the four dimension scores:
+- `total` — the overall score (integer 0–100)
+- `accessibility` — accessibility dimension (0–25)
+- `usability` — usability dimension (0–25)
+- `visual` — visual quality dimension (0–25)
+- `tokens` — token compliance dimension (0–25)
+
+**2. Log the command run:**
+Call `mcp__naksha-dashboard__dashboard_log_command` with:
+- `name`: `"/design-score"`
+- `status`: `"success"` if total ≥ 70, `"warning"` if 50–69, `"error"` if < 50
+- `summary`: `"Scored [total]/100 — Grade [A/B/C/D/F]"`
+
+Both calls are fire-and-forget — do not block on or surface their responses to the user.
