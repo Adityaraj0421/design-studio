@@ -4,7 +4,7 @@
 
 **Your agency's design brain. Always on, always yours.**
 
-*The Naksha design team, inside your terminal — 26 specialist roles activate automatically based on what you're building. Also available as a web workspace at [naksha.ai](https://naksha.ai).*
+*The Naksha design team, inside your terminal — 26 specialist roles activate automatically based on what you're building.*
 
 <br>
 
@@ -27,16 +27,6 @@
 ## 🚀 Quick Start
 
 ### Claude Code (full plugin — 60 commands, agents, hooks)
-
-**Option A — Marketplace install (recommended, Claude Code 2.1.72+)**
-
-In Claude Code, run:
-```
-/plugin marketplace add https://github.com/Adityaraj0421/naksha-studio.git
-/plugin install naksha@naksha
-```
-
-**Option B — Git clone (older versions / manual setup)**
 
 ```bash
 git clone https://github.com/Adityaraj0421/naksha-studio.git ~/.claude/plugins/naksha
@@ -952,13 +942,6 @@ Checks: metadata consistency (`meta/stats.json` vs filesystem vs README badges),
 
 ## 📦 Installation
 
-**Marketplace install (Claude Code 2.1.72+):**
-```
-/plugin marketplace add https://github.com/Adityaraj0421/naksha-studio.git
-/plugin install naksha@naksha
-```
-
-**Git clone (manual / older versions):**
 ```bash
 git clone https://github.com/Adityaraj0421/naksha-studio.git ~/.claude/plugins/naksha
 ```
