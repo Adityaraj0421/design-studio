@@ -2,6 +2,16 @@
 
 Thanks for your interest in contributing! This guide explains how to add new roles, commands, agents, and references to the plugin.
 
+## Finding Work
+
+Browse [Issues](https://github.com/Adityaraj0421/naksha-studio/issues) filtered by the `wishlist` label to find officially wanted contributions:
+
+- [`wishlist`](https://github.com/Adityaraj0421/naksha-studio/issues?q=is%3Aissue+label%3Awishlist) — curated by maintainers, scoped and ready to build
+- [`good-first-issue`](https://github.com/Adityaraj0421/naksha-studio/issues?q=is%3Aissue+label%3Agood-first-issue) — beginner-friendly, well-defined scope
+- [`help-wanted`](https://github.com/Adityaraj0421/naksha-studio/issues?q=is%3Aissue+label%3Ahelp-wanted) — any skill level, needs a builder
+
+**To claim an issue:** Comment on it saying you're working on it. A maintainer will apply the `claimed` label. If you need to step away, comment so others can pick it up.
+
 ## Plugin Architecture
 
 ```
@@ -113,6 +123,31 @@ Roles are virtual — they're defined in `SKILL.md`, not in separate files. To a
 - **Font loading**: Always `await figma.loadFontAsync()` before text operations
 - **Process steps**: Number them, use clear verbs ("Create", "Extract", "Validate")
 - **Output templates**: Show the exact markdown structure the command produces
+
+## Definition of Done
+
+Before marking your PR ready, confirm all of the following apply to your contribution type:
+
+**All PRs:**
+- Tested locally end-to-end in Claude Code
+- `validate-structure` CI passes (checks file counts, version consistency, and command frontmatter)
+- No hardcoded paths — use `${CLAUDE_PLUGIN_ROOT}/` for all plugin-relative references
+
+**New command:**
+- Command `.md` file is in `commands/`
+- Frontmatter has `description`, `allowed-tools`, and role references
+- `meta/stats.json` `commands` count is incremented
+- Eval case added in `evals/evals.json` — this is how we prevent regressions; every command needs one
+
+**New role:**
+- Role definition added to `skills/design/SKILL.md` — roles are virtual, there is no separate role file to create
+- `meta/stats.json` `roles` count is incremented
+- At least one command activates the new role
+
+**Knowledge/reference update:**
+- Reference `.md` file is in `skills/design/references/`
+- `meta/stats.json` `reference_files` count is incremented
+- Relevant commands updated to reference it in their frontmatter
 
 ## Testing
 
