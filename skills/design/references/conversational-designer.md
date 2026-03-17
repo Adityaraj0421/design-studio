@@ -511,12 +511,57 @@ From **IBM Design for AI** (ibm.com/design/ai):
 
 ---
 
+### Chatbot UX Research — Nielsen Norman Group
+
+From **NN/g Report: Chatbots and Conversational Interfaces** (nngroup.com/articles/chatbots):
+
+**Users' mental models of chatbots are shaped by prior failures.** NNG's research found that users who have had bad experiences with chatbots approach new ones with low expectations and high skepticism. This means the first successful interaction must happen within the first 2–3 turns. Every onboarding flow should be designed around a "quick win" — a task the bot can complete reliably and rapidly to rebuild trust.
+
+**Structured quick replies reduce cognitive load more than free text.** NNG's usability testing showed that quick reply chips reduced task completion time by 30–40% on mobile for known-intent scenarios. However, open text input scores higher for emotional support and complex requests. Design adaptive input: show quick replies when options are enumerable, fall back to open text when the intent space is wide or when the user has rejected the offered options twice.
+
+> Source: nngroup.com/articles/chatbots — 2023
+
+---
+
+### Conversational AI Design — Microsoft Bot Framework
+
+From **Microsoft Bot Framework — Principles of Bot Design** (learn.microsoft.com/en-us/azure/bot-service/bot-service-design-principles):
+
+**Design for what you can do, not what you imagine you could do.** Microsoft's Bot Framework documentation explicitly warns against designing an over-capable bot that fails frequently. A bot with a narrow but reliable scope delivers more value than a broad bot with a high failure rate. Scope creep in conversational design is uniquely damaging because every out-of-scope failure damages the user's trust in the entire bot, including tasks it can do well.
+
+**First utterance is the hardest.** Microsoft's research shows that the user's first message is often the most ambiguous — users don't yet know how to phrase requests in ways the bot understands. The onboarding experience must teach the bot's vocabulary through examples and suggested prompts, not documentation. Surface 3–5 example prompts as chips on the empty state; update them based on which prompts users actually convert on.
+
+> Source: learn.microsoft.com/en-us/azure/bot-service/bot-service-design-principles — 2024
+
+---
+
 ## Handoffs
 
-- → **UX Designer**: chatbot widget placement within page layout, visual design of chat container and toggle button, integration with the product design system (button styles, typography, color tokens)
-- → **Frontend Developer**: WebSocket message format and event schema, streaming vs. polling architecture decision, ARIA live region implementation for accessibility (`aria-live="polite"` on message list, role announcements for bubbles), focus management when chat opens/closes
-- → **Content Designer**: all conversation copy (greetings, confirmations, error messages, onboarding), error message writing guidelines, tone and voice documentation for ongoing copy requests, slot re-prompt copy
-- → **Product Designer**: bot scope and capability boundaries (what it can and cannot do), escalation flow design (at what point does the bot hand off to a human, and what data travels with that handoff), conversation success metrics definition
+### → UX Designer
+Chatbot widget placement within the host page layout, visual design of the chat container and toggle button, integration with the product design system (button styles, typography, color tokens), empty state illustration direction.
+
+Deliver: annotated Figma frames showing widget placement in context, component spec for chat container, toggle button, message bubble, quick reply chips, and typing indicator — all mapped to design system tokens.
+
+---
+
+### → Frontend Developer
+WebSocket message format and event schema, streaming vs. polling architecture decision, ARIA live region implementation for accessibility (`aria-live="polite"` on message list, role announcements for bubbles), focus management when chat opens/closes, session storage for conversation continuity.
+
+Deliver: conversation schema documentation (message types, event structure), ARIA annotation spec, focus management flowchart, performance requirements (time-to-first-response, streaming latency targets).
+
+---
+
+### → Content Designer
+All conversation copy — greetings, confirmations, error messages, onboarding, slot re-prompts, fallback messages, escalation messages. Tone and voice documentation for ongoing copy requests. Bot persona guide with vocabulary list, not-do list, and humour calibration table.
+
+Deliver: conversation copy deck (all strings with context + character limits), bot persona document (voice, tone, not-do list, empathy phrase library), slot re-prompt guidelines with examples.
+
+---
+
+### → Product Designer
+Bot scope and capability boundaries (what it can and cannot do), escalation flow design (at what point does the bot hand off to a human, and what data travels with that handoff), conversation success metrics definition, phased capability roadmap.
+
+Deliver: capability matrix (intents in scope / out of scope / future phase), escalation flow diagram with context package spec, success metrics dashboard wireframe, conversation analytics instrumentation requirements.
 
 ---
 
@@ -602,6 +647,33 @@ NLU models return confidence scores. Design explicit routing based on threshold 
 **Calibration note**: these thresholds are starting points. Tune them based on production data — a model with high overall accuracy can still have low confidence on specific intents that need lower thresholds. Review weekly for the first month post-launch.
 
 **Slot confidence** follows the same pattern: low-confidence slot values (e.g., a date the ASR wasn't sure about) should trigger explicit slot confirmation before proceeding, not silent use.
+
+---
+
+### Conversation Analytics and Continuous Improvement Loop
+
+A conversational product is never "shipped" — it degrades without active feedback loops. Design the analytics instrumentation alongside the conversation flows, not as a post-launch addition.
+
+**Metrics to instrument from day one:**
+
+| Metric | Definition | Target Threshold |
+|---|---|---|
+| **Containment rate** | % of sessions that completed a task without human escalation | ≥ 75% for a mature bot |
+| **Task completion rate** | % of intent flows that reached a completion state | ≥ 80% per intent |
+| **Fallback rate** | % of utterances that triggered FALLBACK_1 | ≤ 15% |
+| **Escalation rate** | % of sessions that escalated to human | ≤ 10% |
+| **User satisfaction (CSAT)** | Post-conversation 1–5 star rating | ≥ 4.0 |
+| **Drop-off by state** | % of sessions that ended in each state | Any state with >20% drop-off = redesign signal |
+
+**Improvement cycle (bi-weekly minimum):**
+
+1. **Review fallback logs** — export all FALLBACK_1 and FALLBACK_2 utterances from the past 2 weeks. Cluster by similarity. Any cluster with >5 occurrences is a training gap or a missing intent.
+2. **Review escalation triggers** — what intent/state was the bot in when most escalations occurred? This identifies ceiling gaps (things users need that the bot can't do).
+3. **Review drop-off by state** — states with high drop-off rates indicate friction (overly complex slot-filling, confusing copy, slow API responses).
+4. **A/B test copy changes** — test re-prompt text, quick reply labels, and fallback messages. Even minor copy changes can lift completion rates 10–15%.
+5. **Update training data** — add real user utterances (anonymized) to the intent training set. Real language always outperforms synthetic training data.
+
+**Design implication:** Design the analytics dashboard as part of the initial scope, not a post-launch add-on. The bot team needs to see containment rate, fallback rate, and escalation rate in near-real-time to prioritize the improvement backlog.
 
 ---
 
