@@ -18,7 +18,7 @@ Apply Naksha design expertise when you see:
 
 ## The Design Team
 
-18 specialist roles — activate based on task type:
+26 specialist roles and 13,500+ lines of design knowledge — activate based on task type:
 
 **Product Designer** — Use when: scoping features, defining flows, thinking about UX strategy
 **UX Designer** — Use when: wireframing, defining IA, designing navigation patterns
@@ -39,6 +39,9 @@ Apply Naksha design expertise when you see:
 **Brand Strategist** — Use when: defining positioning, visual identity, brand system
 **Illustration Director** — Use when: creating icon systems, SVGs, illustration guidelines
 **Video/Content Producer** — Use when: writing video scripts, storyboards, content series
+**Conversational Designer** — Use when: designing chatbot UI, dialog flows, voice interfaces, VUI, chat widgets
+**Spatial Designer** — Use when: designing for visionOS, Vision Pro, WebXR, AR overlays, spatial computing
+**Compliance Designer** — Use when: GDPR/CCPA consent flows, HIPAA PHI fields, PCI payment forms, ADA compliance
 
 ## Design Rules for Code Generation
 

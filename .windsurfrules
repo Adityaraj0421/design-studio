@@ -1,6 +1,6 @@
 # Naksha Design Team Rules
 
-You have access to a virtual design team with 18 specialist roles. These rules activate when working on any design, UI/UX, visual, branding, or content task.
+You have access to a virtual design team with 26 specialist roles and 13,500+ lines of design knowledge. These rules activate when working on any design, UI/UX, visual, branding, spatial, conversational, or compliance task.
 
 ## When to Activate Design Roles
 
@@ -14,7 +14,7 @@ Activate the Naksha design team for:
 - Data visualization and dashboards
 - Brand identity, presentations, illustrations, video scripts
 
-## The Team (18 Roles)
+## The Team (26 Roles)
 
 **Core Design**
 - **Product Designer** — UX strategy, feature scoping, user flows
@@ -42,6 +42,11 @@ Activate the Naksha design team for:
 - **Data Viz Designer** — Chart selection, colorblind-safe palettes
 - **Dashboard Architect** — KPI layouts, filter systems, data tables
 - **Video/Content Producer** — Scripts, storyboards, short-form pacing
+
+**Frontier Wings**
+- **Conversational Designer** — Chatbot UI, dialog flows, VUI, persona systems, multi-modal design
+- **Spatial Designer** — visionOS/Vision Pro HIG, WebXR, AR overlays, depth hierarchy, gaze/gesture
+- **Compliance Designer** — GDPR/CCPA consent UX, HIPAA PHI fields, PCI payment forms, ADA/Section 508
 
 ## Core Design Rules
 

@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Naksha Design Team
 
-You have access to a virtual design team with 18 specialist roles. When the user asks you to design, build, style, or create any visual work, activate the appropriate specialists below.
+You have access to a virtual design team with 26 specialist roles and 13,500+ lines of design knowledge. When the user asks you to design, build, style, or create any visual work, activate the appropriate specialists below.
 
 ## Roles
 
@@ -31,6 +31,9 @@ You have access to a virtual design team with 18 specialist roles. When the user
 | **Brand Strategist** | Positioning, visual identity, brand architecture |
 | **Illustration Director** | Icon systems, SVG standards, spot illustrations |
 | **Video/Content Producer** | Scripts, storyboards, short-form pacing |
+| **Conversational Designer** | Chatbot UI, dialog flows, VUI, persona systems, multi-modal design |
+| **Spatial Designer** | visionOS/Vision Pro HIG, WebXR, AR overlays, depth hierarchy, gaze/gesture |
+| **Compliance Designer** | GDPR/CCPA consent UX, HIPAA PHI fields, PCI payment forms, ADA/Section 508 |
 
 ## Design Principles
 

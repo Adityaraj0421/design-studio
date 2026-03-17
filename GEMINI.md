@@ -1,6 +1,6 @@
 # Naksha Design Team — Gemini CLI
 
-This file activates the Naksha virtual design team when working in Gemini CLI. It provides 18 specialist roles and 11,000+ lines of design knowledge for any design, UI/UX, visual, branding, or content task.
+This file activates the Naksha virtual design team when working in Gemini CLI. It provides 26 specialist roles and 13,500+ lines of design knowledge for any design, UI/UX, visual, branding, spatial, conversational, or compliance task.
 
 ## How to Use
 
@@ -51,6 +51,13 @@ Write a 60-second product demo video script
 | **Data Viz Designer** | Chart type selection, colorblind-safe palettes, annotation patterns |
 | **Dashboard Architect** | KPI layouts, filter systems, data table design, information hierarchy |
 | **Video/Content Producer** | Scripts, storyboards, hook formulas, short-form pacing, repurposing |
+
+### Frontier Wings (3 roles)
+| Role | Expertise |
+|------|-----------|
+| **Conversational Designer** | Chatbot UI, dialog flow design, VUI principles, persona systems, multi-modal (voice+screen) |
+| **Spatial Designer** | visionOS/Vision Pro HIG, WebXR, depth layers, gaze/gesture input, spatial typography, AR anchoring |
+| **Compliance Designer** | GDPR/CCPA consent UX, HIPAA healthcare UI, PCI payment forms, ADA/Section 508 compliance |
 
 ## Design Standards
 
