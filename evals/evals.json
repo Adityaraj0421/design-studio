@@ -4135,6 +4135,68 @@
         { "name": "mentions-two-urls", "description": "references two URL arguments or side-by-side comparison" },
         { "name": "actionable-output", "description": "output is actionable and ready to use" }
       ]
+    },
+    {
+      "id": 157,
+      "name": "design-score-landing-page",
+      "command": "/design-score",
+      "role": "UX Design Critic",
+      "prompt": "/design-score https://example.com",
+      "expected_output": "0–100 score card with per-dimension breakdown, grade, and top issues",
+      "assertions": [
+        { "name": "shows-overall-score", "description": "Response includes an overall numeric score out of 100" },
+        { "name": "shows-four-dimensions", "description": "Response shows all four dimension scores: Accessibility, Usability, Visual Quality, Token Compliance" },
+        { "name": "shows-grade-label", "description": "Response includes a grade (A through F) with a plain-language label" },
+        { "name": "shows-score-bars", "description": "Response includes ASCII progress bars for each dimension score" },
+        { "name": "lists-top-issues", "description": "Response includes a prioritized list of top issues with severity indicators" },
+        { "name": "shows-score-methodology", "description": "Response includes a score methodology footer explaining each dimension" }
+      ]
+    },
+    {
+      "id": 158,
+      "name": "design-score-screenshot-mode",
+      "command": "/design-score",
+      "role": "UX Design Critic",
+      "prompt": "/design-score --screenshot /path/to/dashboard.png",
+      "expected_output": "Score card based on visual analysis of the screenshot, noting which criteria required code inspection",
+      "assertions": [
+        { "name": "produces-score-from-image", "description": "Response produces a complete score card from screenshot input without erroring" },
+        { "name": "shows-four-dimensions", "description": "All four dimension scores are present in the output" },
+        { "name": "notes-code-inspection-limits", "description": "Response acknowledges that some criteria require code review and could not be fully assessed from screenshot alone" },
+        { "name": "identifies-visual-issues", "description": "Issues listed are grounded in visual observations, not generic placeholders" },
+        { "name": "shows-grade", "description": "A grade A–F is shown with a label" }
+      ]
+    },
+    {
+      "id": 159,
+      "name": "design-critic-produces-score-summary",
+      "command": "/design-critique",
+      "role": "UX Design Critic",
+      "prompt": "Critique the checkout flow in the current Figma file",
+      "expected_output": "3-pass critique with a Design Score Summary block showing overall score and four dimension scores",
+      "assertions": [
+        { "name": "shows-score-summary-block", "description": "Response includes a Design Score Summary section with an overall score out of 100" },
+        { "name": "shows-all-four-dimensions", "description": "Score summary shows Accessibility, Usability, Visual Quality, and Token Compliance sub-scores" },
+        { "name": "shows-score-bars", "description": "ASCII progress bars are shown for each dimension" },
+        { "name": "still-runs-three-passes", "description": "Response still includes all three critique passes: heuristics, accessibility, and content quality" },
+        { "name": "shows-grade", "description": "A grade A–F is included in the score summary" },
+        { "name": "ends-with-strengths", "description": "Response ends with a section on what the design does well" }
+      ]
+    },
+    {
+      "id": 160,
+      "name": "design-critic-token-compliance-pass",
+      "command": "/design-critique",
+      "role": "UX Design Critic",
+      "prompt": "Critique this React component file for design quality",
+      "expected_output": "4-pass critique including a token compliance pass, with score summary",
+      "assertions": [
+        { "name": "includes-token-compliance-pass", "description": "Response includes a token compliance pass checking for hardcoded values vs. design tokens" },
+        { "name": "identifies-hardcoded-values", "description": "Token compliance pass flags specific hardcoded hex/rgb values or notes their absence" },
+        { "name": "shows-token-compliance-score", "description": "Token Compliance dimension score is shown in the score summary" },
+        { "name": "provides-token-fix-guidance", "description": "Token compliance issues include guidance on converting to CSS custom properties or Tailwind tokens" },
+        { "name": "overall-score-present", "description": "An overall 0–100 score is shown in the score summary at the top of the output" }
+      ]
     }
   ]
 }
