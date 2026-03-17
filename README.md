@@ -342,6 +342,27 @@ _The skill loads only the references your task actually needs_
 | `/gen-audio <voice or music> for <platform>` | Generate an AI audio brief — voiceover (ElevenLabs/Murf) or music/jingle (Suno), timing cues, FTC/EU AI Act compliance |
 | `/gen-moodboard <concept> for <brand>` | Generate 3 AI moodboard directions — brand personality extraction, visual style, 4–6 prompts per direction |
 | `/prompt-refine <existing prompt>` | Diagnose and optimise any AI gen prompt — annotated critique, optimised version, cross-tool variant |
+| `/print-layout <brief>` | Print-ready layout — business cards, certificates, brochures, posters with CMYK, bleed, and crop marks |
+| `/print-audit <file>` | Pre-flight audit for print: bleed, CMYK, resolution, font embedding, PDF/X compliance |
+| `/pdf-report <brief>` | Multi-page PDF report or document — cover, table of contents, body sections, charts, structured for print or digital |
+| `/lint-design <figma_url>` | Design linter — orphan colors, non-token spacing, missing auto-layout, contrast violations, scored by severity |
+| `/accessibility-audit` | WCAG 2.1 AA audit — contrast, ARIA, keyboard nav, semantic HTML — with specific code fixes |
+| `/design-qa <file or URL>` | Visual QA at 3 breakpoints — token compliance, interaction states, responsive behavior |
+| `/design-critique <file>` | Heuristic review — Nielsen's 10 heuristics, visual audit, interaction states; add `--screenshot <path>` for vision-mode critique |
+
+**v4.0.0 — Memory, Pipelines, Vision & Frontier Wings**
+
+| `/naksha-init` | Interactive project setup wizard — writes `.naksha/project.json` (brand, framework, tokens) and creates a design decision log |
+| `/naksha-status` | Display current project context and recent design decisions from memory |
+| `/pipeline run <name>` | Execute a multi-step design pipeline — `launch-prep`, `brand-audit`, `component-build`, `social-launch` |
+| `/design-compare <url1> <url2>` | Side-by-side visual analysis of two URLs — layout, typography, color, UX patterns, "Steal This" recommendations |
+| `/competitive-audit <url>` | Extract a competitor's color palette, type system, layout grid, and UX patterns with quality ratings |
+| `/design-chatbot <type> [platform]` | Complete chatbot/assistant UI spec — persona, dialog flows, message bubbles, quick replies, error states, accessibility |
+| `/design-voice-ui <product> [platform] [screen]` | Voice interface spec — wake word flows, confirmation patterns, hybrid screen layout, SSML, earcon design |
+| `/design-spatial <type> [platform]` | Spatial computing spec for visionOS/WebXR — depth hierarchy, window types, ornaments, spatial typography |
+| `/design-ar-overlay <use-case> [platform]` | AR overlay spec — anchor strategy, world tracking UI, instruction cards, scan states, occlusion handling |
+| `/design-gdpr <type> [jurisdiction]` | GDPR/CCPA consent flows — cookie banner variants, privacy control center, data deletion request flow |
+| `/design-compliance --regulation <hipaa\|pci\|ada>` | Compliance design audit or generation — HIPAA PHI handling, PCI payment form isolation, ADA/Section 508 |
 
 <details>
 <summary><b>📖 Command details & examples</b></summary>
@@ -710,6 +731,12 @@ Commands chain together. Each command suggests relevant next steps:
 | Motion system | `/design-system` → `/motion-design` → `/design-review` |
 | Video + social | `/video-script` → `/social-content` → `/social-campaign` |
 | Full identity system | `/brand-strategy` → `/brand-kit` → `/illustration-system` → `/figma-component-library` |
+| Project setup | `/naksha-init` → `/brand-kit` → `/design-system` → `/design` |
+| Pre-launch pipeline | `/pipeline run launch-prep` |
+| Competitor research | `/competitive-audit` → `/design-compare` → `/design` |
+| Chatbot + voice | `/design-chatbot` → `/design-voice-ui` → `/design-system` |
+| Spatial app | `/design-spatial` → `/design-ar-overlay` → `/design-system` |
+| GDPR + compliance | `/design-gdpr` → `/design-compliance --regulation ada` |
 
 ---
 
@@ -877,8 +904,8 @@ naksha/
 │   ├── detect-design-context.sh        # Project stack detection
 │   └── run-evals.sh                    # Eval structure validator
 ├── evals/
-│   ├── evals.json                      # 46 eval cases (prompt + assertion specs)
-│   └── fixtures/test-page.html         # Fixture: landing page with a11y issues
+│   ├── evals.json                      # 140 eval cases (prompt + assertion specs)
+│   └── fixtures/                       # 60 output fixtures for behavioral smoke tests
 ├── assets/                             # Social preview + demo images
 ├── CHANGELOG.md                       # Version history
 └── CONTRIBUTING.md                    # Contributor guide
