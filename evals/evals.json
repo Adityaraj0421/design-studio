@@ -3970,6 +3970,126 @@
         { "name": "lists-brand-audit", "description": "lists brand-audit pipeline" },
         { "name": "lists-social-launch", "description": "lists social-launch pipeline" }
       ]
+    },
+    {
+      "id": 146,
+      "name": "token-extractor-css",
+      "description": "Token extraction from CSS custom properties",
+      "prompt": "Extract all design tokens from our CSS files and output a coverage report",
+      "expected_output": "Coverage report by category (color, spacing, typography, etc.) and token list in CSS custom property format",
+      "assertions": [
+        { "name": "shows-coverage-report", "description": "shows token coverage report with categories" },
+        { "name": "lists-color-tokens", "description": "lists color tokens found" },
+        { "name": "lists-spacing-tokens", "description": "lists spacing tokens found" },
+        { "name": "identifies-gaps", "description": "identifies token gaps or hardcoded values" },
+        { "name": "outputs-css-format", "description": "outputs tokens in CSS custom property format" },
+        { "name": "shows-summary", "description": "shows summary of tokens found and recommendations" }
+      ]
+    },
+    {
+      "id": 147,
+      "name": "token-extractor-tailwind",
+      "description": "Token extraction with Tailwind config output",
+      "prompt": "Extract our design tokens and output as a Tailwind config",
+      "expected_output": "Token system output as tailwind.config.js theme.extend format",
+      "assertions": [
+        { "name": "outputs-tailwind-format", "description": "outputs Tailwind config format with theme.extend" },
+        { "name": "includes-colors", "description": "includes colors in Tailwind config" },
+        { "name": "includes-spacing", "description": "includes spacing values in Tailwind config" },
+        { "name": "coverage-report-present", "description": "shows coverage report before config output" },
+        { "name": "flags-arbitrary-values", "description": "flags arbitrary Tailwind values that bypass tokens" },
+        { "name": "actionable-next-steps", "description": "provides actionable next steps" }
+      ]
+    },
+    {
+      "id": 148,
+      "name": "design-critic-3pass",
+      "description": "3-pass design critique",
+      "prompt": "Run a thorough critique of this checkout flow design",
+      "expected_output": "3-pass critique: heuristics table, accessibility spot-check, content quality audit, and prioritized action list",
+      "assertions": [
+        { "name": "shows-heuristics-table", "description": "shows Nielsen's 10 heuristics with scores" },
+        { "name": "includes-accessibility-pass", "description": "includes accessibility spot-check" },
+        { "name": "includes-content-quality", "description": "includes content quality pass (microcopy, errors, tone)" },
+        { "name": "shows-priority-list", "description": "shows prioritized action list sorted by impact" },
+        { "name": "includes-severity-ratings", "description": "issues have severity ratings (critical/important/recommended)" },
+        { "name": "includes-strengths", "description": "includes genuine strengths section" }
+      ]
+    },
+    {
+      "id": 149,
+      "name": "design-critic-microcopy",
+      "description": "Content quality focus in design critique",
+      "prompt": "Critique the microcopy on this settings page",
+      "expected_output": "Content quality audit covering CTA buttons, empty states, error messages, and tone consistency",
+      "assertions": [
+        { "name": "evaluates-cta-buttons", "description": "evaluates CTA button text quality" },
+        { "name": "checks-empty-states", "description": "checks empty state content" },
+        { "name": "evaluates-error-messages", "description": "evaluates error message quality (specific, constructive, human)" },
+        { "name": "checks-tone-consistency", "description": "checks tone and voice consistency" },
+        { "name": "provides-rewrite-suggestions", "description": "provides specific rewrite suggestions for issues found" },
+        { "name": "includes-strengths", "description": "includes genuine content strengths" }
+      ]
+    },
+    {
+      "id": 150,
+      "name": "design-critic-heuristics",
+      "description": "Heuristic evaluation focus",
+      "prompt": "Evaluate this navigation design against usability heuristics",
+      "expected_output": "Nielsen heuristics table with severity ratings and specific fix for each failing heuristic",
+      "assertions": [
+        { "name": "scores-all-10-heuristics", "description": "scores all 10 Nielsen heuristics" },
+        { "name": "provides-evidence", "description": "each rating below pass includes specific evidence" },
+        { "name": "provides-exact-fixes", "description": "each issue includes an exact UI/copy fix" },
+        { "name": "overall-score-shown", "description": "shows overall heuristics score" },
+        { "name": "quick-wins-highlighted", "description": "highlights quick wins or easy improvements" },
+        { "name": "includes-strengths", "description": "includes what is working well" }
+      ]
+    },
+    {
+      "id": 151,
+      "name": "accessibility-auditor-wcag22",
+      "description": "WCAG 2.2 new criteria check",
+      "prompt": "Run an accessibility audit checking the new WCAG 2.2 criteria",
+      "expected_output": "Audit covering WCAG 2.2 criteria 2.5.7, 2.5.8, 3.2.6, and 3.3.7 with pass/fail and fixes",
+      "assertions": [
+        { "name": "checks-2.5.7-dragging", "description": "checks WCAG 2.5.7 Dragging Movements" },
+        { "name": "checks-2.5.8-target-size", "description": "checks WCAG 2.5.8 Target Size Minimum (24px)" },
+        { "name": "checks-3.2.6-consistent-help", "description": "checks WCAG 3.2.6 Consistent Help" },
+        { "name": "checks-3.3.7-redundant-entry", "description": "checks WCAG 3.3.7 Redundant Entry" },
+        { "name": "provides-code-fixes", "description": "provides exact code fixes for failing criteria" },
+        { "name": "includes-overall-grade", "description": "includes overall accessibility grade" }
+      ]
+    },
+    {
+      "id": 152,
+      "name": "accessibility-auditor-brand-contrast",
+      "description": "Brand color contrast check via project memory",
+      "prompt": "Audit accessibility for our brand colors — primary is #6366F1",
+      "expected_output": "Contrast ratio report for the brand color against white, black, and common backgrounds",
+      "assertions": [
+        { "name": "checks-brand-primary-contrast", "description": "checks contrast ratio for the specified brand color" },
+        { "name": "reports-contrast-ratios", "description": "reports specific contrast ratios (e.g. 4.73:1)" },
+        { "name": "checks-wcag-thresholds", "description": "evaluates against WCAG 4.5:1 and 3:1 thresholds" },
+        { "name": "suggests-accessible-alternatives", "description": "suggests accessible color alternatives if failing" },
+        { "name": "covers-text-sizes", "description": "distinguishes between normal text and large text thresholds" },
+        { "name": "actionable-fixes", "description": "provides actionable color adjustments" }
+      ]
+    },
+    {
+      "id": 153,
+      "name": "design-qa-viewport-simulation",
+      "description": "Responsive QA with breakpoint testing",
+      "prompt": "Run design QA on this page and test at mobile, tablet, and desktop breakpoints",
+      "expected_output": "QA report with findings at 375px, 768px, and 1280px viewports plus token compliance and interactive state checks",
+      "assertions": [
+        { "name": "tests-mobile-375", "description": "tests at 375px mobile breakpoint" },
+        { "name": "tests-tablet-768", "description": "tests at 768px tablet breakpoint" },
+        { "name": "tests-desktop-1280", "description": "tests at 1280px desktop breakpoint" },
+        { "name": "token-compliance-score", "description": "reports token compliance percentage" },
+        { "name": "interactive-state-check", "description": "checks hover, focus, active, disabled states" },
+        { "name": "overall-qa-score", "description": "shows overall QA score out of 100" }
+      ]
     }
   ]
 }

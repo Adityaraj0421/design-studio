@@ -37,7 +37,9 @@ description: >
   GDPR, CCPA, compliance design, cookie consent, consent banner, HIPAA, PCI DSS,
   data deletion, data portability, accessibility compliance, ADA compliance,
   naksha-init, naksha-status, project memory, pipeline, run pipeline,
-  competitor analysis, compare designs, competitive audit, design compare.
+  competitor analysis, compare designs, competitive audit, design compare,
+  extract tokens, token extraction, find my design tokens, map tokens, token audit, token coverage,
+  UX critique, 3-pass review, multi-pass audit, thorough design review, design second opinion.
   Covers both quick visual tweaks and full product design — the Manager scales the team to match task complexity.
 
   <example>
@@ -358,6 +360,8 @@ This skill is part of the **naksha** plugin. For focused workflows, use these co
 | **Figma Creator** | Build pages, frames, components, styles in Figma via Desktop Bridge | When the task requires creating designs inside Figma | `agents/figma-creator.md` |
 | **Design Critique** | UX heuristic review — Nielsen's 10, visual audit, interaction states | When user wants design feedback, or before presenting designs | `agents/design-critique.md` |
 | **Design Lint** | Scan Figma files for orphan colors, non-standard spacing, low contrast | When auditing Figma file quality, or before handoff | `agents/design-lint.md` |
+| design-token-extractor | Reads CSS/SCSS/Tailwind configs, extracts and categorizes tokens, outputs in CSS vars/Tailwind/Style Dictionary formats |
+| design-critic | 3-pass UX critique: Nielsen heuristics (severity-rated) + accessibility spot-check + content quality audit |
 
 ### Frontier Wing Specialists
 

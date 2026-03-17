@@ -2,6 +2,18 @@
 
 All notable changes to naksha are documented here.
 
+## v4.3.0 — Agent Upgrades (2026-03-17)
+
+**New agents:**
+- `design-token-extractor` — reads CSS/SCSS/Tailwind configs, extracts and categorizes design tokens, outputs CSS vars/Tailwind/Style Dictionary. Reads `.naksha/project.json` for preferred format.
+- `design-critic` — 3-pass UX critique: Pass 1 Nielsen's 10 heuristics (severity-rated), Pass 2 accessibility spot-check, Pass 3 content quality (microcopy, errors, tone, hierarchy). Playwright-enabled for live URLs. Reads `.naksha/` brand voice.
+
+**Upgraded agents:**
+- `accessibility-auditor` — Playwright URL capture (live site auditing), `.naksha/` brand color contrast awareness, WCAG 2.2 new criteria (2.5.7, 2.5.8, 3.2.6, 3.3.7)
+- `design-qa` — Playwright viewport simulation (375/768/1280px breakpoints), `.naksha/` token format + framework context, Tailwind arbitrary value detection
+
+**Stats:** 7 agents (+2) · 57 commands · 26 roles
+
 ## v4.2.0 — Eval Quality & CI Hardening (2026-03-17)
 
 **Eval quality:**
