@@ -39,7 +39,7 @@ Collect as `project_name`. Required — do not accept empty.
 ### Q2 — Primary Brand Color
 > "What is your primary brand color? (hex, e.g. #6366F1)[current: {existing_primary}]"
 
-Collect as `brand_primary`. Required. Must start with `#` and be 4 or 7 characters (short or full hex).
+Collect as `brand_primary`. Required. Must start with `#` and be 6 or 8 characters including # prefix (e.g. #6366F1 or #6366F1FF).
 
 ### Q3 — Secondary Brand Color
 > "What is your secondary/accent color? (hex, optional — press Enter to skip)[current: {existing_secondary}]"
