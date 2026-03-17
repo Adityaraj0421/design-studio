@@ -1,7 +1,5 @@
 <div align="center">
 
-<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" fill="#E8633A"/><circle cx="26" cy="10" r="8" fill="#E8633A" fill-opacity="0.12"/><circle cx="42" cy="10" r="8" fill="#E8633A"/><circle cx="10" cy="26" r="8" fill="#E8633A" fill-opacity="0.12"/><circle cx="26" cy="26" r="8" fill="#E8633A" fill-opacity="0.45"/><circle cx="42" cy="26" r="8" fill="#E8633A" fill-opacity="0.12"/><circle cx="10" cy="42" r="8" fill="#E8633A"/><circle cx="26" cy="42" r="8" fill="#E8633A" fill-opacity="0.12"/><circle cx="42" cy="42" r="8" fill="#E8633A"/></svg>
-
 # naksha
 
 **Your agency's design brain. Always on, always yours.**
@@ -66,27 +64,6 @@ Copy `GEMINI.md` to your project root. Gemini CLI reads it at session start.
 ### VS Code Copilot
 
 Copy `.github/copilot-instructions.md` to your project's `.github/` directory. Copilot Chat and inline completions will apply the design team's rules.
-
----
-
-## ⚡ Demo
-
-<div align="center">
-<img src="demos/demo.svg" alt="Naksha demo — building a pricing page" width="720">
-</div>
-
-<br>
-
-Running `/design Build a pricing page with monthly/annual toggle` automatically loads UI Designer, Content Designer, Motion Designer, and Design System Lead references — each contributing their specific knowledge to the output. A button redesign loads 1–2 references. A full product feature loads 4–7.
-
-<details>
-<summary><b>More examples</b></summary>
-
-<div align="center">
-<img src="demos/demo-commands.svg" alt="Naksha command examples — design-review, brand-kit, figma-create, design-sprint" width="820">
-</div>
-
-</details>
 
 ---
 
@@ -785,27 +762,7 @@ node scripts/design-lint.js src/**/*.html src/**/*.css
 
 ## ⚙️ How It Works
 
-```mermaid
-graph TB
-    A["🎯 Your Request"] --> B["🧑‍💼 Design Manager"]
-    B --> C["🎬 Creative Director"]
-    C --> D["🔍 Research"]
-    C --> E["📐 Strategy"]
-    C --> F["🎨 Creative"]
-    D --> G["⚡ Build & Polish"]
-    E --> G
-    F --> G
-    G --> H["📦 Delivery"]
-
-    style A fill:#818cf8,stroke:#6366f1,color:#fff
-    style B fill:#1e293b,stroke:#475569,color:#f8fafc
-    style C fill:#1e293b,stroke:#475569,color:#f8fafc
-    style D fill:#0f172a,stroke:#334155,color:#94a3b8
-    style E fill:#0f172a,stroke:#334155,color:#94a3b8
-    style F fill:#0f172a,stroke:#334155,color:#94a3b8
-    style G fill:#1e293b,stroke:#475569,color:#f8fafc
-    style H fill:#22c55e,stroke:#16a34a,color:#fff
-```
+When you run a command, the Design Manager reads your request and assembles the right specialist roles from `skills/design/references/`. Each role contributes its knowledge — UI Designer for color and typography, Motion Designer for animation, Design System Lead for tokens, and so on. The assembled team runs the full workflow: research, strategy, creative, build, and delivery.
 
 **Adaptive loading:** A simple button redesign loads 1–2 references. A full product feature loads 4–7 references with the complete workflow.
 
