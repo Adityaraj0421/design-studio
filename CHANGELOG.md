@@ -2,6 +2,26 @@
 
 All notable changes to naksha are documented here.
 
+## v4.5.0 — Knowledge Depth Pass (2026-03-17)
+
+**Conversational Designer reference deepened:**
+- Added 2 new Reference-Sourced Insights: Nielsen Norman Group chatbot UX research (structured quick replies lift task completion 30–40%, quick-win onboarding strategy), Microsoft Bot Framework (narrow scope reliability, first-utterance vocabulary teaching)
+- Added 1 new Advanced Pattern: Conversation Analytics & Continuous Improvement Loop (6-metric instrumentation table, bi-weekly review cycle, fallback log clustering)
+- Upgraded Handoffs from bullet points to rich deliverables format with explicit "Deliver:" lines
+
+**Spatial Designer reference deepened:**
+- Deepened all 4 existing Reference-Sourced Insights to multi-paragraph format: Apple visionOS HIG (adaptive layout, defaultSize/minSize/maxSize), W3C WebXR (session entry/exit design, 3-state feature detection), W3C Immersive Web (AR anchor 3-tier fallback, surface type feedback), Google Daydream (3DoF constraints, hybrid capability flags)
+- Added 2 new Reference-Sourced Insights: Meta Quest Developer Center (natural affordance transfer, hand presence, 50ms microinteraction latency), Microsoft Mixed Reality (vergence-accommodation conflict, angular type scaling, depth jitter rules)
+- Added 1 new Advanced Pattern: Spatial Audio as UI Feedback (6-trigger feedback hierarchy, directionality rules, earcon design, SSML integration)
+
+**Compliance Designer reference deepened:**
+- Added 2 new Reference-Sourced Insights: CPPA CCPA Enforcement (exact link text, GPC Sec-GPC:1 compliance, opt-out confirmation requirements), eIDAS QES (SES/AES/QES three-tier table, QES multi-step identity verification pre-flow)
+- Added 1 new Advanced Pattern: Consent Version Migration & Re-Consent Flows (when re-consent is required, blocking modal pattern, consequence-first rejection, audit trail append-only rules)
+
+**Knowledge total:** ~13,800 lines across 32 reference files
+
+---
+
 ## v4.4.0 — Discovery & Polish (2026-03-17)
 
 **Version-agnostic assets:**
