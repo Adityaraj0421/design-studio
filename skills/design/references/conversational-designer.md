@@ -635,3 +635,5 @@ Before shipping any conversational interface, verify that each scenario has been
 - [ ] **Disambiguation triggered**: top 2 intents shown as quick replies; second ambiguous match routes to FALLBACK, not another disambiguation
 - [ ] **Proactive message received**: user arrives from a push notification — conversation opens in the correct context, not the generic welcome state
 - [ ] **Accessibility**: all message bubbles announced by screen reader; quick replies keyboard-navigable; focus management correct on chat open/close; no content conveyed by color alone
+
+---
