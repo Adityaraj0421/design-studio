@@ -491,6 +491,55 @@ Run this command now:
 
 ---
 
+### TRACK: spatial
+
+**Goal:** Design a visionOS app, an AR overlay, and audit a competitor's spatial design — the full Spatial & AR wing in three exercises.
+
+---
+
+**Exercise 1 of 3 — Spatial App (visionOS)**
+
+Run this command now:
+
+```
+/design-spatial productivity app. Platform: visionOS. App type: utility.
+```
+
+> **What to watch for:** Depth hierarchy document (background layer / secondary layer / primary interaction layer / overlay layer with `44pt × distance_in_meters` formula), window type selection rationale (Window vs. Volumetric vs. Immersive Space), ornament placement using `attachmentAnchor` API guidance, spatial typography scale (minimum 11sp at 2m viewing distance), and comfort guidelines (max 90-min session, 60° horizontal field).
+
+---
+
+**Exercise 2 of 3 — AR Overlay**
+
+```
+/design-ar-overlay assembly instructions for a product. Platform: ARKit.
+```
+
+> **What to watch for:** Anchor strategy selection (image vs. object vs. plane anchor), world tracking UI spec for 3 states (Searching / Anchor Found / Tracking Lost), instruction card pattern positioned within ±20° gaze range of the tracked object, scan state designs, and occlusion handling approach.
+
+---
+
+**Exercise 3 of 3 — Competitive Audit**
+
+```
+/competitive-audit https://www.apple.com/apple-vision-pro/
+```
+
+> **What to watch for:** If Playwright is available, this captures the page and extracts color palette, type system, layout patterns, and UX patterns — then produces a "Steal This" table with ⭐ quality ratings. If Playwright is unavailable, the MCP Fallback prompts for a screenshot.
+
+---
+
+**Spatial track complete.** You've seen:
+- `/design-spatial` → depth hierarchy, window types, ornaments, comfort guidelines
+- `/design-ar-overlay` → anchor strategy, world tracking UI, scan states
+- `/competitive-audit` → design system extraction with "Steal This" recommendations
+
+**Suggested next:**
+- `/design-tutorial compliance` for the Compliance wing
+- `/design-tutorial full` for the complete tour
+
+---
+
 ### TRACK: full
 
 **Goal:** Complete tour of all design wings — UI, Figma, Social, AI Visual Gen, Email, Data Viz, Print/PDF, and Handoff.
