@@ -139,7 +139,7 @@ When `--fix` is present, after the report add a numbered remediation checklist f
 
 **guard-legacy-branding failures:**
 - Each FAIL shows the file and line number with the banned string
-- Replace `design-studio`, `design_studio`, or `Design Studio` with `naksha`
+- The file contains the pre-rename plugin name (the old name used before the March 2026 rebrand). Replace the offending string with the current brand name `naksha`.
 
 **MCP availability (informational — not a quality gate):**
 - `playwright UNAVAILABLE`: Playwright MCP is not running in this session. Ensure `mcp__plugin_playwright_playwright` is configured in your Claude Code MCP settings and the Playwright server is started.

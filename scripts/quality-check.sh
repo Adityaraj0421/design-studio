@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # quality-check.sh — runs all naksha-studio quality gates in sequence.
 # Fail-at-end: all checks run regardless of individual failures.
-# Only 3 checks count toward FAILED (design-lint is a binary smoke test).
+# All 4 checks count toward FAILED.
 # Usage: bash scripts/quality-check.sh
-# Exit: 0 if all 3 real checks pass, 1 if any fail
+# Exit: 0 if all 4 checks pass, 1 if any fail
 
 set -uo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
@@ -23,13 +23,12 @@ echo ""
 bash "$REPO/scripts/behavioral-smoke.sh" || FAILED=$((FAILED + 1))
 echo ""
 
-# ── 3. Design linter (binary smoke test — linter binary health check only)
+# ── 3. Design linter ──────────────────────────────────────────────────────────
 echo "═══════════════════════════════════════"
-echo "  design-lint (binary smoke test)"
+echo "  design-lint"
 echo "═══════════════════════════════════════"
 echo ""
-node "$REPO/scripts/design-lint.js" 2>/dev/null || true
-echo "  (linter binary smoke test complete — not counted in quality gate)"
+node "$REPO/scripts/design-lint.js" 2>/dev/null || FAILED=$((FAILED + 1))
 echo ""
 
 # ── 4. Legacy branding guard ──────────────────────────────────────────────
@@ -39,12 +38,12 @@ echo ""
 # ── Summary ───────────────────────────────────────────────────────────────
 echo "╔═══════════════════════════════════════╗"
 if [ "$FAILED" -gt 0 ]; then
-  echo "║  quality-check: FAIL ($FAILED of 3 failed) ║"
+  echo "║  quality-check: FAIL ($FAILED of 4 failed) ║"
   echo "╚═══════════════════════════════════════╝"
   echo ""
   exit 1
 else
-  echo "║  quality-check: PASS (all 3 passed)   ║"
+  echo "║  quality-check: PASS (all 4 passed)   ║"
   echo "╚═══════════════════════════════════════╝"
   echo ""
   exit 0

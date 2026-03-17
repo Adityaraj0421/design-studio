@@ -6,7 +6,6 @@
  * - Accessibility (semantic HTML, ARIA, alt text, lang attribute)
  * - Token compliance (hardcoded color/spacing values instead of CSS variables)
  * - Responsive design (missing meta viewport, fixed pixel widths)
- * - Contrast-critical patterns (common low-contrast text colors)
  *
  * Usage:
  *   node scripts/design-lint.js                  # reads CHANGED_FILES env var (CI mode)
@@ -24,15 +23,10 @@ const path = require('path');
 const DEFAULT_CONFIG = {
   failThreshold: 70,      // score below this fails CI
   warnOnTokens: true,     // warn when hardcoded colors/spacing found
-  checkContrast: true,    // check for common low-contrast patterns
   checkSemantic: true,    // check for semantic HTML
   checkResponsive: true,  // check for responsive design basics
   ignorePatterns: [],     // glob patterns to ignore
 };
-
-// NOTE: checkContrast is declared in config but has no corresponding check in CHECKS.
-// Passing checkContrast: false is a deliberate no-op. To implement contrast checking,
-// add a check with configKey: 'checkContrast' to the CHECKS array.
 
 function loadConfig() {
   const configPath = path.join(process.cwd(), '.design-lint.json');
