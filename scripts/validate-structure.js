@@ -107,6 +107,24 @@ check('pipeline-yaml-structure', () => {
   return true;
 });
 
+// --- Check 7: SKILL.md command sync ---
+check('skill-command-sync', () => {
+  const commandDir = path.join(ROOT, 'commands');
+  const skillPath = path.join(ROOT, 'skills/design/SKILL.md');
+  if (!fs.existsSync(skillPath)) return 'skills/design/SKILL.md not found';
+  const skillContent = fs.readFileSync(skillPath, 'utf-8');
+  const commandFiles = fs.readdirSync(commandDir).filter(f => f.endsWith('.md'));
+  const missing = [];
+  for (const file of commandFiles) {
+    const commandName = '/' + file.replace('.md', '');
+    if (!skillContent.includes(commandName)) {
+      missing.push(commandName);
+    }
+  }
+  if (missing.length > 0) return `commands not referenced in SKILL.md: ${missing.join(', ')}`;
+  return true;
+});
+
 // --- Result ---
 if (failed === 0) {
   console.log(`✅ validate-structure: ${passed} checks passed`);
