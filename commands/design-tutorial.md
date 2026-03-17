@@ -476,21 +476,37 @@ You've learned: [list the commands used in this track]
 
 ━━━ Explore more ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  All 26 commands:
+  All 46 commands:
 
-  Core Design     /design /design-review /design-system /brand-kit
+  Core Design     /design /design-review /design-critique /design-qa
+                  /design-system /brand-kit /brand-strategy
                   /design-sprint /design-present /design-handoff
+
   Figma           /figma /figma-create /figma-responsive /figma-prototype
-                  /figma-sync /ux-audit /ab-variants /site-to-figma
-                  /component-docs
+                  /figma-sync /figma-component-library /ab-variants /site-to-figma
+
+  QA & Audit      /ux-audit /accessibility-audit /lint-design /component-docs
+
   Social          /social-content /social-campaign /social-analytics
+
+  Email           /email-template /email-campaign /email-audit
+
+  Data Viz        /chart-design /dashboard-layout /data-viz-audit
+
   Framework       /design-framework
-  Email           /email-template /email-campaign
+
+  AI Visual Gen   /gen-image /gen-video /gen-audio /gen-moodboard /prompt-refine
+
+  Print / PDF     /pdf-report /print-layout /print-audit
+
+  Media           /illustration-system /motion-design /presentation-design /video-script
+
   Templates       /design-template
-  Data Viz        /chart-design /dashboard-layout
+
   Tutorial        /design-tutorial
 
   Run /design-tutorial <track> to explore another wing.
+  Tracks: quick-start · ui · figma · social · email · data-viz · ai-visual-gen · print-pdf · full
   Run /design <anything> to start real work.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
