@@ -204,3 +204,108 @@ Then restart Claude Code to reload the plugin.
 2. Create a feature branch: `git checkout -b feature/my-improvement`
 3. Make your changes and test locally in Claude Code
 4. Submit a PR with a clear description of what was added/changed
+
+---
+
+## Building a Wing
+
+A **wing** is a cohesive thematic extension — a new specialist role paired with 2+ commands that apply that expertise. The three existing wings are good templates:
+
+| Wing | Role Reference | Commands |
+|------|---------------|---------|
+| Conversational | `skills/design/references/conversational-designer.md` | `/design-chatbot`, `/design-voice-ui` |
+| Spatial | `skills/design/references/spatial-designer.md` | `/design-spatial`, `/design-ar-overlay` |
+| Compliance | `skills/design/references/compliance-designer.md` | `/design-gdpr`, `/design-compliance` |
+
+A wing contribution is large — expect 3–5 hours of focused work. Check the [`wing` label](https://github.com/Adityaraj0421/naksha-studio/issues?q=label%3AWing) for maintainer-scoped wing requests before starting your own.
+
+### Wing File Checklist
+
+**1. Role reference file** — `skills/design/references/<role-name>.md`
+
+Follow the established pattern from any existing reference file:
+- `# Role Name` — 2-sentence identity statement
+- `## Your Responsibilities` — numbered list, 6–8 items
+- Domain sections — 4–8 sections covering the core knowledge areas (tables, rules, code examples)
+- `## Reference-Sourced Insights` — 4–6 entries with authoritative citations (real URLs, direct quotes, design implications)
+- `## Handoffs` — one sub-section per stakeholder with `Deliver:` line
+- `## Advanced Patterns` — 3–5 sophisticated patterns not obvious from the basics
+- `## Full Coverage` — pre-handoff verification checklist with `- [ ]` items
+
+Target: 500–700 lines. Read an existing file in full before writing yours.
+
+**2. Commands (minimum 2)** — `commands/<wing-name>-<variant>.md`
+
+Each command file needs:
+```yaml
+---
+description: "One-line description."
+argument-hint: "[--flag <value>]"
+allowed-tools: ["Read", "Write", "Glob"]
+---
+```
+
+Body pattern:
+- **Reads the role reference** using the `Read` tool (path: `${CLAUDE_PLUGIN_ROOT}/skills/design/references/<role-name>.md`)
+- Input section: what arguments/flags it accepts
+- Process steps: numbered, each producing visible output
+- Output section: exactly what the user receives (format, sections, depth)
+- MCP Fallback block: what to do if optional tools (Playwright, Figma) are unavailable
+
+**3. SKILL.md updates** — `skills/design/SKILL.md`
+
+7 update locations (all must be done in one editing session to avoid drift):
+1. Trigger phrases — add 8–12 natural language phrases that route to this wing
+2. Examples block — add 2 examples (one per command)
+3. Plugin Commands table — add rows for both commands; add a section header if needed
+4. The Team table — add the new role row
+5. Step 3 routing rules — add activation condition
+6. Output formats — add the wing's output format
+7. Stop hook suggestion list — add both commands
+
+**4. Evals** — `evals/evals.json`
+
+Add 2 eval entries per command (minimum). Each eval needs:
+- `id`: next available integer (run `node -e "const e=require('./evals/evals.json'); console.log('Last ID:', e.evals[e.evals.length-1].id)"`)
+- `name`: `kebab-case-description`
+- `prompt`: the exact user prompt
+- `expected_output`: one sentence describing the ideal output
+- `assertions`: array of 5–6 named assertions (each is `{ "name": "kebab-case", "description": "Sentence." }`)
+
+**5. Smoke fixtures** — `evals/fixtures/<command>-output.md`
+
+Create one fixture per command. Start with the SENTINEL placeholder:
+```markdown
+# FIXTURE NEEDED — run this command and paste output here
+```
+
+Add `check_fixture` rows to `scripts/behavioral-smoke.sh`:
+```bash
+check_fixture "<command>-output.md" "<keyword1>,<keyword2>,<keyword3>" <min_h2_headers> <min_chars>
+```
+
+**6. Platform adapters** — update all 4
+
+Add the new role row to each:
+- `GEMINI.md`
+- `.cursor/rules/naksha.mdc`
+- `.windsurfrules`
+- `.github/copilot-instructions.md`
+
+**7. Stats** — `meta/stats.json` and `.claude-plugin/plugin.json`
+
+Update **last** (after all files are committed, since validate-structure.js enforces counts):
+- `roles`: +1
+- `commands`: +2 (or however many you added)
+- `reference_files`: +1
+- `knowledge_lines`: estimate (count lines in your reference file + ~250 per command)
+- `version`: bump minor (e.g. 4.7.0 for a new wing)
+
+### Wing Pull Request
+
+Open your PR with:
+- Title: `feat: add <Wing Name> wing (<role>, /command-1, /command-2)`
+- Labels: `wing`, `enhancement`
+- PR body should include: the reference file line count, eval assertion count per command, and a sample output from each command
+
+A maintainer will review the reference file depth (Reference-Sourced Insights must have real citations, not invented sources), command output quality, and SKILL.md wiring completeness before merging.
